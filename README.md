@@ -43,7 +43,8 @@ wp-content/
 docs/
 ├── WOOCOMMERCE-TEMPLATE-AUDIT.md   # per-template verdict vs WooCommerce 11.2.1
 ├── STAGING-QA-CHECKLIST.md         # pre-launch checklist, checkout gate included
-└── GREENGEEKS-DEPLOY.md            # host-specific runbook for the client review site
+├── GREENGEEKS-DEPLOY.md            # host-specific runbook for the client review site
+└── GREENGEEKS-STEPS.html           # printable/tickable build sheet (open in a browser)
 
 tools/
 ├── build-core-plugin-zip.sh        # rebuilds the plugin bundle the theme installer ships

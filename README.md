@@ -45,7 +45,8 @@ docs/
 ├── STAGING-QA-CHECKLIST.md         # pre-launch checklist, checkout gate included
 ├── GREENGEEKS-DEPLOY.md            # host-specific runbook for the client review site
 ├── GREENGEEKS-STEPS.html           # printable/tickable build sheet (open in a browser)
-└── LIVE-SITE-FIXES.md              # audit of the deployed install + go-live migration
+├── LIVE-SITE-FIXES.md              # audit of the deployed install + go-live migration
+└── CLIENT-BRIEF-QUEENDOR.md        # client profile: jewellery demo vs fashion house, re-platform decisions
 
 tools/
 ├── build-core-plugin-zip.sh        # rebuilds the plugin bundle the theme installer ships

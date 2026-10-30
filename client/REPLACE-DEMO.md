@@ -1,0 +1,184 @@
+# Replace the demo with the client's site
+
+Eight steps. Steps 1–4 clear the demo; 5–8 put Queen Dor's in its place.
+
+**Do them in this order.** The page import has to come after the cleanup, or WordPress creates `about-2` next to the demo's `about` and you end up with two of everything.
+
+---
+
+## 1. Upload the cleanup tool
+
+`Plugins → Add New → Upload Plugin` → `queendor-cleanup-1.0.0.zip` → **Install** → **Activate**.
+
+Then `Tools → Queen Dor's Cleanup`.
+
+It trashes rather than deletes — everything sits in the Trash for 30 days and can be restored from `Pages` / `Products`. Nothing happens until you press a button.
+
+## 2. Trash the demo products
+
+The tool counts two things: products with a `QD-` SKU (yours — 10) and everything else (the demo — 31).
+
+Press **Trash 31 demo products**.
+
+> It refuses to run if it can't find any `QD-` products, because in that state "everything else" means your entire catalogue. If you see that warning, the CSV import hasn't happened — do `IMPORT-GUIDE.md` first.
+
+Then check `Products → All Products`: ten products, all with images missing. That's the correct state.
+
+## 3. Trash the demo posts
+
+Same screen, section 2. The theme ships blog posts dated November–December 2024 by author `iwan1`. Press the button.
+
+## 4. Trash the demo pages — tick them yourself
+
+Section 3 lists every page with a checkbox. The front page, posts page and all four WooCommerce pages are locked and cannot be selected, because trashing those takes the shop apart.
+
+Tick these, and only these:
+
+```
+Home 02
+Home 03
+Shop 2
+Cart 2
+Checkout 2
+My Account 2
+FAQ's
+Blog
+About          ← keep the slug free; step 5 recreates it
+Contact        ← same
+404 Page
+```
+
+**Do not tick `Home 01`** — it is almost certainly still the front page. Leave the theme's Elementor home layout in place; it gets rewritten section by section in step 7.
+
+## 5. Import the client pages
+
+`Tools → Import → WordPress` → install the importer if prompted → **Choose file** → `queendor-pages.wxr` → **Upload file and import**.
+
+On the next screen, **assign posts to an existing user** (yourself), and leave *"Download and import file attachments"* unticked — there are none.
+
+Expect **8 pages**:
+
+| Page | Slug |
+|---|---|
+| About | `/about/` |
+| Contact | `/contact/` |
+| Shipping & Delivery | `/shipping-delivery/` |
+| Returns & Exchanges | `/returns-exchanges/` |
+| Privacy Policy | `/privacy-policy/` |
+| Size Guide | `/size-guide/` — renders `[queendor_ring_guide]` |
+| Symbols | `/symbols/` — renders `[queendor_symbol_index]` |
+| Wholesale | `/wholesale/` |
+
+**Repeat the import with `queendor-pages.wxr` a second time and you get duplicates** — WordPress will happily create `/about-2/`. Import once.
+
+## 6. Build the menu
+
+`Appearance → Menus` → edit the **Primary Menu** that the demo left behind. Delete every item and add:
+
+```
+Home          → Home
+Shop          → Shop page (/shop/)
+Symbols       → Symbols (/symbols/)
+Wholesale     → Wholesale (/wholesale/)
+About         → About (/about/)
+Contact       → Contact (/contact/)
+```
+
+Also remove the `404 Page` item — it currently points at the theme vendor's demo site.
+
+Then check the footer menu and the mobile menu assignment (`Appearance → Menus → Manage Locations`).
+
+**Check the header cart and account links.** The demo points them at `/cart-2/`, `/checkout-2/` and `/my-account-2/`. Every purchase now runs through these, and a customer who lands on a trashed demo page stops there. Fix them in the theme's header options or the menu, and confirm `WooCommerce → Settings → Advanced` assigns Cart, Checkout, My account and Shop to the real pages.
+
+---
+
+# Homepage copy
+
+The home page is an Elementor template — duplicating and editing it is a hundred times faster than starting from scratch. Work top to bottom, replacing section content, and delete any section you don't want rather than leaving it empty.
+
+### 1. Hero
+
+> **Jewellery that already means something**
+> Adinkra pieces, hand-finished in Accra. Retail and wholesale, worldwide.
+>
+> [ Shop the collection ] → `/shop/`  ·  [ Our symbols ] → `/symbols/`
+
+Image: one strong model shot, or the Five Symbols necklace on a plain background.
+
+### 2. Category tiles
+
+Five tiles, one per category, each linking to its product category:
+
+`Necklaces` · `Earrings` · `Bracelets` · `Rings` · `Sets & Gifts`
+
+### 3. The symbol strip
+
+A quiet band, no images:
+
+> **Gye Nyame** — Except for God  ·  **Sankofa** — Go back and fetch it  ·  **Duafe** — The wooden comb  ·  **Akoma** — The heart
+>
+> [ What the symbols mean ] → `/symbols/`
+
+### 4. Best sellers
+
+Use a **Featured products** block — the CSV already marks three pieces as featured (Sankofa Pendant Necklace, Five Symbols Layered Necklace, Adinkrahene Stacking Ring Set). It populates itself.
+
+### 5. Their story
+
+> We make Adinkra jewellery in Accra, in small runs, and we have not invented the meanings —
+> Gye Nyame for what holds everything together, Sankofa for what you carry with you.
+> We just make them wearable.
+>
+> [ Read more ] → `/about/`
+
+### 6. Wholesale band
+
+> **Stock Queen Dor's**
+> Trade prices, minimum six per style, retail-ready and boxed.
+>
+> [ Wholesale enquiries ] → `/wholesale/`
+
+### 7. Newsletter
+
+> **New pieces, occasionally.**
+> A message when something new is finished — nothing else.
+
+### 8. Delete the rest
+
+The demo's newsletter block, Instagram strip and quote sections are full of images hotlinked from the theme vendor's server. **Delete those sections rather than editing them** — one of them is still loading images from `wordpress.vecurosoft.com`, and the Instagram strip shows another brand's products.
+
+---
+
+## 7. Fill the blanks
+
+Every `________` in the imported pages is a real decision. Search the pages for underscores:
+
+| Page | What's missing |
+|---|---|
+| Contact | phone, email, studio address, opening hours |
+| Shipping & Delivery | Accra fee, regional fee, free-delivery threshold, made-to-order lead time |
+| Wholesale | minimum order, lead time, terms, wholesale email |
+| Privacy Policy | the contact address for data requests |
+
+And outside the pages:
+
+- [ ] **Product prices** — all ten are placeholders (`IMPORT-GUIDE.md` §5)
+- [ ] **Product photographs** — every product currently shows the WooCommerce placeholder
+- [ ] **Materials** — gold-plated vs brass is assumed per product, and drives the care note shown on that product page
+- [ ] **Ring sizes** — L, N, P, R, T, V is a guess; set their real range
+- [ ] **Logo** — the Luxrio logo is still in the header
+- [ ] **Footer** — real business name, registration, address, and remove the "Vecuro" / "Luxrio" credit
+
+## 8. Then deactivate the cleanup tool
+
+`Plugins → Deactivate → Delete`. It has done its job, and a tool that can trash the catalogue should not sit active on a live site.
+
+---
+
+## What should be true when this is finished
+
+- `Products` shows exactly ten, all Queen Dor's
+- `Pages` shows the client's pages plus the four WooCommerce pages — no `Home 02`, no `-2` duplicates, no `FAQ's` from the demo
+- The menu has six items and none of them 404
+- `/symbols/` lists eleven symbols with meanings; `/size-guide/` renders the chart
+- The homepage says "Adinkra" and the client's name, not "High Class Jewellery"

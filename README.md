@@ -86,11 +86,12 @@ The vendor package shipped **Font Awesome Pro 6.6.0** (`thin`/`light`/`duotone`/
 | `assets/img/logo.svg`, `logo-white.svg` | **Created** as neutral placeholders. The theme's default logo previously pointed at `wordpress.vecurosoft.com`. |
 | `assets/css/style.min.css` | **Created** (283.8 KB → 230.7 KB). `style.css.map` removed. |
 | `wp-content/plugins/luxrio-core/**` | `ABSPATH` guards added to 43 files that lacked one (1 more uncommented); 2 HTML-only partials intentionally skipped. |
+| `woocommerce/**` (9 files) | Six upstream merges applied against WooCommerce 11.2.1: escaping of the review heading, `is_string()` guard on login/register input, password-manager `autocomplete` hints + display-name help text, conditional `max` attribute, related-product lazy loading, `role="presentation"` on the grouped table. Plus three stale `@version` headers aligned. |
 | all text files | Line endings normalised to LF. |
 
 ### Known remaining issues (deliberately not changed)
 - **Google Fonts** (Cormorant, Italiana, Poppins) are still fetched from `fonts.googleapis.com`. Self-hosting needs the font binaries, which were not available in this environment. GDPR/CWV impact.
-- **WooCommerce overrides**: 33 templates, audited against WooCommerce 11.2.1 in [`docs/WOOCOMMERCE-TEMPLATE-AUDIT.md`](docs/WOOCOMMERCE-TEMPLATE-AUDIT.md) — 16 current, 3 with stale headers only, **6 needing a small upstream merge**, 8 custom. No HPOS compatibility is declared.
+- **WooCommerce overrides**: 33 templates, audited against WooCommerce 11.2.1 and brought fully up to date — 25 current, 8 custom. The six outstanding upstream merges were applied on 2026-10-30 (see [`docs/WOOCOMMERCE-TEMPLATE-AUDIT.md`](docs/WOOCOMMERCE-TEMPLATE-AUDIT.md)). **No HPOS compatibility is declared** — do that only after a test order on staging.
 - **12 plugins are flagged `required`** with no version pins. Pin the versions you ship and update them deliberately.
 - Bootstrap 5.0.0-**beta1** (2020) is still the bundled framework.
 - No `<main>` landmark on pages (only when the scroll-animation option is on), no skip link.

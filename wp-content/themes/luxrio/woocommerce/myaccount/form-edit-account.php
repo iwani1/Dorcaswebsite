@@ -12,7 +12,7 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 9.7.0
+ * @version 11.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -31,7 +31,8 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
         </p>
 
         <p class="col-sm-6 mb-30">
-            <input type="text" class="form-control" name="account_display_name" id="account_display_name" value="<?php echo esc_attr( $user->display_name ); ?>" placeholder="<?php echo esc_attr__('Display Name', 'luxrio')  ?>"/>
+            <input type="text" class="form-control" name="account_display_name" id="account_display_name" aria-describedby="account_display_name_description" value="<?php echo esc_attr( $user->display_name ); ?>" placeholder="<?php echo esc_attr__('Display Name', 'luxrio')  ?>"/>
+            <span id="account_display_name_description"><em><?php echo wc_reviews_enabled() ? esc_html__( 'This will be how your name will be displayed in the account section and in reviews', 'luxrio' ) : esc_html__( 'This will be how your name will be displayed in the account section', 'luxrio' ); ?></em></span>
         </p>
         <p class="col-sm-6 mb-30">
             <input type="email" class="form-control" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $user->user_email ); ?>" placeholder="<?php echo esc_attr__('Your Email', 'luxrio')  ?>"/>
@@ -42,13 +43,13 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 		<h6 class="col-12 mb-3"><?php esc_html_e( 'Password Change', 'luxrio' ); ?></h6>
 
 		<p class="col-12 mb-30">
-			<input type="password" class="form-control" name="password_current" id="password_current" autocomplete="off" placeholder="<?php echo esc_attr('Current Password', 'luxrio') ?>"/>
+			<input type="password" class="form-control" name="password_current" id="password_current" autocomplete="current-password" placeholder="<?php echo esc_attr__('Current Password', 'luxrio') ?>"/>
 		</p>
 		<p class="col-12 mb-30">
-			<input type="password" class="form-control" name="password_1" id="password_1" autocomplete="off" placeholder="<?php echo esc_attr('New Password', 'luxrio') ?>"/>
+			<input type="password" class="form-control" name="password_1" id="password_1" autocomplete="new-password" placeholder="<?php echo esc_attr__('New Password', 'luxrio') ?>"/>
 		</p>
 		<p class="col-12 mb-4">
-			<input type="password" class="form-control" name="password_2" id="password_2" autocomplete="off" placeholder="<?php echo esc_attr('Confirm Password', 'luxrio') ?>"/>
+			<input type="password" class="form-control" name="password_2" id="password_2" autocomplete="new-password" placeholder="<?php echo esc_attr__('Confirm Password', 'luxrio') ?>"/>
 		</p>
 	</fieldset>
 

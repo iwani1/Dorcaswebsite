@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 9.7.0
+ * @version 11.2.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -63,7 +63,7 @@ if ( ! comments_open() ) {
 					$aria_req = ( $req ? "required" : '' );
 					$comment_form = array(
 						/* translators: %s is product title */
-						'title_reply'         => have_comments() ? esc_html__( 'Post Review', 'luxrio' ) : sprintf( esc_html__( 'Be the first to review &ldquo;%s&rdquo;', 'luxrio' ), get_the_title() ),
+						'title_reply'         => have_comments() ? esc_html__( 'Post Review', 'luxrio' ) : sprintf( esc_html__( 'Be the first to review &ldquo;%s&rdquo;', 'luxrio' ), esc_html( get_the_title() ) ),
 						/* translators: %s is product title */
 						'title_reply_to'      => esc_html__( 'Leave a Reply to %s', 'luxrio' ),
 						'title_reply_before'  => '<div class="form-title"><h3 class="blog-inner-title">',

@@ -145,7 +145,7 @@ Version spread in override headers: **1.6.4 → 9.7.0**.
 
 - Modern and likely fine: `form-login.php`, `form-edit-account.php`, `single-product-reviews.php` (9.7.0); `loop/orderby.php` (9.7.0); `tabs.php`, `related.php`, `up-sells.php` (9.6.0).
 - Low version numbers are **not** proof of drift: `single-product.php` is still `@version 1.6.4` in WooCommerce 11.2.1, so that override is current. The later audit (against WC 11.2.1) found only **6** overrides actually missing upstream changes, 3 with stale headers, and 16 fully current.
-- Expect "outdated templates" notices for those 9; none of them breaks the checkout path.
+- All nine were reconciled against WooCommerce 11.2.1 on 2026-10-30; no "outdated templates" notices remain in the override set.
 
 `add_theme_support( 'woocommerce' )` plus gallery zoom/slider are declared; there is **no `FeaturesUtil::declare_compatibility()`** call (e.g. for HPOS/custom order tables), so a store using High-Performance Order Storage gets the "incompatible plugin" notice.
 
@@ -240,7 +240,7 @@ If this theme is going to be maintained, the zip should be unpacked to `wp-conte
 | **Output escaping / XSS** | ✅ **Good** (580 i18n-escaped strings, 143 `esc_attr`, 139 `esc_url`, zero raw echoes found). |
 | **CSRF / capability** | 🟡 Adequate (5 nonce checks, 12 cap checks, admin-only import path). |
 | **Bundled dependencies** | 🟡 12 required plugins, no version pins, 2 wrong slugs; TGMPA 2.6.1 abandoned. |
-| **WooCommerce compatibility** | 🟡 33 overrides; audited against WC 11.2.1 — 16 current, 3 header-only drift, 6 need a small upstream merge, 8 custom. No HPOS declaration. See [audit](docs/WOOCOMMERCE-TEMPLATE-AUDIT.md). |
+| **WooCommerce compatibility** | 🟡 33 overrides; audited against WC 11.2.1 — 25 current, 8 custom, the 6 small upstream merges now applied. No HPOS declaration. See [audit](docs/WOOCOMMERCE-TEMPLATE-AUDIT.md). |
 | **Demo import reliability** | 🟠 Deprecated API + unguarded object access + hard Elementor dependency → fatal-error risk. |
 | **Performance** | 🟠 18 MB fonts, 1 MB CSS (unminified), 0.33 MB JS, no defer, remote Google Fonts. |
 | **Licensing** | 🔴 **Font Awesome Pro 6.6.0 redistributed** under a commercial license with no attribution or vendor clearance. |

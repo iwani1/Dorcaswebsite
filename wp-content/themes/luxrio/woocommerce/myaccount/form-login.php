@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 9.7.0
+ * @version 9.9.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -47,7 +47,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
                         echo '<form method="post" class="woocommerce-form woocommerce-form-login login">';
                             do_action( 'woocommerce_login_form_start' );
                             echo '<p class="form-row form-group">';
-                                $username_value = ! empty( $_POST['username'] ) ? sanitize_text_field( wp_unslash( $_POST['username'] ) ) : '';
+                                $username_value = ! empty( $_POST['username'] ) && is_string( $_POST['username'] ) ? sanitize_text_field( wp_unslash( $_POST['username'] ) ) : '';
                                 echo '<input name="username" value="'.esc_attr( $username_value ).'" class="form-control" type="text" placeholder="'.esc_attr__('User Name','luxrio').'">';
                             echo '</p>';
                             echo '<p class="form-row form-group">';
@@ -88,13 +88,13 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
                             do_action( 'woocommerce_register_form_start' );
                             if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) {
                                 echo '<p class="form-row form-group">';
-                                    $resgisterusername = ( ! empty( $_POST['username'] ) ) ? sanitize_text_field( wp_unslash( $_POST['username'] ) ) : '';
+                                    $resgisterusername = ( ! empty( $_POST['username'] ) && is_string( $_POST['username'] ) ) ? sanitize_text_field( wp_unslash( $_POST['username'] ) ) : '';
                                     echo '<input name="username" value="'.esc_attr( $resgisterusername ).'" class="form-control" type="text" placeholder="'.esc_attr__('User Name','luxrio').'">';
                                 echo '</p>';
                             }
 
                             echo '<p class="form-row form-group">';
-                                $registeremail = ( ! empty( $_POST['email'] ) ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
+                                $registeremail = ( ! empty( $_POST['email'] ) && is_string( $_POST['email'] ) ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
                                 echo '<input name="email" value="'.esc_attr($registeremail).'" class="form-control" type="email" placeholder="'.esc_attr__('Email','luxrio').'">';
                             echo '</p>';
                             if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ){

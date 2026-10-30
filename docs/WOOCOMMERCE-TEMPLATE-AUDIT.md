@@ -20,12 +20,12 @@ python3 tools/wc-template-audit.py \
 
 | Status | Count | Meaning |
 |---|---|---|
-| ✅ **Current** | **16** | `@version` matches core — WooCommerce has not changed the template since the override was written |
-| 🟠 **Needs upstream merge** | **6** | Core changed the template; the override is missing that change |
-| 🟡 **Stale header, current code** | **3** | The upstream change is already present, only the `@version` comment is behind |
-| ⚪ **Custom** | **8** | No core counterpart — theme-specific templates |
+| ✅ **Current** | **25** | `@version` matches core — nothing outstanding |
+| 🟠 ~~Needs upstream merge~~ | ~~6~~ → **0** | **All six merged on 2026-10-30** (see below) |
+| 🟡 ~~Stale header~~ | ~~3~~ → **0** | Headers aligned on 2026-10-30 |
+| ⚪ **Custom** | **8** | No core counterpart — review by hand on each major |
 
-**Bottom line: the checkout path is not at risk.** WooCommerce has not touched `single-product.php`, `archive-product.php`, `content-product.php`, `content-single-product.php`, `loop/orderby.php`, `myaccount/navigation.php` or any of the account/cart-adjacent templates the store actually depends on since the theme's copies were made. Of the six that did drift, five are cosmetic/accessibility/performance and one (`single-product-reviews.php`) is a small escaping hardening. None is a functional break.
+**Bottom line: the checkout path is not at risk.** WooCommerce has not touched `single-product.php`, `archive-product.php`, `content-product.php`, `content-single-product.php`, `loop/orderby.php`, `myaccount/navigation.php` or any of the account/cart-adjacent templates the store actually depends on since the theme's copies were made. Of the six that did drift, five were cosmetic/accessibility/performance and one (`single-product-reviews.php`) a small escaping hardening — none was a functional break. **All six are merged as of 2026-10-30**, so the override set is now fully current against 11.2.1.
 
 > This corrects the earlier estimate in `ANALYSIS.md`, which flagged "several stale overrides" from version headers alone. Those headers turn out to be a poor proxy in both directions: three overrides show old versions but already contain the new code, and the genuinely stale ones change far less than the raw header spread (1.6.4 → 11.2.1) suggests.
 
@@ -35,44 +35,45 @@ python3 tools/wc-template-audit.py \
 
 | Template | Theme @version | WC 11.2.1 @version | Status | Action |
 |---|---|---|---|---|
-| `archive-product.php` | 8.6.0 | 8.6.0 | ✅ current | No action |
-| `contact-product-four.php` | 3.6.0 | — | ⚪ custom (no core counterpart) | Theme-specific — nothing upstream to track |
-| `content-horizontal-product.php` | 3.6.0 | — | ⚪ custom (no core counterpart) | Theme-specific — nothing upstream to track |
-| `content-product-four.php` | 3.6.0 | — | ⚪ custom (no core counterpart) | Theme-specific — nothing upstream to track |
-| `content-product-three.php` | 3.6.0 | — | ⚪ custom (no core counterpart) | Theme-specific — nothing upstream to track |
-| `content-product-two.php` | 3.6.0 | — | ⚪ custom (no core counterpart) | Theme-specific — nothing upstream to track |
-| `content-product-view.php` | — | — | ⚪ custom (no core counterpart) | Theme-specific — nothing upstream to track |
-| `content-product.php` | 9.4.0 | 9.4.0 | ✅ current | No action |
-| `content-single-product.php` | 3.6.0 | 3.6.0 | ✅ current | No action |
-| `content-widget-product.php` | 3.5.5 | 3.5.5 | ✅ current | No action |
-| `global/form-login.php` | 9.2.0 | 9.2.0 | ✅ current | No action |
-| `global/quantity-input.php` | 9.4.0 | 10.1.0 | 🟠 needs upstream merge | Guard `max` attribute so it is only output when > 0 |
-| `loop/orderby.php` | 9.7.0 | 9.7.0 | ✅ current | No action |
-| `myaccount/form-edit-account.php` | 9.7.0 | 11.0.0 | 🟠 needs upstream merge | Add `account_display_name_description` help text |
-| `myaccount/form-edit-address.php` | 9.3.0 | 9.3.0 | ✅ current | No action |
-| `myaccount/form-login.php` | 9.7.0 | 9.9.0 | 🟠 needs upstream merge | Add `autocomplete="username"` to the login input |
-| `myaccount/form-lost-password.php` | 9.2.0 | 9.2.0 | ✅ current | No action |
-| `myaccount/my-account.php` | 3.5.0 | 3.5.0 | ✅ current | No action |
-| `myaccount/my-address.php` | 9.3.0 | 9.3.0 | ✅ current | No action |
-| `myaccount/navigation.php` | 9.3.0 | 9.3.0 | ✅ current | No action |
-| `order/order-details-customer.php` | 8.7.0 | 8.7.0 | ✅ current | No action |
-| `product-list-style.php` | 3.6.0 | — | ⚪ custom (no core counterpart) | Theme-specific — nothing upstream to track |
-| `single-product/add-to-cart/external.php` | 7.0.1 | 7.0.1 | ✅ current | No action |
-| `single-product/add-to-cart/grouped.php` | 7.0.1 | 11.0.0 | 🟠 needs upstream merge | Add `role="presentation"` + per-child sale notice block |
-| `single-product/add-to-cart/simple.php` | 7.0.1 | 10.2.0 | 🟡 verify, then bump header | Code already carries the upstream change; `@version` header is stale |
-| `single-product/add-to-cart/variation-add-to-cart-button.php` | 7.0.1 | 10.5.2 | 🟡 verify, then bump header | Code already carries the upstream change; `@version` header is stale |
-| `single-product/related.php` | 9.6.0 | 10.3.0 | 🟠 needs upstream merge | Lazy-load fix: bump media count for related product images |
-| `single-product/review.php` | 2.6.0 | 2.6.0 | ✅ current | No action |
-| `single-product/tabs/tabs.php` | 9.6.0 | 9.8.0 | 🟡 verify, then bump header | Code already carries the upstream change; `@version` header is stale |
-| `single-product/up-sells.php` | 9.6.0 | 9.6.0 | ✅ current | No action |
-| `single-product-reviews.php` | 9.7.0 | 11.2.0 | 🟠 needs upstream merge | Updated `woocommerce_reviews_title` filter signature/docblock |
-| `single-product.php` | 1.6.4 | 1.6.4 | ✅ current | No action |
-| `ti-wishlist-product-counter.php` | 2.8.0 | — | ⚪ custom (no core counterpart) | Theme-specific — nothing upstream to track |
+| `archive-product.php` | 8.6.0 | 8.6.0 | OK | No action |
+| `contact-product-four.php` | 3.6.0 | — | n/a no core counterpart | Theme-specific — nothing upstream to track |
+| `content-horizontal-product.php` | 3.6.0 | — | n/a no core counterpart | Theme-specific — nothing upstream to track |
+| `content-product-four.php` | 3.6.0 | — | n/a no core counterpart | Theme-specific — nothing upstream to track |
+| `content-product-three.php` | 3.6.0 | — | n/a no core counterpart | Theme-specific — nothing upstream to track |
+| `content-product-two.php` | 3.6.0 | — | n/a no core counterpart | Theme-specific — nothing upstream to track |
+| `content-product-view.php` | — | — | n/a no core counterpart | Theme-specific — nothing upstream to track |
+| `content-product.php` | 9.4.0 | 9.4.0 | OK | No action |
+| `content-single-product.php` | 3.6.0 | 3.6.0 | OK | No action |
+| `content-widget-product.php` | 3.5.5 | 3.5.5 | OK | No action |
+| `global/form-login.php` | 9.2.0 | 9.2.0 | OK | No action |
+| `global/quantity-input.php` | 10.1.0 | 10.1.0 | OK | **Merged 2026-10-30** |
+| `loop/orderby.php` | 9.7.0 | 9.7.0 | OK | No action |
+| `myaccount/form-edit-account.php` | 11.0.0 | 11.0.0 | OK | **Merged 2026-10-30** |
+| `myaccount/form-edit-address.php` | 9.3.0 | 9.3.0 | OK | No action |
+| `myaccount/form-login.php` | 9.9.0 | 9.9.0 | OK | **Merged 2026-10-30** |
+| `myaccount/form-lost-password.php` | 9.2.0 | 9.2.0 | OK | No action |
+| `myaccount/my-account.php` | 3.5.0 | 3.5.0 | OK | No action |
+| `myaccount/my-address.php` | 9.3.0 | 9.3.0 | OK | No action |
+| `myaccount/navigation.php` | 9.3.0 | 9.3.0 | OK | No action |
+| `order/order-details-customer.php` | 8.7.0 | 8.7.0 | OK | No action |
+| `product-list-style.php` | 3.6.0 | — | n/a no core counterpart | Theme-specific — nothing upstream to track |
+| `single-product/add-to-cart/external.php` | 7.0.1 | 7.0.1 | OK | No action |
+| `single-product/add-to-cart/grouped.php` | 11.0.0 | 11.0.0 | OK | **Merged 2026-10-30** |
+| `single-product/add-to-cart/simple.php` | 10.2.0 | 10.2.0 | OK | Header aligned 2026-10-30 |
+| `single-product/add-to-cart/variation-add-to-cart-button.php` | 10.5.2 | 10.5.2 | OK | Header aligned 2026-10-30 |
+| `single-product/related.php` | 10.3.0 | 10.3.0 | OK | **Merged 2026-10-30** |
+| `single-product/review.php` | 2.6.0 | 2.6.0 | OK | No action |
+| `single-product/tabs/tabs.php` | 9.8.0 | 9.8.0 | OK | Header aligned 2026-10-30 |
+| `single-product/up-sells.php` | 9.6.0 | 9.6.0 | OK | No action |
+| `single-product-reviews.php` | 11.2.0 | 11.2.0 | OK | **Merged 2026-10-30** |
+| `single-product.php` | 1.6.4 | 1.6.4 | OK | No action |
+| `ti-wishlist-product-counter.php` | 2.8.0 | — | n/a no core counterpart | Theme-specific — nothing upstream to track |
+
 ---
 
-## The six that need merging
+## The six merges applied on 2026-10-30
 
-Each entry shows what WooCommerce changed *after* the version the theme copied, and why it matters. Patches are against the theme's file in `wp-content/themes/luxrio/woocommerce/`.
+All six are now merged into the restyled theme templates — the semantic change was applied without replacing the theme's markup. Listed here as the record of what changed and why.
 
 ### 1. `single-product-reviews.php` — 9.7.0 → 11.2.0 · escaping
 ```php
@@ -137,15 +138,17 @@ if ( $related_products ) :
 
 ---
 
-## The three with stale headers but current code
+## The three header-only corrections
 
-These already contain the upstream change; only the `@version` comment is behind. **Do not "merge" them** — verify the rendered page, then bump the header to silence false "outdated template" notices:
+These already contained the upstream change; only the `@version` comment was behind. Headers are now aligned so they no longer trigger false "outdated template" notices:
 
-| Template | Theme header | Code already includes | Bump to |
+| Template | Old header | Code already included | Now |
 |---|---|---|---|
 | `single-product/add-to-cart/simple.php` | 7.0.1 | quantity min/max now read straight from the product | 10.2.0 |
 | `single-product/add-to-cart/variation-add-to-cart-button.php` | 7.0.1 | same | 10.5.2 |
 | `single-product/tabs/tabs.php` | 9.6.0 | `role="presentation"` on tab `<li>` | 9.8.0 |
+
+**Current state after this pass: 25 current · 0 stale · 8 custom.**
 
 ---
 

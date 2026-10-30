@@ -113,3 +113,26 @@ Patch the plugin in `wp-content/plugins/luxrio-core/`, then rebuild the bundle t
 ```
 
 The script exists so the tracked source and the installer bundle cannot silently drift apart.
+
+### Rebuilding the stylesheet
+
+`assets/css/style.css` is the readable source (compiled from `assets/sass/`); the front end loads `assets/css/style.min.css`. After any CSS change:
+
+```bash
+python3 -c "import rcssmin,sys; open('wp-content/themes/luxrio/assets/css/style.min.css','w').write(rcssmin.cssmin(open('wp-content/themes/luxrio/assets/css/style.css').read()))"
+```
+
+The enqueue helper keys the cache-busting version to the file's mtime, so a rebuilt file is picked up automatically.
+
+---
+
+## Measured effect of this patch set
+
+| | Vendor package | Now |
+|---|---|---|
+| Theme working tree | 24 MB | 5.5 MB |
+| Webfonts | 18.0 MB (31 files, 6 formats) | 312 KB (4 files, woff2 only) |
+| CSS served on the front end | 993.5 KB | 527.9 KB |
+| Main stylesheet | 283.8 KB unminified + 59 KB map | 230.7 KB minified, no map |
+| Requests per page load | +1 empty stylesheet | –1 |
+| PHP files failing a direct-access guard (plugin) | 44 | 0 |

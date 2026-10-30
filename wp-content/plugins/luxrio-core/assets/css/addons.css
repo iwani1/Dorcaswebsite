@@ -1,0 +1,283 @@
+/*--------------------------------------------------------------============================================================
+[Widget Stylesheet]
+
+/*==============================
+[Table of contents]
+
+WIDGET STYLESHEET
+----------------------------------
+1. GROUP LIST
+2. DUAL HEADDING
+3. CSS TRANSFORM
+4. ICON BOX
+=============================================================--------------------------------------------------------------*/
+
+.form-style2 span.wpcf7-form-control-wrap {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/*---------------------------------------------------
+GROUP LIST
+----------------------------------------------------*/
+.luxrio-list-group-wrapper {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper.layout_1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper.layout_2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item,
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item a {
+    position: relative;
+    line-height: 1;
+    display: flex;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item.luxrio-icon-center,
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item.luxrio-icon-center a {
+    flex-direction: column;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item.luxrio-icon-right .luxrio-list-group-icon {
+    order: 2;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item .luxrio-list-group-icon .luxrio-list-group-icon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item .luxrio-list-group-icon .luxrio-list-group-icon-image {
+    display: flex;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper.layout_1 .luxrio-list-group-item:after {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    content: "";
+    left: 0;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item .luxrio-list-group-icon.yes {
+    transition: 0.4s;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper.layout_2 .luxrio-list-group-item:after {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    content: "";
+    top: 0;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item .luxrio-list-group-icon.yes {
+    position: relative;
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item .luxrio-list-group-icon.yes i,
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item .luxrio-list-group-icon.yes .luxrio-list-group-icon-image,
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item .luxrio-list-group-icon.yes .luxrio-list-group-icon-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.luxrio-list-group .luxrio-list-group-wrapper .luxrio-list-group-item .luxrio-list-group-icon.yes .luxrio-list-group-icon-number {
+    line-height: 0;
+}
+
+
+@media (max-width: 767px) {
+    .luxrio-list-group .luxrio-list-group-wrapper.layout_2 {
+        display: block;
+    }
+}
+
+span.luxrio-list-group-text {
+    transition: 0.4s;
+}
+
+/*---------------------------------------------------
+DUAL HEADDING
+----------------------------------------------------*/
+.luxrio-addons-dual-heading .luxrio-addons-dual-heading-wrapper {
+    padding: 5px;
+}
+
+.luxrio-addons-dual-heading .luxrio-addons-dual-heading-wrapper .luxrio-addons-dual-heading-description {
+    line-height: 26px;
+    margin: 30px 0 0 0;
+    padding: 10px;
+    font-weight: 400;
+}
+
+.luxrio-addons-dual-heading .luxrio-addons-dual-heading-wrapper .luxrio-addons-dual-heading-icon {
+    display: inline-block;
+}
+
+.luxrio-addons-dual-heading .luxrio-addons-dual-heading-wrapper .luxrio-addons-dual-heading-icon i {
+    font-size: 36px;
+}
+
+.luxrio-addons-dual-heading .luxrio-addons-dual-heading-wrapper .luxrio-addons-dual-heading-title {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.luxrio-addons-dual-heading .luxrio-addons-dual-heading-wrapper .luxrio-addons-dual-heading-title {
+    font-size: 30px;
+    color: #132c47;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.luxrio-addons-dual-heading .luxrio-addons-dual-heading-wrapper .luxrio-addons-dual-heading-title span {
+    color: #132c47;
+    display: initial;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1440px) {
+
+    .luxrio-addons-dual-heading .luxrio-addons-dual-heading-wrapper .luxrio-addons-dual-heading-title .first-heading,
+    .luxrio-addons-dual-heading .luxrio-addons-dual-heading-wrapper .luxrio-addons-dual-heading-title .second-heading {
+        padding: 0;
+    }
+}
+
+/*---------------------------------------------------
+CSS TRANSFORM
+----------------------------------------------------*/
+.luxrio-css-transform-yes {
+    -webkit-transition-duration: var(--luxrio-tfx-transition-duration, 0.2s);
+    transition-duration: var(--luxrio-tfx-transition-duration, 0.2s);
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transform: translate(var(--luxrio-tfx-translate-x, 0), var(--luxrio-tfx-translate-y, 0)) scale(var(--luxrio-tfx-scale-x, 1), var(--luxrio-tfx-scale-y, 1)) skew(var(--luxrio-tfx-skew-x, 0), var(--luxrio-tfx-skew-y, 0)) rotateX(var(--luxrio-tfx-rotate-x, 0)) rotateY(var(--luxrio-tfx-rotate-y, 0)) rotateZ(var(--luxrio-tfx-rotate-z, 0));
+    transform: translate(var(--luxrio-tfx-translate-x, 0), var(--luxrio-tfx-translate-y, 0)) scale(var(--luxrio-tfx-scale-x, 1), var(--luxrio-tfx-scale-y, 1)) skew(var(--luxrio-tfx-skew-x, 0), var(--luxrio-tfx-skew-y, 0)) rotateX(var(--luxrio-tfx-rotate-x, 0)) rotateY(var(--luxrio-tfx-rotate-y, 0)) rotateZ(var(--luxrio-tfx-rotate-z, 0));
+}
+
+.luxrio-css-transform-yes:hover {
+    -webkit-transform: translate(var(--luxrio-tfx-translate-x-hover, var(--luxrio-tfx-translate-x, 0)), var(--luxrio-tfx-translate-y-hover, var(--luxrio-tfx-translate-y, 0))) scale(var(--luxrio-tfx-scale-x-hover, var(--luxrio-tfx-scale-x, 1)), var(--luxrio-tfx-scale-y-hover, var(--luxrio-tfx-scale-y, 1))) skew(var(--luxrio-tfx-skew-x-hover, var(--luxrio-tfx-skew-x, 0)), var(--luxrio-tfx-skew-y-hover, var(--luxrio-tfx-skew-y, 0))) rotateX(var(--luxrio-tfx-rotate-x-hover, var(--luxrio-tfx-rotate-x, 0))) rotateY(var(--luxrio-tfx-rotate-y-hover, var(--luxrio-tfx-rotate-y, 0))) rotateZ(var(--luxrio-tfx-rotate-z-hover, var(--luxrio-tfx-rotate-z, 0)));
+    transform: translate(var(--luxrio-tfx-translate-x-hover, var(--luxrio-tfx-translate-x, 0)), var(--luxrio-tfx-translate-y-hover, var(--luxrio-tfx-translate-y, 0))) scale(var(--luxrio-tfx-scale-x-hover, var(--luxrio-tfx-scale-x, 1)), var(--luxrio-tfx-scale-y-hover, var(--luxrio-tfx-scale-y, 1))) skew(var(--luxrio-tfx-skew-x-hover, var(--luxrio-tfx-skew-x, 0)), var(--luxrio-tfx-skew-y-hover, var(--luxrio-tfx-skew-y, 0))) rotateX(var(--luxrio-tfx-rotate-x-hover, var(--luxrio-tfx-rotate-x, 0))) rotateY(var(--luxrio-tfx-rotate-y-hover, var(--luxrio-tfx-rotate-y, 0))) rotateZ(var(--luxrio-tfx-rotate-z-hover, var(--luxrio-tfx-rotate-z, 0)));
+}
+
+/*---------------------------------------------------
+ICON BOX
+----------------------------------------------------*/
+.luxrio-feature-box-item {
+    transition: .4s;
+}
+
+.luxrio-feature-box-item .icon-background-yes .luxrio-feature-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    text-align: center;
+    line-height: 70px;
+    font-size: 30px;
+    background-color: var(--accent-color);
+    border-radius: 0px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.luxrio-feature-box-item .icon-background-yes .luxrio-feature-icon svg {
+    width: 35px;
+}
+
+span.luxrio-feature-icon.icon-type-image img {
+    object-fit: cover;
+}
+
+.luxrio-feature-icon-wrap {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.luxrio-feature-title {
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+.luxrio-feature-content p {
+    margin-bottom: 0;
+}
+
+.luxrio-feature-box-item.luxrio-icon-position-left {
+    display: inline-flex;
+    text-align: left;
+}
+
+.luxrio-feature-box-item.luxrio-icon-position-right {
+    display: flex;
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+.luxrio-feature-box-item.luxrio-feature-icon-center {
+    text-align: center;
+}
+
+.luxrio-feature-box-item.luxrio-feature-icon-left {
+    text-align: left;
+}
+
+.luxrio-feature-box-item.luxrio-feature-icon-left .luxrio-feature-icon-wrap {
+    justify-content: flex-start;
+}
+
+.luxrio-feature-box-item.luxrio-feature-icon-right .luxrio-feature-icon-wrap {
+    justify-content: flex-end;
+}
+
+.luxrio-feature-box-item.luxrio-feature-icon-right {
+    text-align: right;
+}
+
+.luxrio-feature-icon-wrap i,
+.luxrio-feature-icon-wrap svg,
+.luxrio-feature-icon {
+    transition: .3s ease-in-out;
+    ;
+}
+
+.luxrio-feature-box-item .icon-background-no .luxrio-feature-icon svg {
+    MAX-HEIGHT: 118PX;
+}
+
+.luxrio-feature-box-item .luxrio-feature-icon i {
+    font-size: 25px;
+}
+
+.luxrio-feature-box-number {
+    font-size: 22px;
+    letter-spacing: -0.73px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.luxrio-feature-box-number span {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .16);
+}

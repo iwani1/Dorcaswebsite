@@ -1,0 +1,2870 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Luxrio Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-27 06:12+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.1\n"
+"X-Domain: luxrio"
+
+#: addons/widgets/luxrio-countdown.php:251
+msgid " Countdown Color"
+msgstr ""
+
+#: addons/header/luxrio-offcanvas.php:46
+msgid " Version"
+msgstr ""
+
+#. 1: Plugin name 2: Elementor
+#: addons/addons.php:160
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr ""
+
+#. 1: Plugin name 2: Elementor 3: Required Elementor version
+#. 1: Plugin name 2: PHP 3: Required PHP version
+#: addons/addons.php:184 addons/addons.php:209
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:89
+#: addons/footer-widgets/luxrio-menu-list.php:94
+#: addons/footer-widgets/luxrio-menu-list.php:99
+#: addons/footer-widgets/luxrio-menu-list.php:104
+#: addons/header/luxrio-category-menu.php:86
+#: addons/header/luxrio-category-menu.php:90
+#: addons/header/luxrio-category-menu.php:94
+#: addons/header/luxrio-category-menu.php:98
+#: addons/header/luxrio-category-menu.php:102
+#: addons/header/luxrio-category-menu.php:106
+#: addons/header/luxrio-mobile-menu.php:70
+#: addons/widgets/luxrio-countdown.php:128
+#: addons/widgets/luxrio-instagram-slider.php:73
+#: addons/widgets/luxrio-product-category-slider.php:71
+#: addons/widgets/luxrio-product-category.php:131
+#: addons/widgets/luxrio-view-card.php:115
+#: addons/widgets/hero-slider/slider-one.php:163
+#: addons/widgets/hero-slider/slider-one.php:171
+msgid "#"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:44
+msgid "01."
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:108
+msgid "01/12/2025"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:100
+msgid "1"
+msgstr ""
+
+#: addons/widgets/blog-post.php:79
+msgid "10"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:93
+msgid "105 Jobs Done"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:97
+msgid "1259 Jobs Done"
+msgstr ""
+
+#: addons/widgets/blog-post.php:88
+msgid "15"
+msgstr ""
+
+#: addons/widgets/image-box/image-box.php:118
+msgid "15% Off"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:50
+msgid "2 Column"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:75
+#: addons/widgets/luxrio-product-tab.php:91
+#: addons/widgets/luxrio-product-tab.php:107
+#: addons/widgets/luxrio-product-tab.php:123
+msgid "2 Columns"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:80
+#: addons/widgets/luxrio-product-category.php:140
+msgid "20 Product"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:62
+msgid "20 PX"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:62
+#: addons/widgets/luxrio-tab-build.php:85
+msgid "259 Jobs Done"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:49
+msgid "3 Column"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:76
+#: addons/widgets/luxrio-product-tab.php:92
+#: addons/widgets/luxrio-product-tab.php:108
+#: addons/widgets/luxrio-product-tab.php:124
+msgid "3 Columns"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:63
+msgid "30 PX"
+msgstr ""
+
+#: addons/widgets/blog-post.php:70
+msgid "4"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:48
+msgid "4 Column"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:77
+#: addons/widgets/luxrio-product-tab.php:93
+#: addons/widgets/luxrio-product-tab.php:109
+#: addons/widgets/luxrio-product-tab.php:125
+msgid "4 Columns"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:89
+msgid "403 Jobs Done"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:47
+msgid "6 Column"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:78
+#: addons/widgets/luxrio-product-tab.php:94
+#: addons/widgets/luxrio-product-tab.php:110
+#: addons/widgets/luxrio-product-tab.php:126
+msgid "6 Columns"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:47
+msgid "[shortcode here]"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:93
+msgid "About"
+msgstr ""
+
+#: addons/widgets/faq.php:103
+msgid "Accordion Box Background"
+msgstr ""
+
+#: inc/widgets/gallery-widget.php:30
+msgid "Add Gallery Widget"
+msgstr ""
+
+#: inc/builder/builder.php:141 inc/builder/builder.php:173
+#: inc/builder/builder.php:205 inc/builder/builder.php:237
+msgid "Add New"
+msgstr ""
+
+#: inc/builder/builder.php:142
+msgid "Add New Footer"
+msgstr ""
+
+#: inc/builder/builder.php:174
+msgid "Add New Header"
+msgstr ""
+
+#: inc/builder/builder.php:238
+msgid "Add New Off Canvas Builder"
+msgstr ""
+
+#: inc/builder/builder.php:206
+msgid "Add New Tab Builder"
+msgstr ""
+
+#: inc/widgets/recent-post-widget.php:30
+msgid "Add Recent Posts Widget"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:125
+#: addons/widgets/luxrio-testimonial-two.php:143
+msgid "alaxander lee"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:84
+msgid "Align"
+msgstr ""
+
+#: addons/widgets/button.php:93 addons/widgets/luxrio-list-icon.php:215
+#: addons/widgets/section-title.php:133
+msgid "Alignment"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:366
+msgid "All"
+msgstr ""
+
+#: inc/builder/builder.php:146
+msgid "All Footer"
+msgstr ""
+
+#: inc/builder/builder.php:178
+msgid "All Header"
+msgstr ""
+
+#: inc/builder/builder.php:242
+msgid "All Off Canvas Builder"
+msgstr ""
+
+#: inc/builder/builder.php:210
+msgid "All Tab Builder"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:137
+msgid "Appointment"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:158
+msgid "Arrow"
+msgstr ""
+
+#: addons/widgets/luxrio-product-slider.php:122
+msgid "Arrows"
+msgstr ""
+
+#: addons/widgets/blog-post.php:98
+msgid "ASC"
+msgstr ""
+
+#: addons/widgets/faq.php:57 addons/widgets/faq.php:70
+#: addons/widgets/faq.php:74 addons/widgets/faq.php:78
+#: addons/widgets/faq.php:82
+msgid ""
+"Assertively conceptualize cooperative potentialities with process centric "
+"internal or \"organic\" sources. Authoritatively pontificate B2C metrics via "
+"one-to-one synergy."
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:92
+msgid "Atmosphere Affordable Housing"
+msgstr ""
+
+#: addons/widgets/blog-post.php:112
+msgid "Author"
+msgstr ""
+
+#: addons/widgets/blog-post.php:201
+#: addons/widgets/luxrio-instagram-slider.php:147
+#: addons/widgets/luxrio-product-slider.php:110
+#: addons/widgets/hero-slider/slider-four.php:160
+#: addons/widgets/hero-slider/slider-one.php:230
+#: addons/widgets/hero-slider/slider-three.php:150
+#: addons/widgets/hero-slider/slider-two.php:172
+msgid "Autoplay"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:218
+#: addons/widgets/luxrio-product-category-tab.php:454
+#: addons/widgets/luxrio-product-category.php:466
+msgid "Autoplay?"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:183
+#: addons/widgets/luxrio-product-category.php:195
+#: addons/widgets/luxrio-testimonial-slider.php:164
+msgid "Background"
+msgstr ""
+
+#: addons/widgets/button.php:161 addons/widgets/luxrio-countdown.php:329
+#: addons/widgets/luxrio-offer-box.php:191
+#: addons/widgets/luxrio-product-banner.php:224
+#: addons/widgets/hero-slider/slider-four.php:282
+#: addons/widgets/hero-slider/slider-one.php:354
+#: addons/widgets/hero-slider/slider-two.php:296
+msgid "Background Color"
+msgstr ""
+
+#: addons/widgets/button.php:171 addons/widgets/luxrio-countdown.php:339
+#: addons/widgets/luxrio-offer-box.php:201
+#: addons/widgets/luxrio-product-banner.php:234
+#: addons/widgets/hero-slider/slider-four.php:292
+#: addons/widgets/hero-slider/slider-one.php:364
+#: addons/widgets/hero-slider/slider-two.php:306
+msgid "Background Hover Color"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:303
+#: addons/widgets/hero-slider/slider-one.php:375
+#: addons/widgets/hero-slider/slider-two.php:317
+msgid "Background Hover Color Two"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:180
+#: addons/widgets/hero-slider/slider-three.php:53
+msgid "Background Image"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:193
+msgid "Background Shape One"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:206
+msgid "Background Shape Two"
+msgstr ""
+
+#: addons/header/luxrio-minicart.php:46
+msgid "Bag"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:37
+msgid "Banner"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:123
+msgid "Banner Background Image"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:45
+msgid "Banner Image"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:159
+msgid "Best Selling"
+msgstr ""
+
+#: addons/widgets/blog-post.php:18 addons/widgets/blog-post.php:34
+msgid "Blog Post"
+msgstr ""
+
+#: addons/widgets/blog-post.php:55
+msgid "Blog Style"
+msgstr ""
+
+#: addons/widgets/blog-post.php:42
+msgid "Blog Version"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:197
+#: addons/header/luxrio-megamenu-shortcode.php:211
+#: addons/header/luxrio-megamenu.php:189 addons/widgets/button.php:184
+#: addons/widgets/luxrio-countdown.php:352
+#: addons/widgets/luxrio-offer-box.php:214
+#: addons/widgets/luxrio-product-banner.php:247
+#: addons/widgets/luxrio-product-category-tab.php:294
+#: addons/widgets/luxrio-product-category.php:306
+#: addons/widgets/luxrio-testimonial-slider.php:265
+#: addons/widgets/luxrio-testimonial-two.php:274
+#: addons/widgets/section-title.php:266
+#: addons/widgets/hero-slider/slider-four.php:315
+#: addons/widgets/hero-slider/slider-one.php:387
+#: addons/widgets/hero-slider/slider-two.php:329
+msgid "Border"
+msgstr ""
+
+#: addons/widgets/blog-post.php:362 addons/widgets/luxrio-list-icon.php:287
+#: addons/widgets/luxrio-list-icon.php:471
+#: addons/widgets/luxrio-list-icon.php:909
+#: addons/widgets/luxrio-product-banner.php:137
+msgid "Border Radius"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:556
+msgid "Bottom"
+msgstr ""
+
+#: addons/widgets/blog-post.php:354
+msgid "Box"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:240
+msgid "Box Bg Color"
+msgstr ""
+
+#: addons/widgets/blog-post.php:374
+msgid "Box Margin"
+msgstr ""
+
+#: addons/widgets/blog-post.php:386
+msgid "Box Padding"
+msgstr ""
+
+#: addons/widgets/button.php:236 addons/widgets/luxrio-countdown.php:404
+#: addons/widgets/luxrio-offer-box.php:266
+#: addons/widgets/luxrio-product-banner.php:299
+#: addons/widgets/hero-slider/slider-four.php:367
+#: addons/widgets/hero-slider/slider-one.php:439
+#: addons/widgets/hero-slider/slider-two.php:381
+msgid "Box Shadow"
+msgstr ""
+
+#: addons/widgets/button.php:19 addons/widgets/button.php:36
+msgid "Button"
+msgstr ""
+
+#: addons/widgets/button.php:224 addons/widgets/luxrio-countdown.php:392
+#: addons/widgets/luxrio-offer-box.php:254
+#: addons/widgets/luxrio-product-banner.php:287
+#: addons/widgets/hero-slider/slider-four.php:355
+#: addons/widgets/hero-slider/slider-one.php:427
+#: addons/widgets/hero-slider/slider-two.php:369
+msgid "Button Border Radius"
+msgstr ""
+
+#: addons/widgets/blog-post.php:163
+msgid "Button Class"
+msgstr ""
+
+#: addons/widgets/blog-post.php:321 addons/widgets/button.php:130
+#: addons/widgets/luxrio-countdown.php:298
+#: addons/widgets/luxrio-offer-box.php:169
+#: addons/widgets/luxrio-product-banner.php:202
+#: addons/widgets/hero-slider/slider-four.php:260
+#: addons/widgets/hero-slider/slider-one.php:332
+#: addons/widgets/hero-slider/slider-two.php:274
+msgid "Button Color"
+msgstr ""
+
+#: addons/widgets/blog-post.php:332
+msgid "Button Hover Color"
+msgstr ""
+
+#: addons/widgets/button.php:83
+msgid "Button Icon Class"
+msgstr ""
+
+#: addons/widgets/button.php:151 addons/widgets/luxrio-countdown.php:319
+msgid "Button Icon Color"
+msgstr ""
+
+#: addons/widgets/button.php:201 addons/widgets/luxrio-countdown.php:369
+#: addons/widgets/luxrio-offer-box.php:231
+#: addons/widgets/luxrio-product-banner.php:264
+#: addons/widgets/hero-slider/slider-four.php:332
+#: addons/widgets/hero-slider/slider-one.php:404
+#: addons/widgets/hero-slider/slider-two.php:346
+msgid "Button Margin"
+msgstr ""
+
+#: addons/widgets/button.php:213 addons/widgets/luxrio-countdown.php:381
+#: addons/widgets/luxrio-offer-box.php:243
+#: addons/widgets/luxrio-product-banner.php:276
+#: addons/widgets/hero-slider/slider-four.php:344
+#: addons/widgets/hero-slider/slider-one.php:416
+#: addons/widgets/hero-slider/slider-two.php:358
+msgid "Button Padding"
+msgstr ""
+
+#: addons/header/luxrio-mobile-menu.php:44 addons/widgets/button.php:44
+#: addons/widgets/button.php:122 addons/widgets/luxrio-countdown.php:290
+#: addons/widgets/luxrio-offer-box.php:161
+#: addons/widgets/luxrio-product-banner.php:194
+#: addons/widgets/hero-slider/slider-four.php:252
+#: addons/widgets/hero-slider/slider-one.php:324
+#: addons/widgets/hero-slider/slider-two.php:266
+msgid "Button Style"
+msgstr ""
+
+#: addons/widgets/button.php:59 addons/widgets/luxrio-countdown.php:116
+#: addons/widgets/luxrio-offer-box.php:80
+#: addons/widgets/luxrio-product-banner.php:87
+#: addons/widgets/luxrio-view-card.php:101
+#: addons/widgets/hero-slider/slider-four.php:95
+#: addons/widgets/hero-slider/slider-one.php:135
+#: addons/widgets/hero-slider/slider-two.php:107
+msgid "Button Text"
+msgstr ""
+
+#: addons/widgets/blog-post.php:344 addons/widgets/button.php:193
+#: addons/widgets/luxrio-countdown.php:361
+#: addons/widgets/luxrio-offer-box.php:223
+#: addons/widgets/luxrio-product-banner.php:256
+#: addons/widgets/hero-slider/slider-four.php:324
+#: addons/widgets/hero-slider/slider-one.php:396
+#: addons/widgets/hero-slider/slider-two.php:338
+msgid "Button Typography"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:126
+#: addons/widgets/hero-slider/slider-four.php:104
+#: addons/widgets/hero-slider/slider-one.php:144
+#: addons/widgets/hero-slider/slider-two.php:116
+msgid "Button Url"
+msgstr ""
+
+#: addons/header/luxrio-minicart.php:44
+msgid "Cart Text"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:191
+#: addons/widgets/luxrio-product-category.php:203
+msgid "Category Box Bg Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:50
+#: addons/widgets/luxrio-product-category.php:110
+msgid "Category Image"
+msgstr ""
+
+#: addons/header/luxrio-category-menu.php:19
+#: addons/header/luxrio-category-menu.php:38
+msgid "Category Menu"
+msgstr ""
+
+#: addons/header/luxrio-category-menu.php:48
+#: addons/header/luxrio-category-menu.php:80
+#: addons/widgets/luxrio-product-category-slider.php:60
+#: addons/widgets/luxrio-product-category-slider.php:115
+#: addons/widgets/luxrio-product-category-tab.php:89
+#: addons/widgets/luxrio-product-category-tab.php:351
+#: addons/widgets/luxrio-product-category.php:120
+#: addons/widgets/luxrio-product-category.php:363
+msgid "Category Name"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:123
+#: addons/widgets/luxrio-product-category-tab.php:359
+#: addons/widgets/luxrio-product-category.php:371
+msgid "Category Name Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:134
+#: addons/widgets/luxrio-product-category-tab.php:370
+#: addons/widgets/luxrio-product-category.php:382
+msgid "Category Name Hover Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:154
+#: addons/widgets/luxrio-product-category-tab.php:390
+#: addons/widgets/luxrio-product-category.php:402
+msgid "Category Name Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:146
+#: addons/widgets/luxrio-product-category-tab.php:382
+#: addons/widgets/luxrio-product-category.php:394
+msgid "Category Name Typography"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:167
+#: addons/widgets/luxrio-product-category-tab.php:403
+#: addons/widgets/luxrio-product-category.php:415
+msgid "Category Stock"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:78
+#: addons/widgets/luxrio-product-category.php:138
+msgid "Category Stock Amount"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:175
+#: addons/widgets/luxrio-product-category-tab.php:411
+#: addons/widgets/luxrio-product-category.php:423
+msgid "Category Stock Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:160
+msgid "Category Text Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:69
+#: addons/widgets/luxrio-product-category.php:129
+msgid "Category Url"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:92
+#: addons/header/luxrio-megamenu-shortcode.php:72
+#: addons/header/luxrio-megamenu.php:84 addons/header/luxrio-mobile-menu.php:96
+#: addons/widgets/button.php:101 addons/widgets/luxrio-list-icon.php:225
+#: addons/widgets/luxrio-list-icon.php:527
+#: addons/widgets/luxrio-list-icon.php:552
+#: addons/widgets/luxrio-list-icon.php:588
+#: addons/widgets/luxrio-list-icon.php:965 addons/widgets/section-title.php:141
+msgid "Center"
+msgstr ""
+
+#: addons/header/luxrio-category-menu.php:56
+msgid "Choose Category Image"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:111
+msgid "Choose Image"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:58
+msgid "Choose logo"
+msgstr ""
+
+#: addons/header/luxrio-category-menu.php:105
+msgid "Classic"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-two.php:109
+#: addons/widgets/luxrio-testimonial-two.php:413
+msgid "Client Designation"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-two.php:421
+msgid "Client Designation Color"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:110
+#: addons/widgets/luxrio-testimonial-slider.php:363
+#: addons/widgets/luxrio-testimonial-two.php:118
+#: addons/widgets/luxrio-testimonial-two.php:372
+msgid "Client Feedback"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:371
+#: addons/widgets/luxrio-testimonial-two.php:380
+msgid "Client Feedback Color"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:91
+#: addons/widgets/luxrio-testimonial-two.php:91
+msgid "Client Image"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:101
+#: addons/widgets/luxrio-testimonial-slider.php:322
+#: addons/widgets/luxrio-testimonial-two.php:101
+#: addons/widgets/luxrio-testimonial-two.php:331
+msgid "Client Name"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:330
+#: addons/widgets/luxrio-testimonial-two.php:339
+msgid "Client Name Color"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:350
+#: addons/widgets/luxrio-testimonial-two.php:359
+msgid "Client Name Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:342
+#: addons/widgets/luxrio-testimonial-two.php:351
+msgid "Client Name Typography"
+msgstr ""
+
+#: addons/widgets/luxrio-offer-box.php:141
+#: addons/widgets/hero-slider/slider-four.php:231
+#: addons/widgets/hero-slider/slider-one.php:303
+#: addons/widgets/hero-slider/slider-three.php:192
+#: addons/widgets/hero-slider/slider-three.php:237
+#: addons/widgets/hero-slider/slider-two.php:245
+#: addons/widgets/image-box/image-box.php:167
+msgid "Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:72
+msgid "Column"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:58
+msgid "Column Gap"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:88
+msgid "Column Laptop"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:120
+msgid "Column Mobile"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:438
+msgid "Column Padding"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:104
+msgid "Column Tablet"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:103
+msgid "Contact"
+msgstr ""
+
+#: addons/widgets/button.php:61 addons/widgets/luxrio-offer-box.php:82
+msgid "Contact Us"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:193
+msgid "Container"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:47
+#: addons/widgets/luxrio-offer-box.php:38
+msgid "Content"
+msgstr ""
+
+#: addons/widgets/image-box/image-box.php:131
+msgid "Content Box"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:139
+#: addons/widgets/luxrio-view-card.php:126
+#: addons/widgets/hero-slider/slider-four.php:174
+#: addons/widgets/hero-slider/slider-one.php:244
+#: addons/widgets/hero-slider/slider-three.php:164
+#: addons/widgets/hero-slider/slider-two.php:186
+msgid "Content Style"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:112
+#: addons/widgets/luxrio-testimonial-two.php:120
+msgid ""
+"Contrary to popular belief, Lorem Ipsum is not simply random text over 2000 "
+"years old. Richard McClintock"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:270
+msgid "Count Name Color"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:281
+msgid "Count Name Typography"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:21
+#: addons/widgets/luxrio-countdown.php:41
+msgid "Countdown"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:106
+msgid "Countdown Date ( Format Like 01/12/2024 )"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:232
+msgid "Countdown Style"
+msgstr ""
+
+#: addons/widgets/faq.php:77
+msgid "Creation timelines for the standard lorem passage"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:50
+msgid "Custom"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:48
+msgid "Dark"
+msgstr ""
+
+#: addons/widgets/blog-post.php:114
+msgid "Date"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:442
+msgid "Days"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:89
+msgid "deal of the week"
+msgstr ""
+
+#: addons/widgets/blog-post.php:99
+msgid "DESC"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:97
+msgid "Description"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-two.php:441
+msgid "Designation Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-two.php:433
+msgid "Designation Typography"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-two.php:134
+#: addons/widgets/hero-slider/slider-two.php:140
+msgid "Designed for luxrio unique shop"
+msgstr ""
+
+#: addons/widgets/luxrio-product-slider.php:90
+msgid "Desktop Items"
+msgstr ""
+
+#: addons/widgets/luxrio-view-card.php:113
+msgid "Details Url?"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:98
+#: addons/widgets/luxrio-product-category.php:158
+msgid "Diamond Pendant"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:131
+#: addons/widgets/luxrio-testimonial-two.php:149
+msgid ""
+"Didco ipsum dolor sit amet, conse elit, sedid do eiusmod tempor incidit "
+"laboret dolore magna aliqua. Quis ipsum usndi laboris ipsum dolor sitamet "
+"conseelit, sedid mturing“"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:53
+msgid "Digital Marketing"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:85
+#: addons/widgets/hero-slider/slider-four.php:222
+#: addons/widgets/hero-slider/slider-one.php:124
+#: addons/widgets/hero-slider/slider-one.php:294
+#: addons/widgets/hero-slider/slider-three.php:228
+#: addons/widgets/hero-slider/slider-two.php:97
+#: addons/widgets/hero-slider/slider-two.php:236
+msgid "Discription"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:210
+msgid "Discription Color"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:221
+msgid "Discription Typography"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:149
+#: addons/widgets/hero-slider/slider-two.php:161
+msgid "Dots"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category.php:70
+msgid "Earring"
+msgstr ""
+
+#: addons/header/luxrio-category-menu.php:93
+msgid "Earrings"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-two.php:80
+#: addons/widgets/hero-slider/slider-two.php:132
+#: addons/widgets/hero-slider/slider-two.php:138
+msgid "earrings"
+msgstr ""
+
+#: inc/builder/builder.php:144
+msgid "Edit Footer"
+msgstr ""
+
+#: inc/builder/builder.php:176
+msgid "Edit Header"
+msgstr ""
+
+#: inc/builder/builder.php:240
+msgid "Edit Off Canvas Builder"
+msgstr ""
+
+#: inc/builder/builder.php:208
+msgid "Edit Tab Builder"
+msgstr ""
+
+#: addons/addons.php:162 addons/addons.php:186
+msgid "Elementor"
+msgstr ""
+
+#: inc/builder/builder.php:74
+msgid "Enable Footer?"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:806
+msgid "Enable Icon Box"
+msgstr ""
+
+#: addons/widgets/faq.php:48 addons/widgets/faq.php:69
+msgid "Ethical testing rather than ethical interfaces?"
+msgstr ""
+
+#: addons/widgets/blog-post.php:86
+msgid "Excerpt Length"
+msgstr ""
+
+#: addons/widgets/blog-post.php:124
+msgid "Exclude Categories"
+msgstr ""
+
+#: addons/widgets/blog-post.php:144
+msgid "Exclude Post"
+msgstr ""
+
+#: addons/widgets/blog-post.php:134
+msgid "Exclude Tags"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:68
+#: addons/widgets/hero-slider/slider-four.php:120
+#: addons/widgets/hero-slider/slider-four.php:126
+msgid "extra 20% off"
+msgstr ""
+
+#: addons/widgets/button.php:85
+msgid "fa-solid fa-headphones"
+msgstr ""
+
+#: addons/widgets/faq.php:20 addons/widgets/faq.php:36
+#: addons/widgets/faq.php:64
+msgid "Faq"
+msgstr ""
+
+#: addons/widgets/faq.php:55
+msgid "Faq Answer"
+msgstr ""
+
+#: addons/widgets/faq.php:158
+msgid "Faq Answer Color"
+msgstr ""
+
+#: addons/widgets/faq.php:179
+msgid "Faq Answer Margin"
+msgstr ""
+
+#: addons/widgets/faq.php:191
+msgid "Faq Answer Padding"
+msgstr ""
+
+#: addons/widgets/faq.php:171
+msgid "Faq Answer Typography"
+msgstr ""
+
+#: addons/widgets/faq.php:46
+msgid "Faq Question"
+msgstr ""
+
+#: addons/widgets/faq.php:114
+msgid "Faq Question Color"
+msgstr ""
+
+#: addons/widgets/faq.php:134
+msgid "Faq Question Margin"
+msgstr ""
+
+#: addons/widgets/faq.php:146
+msgid "Faq Question Padding"
+msgstr ""
+
+#: addons/widgets/faq.php:94
+msgid "Faq Question Style"
+msgstr ""
+
+#: addons/widgets/faq.php:126
+msgid "Faq Question Typography"
+msgstr ""
+
+#: addons/header/luxrio-category-menu.php:85
+msgid "Fashion"
+msgstr ""
+
+#: inc/luxriocore-functions.php:62
+msgid "FB"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:157
+msgid "Featured"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:195
+#: addons/widgets/luxrio-product-category-tab.php:431
+#: addons/widgets/luxrio-product-category.php:443
+#: addons/widgets/luxrio-testimonial-slider.php:391
+#: addons/widgets/luxrio-testimonial-two.php:400
+msgid "Feedback Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:187
+#: addons/widgets/luxrio-product-category-tab.php:423
+#: addons/widgets/luxrio-product-category.php:435
+#: addons/widgets/luxrio-testimonial-slider.php:383
+#: addons/widgets/luxrio-testimonial-two.php:392
+msgid "Feedback Typography"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:221
+msgid "Flyout Menu"
+msgstr ""
+
+#: inc/builder/builder.php:137 inc/builder/builder.php:138
+#: inc/builder/builder.php:140
+msgid "Footer"
+msgstr ""
+
+#: inc/builder/builder.php:89 inc/builder/builder.php:121
+#: inc/builder/builder.php:121
+msgid "Footer Builder"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:83
+msgid "Footer Menus"
+msgstr ""
+
+#: inc/builder/builder.php:98
+msgid "Footer Name"
+msgstr ""
+
+#: inc/builder/builder.php:67
+msgid "Footer Option"
+msgstr ""
+
+#: inc/builder/builder.php:85
+msgid "Footer Style"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:46
+#: addons/widgets/luxrio-product-tab.php:79
+#: addons/widgets/luxrio-product-tab.php:95
+#: addons/widgets/luxrio-product-tab.php:111
+#: addons/widgets/luxrio-product-tab.php:127
+msgid "Full Width"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:112
+#: addons/widgets/luxrio-product-slider.php:136
+#: addons/widgets/luxrio-product-tab.php:182
+msgid "General"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:174
+#: addons/widgets/luxrio-product-category.php:186
+#: addons/widgets/luxrio-tab-build.php:110
+#: addons/widgets/luxrio-testimonial-slider.php:155
+#: addons/widgets/luxrio-testimonial-two.php:163
+msgid "General Style"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:57
+#, php-format
+msgid ""
+"Go to the <a href=\"%s\" target=\"_blank\">Menus screen</a> to create one."
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:49
+#, php-format
+msgid ""
+"Go to the <a href=\"%s\" target=\"_blank\">Menus screen</a> to manage your "
+"menus."
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-two.php:111
+msgid "Google Ceo"
+msgstr ""
+
+#: addons/widgets/blog-post.php:45
+msgid "Gride"
+msgstr ""
+
+#: addons/header/luxrio-language-switcher.php:20
+#: addons/header/luxrio-language-switcher.php:36
+msgid "Gtranslate"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:36 addons/header/luxrio-megamenu.php:36
+#: inc/builder/builder.php:169 inc/builder/builder.php:170
+#: inc/builder/builder.php:172
+msgid "Header"
+msgstr ""
+
+#: inc/builder/builder.php:45 inc/builder/builder.php:122
+#: inc/builder/builder.php:122
+msgid "Header Builder"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:20 addons/header/luxrio-megamenu.php:20
+msgid "Header Menu"
+msgstr ""
+
+#: inc/builder/builder.php:54
+msgid "Header Name"
+msgstr ""
+
+#: inc/builder/builder.php:32 inc/builder/builder.php:41
+msgid "Header Option"
+msgstr ""
+
+#: addons/header/luxrio-search.php:36
+msgid "Header Search And Login"
+msgstr ""
+
+#: addons/header/luxrio-search.php:44
+msgid "Header Search Version"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:191
+msgid "Height"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:23
+msgid "Hero Home Four"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:23
+msgid "Hero Home One"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-three.php:23
+msgid "Hero Home Three"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-two.php:23
+msgid "Hero Home Two"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:349
+#: addons/widgets/luxrio-list-icon.php:809
+#: addons/widgets/luxrio-product-banner.php:61
+#: addons/widgets/luxrio-testimonial-two.php:130
+#: addons/widgets/section-title.php:112
+msgid "Hide"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:161
+#: addons/widgets/hero-slider/slider-one.php:169
+msgid "HOLY JEWELRY and diamonds"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:63
+#: addons/footer-widgets/luxrio-menu-list.php:88
+#: addons/header/luxrio-category-menu.php:50
+msgid "Home"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:445
+msgid "Hours"
+msgstr ""
+
+#: addons/widgets/button.php:141 addons/widgets/luxrio-countdown.php:309
+#: addons/widgets/luxrio-offer-box.php:180
+#: addons/widgets/luxrio-product-banner.php:213
+#: addons/widgets/hero-slider/slider-four.php:271
+#: addons/widgets/hero-slider/slider-one.php:343
+#: addons/widgets/hero-slider/slider-two.php:285
+msgid "Hover Color "
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:71
+#: addons/header/luxrio-category-menu.php:68
+#: addons/header/luxrio-language-switcher.php:64 addons/widgets/button.php:70
+#: addons/widgets/luxrio-list-icon.php:142
+#: addons/widgets/luxrio-offer-box.php:91
+#: addons/widgets/luxrio-product-banner.php:98
+#: addons/widgets/hero-slider/slider-four.php:106
+#: addons/widgets/hero-slider/slider-one.php:146
+#: addons/widgets/hero-slider/slider-two.php:118
+msgid "https://your-link.com"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:112
+#: addons/widgets/luxrio-list-icon.php:61
+#: addons/widgets/luxrio-list-icon.php:81
+#: addons/widgets/luxrio-list-icon.php:509
+msgid "Icon"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:578
+msgid "Icon Alignment"
+msgstr ""
+
+#: addons/header/luxrio-offcanvas.php:70
+msgid "Icon Background Color"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:764
+msgid "Icon Background Hover"
+msgstr ""
+
+#: addons/header/luxrio-offcanvas.php:81
+msgid "Icon Background Hover Color"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:775
+msgid "Icon Border Hover"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:641
+#: addons/widgets/luxrio-list-icon.php:689
+msgid "Icon Bottom Spacing"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:848
+msgid "Icon Box Height"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:819
+msgid "Icon Box Width"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:740
+msgid "Icon Color"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:752
+msgid "Icon Color Hover"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:664
+msgid "Icon Left Spacing"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:517
+msgid "Icon Position"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:615
+msgid "Icon Right Spacing"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:715
+msgid "Icon Size"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:542
+msgid "Icon Vertical Alignment"
+msgstr ""
+
+#: addons/widgets/blog-post.php:111
+msgid "ID"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:69 addons/widgets/section-title.php:121
+msgid "Image"
+msgstr ""
+
+#: addons/widgets/luxrio-offer-box.php:46
+msgid "Image / Svg Icon"
+msgstr ""
+
+#: addons/widgets/image-box/image-box.php:22
+#: addons/widgets/image-box/image-box.php:39
+msgid "Image Box"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category.php:68
+#: addons/widgets/luxrio-view-card.php:92
+#: addons/widgets/image-box/image-box.php:116
+msgid "Image Caption"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:92
+#: addons/widgets/image-box/image-box.php:101
+msgid "Image Four"
+msgstr ""
+
+#: addons/widgets/luxrio-view-card.php:61
+#: addons/widgets/hero-slider/slider-one.php:53
+#: addons/widgets/image-box/image-box.php:60
+msgid "Image One"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:787
+msgid "Image Radius"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:79
+#: addons/widgets/image-box/image-box.php:87
+msgid "Image Three"
+msgstr ""
+
+#: addons/widgets/luxrio-view-card.php:75
+#: addons/widgets/hero-slider/slider-one.php:66
+#: addons/widgets/image-box/image-box.php:74
+msgid "Image Two"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:110
+msgid "Image width"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:99
+msgid "INew deal every week! Hurry Up!"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:126
+#: addons/widgets/hero-slider/slider-two.php:99
+msgid "inspires"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:128
+msgid "Instagram"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:59
+msgid "Instagram Image"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:22
+#: addons/widgets/luxrio-instagram-slider.php:38
+msgid "Instagram Slider"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:45
+msgid "Instagram Style"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:481
+#: addons/header/luxrio-megamenu-shortcode.php:567
+msgid "Item Background Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:459
+#: addons/header/luxrio-megamenu-shortcode.php:545
+msgid "Item Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:492
+#: addons/header/luxrio-megamenu-shortcode.php:578
+msgid "Item Hover Background Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:470
+#: addons/header/luxrio-megamenu-shortcode.php:556
+msgid "Item Hover Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:524
+#: addons/header/luxrio-megamenu-shortcode.php:610
+msgid "Item Margin"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:512
+#: addons/header/luxrio-megamenu-shortcode.php:598
+#: addons/widgets/luxrio-list-icon.php:327
+msgid "Item Padding"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:346
+msgid "Item Separator"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:406
+msgid "Item Spacing"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:504
+#: addons/header/luxrio-megamenu-shortcode.php:590
+msgid "Item Typography"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:116
+#: addons/widgets/hero-slider/slider-one.php:160
+#: addons/widgets/hero-slider/slider-one.php:168
+msgid "jeweellery"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:121
+msgid "Kids"
+msgstr ""
+
+#: addons/widgets/faq.php:73
+msgid "Latin derived from Cicero's 1st-century BC text De"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:37 addons/widgets/luxrio-list-icon.php:201
+msgid "Layout"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:205
+msgid "Layout 1"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:206
+msgid "Layout 2"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:207
+msgid "Layout 3"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:88 addons/header/luxrio-logo.php:88
+#: addons/header/luxrio-megamenu-shortcode.php:68
+#: addons/header/luxrio-megamenu.php:80 addons/header/luxrio-mobile-menu.php:92
+#: addons/widgets/button.php:97 addons/widgets/luxrio-list-icon.php:221
+#: addons/widgets/luxrio-list-icon.php:523
+#: addons/widgets/luxrio-list-icon.php:584
+#: addons/widgets/luxrio-list-icon.php:961 addons/widgets/section-title.php:137
+msgid "Left"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:49
+msgid "Left Background Image"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:47
+#: addons/widgets/luxrio-product-category.php:47
+#: addons/widgets/luxrio-testimonial-slider.php:48
+#: addons/widgets/luxrio-testimonial-two.php:48
+msgid "Left Big Image"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category.php:58
+msgid "Left Small Shape Image"
+msgstr ""
+
+#: inc/luxriocore-functions.php:65
+msgid "LI"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:69
+#: addons/header/luxrio-category-menu.php:66
+#: addons/header/luxrio-mobile-menu.php:68 addons/widgets/button.php:68
+#: addons/widgets/luxrio-offer-box.php:89
+#: addons/widgets/luxrio-product-banner.php:96
+msgid "Link"
+msgstr ""
+
+#: addons/widgets/blog-post.php:165
+msgid "link-btn"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:24
+msgid "List Group"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:319
+msgid "List Item"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:132
+msgid "List Text"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:140
+msgid "List URL"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:44
+msgid "Logo Type"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-two.php:89
+#: addons/widgets/hero-slider/slider-two.php:133
+#: addons/widgets/hero-slider/slider-two.php:139
+msgid "look"
+msgstr ""
+
+#: addons/widgets/faq.php:81
+msgid "Lorem ipsum was purposefully designed to have"
+msgstr ""
+
+#: addons/addons.php:322
+msgid "Luxrio"
+msgstr ""
+
+#. Widget name will appear in UI
+#: inc/widgets/gallery-widget.php:24
+msgid "Luxrio :: Gallery"
+msgstr ""
+
+#. Widget name will appear in UI
+#: inc/widgets/recent-post-widget.php:24
+msgid "Luxrio :: Recent Posts"
+msgstr ""
+
+#: inc/builder/builder.php:112 inc/builder/builder.php:113
+msgid "Luxrio Builder"
+msgstr ""
+
+#. Name of the plugin
+#: addons/addons.php:161 addons/addons.php:185 addons/addons.php:210
+msgid "Luxrio Core"
+msgstr ""
+
+#: inc/builder/builder.php:139
+msgid "Luxrio Footer Builder"
+msgstr ""
+
+#: addons/addons.php:329
+msgid "Luxrio Footer Elements"
+msgstr ""
+
+#: inc/builder/builder.php:171
+msgid "Luxrio Header Builder"
+msgstr ""
+
+#: addons/addons.php:336
+msgid "Luxrio Header Elements"
+msgstr ""
+
+#: inc/builder/builder.php:235
+msgid "Luxrio Off Canvas Builder"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:21
+msgid "Luxrio Site Logo"
+msgstr ""
+
+#: inc/builder/builder.php:203
+msgid "Luxrio Tab Builder"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:91
+#: addons/widgets/luxrio-product-category-tab.php:115
+msgid "Man"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:128 addons/header/luxrio-search.php:117
+#: addons/widgets/luxrio-countdown.php:167
+msgid "Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:56
+msgid "Media Type"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:390
+msgid "Mega Menu"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:397
+msgid "Megamenu Panel Width"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:84
+#: addons/header/luxrio-megamenu-shortcode.php:64
+#: addons/header/luxrio-megamenu.php:76 addons/header/luxrio-mobile-menu.php:88
+msgid "Menu Alignment"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:132
+#: addons/header/luxrio-megamenu-shortcode.php:112
+#: addons/header/luxrio-megamenu.php:124
+#: addons/header/luxrio-mobile-menu.php:78
+msgid "Menu Background Color"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:110
+#: addons/header/luxrio-megamenu-shortcode.php:90
+#: addons/header/luxrio-megamenu.php:102
+msgid "Menu Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:146
+msgid "Menu Current Item Background Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:134
+msgid "Menu Current Item Color"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:143
+#: addons/header/luxrio-megamenu-shortcode.php:123
+#: addons/header/luxrio-megamenu.php:135
+msgid "Menu Hover Background Color"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:121
+#: addons/header/luxrio-megamenu-shortcode.php:101
+#: addons/header/luxrio-megamenu.php:113
+msgid "Menu Hover Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:303
+msgid "Menu Item Background Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:292
+msgid "Menu Item Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:369
+msgid "Menu Item Height"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:325
+msgid "Menu Item Hover Background Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:314
+msgid "Menu Item Hover Color"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:345
+msgid "Menu Item Margin"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:357
+msgid "Menu Item Padding"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:337
+msgid "Menu Item Typography"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:19
+#: addons/footer-widgets/luxrio-menu-list.php:38
+msgid "Menu List"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:172
+#: addons/header/luxrio-megamenu-shortcode.php:167
+#: addons/header/luxrio-megamenu.php:164
+msgid "Menu Margin"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:184
+#: addons/header/luxrio-megamenu-shortcode.php:179
+#: addons/header/luxrio-megamenu.php:176
+msgid "Menu Padding"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:18
+#: addons/header/luxrio-megamenu-shortcode.php:37
+msgid "Menu Shortcode"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:46
+#: addons/header/luxrio-megamenu.php:44
+msgid "Menu Style"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:155
+#: addons/header/luxrio-megamenu-shortcode.php:159
+#: addons/header/luxrio-megamenu.php:147
+msgid "Menu Typography"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:164
+#: addons/header/luxrio-megamenu.php:156
+msgid "Menu Typography Hover"
+msgstr ""
+
+#: addons/widgets/blog-post.php:281
+msgid "Meta"
+msgstr ""
+
+#: addons/widgets/blog-post.php:289
+msgid "Meta Color"
+msgstr ""
+
+#: addons/widgets/blog-post.php:300
+msgid "Meta Hover Color"
+msgstr ""
+
+#: addons/widgets/blog-post.php:312
+msgid "Meta Typography"
+msgstr ""
+
+#: addons/header/luxrio-minicart.php:20 addons/header/luxrio-minicart.php:36
+msgid "Minicart"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:448
+msgid "Minutes"
+msgstr ""
+
+#: addons/header/luxrio-mobile-menu.php:57
+msgid "Mobile Logo"
+msgstr ""
+
+#: addons/header/luxrio-mobile-menu.php:20
+#: addons/header/luxrio-mobile-menu.php:36
+msgid "Mobile Menu"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:61
+msgid "Name"
+msgstr ""
+
+#: addons/header/luxrio-category-menu.php:97
+#: addons/widgets/hero-slider/slider-one.php:107
+#: addons/widgets/hero-slider/slider-one.php:159
+msgid "Necklace"
+msgstr ""
+
+#: inc/builder/builder.php:143
+msgid "New Footer"
+msgstr ""
+
+#: inc/builder/builder.php:175
+msgid "New Header"
+msgstr ""
+
+#: inc/builder/builder.php:239
+msgid "New Off Canvas Builder"
+msgstr ""
+
+#: inc/builder/builder.php:207
+msgid "New Tab Builder"
+msgstr ""
+
+#: addons/widgets/blog-post.php:204
+#: addons/widgets/luxrio-instagram-slider.php:150
+#: addons/widgets/luxrio-instagram-slider.php:161
+#: addons/widgets/luxrio-product-category-slider.php:221
+#: addons/widgets/luxrio-product-category-tab.php:457
+#: addons/widgets/luxrio-product-category.php:469
+#: addons/widgets/luxrio-product-slider.php:113
+#: addons/widgets/luxrio-product-slider.php:125 inc/builder/builder.php:77
+#: addons/widgets/hero-slider/slider-four.php:152
+#: addons/widgets/hero-slider/slider-four.php:163
+#: addons/widgets/hero-slider/slider-one.php:233
+#: addons/widgets/hero-slider/slider-three.php:153
+#: addons/widgets/hero-slider/slider-two.php:164
+#: addons/widgets/hero-slider/slider-two.php:175
+msgid "No"
+msgstr ""
+
+#: inc/builder/builder.php:150
+msgid "No Footer found in Trash."
+msgstr ""
+
+#: inc/builder/builder.php:149
+msgid "No Footer found."
+msgstr ""
+
+#: inc/builder/builder.php:182
+msgid "No Header found in Trash."
+msgstr ""
+
+#: inc/builder/builder.php:181
+msgid "No Header found."
+msgstr ""
+
+#: addons/widgets/blog-post.php:68
+msgid "No of Post to show"
+msgstr ""
+
+#: inc/builder/builder.php:246
+msgid "No Off Canvas Builder found in Trash."
+msgstr ""
+
+#: inc/builder/builder.php:245
+msgid "No Off Canvas Builder found."
+msgstr ""
+
+#: inc/builder/builder.php:214
+msgid "No Tab Builder found in Trash."
+msgstr ""
+
+#: inc/builder/builder.php:213
+msgid "No Tab Builder found."
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:84
+msgid "North West Redwater Refinery"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:65
+#: addons/widgets/luxrio-list-icon.php:98
+msgid "Number"
+msgstr ""
+
+#: inc/widgets/recent-post-widget.php:112
+msgid "Number of Posts to show:"
+msgstr ""
+
+#: inc/builder/builder.php:124
+msgid "OFF Canvas Builder"
+msgstr ""
+
+#: inc/builder/builder.php:233 inc/builder/builder.php:234
+#: inc/builder/builder.php:236
+msgid "Off Canvas Builder"
+msgstr ""
+
+#: addons/header/luxrio-offcanvas.php:20 addons/header/luxrio-offcanvas.php:38
+msgid "Offcanvas"
+msgstr ""
+
+#: addons/header/luxrio-offcanvas.php:92
+msgid "Offcanvas Background Color"
+msgstr ""
+
+#: addons/widgets/luxrio-offer-box.php:22
+msgid "Offer Box"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:158
+msgid "On Sale"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:80
+msgid "Only From $85"
+msgstr ""
+
+#: addons/widgets/blog-post.php:95
+msgid "Order"
+msgstr ""
+
+#: addons/widgets/blog-post.php:108
+msgid "Order By"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:179
+#: addons/widgets/luxrio-list-icon.php:259
+#: addons/widgets/hero-slider/slider-three.php:213
+msgid "Padding"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:415
+msgid "Panel Background"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:426
+msgid "Panel Padding"
+msgstr ""
+
+#: inc/builder/builder.php:148
+msgid "Parent Footer:"
+msgstr ""
+
+#: inc/builder/builder.php:180
+msgid "Parent Header:"
+msgstr ""
+
+#: inc/builder/builder.php:244
+msgid "Parent Off Canvas Builder:"
+msgstr ""
+
+#: inc/builder/builder.php:212
+msgid "Parent Tab Builder:"
+msgstr ""
+
+#: addons/widgets/luxrio-offer-box.php:70
+msgid "Personalized Learning"
+msgstr ""
+
+#: addons/addons.php:211
+msgid "PHP"
+msgstr ""
+
+#: inc/luxriocore-functions.php:64
+msgid "PIN"
+msgstr ""
+
+#: addons/header/luxrio-language-switcher.php:43
+msgid "Please Select Your Style From Gtranslate"
+msgstr ""
+
+#: inc/builder/builder.php:44 inc/builder/builder.php:88
+msgid "Pre Built"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:71
+msgid "Premium Model"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:78
+msgid "Price"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-three.php:100
+msgid "Price Text"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:181
+msgid "Price Text Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-slider-arrow.php:22
+msgid "Prodcut Slider Arrow"
+msgstr ""
+
+#: addons/widgets/luxrio-product-slider-arrow.php:39
+msgid "Product Arrow"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:140
+#: addons/widgets/luxrio-product-tab.php:150
+msgid "Product Attributes"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:21
+msgid "Product Banner"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:98
+#: addons/widgets/luxrio-product-slider.php:69
+#: addons/widgets/luxrio-product-tab.php:141
+#: addons/widgets/luxrio-product-tab.php:168
+msgid "Product Categories"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category.php:23
+#: addons/widgets/luxrio-product-category.php:39
+msgid "Product Category"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:23
+#: addons/widgets/luxrio-product-category-slider.php:39
+msgid "Product Category Slider"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:23
+#: addons/widgets/luxrio-product-category-tab.php:39
+msgid "Product Category Tab"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:69
+msgid "Product Category Text"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:86
+#: addons/widgets/luxrio-product-slider.php:57
+#: addons/widgets/luxrio-product-tab.php:45
+msgid "Product Count"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:137
+msgid "Product Filter By"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:18
+#: addons/widgets/luxrio-product-grid.php:34
+#: addons/widgets/luxrio-product-grid.php:42
+msgid "Product Grid"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:207
+#: addons/widgets/luxrio-product-slider.php:231
+#: addons/widgets/luxrio-product-tab.php:277
+msgid "Product Price Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:227
+#: addons/widgets/luxrio-product-slider.php:251
+#: addons/widgets/luxrio-product-tab.php:297
+msgid "Product Price Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:239
+#: addons/widgets/luxrio-product-slider.php:263
+#: addons/widgets/luxrio-product-tab.php:309
+msgid "Product Price Padding"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:199
+#: addons/widgets/luxrio-product-slider.php:223
+#: addons/widgets/luxrio-product-tab.php:269
+msgid "Product Price Style"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:219
+#: addons/widgets/luxrio-product-slider.php:243
+#: addons/widgets/luxrio-product-tab.php:289
+msgid "Product Price Typography"
+msgstr ""
+
+#: addons/widgets/luxrio-product-slider.php:18
+#: addons/widgets/luxrio-product-slider.php:34
+msgid "Product Slider"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:71
+#: addons/widgets/luxrio-product-slider.php:42
+#: addons/widgets/luxrio-product-tab.php:57
+msgid "Product Style"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:18
+#: addons/widgets/luxrio-product-tab.php:37
+msgid "Product Tab"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:141
+#: addons/widgets/luxrio-product-slider.php:165
+#: addons/widgets/luxrio-product-tab.php:211
+msgid "Product Title Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:152
+#: addons/widgets/luxrio-product-slider.php:176
+#: addons/widgets/luxrio-product-tab.php:222
+msgid "Product Title Hover Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:173
+#: addons/widgets/luxrio-product-slider.php:197
+#: addons/widgets/luxrio-product-tab.php:243
+msgid "Product Title Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:185
+#: addons/widgets/luxrio-product-slider.php:209
+#: addons/widgets/luxrio-product-tab.php:255
+msgid "Product Title Padding"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:133
+#: addons/widgets/luxrio-product-slider.php:157
+#: addons/widgets/luxrio-product-tab.php:203
+msgid "Product Title Style"
+msgstr ""
+
+#: addons/widgets/luxrio-product-grid.php:165
+#: addons/widgets/luxrio-product-slider.php:189
+#: addons/widgets/luxrio-product-tab.php:235
+msgid "Product Title Typography"
+msgstr ""
+
+#: addons/widgets/blog-post.php:115
+msgid "Random"
+msgstr ""
+
+#: addons/widgets/blog-post.php:156
+msgid "Read More"
+msgstr ""
+
+#: addons/widgets/blog-post.php:154
+msgid "Read More Text"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:155
+msgid "Recent"
+msgstr ""
+
+#: inc/luxriocore-functions.php:216
+msgid "Responsive Column Order"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:96 addons/header/luxrio-logo.php:96
+#: addons/header/luxrio-megamenu-shortcode.php:76
+#: addons/header/luxrio-megamenu.php:88
+#: addons/header/luxrio-mobile-menu.php:100 addons/widgets/button.php:105
+#: addons/widgets/luxrio-list-icon.php:229
+#: addons/widgets/luxrio-list-icon.php:531
+#: addons/widgets/luxrio-list-icon.php:592
+#: addons/widgets/luxrio-list-icon.php:969 addons/widgets/section-title.php:145
+msgid "Right"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:63
+msgid "Right Background Image"
+msgstr ""
+
+#: addons/header/luxrio-category-menu.php:101
+msgid "Rings"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:88
+msgid "Road Construction"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:103
+#: addons/widgets/luxrio-testimonial-two.php:103
+msgid "Rodja Heartmann"
+msgstr ""
+
+#: addons/widgets/luxrio-offer-box.php:61
+msgid "save up to 40% off"
+msgstr ""
+
+#: inc/builder/builder.php:147
+msgid "Search Footer"
+msgstr ""
+
+#: addons/header/luxrio-search.php:20
+msgid "Search Form"
+msgstr ""
+
+#: inc/builder/builder.php:179
+msgid "Search Header"
+msgstr ""
+
+#: addons/header/luxrio-search.php:59
+msgid "Search Here..."
+msgstr ""
+
+#: addons/header/luxrio-search.php:77
+msgid "Search Icon Color"
+msgstr ""
+
+#: addons/header/luxrio-search.php:88
+msgid "Search Icon Hover Color"
+msgstr ""
+
+#: inc/builder/builder.php:243
+msgid "Search Off Canvas Builder"
+msgstr ""
+
+#: inc/builder/builder.php:211
+msgid "Search Tab Builder"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:450
+msgid "Second Level Menu Items"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:451
+msgid "Seconds"
+msgstr ""
+
+#: addons/widgets/section-title.php:101 addons/widgets/section-title.php:103
+msgid "Section Description"
+msgstr ""
+
+#: addons/widgets/section-title.php:320
+msgid "Section Description Color"
+msgstr ""
+
+#: addons/widgets/section-title.php:346
+msgid "Section Description Margin"
+msgstr ""
+
+#: addons/widgets/section-title.php:335
+msgid "Section Description Typography"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:67
+#: addons/widgets/luxrio-product-category-tab.php:69
+#: addons/widgets/luxrio-product-category.php:87
+#: addons/widgets/luxrio-product-category.php:89
+#: addons/widgets/luxrio-testimonial-slider.php:68
+#: addons/widgets/luxrio-testimonial-slider.php:70
+#: addons/widgets/luxrio-testimonial-two.php:68
+#: addons/widgets/luxrio-testimonial-two.php:70
+#: addons/widgets/section-title.php:72 addons/widgets/section-title.php:74
+msgid "Section Subtitle"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:308
+#: addons/widgets/luxrio-product-category.php:320
+#: addons/widgets/luxrio-testimonial-slider.php:279
+#: addons/widgets/luxrio-testimonial-two.php:288
+#: addons/widgets/section-title.php:280
+msgid "Section Subtitle Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:334
+#: addons/widgets/luxrio-product-category.php:346
+#: addons/widgets/luxrio-testimonial-slider.php:305
+#: addons/widgets/luxrio-testimonial-two.php:314
+#: addons/widgets/section-title.php:306
+msgid "Section Subtitle Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:323
+#: addons/widgets/luxrio-product-category.php:335
+#: addons/widgets/luxrio-testimonial-slider.php:294
+#: addons/widgets/luxrio-testimonial-two.php:303
+#: addons/widgets/section-title.php:295
+msgid "Section Subtitle Typography"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:58
+#: addons/widgets/luxrio-product-category-tab.php:60
+#: addons/widgets/luxrio-product-category.php:78
+#: addons/widgets/luxrio-product-category.php:80
+#: addons/widgets/luxrio-testimonial-slider.php:59
+#: addons/widgets/luxrio-testimonial-slider.php:61
+#: addons/widgets/luxrio-testimonial-two.php:59
+#: addons/widgets/luxrio-testimonial-two.php:61
+#: addons/widgets/section-title.php:19 addons/widgets/section-title.php:35
+#: addons/widgets/section-title.php:45 addons/widgets/section-title.php:47
+msgid "Section Title"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:237
+#: addons/widgets/luxrio-product-category.php:249
+#: addons/widgets/luxrio-testimonial-slider.php:208
+#: addons/widgets/luxrio-testimonial-two.php:217
+#: addons/widgets/section-title.php:195
+msgid "Section Title Color"
+msgstr ""
+
+#: addons/widgets/section-title.php:209
+msgid "Section Title Different Color"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:263
+#: addons/widgets/luxrio-product-category.php:275
+#: addons/widgets/luxrio-testimonial-slider.php:234
+#: addons/widgets/luxrio-testimonial-two.php:243
+#: addons/widgets/section-title.php:235
+msgid "Section Title Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:278
+#: addons/widgets/luxrio-product-category.php:290
+#: addons/widgets/luxrio-testimonial-slider.php:249
+#: addons/widgets/luxrio-testimonial-two.php:258
+#: addons/widgets/section-title.php:250
+msgid "Section Title Padding"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:204
+#: addons/widgets/luxrio-product-category.php:216
+#: addons/widgets/luxrio-testimonial-slider.php:175
+#: addons/widgets/luxrio-testimonial-two.php:184
+#: addons/widgets/section-title.php:162
+msgid "Section Title Style"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:252
+#: addons/widgets/luxrio-product-category.php:264
+#: addons/widgets/luxrio-testimonial-slider.php:223
+#: addons/widgets/luxrio-testimonial-two.php:232
+#: addons/widgets/section-title.php:224
+msgid "Section Title Typography"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:212
+#: addons/widgets/luxrio-product-category.php:224
+#: addons/widgets/luxrio-testimonial-slider.php:183
+#: addons/widgets/luxrio-testimonial-two.php:192
+#: addons/widgets/section-title.php:170
+msgid "Section Wrapper Margin"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:224
+#: addons/widgets/luxrio-product-category.php:236
+#: addons/widgets/luxrio-testimonial-slider.php:195
+#: addons/widgets/luxrio-testimonial-two.php:204
+#: addons/widgets/section-title.php:182
+msgid "Section Wrapper Padding"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:210
+msgid "Select A Menu"
+msgstr ""
+
+#: addons/header/luxrio-offcanvas.php:113
+msgid "Select a Title"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:99
+#: addons/widgets/luxrio-tab-build.php:69
+msgid "Select Data"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:46
+msgid "Select Menu"
+msgstr ""
+
+#: addons/header/luxrio-offcanvas.php:60
+msgid "Select Offcanvas"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:389
+msgid "Separator Color"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:361
+msgid "Separator Height"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:98
+msgid "Service"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:66 addons/header/luxrio-megamenu.php:58
+msgid "Set Your Style From Style Tab"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:161
+msgid "Shape Four"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category.php:173
+#: addons/widgets/luxrio-testimonial-slider.php:142
+#: addons/widgets/hero-slider/slider-three.php:126
+#: addons/widgets/hero-slider/slider-two.php:65
+msgid "Shape Image"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:131
+msgid "Shape One"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:151
+msgid "Shape Three"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:141
+msgid "Shape Two"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:118
+#: addons/widgets/luxrio-product-banner.php:89
+#: addons/widgets/luxrio-view-card.php:103
+#: addons/widgets/hero-slider/slider-four.php:97
+#: addons/widgets/hero-slider/slider-one.php:162
+#: addons/widgets/hero-slider/slider-one.php:170
+#: addons/widgets/hero-slider/slider-two.php:109
+msgid "Shop Now"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:45
+msgid "Shortcode"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:348
+#: addons/widgets/luxrio-list-icon.php:808
+#: addons/widgets/luxrio-product-banner.php:60
+#: addons/widgets/luxrio-testimonial-two.php:129
+#: addons/widgets/section-title.php:111
+msgid "Show"
+msgstr ""
+
+#: addons/widgets/section-title.php:109
+msgid "Show Shape"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:58
+#: addons/widgets/luxrio-testimonial-two.php:127
+msgid "Show Star"
+msgstr ""
+
+#: addons/header/luxrio-search.php:98
+msgid "Size"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-three.php:67
+msgid "Slide Image"
+msgstr ""
+
+#: addons/widgets/blog-post.php:182
+#: addons/widgets/luxrio-instagram-slider.php:169
+msgid "Slide To Show"
+msgstr ""
+
+#: addons/widgets/blog-post.php:46
+msgid "Slider"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:42
+#: addons/widgets/hero-slider/slider-one.php:42
+#: addons/widgets/hero-slider/slider-three.php:42
+#: addons/widgets/hero-slider/slider-two.php:42
+msgid "Slider Content"
+msgstr ""
+
+#: addons/widgets/blog-post.php:174 addons/widgets/luxrio-product-slider.php:82
+msgid "Slider Control"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:52
+#: addons/widgets/hero-slider/slider-two.php:52
+msgid "Slider Image"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:140
+#: addons/widgets/hero-slider/slider-four.php:142
+#: addons/widgets/hero-slider/slider-one.php:223
+#: addons/widgets/hero-slider/slider-three.php:143
+#: addons/widgets/hero-slider/slider-two.php:154
+msgid "Slider Settings"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:114
+#: addons/widgets/hero-slider/slider-one.php:153
+#: addons/widgets/hero-slider/slider-three.php:110
+#: addons/widgets/hero-slider/slider-two.php:126
+msgid "Sliders"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:80
+#: addons/widgets/luxrio-product-category-slider.php:89
+#: addons/widgets/luxrio-product-category-tab.php:110
+#: addons/widgets/luxrio-product-category.php:149
+#: addons/widgets/luxrio-testimonial-slider.php:120
+#: addons/widgets/luxrio-testimonial-two.php:138
+msgid "Slides"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:149
+#: addons/widgets/luxrio-product-grid.php:120
+#: addons/widgets/luxrio-product-slider.php:144
+#: addons/widgets/luxrio-product-tab.php:190
+#: addons/widgets/luxrio-testimonial-two.php:171
+msgid "Star Color"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:87
+msgid "Starting At"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-three.php:102
+msgid "starting at $150.00"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:122
+#: addons/widgets/hero-slider/slider-four.php:128
+msgid "starting at <span>$150.00</span>"
+msgstr ""
+
+#: addons/header/luxrio-search.php:69 addons/widgets/luxrio-offer-box.php:106
+#: addons/widgets/luxrio-product-banner.php:113
+#: addons/widgets/luxrio-view-card.php:47
+#: addons/widgets/image-box/image-box.php:47
+msgid "Style"
+msgstr ""
+
+#: addons/widgets/luxrio-view-card.php:51
+#: addons/widgets/image-box/image-box.php:51
+msgid "Style 1"
+msgstr ""
+
+#: addons/widgets/luxrio-view-card.php:52
+#: addons/widgets/image-box/image-box.php:52
+msgid "Style 2"
+msgstr ""
+
+#: addons/widgets/luxrio-view-card.php:53
+msgid "Style 3"
+msgstr ""
+
+#: addons/widgets/button.php:51 addons/widgets/luxrio-product-grid.php:78
+#: addons/widgets/luxrio-product-slider.php:49
+#: addons/widgets/luxrio-product-tab.php:64
+msgid "Style Four"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:49
+#: addons/header/luxrio-megamenu.php:48 addons/widgets/blog-post.php:58
+#: addons/widgets/button.php:48 addons/widgets/luxrio-instagram-slider.php:49
+#: addons/widgets/luxrio-product-grid.php:75
+#: addons/widgets/luxrio-product-slider.php:46
+#: addons/widgets/luxrio-product-tab.php:61
+msgid "Style One"
+msgstr ""
+
+#: addons/widgets/button.php:50 addons/widgets/luxrio-product-grid.php:77
+#: addons/widgets/luxrio-product-slider.php:48
+#: addons/widgets/luxrio-product-tab.php:63
+msgid "Style Three"
+msgstr ""
+
+#: addons/footer-widgets/luxrio-menu-list.php:50
+#: addons/header/luxrio-megamenu.php:49 addons/header/luxrio-megamenu.php:50
+#: addons/widgets/blog-post.php:59 addons/widgets/button.php:49
+#: addons/widgets/luxrio-instagram-slider.php:50
+#: addons/widgets/luxrio-product-grid.php:76
+#: addons/widgets/luxrio-product-slider.php:47
+#: addons/widgets/luxrio-product-tab.php:62
+msgid "Style Two"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:77
+#: addons/widgets/hero-slider/slider-four.php:127
+msgid "stylish wrist watch"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:121
+msgid "stylish wrist watch "
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:229
+msgid "Sub Menu Background"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:272
+msgid "Sub Menu Border"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:280
+msgid "Sub Menu Border Radius"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:259
+msgid "Sub Menu Padding"
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:240
+msgid "Sub Menu Width"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:190
+msgid "Sub Title Color"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:202
+msgid "Sub Title Typography"
+msgstr ""
+
+#: addons/widgets/section-title.php:81
+msgid "Subitle Tag"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:77
+#: addons/widgets/luxrio-offer-box.php:59
+#: addons/widgets/luxrio-offer-box.php:133
+msgid "Subtitle"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:181
+msgid "Subtitle Color"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:193
+msgid "Subtitle Typhography"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:66
+msgid "Subttile"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:79
+msgid "Tab"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:118
+msgid "Tab Active Background Color"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:128
+msgid "Tab Active Text background Color"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:20
+#: addons/widgets/luxrio-tab-build.php:32 inc/builder/builder.php:123
+#: inc/builder/builder.php:123 inc/builder/builder.php:201
+#: inc/builder/builder.php:202 inc/builder/builder.php:204
+msgid "Tab Builder"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:42
+msgid "Tab Builder Number"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:60
+msgid "Tab Builder SubTitle"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:51
+msgid "Tab Builder Title"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:23
+#: addons/widgets/luxrio-testimonial-slider.php:39
+msgid "Testimonial Slider"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-two.php:23
+#: addons/widgets/luxrio-testimonial-two.php:39
+msgid "Testimonial Slider Two"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:125
+#: addons/widgets/luxrio-list-icon.php:129
+#: addons/widgets/luxrio-list-icon.php:947
+msgid "Text"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:955
+msgid "Text Alignment"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:1000
+msgid "Text Color"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:1011
+msgid "Text Color Hover"
+msgstr ""
+
+#: addons/widgets/luxrio-product-banner.php:170
+msgid "Text hover Color"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:96
+msgid "The Boulevard at West River"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:57
+msgid "There are no menus in your site."
+msgstr ""
+
+#: addons/header/luxrio-megamenu-shortcode.php:536
+msgid "Third Level Menu Items"
+msgstr ""
+
+#. Description of the plugin
+msgid "This is a helper plugin of luxrio theme"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-three.php:83
+#: addons/widgets/hero-slider/slider-three.php:116
+msgid "Time"
+msgstr ""
+
+#: addons/widgets/blog-post.php:113 addons/widgets/blog-post.php:216
+#: addons/widgets/luxrio-countdown.php:87
+#: addons/widgets/luxrio-offer-box.php:68
+#: addons/widgets/hero-slider/slider-four.php:75
+#: addons/widgets/image-box/image-box.php:159
+msgid "Title"
+msgstr ""
+
+#: addons/widgets/blog-post.php:224 addons/widgets/luxrio-countdown.php:147
+#: addons/widgets/luxrio-offer-box.php:115
+#: addons/widgets/luxrio-view-card.php:134
+#: addons/widgets/hero-slider/slider-four.php:201
+msgid "Title Color"
+msgstr ""
+
+#: addons/widgets/blog-post.php:235
+msgid "Title Color Hover"
+msgstr ""
+
+#: addons/widgets/luxrio-view-card.php:144
+msgid "Title Hover Color"
+msgstr ""
+
+#: addons/widgets/blog-post.php:77
+msgid "Title Length"
+msgstr ""
+
+#: addons/widgets/blog-post.php:255
+msgid "Title Margin"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:105
+#: addons/widgets/hero-slider/slider-three.php:81
+#: addons/widgets/hero-slider/slider-two.php:78
+msgid "Title One"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:251
+#: addons/widgets/hero-slider/slider-three.php:172
+#: addons/widgets/hero-slider/slider-two.php:193
+msgid "Title One Color"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:263
+#: addons/widgets/hero-slider/slider-two.php:205
+msgid "Title One Typhography"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-three.php:184
+msgid "Title One Typo"
+msgstr ""
+
+#: addons/widgets/blog-post.php:268
+msgid "Title Padding"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:76
+#: addons/widgets/luxrio-product-category.php:96
+#: addons/widgets/luxrio-testimonial-slider.php:77
+#: addons/widgets/luxrio-testimonial-two.php:77
+msgid "Title Shape Image"
+msgstr ""
+
+#: addons/widgets/section-title.php:53
+msgid "Title Tag"
+msgstr ""
+
+#: addons/widgets/luxrio-tab-build.php:138
+msgid "Title Text Color"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:114
+#: addons/widgets/hero-slider/slider-three.php:90
+#: addons/widgets/hero-slider/slider-two.php:87
+msgid "Title Two"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:271
+#: addons/widgets/hero-slider/slider-two.php:213
+msgid "Title Two Color"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:283
+#: addons/widgets/hero-slider/slider-two.php:225
+msgid "Title Two Typhography"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-four.php:213
+msgid "Title Typhography"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-three.php:204
+msgid "Title Typo"
+msgstr ""
+
+#: addons/widgets/blog-post.php:247 addons/widgets/luxrio-offer-box.php:126
+#: addons/widgets/luxrio-view-card.php:155
+#: addons/widgets/image-box/image-box.php:151
+msgid "Title Typography"
+msgstr ""
+
+#: inc/widgets/gallery-widget.php:84 inc/widgets/recent-post-widget.php:108
+msgid "Title:"
+msgstr ""
+
+#: addons/widgets/luxrio-list-icon.php:548
+msgid "Top"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:92
+msgid "top"
+msgstr ""
+
+#: addons/widgets/luxrio-view-card.php:94
+msgid "Top Categories"
+msgstr ""
+
+#: addons/header/luxrio-header-menu.php:76
+#: addons/header/luxrio-megamenu-shortcode.php:56
+#: addons/header/luxrio-megamenu.php:68
+msgid "Top Level Menu Items"
+msgstr ""
+
+#: addons/widgets/luxrio-product-tab.php:156
+msgid "Top Rated"
+msgstr ""
+
+#: addons/widgets/image-box/image-box.php:140
+msgid "Top Title"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-three.php:92
+#: addons/widgets/hero-slider/slider-three.php:117
+msgid "Travel"
+msgstr ""
+
+#: addons/header/luxrio-mobile-menu.php:71
+msgid "Type Url Here"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:159
+#: addons/widgets/luxrio-countdown.php:262
+#: addons/widgets/luxrio-list-icon.php:992
+#: addons/widgets/luxrio-offer-box.php:152
+#: addons/widgets/luxrio-tab-build.php:149
+#: addons/widgets/hero-slider/slider-four.php:243
+#: addons/widgets/hero-slider/slider-one.php:315
+#: addons/widgets/hero-slider/slider-three.php:249
+#: addons/widgets/hero-slider/slider-two.php:257
+#: addons/widgets/image-box/image-box.php:178
+msgid "Typography"
+msgstr ""
+
+#: addons/widgets/luxrio-instagram-slider.php:70
+msgid "URL"
+msgstr ""
+
+#: addons/header/luxrio-language-switcher.php:62
+msgid "Url"
+msgstr ""
+
+#. Author of the plugin
+msgid "Vecurosoft"
+msgstr ""
+
+#: addons/header/luxrio-mobile-menu.php:48
+#: addons/header/luxrio-offcanvas.php:50 addons/header/luxrio-search.php:48
+msgid "Version One"
+msgstr ""
+
+#: addons/header/luxrio-offcanvas.php:52
+msgid "Version Three"
+msgstr ""
+
+#: addons/header/luxrio-mobile-menu.php:49
+#: addons/header/luxrio-offcanvas.php:51 addons/header/luxrio-search.php:49
+msgid "Version Two"
+msgstr ""
+
+#: addons/widgets/luxrio-view-card.php:22
+#: addons/widgets/luxrio-view-card.php:39
+msgid "View Card"
+msgstr ""
+
+#: inc/builder/builder.php:145
+msgid "View Footer"
+msgstr ""
+
+#: inc/builder/builder.php:177
+msgid "View Header"
+msgstr ""
+
+#: inc/builder/builder.php:241
+msgid "View Off Canvas Builder"
+msgstr ""
+
+#: inc/builder/builder.php:209
+msgid "View Tab Builder"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:130
+#: addons/widgets/luxrio-testimonial-two.php:148
+msgid "Vivi Marian"
+msgstr ""
+
+#: addons/header/luxrio-category-menu.php:89
+msgid "Watch"
+msgstr ""
+
+#: addons/widgets/hero-slider/slider-one.php:167
+msgid "Wedding"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:62
+#: addons/widgets/luxrio-product-category.php:122
+msgid "Wedding Ring"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:94
+#: addons/widgets/luxrio-product-category.php:154
+msgid "wedding ring"
+msgstr ""
+
+#: inc/builder/builder.php:130
+msgid "Welcome To Header And Footer Builder Of This Theme"
+msgstr ""
+
+#: addons/header/luxrio-search.php:57
+msgid "What are you looking for"
+msgstr ""
+
+#: addons/header/luxrio-logo.php:49
+msgid "White"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-tab.php:118
+msgid "Woman"
+msgstr ""
+
+#: addons/widgets/luxrio-product-category-slider.php:102
+#: addons/widgets/luxrio-product-category.php:162
+msgid "Woman Earring"
+msgstr ""
+
+#: inc/luxriocore-functions.php:63
+msgid "X"
+msgstr ""
+
+#: addons/widgets/blog-post.php:203
+#: addons/widgets/luxrio-instagram-slider.php:149
+#: addons/widgets/luxrio-instagram-slider.php:160
+#: addons/widgets/luxrio-product-category-slider.php:220
+#: addons/widgets/luxrio-product-category-tab.php:456
+#: addons/widgets/luxrio-product-category.php:468
+#: addons/widgets/luxrio-product-slider.php:112
+#: addons/widgets/luxrio-product-slider.php:124 inc/builder/builder.php:76
+#: addons/widgets/hero-slider/slider-four.php:151
+#: addons/widgets/hero-slider/slider-four.php:162
+#: addons/widgets/hero-slider/slider-one.php:232
+#: addons/widgets/hero-slider/slider-three.php:152
+#: addons/widgets/hero-slider/slider-two.php:163
+#: addons/widgets/hero-slider/slider-two.php:174
+msgid "Yes"
+msgstr ""
+
+#: addons/widgets/luxrio-countdown.php:79
+msgid "your need it"
+msgstr ""
+
+#: addons/widgets/luxrio-testimonial-slider.php:126
+#: addons/widgets/luxrio-testimonial-two.php:144
+msgid ""
+"“Lorem ipsum dolor sit amet, conse elit, sedid do eiusmod tempor incidit "
+"laboret dolore magna aliqua. Quis ipsum usndi laboris ipsum dolor sitamet "
+"conseelit, sedid mollit“"
+msgstr ""

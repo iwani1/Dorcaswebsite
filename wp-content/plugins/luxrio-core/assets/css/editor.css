@@ -1,0 +1,19 @@
+span.luxrio-core-badge {
+    position: relative;
+}
+
+span.luxrio-core-badge {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 7px;
+    right: 20px;
+    background-image: url("../img/vecuro.png");
+    background-position: center center;
+    background-size: cover;
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 4px;
+}

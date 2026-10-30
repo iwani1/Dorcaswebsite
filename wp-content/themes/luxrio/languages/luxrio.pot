@@ -1,0 +1,2709 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Luxrio\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-27 04:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.1\n"
+"X-Domain: luxrio"
+
+#: inc/hooks/hooks-functions.php:330
+msgid " Comment"
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:332
+msgid " Comments"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:390
+msgid " Review"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:388
+msgid " Reviews"
+msgstr ""
+
+#: comments.php:57
+msgid ""
+" Save my name, email, and website in this browser for the next time I "
+"comment."
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:517
+msgid " Views"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:222
+msgid "$29"
+msgstr ""
+
+#: inc/luxrio-functions.php:238
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:538
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#. 1: plugin name.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7245
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#. 1: plugin name.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7261
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#. %s: Quantity.
+#: woocommerce/global/quantity-input.php:28
+#, php-format
+msgid "%s quantity"
+msgstr ""
+
+#: inc/wp_bootstrap_pagination.php:40
+msgid "&laquo;"
+msgstr ""
+
+#: inc/wp_bootstrap_pagination.php:41
+msgid "&raquo;"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:254
+msgid "+44 (0) 207 689 7888"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:229
+msgid "/ month"
+msgstr ""
+
+#: inc/luxrio-functions.php:502
+msgid "0"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:663
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:686
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:851
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1132
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1351
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1417
+msgid "1 Column"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:214
+msgid "11 - 13 Years"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:667
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:690
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:855
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1136
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1355
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1421
+msgid "2 Column Left"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:671
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:694
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:859
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1140
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1359
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1425
+msgid "2 Column Right"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1374
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1509
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1555
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1601
+msgid "2 Columns"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1378
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1513
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1559
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1605
+msgid "3 Columns"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1382
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1517
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1563
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1609
+msgid "4 Columns"
+msgstr ""
+
+#: 404.php:21 inc/luxrio-framework/luxrio-options/luxrio-options.php:1248
+msgid "404"
+msgstr ""
+
+#: templates/header-menu-bottom.php:208
+msgid "404 PAGE"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1238
+msgid "404 Page"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1386
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1394
+msgid "5 Columns"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1390
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1398
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1521
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1567
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1613
+msgid "6 Columns"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1901
+msgid ""
+"<p class=\"description\">This is a section created by adding a filter to the "
+"sections array. Can be used by child themes to add/remove sections from the "
+"options.</p>"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:209
+msgid "<p>This is the sidebar content, HTML is allowed.</p>"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:198
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:203
+msgid "<p>This is the tab content, HTML is allowed.</p>"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:106
+msgid "A password will be sent to your email address."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5665
+msgid "Activate"
+msgstr ""
+
+#. %2$s: plugin name in screen reader markup
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5441
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4855
+msgid "Active"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:84
+msgid "Add"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:263
+msgid "Add Another Profile"
+msgstr ""
+
+#: inc/luxrio-widgets-reg.php:28
+msgid "Add Blog Sidebar Widgets Here."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1748
+msgid "Add Copyright Text"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:103
+msgid "Add File"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:193
+msgid "Add Image"
+msgstr ""
+
+#: inc/luxrio-widgets-reg.php:39
+msgid "Add Page Sidebar Widgets Here."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1637
+msgid "Add social icon and url."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:260
+msgid "Add social profiles"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1486
+msgid "Add Title Shape Image"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:636
+msgid "Add to cart"
+msgstr ""
+
+#: inc/luxrio-widgets-reg.php:51
+msgid "Add widgets here to appear in your woocommerce page sidebar."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1332
+msgid "Add Your Shop Page Background Image"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1338
+msgid "Add Your Shop Page Breadcrumb Image"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:465
+msgid "Admin Label"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:471
+msgid "Admin Login Logo"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7247
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7263
+msgid "All installations have been completed."
+msgstr ""
+
+#. 1: dashboard link.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:801
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#. 1: plugin name, 2: error message.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7229
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:478
+msgid "Any CSS your write here will run in admin."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5177
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5233
+msgid "Available version:"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:96
+#: woocommerce/single-product-reviews.php:107
+msgid "Average"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:383
+msgid "Back To Top"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:390
+msgid "Back To Top Button"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:399
+msgid "Back To Top Button Background Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:415
+msgid "Back To Top Button Border Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:407
+msgid "Back To Top Icon Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1195
+msgid "Background"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:66
+#, php-format
+msgid "Be the first to review &ldquo;%s&rdquo;"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:773
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:753
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:763
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:872
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1438
+msgid "Below Thumbnail"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:20
+#: woocommerce/myaccount/my-address.php:26
+#: woocommerce/myaccount/my-address.php:35
+#: woocommerce/order/order-details-customer.php:29
+msgid "Billing address"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:905
+msgid "Biography Info"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:298
+msgid "Black Color"
+msgstr ""
+
+#: templates/header-menu-bottom.php:182 templates/header-menu-bottom.php:191
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:651
+msgid "Blog"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:736
+msgid "Blog Custom Title"
+msgstr ""
+
+#: templates/header-menu-bottom.php:292
+msgid "Blog Details"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:880
+msgid "Blog Details Custom Title"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:796
+msgid "Blog Excerpt / Content Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:955
+msgid "Blog Meta Hover Text Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:941
+msgid "Blog Meta Icon Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:948
+msgid "Blog Meta Text Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:718
+msgid "Blog Page Title"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:724
+msgid "Blog Page Title Setting"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:824
+msgid "Blog Pagination Active Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:817
+msgid "Blog Pagination Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:832
+msgid "Blog Pagination Hover Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:874
+msgid "Blog Post Title Position"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:743
+msgid "Blog Posts Excerpt"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:773
+msgid "Blog Separator Image"
+msgstr ""
+
+#: inc/luxrio-widgets-reg.php:26
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1155
+msgid "Blog Sidebar"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:710
+msgid "Blog Style"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:706
+msgid "Blog Style One"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:707
+msgid "Blog Style Two"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:782
+msgid "Blog Title Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:789
+msgid "Blog Title Hover Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:278
+msgid "Body Text Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:365
+msgid "Body Typography"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:334
+msgid "Border Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1020
+msgid "Box Shadow"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:247
+msgid "Brand Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:138
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/luxrio-functions.php:453
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1219
+msgid "Breadcrumb Active Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1211
+msgid "Breadcrumb Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1228
+msgid "Breadcrumb Divider Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1202
+msgid "Breadcrumb Hide/Show"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1337
+msgid "Breadcrumb Image"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:94
+msgid "Breadcumb Image"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1306
+msgid "Button Background Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1291
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1299
+msgid "Button Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1314
+msgid "Button Hover Background Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1267
+msgid "Button Text"
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:26 inc/hooks/hooks-functions.php:39
+msgid "Cancel Preloader"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:620
+msgid "Cart Offcanvas"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:988
+msgid "Category"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:188
+msgid "Category Image"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:177
+msgid "Category Metabox"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:488
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:71
+msgid "check to display page breadcrumb area."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:110
+msgid "check to display Page Title."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:660
+msgid ""
+"Choose blog layout from here. If you use this option then you will able to "
+"change three type of blog layout ( Default Left Sidebar Layour ). "
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:848
+msgid ""
+"Choose blog single page layout from here. If you use this option then you "
+"will able to change three type of blog single page layout ( Default Left "
+"Sidebar Layour ). "
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1229
+msgid "Choose breadcrumb divider color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1220
+msgid ""
+"Choose page header breadcrumb text active color here.If you user this option "
+"then you will able to set page breadcrumb active color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1212
+msgid ""
+"Choose page header breadcrumb text color here.If you user this option then "
+"you will able to set page breadcrumb color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1413
+msgid "Choose product single page sidebar."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1347
+msgid "Choose shop page sidebar"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:498
+msgid "Choose the site Dark logo"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:507
+msgid "Choose the site White logo"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1128
+msgid ""
+"Choose your page layout. If you use this option then you will able to choose "
+"three type of page layout ( Default no sidebar ). "
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:211
+msgid "Class Info"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:206
+msgid "class Metabox"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:79
+msgid "CMB2"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:979
+msgid "Comment Count"
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:464
+msgid "Comments are closed"
+msgstr ""
+
+#: comments.php:25
+#, php-format
+msgctxt "comments title"
+msgid "1 Comment "
+msgid_plural " %1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:85
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:158
+msgid "Container"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:159
+msgid "Container Fluid"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:906
+msgid ""
+"Control biography info from here. If you use this option then you will able "
+"to show or hide biography info ( Default setting Show )."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:725
+msgid ""
+"Control blog page title setting. If you use this option then you can able to "
+"show default or custom blog page title ( Default Blog )."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:719
+msgid ""
+"Control blog page title show / hide. If you use this option then you will "
+"able to show / hide your blog page title ( Default Setting Show )."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:875
+msgid "Control blog post title position from here."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:604
+msgid "Control Header Searchbar By Show Or Hide System."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:915
+msgid ""
+"Control post navigation from here. If you use this option then you will able "
+"to show or hide post navigation ( Default setting Show )."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:897
+msgid ""
+"Control post share options from here. If you use this option then you will "
+"able to show or hide post share options."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1441
+msgid "Control product details title position from here."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:756
+msgid "Control read more text from here."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:924
+msgid ""
+"Control related post from here. If you use this option then you will able to "
+"show or hide related post ( Default setting Show )."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:744
+msgid ""
+"Control the number of characters you want to show in the blog page for each "
+"post.. If you use this option then you can able to control your blog post "
+"characters from here ( Default show 10 )."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1747
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1595
+msgid "Cross sell Product Column"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1577
+msgid "Cross sell product Hide/Show"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1586
+msgid "Cross sell products number"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1792
+msgid "CSS Code"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:728
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:759
+msgid "Custom"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1785
+msgid "Custom Css"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:477
+msgid "Custom CSS For admin"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:132
+msgid "Custom Page Title"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:126
+msgid "Custom Title"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:727
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:758
+msgid "Default"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:125
+msgid "Default Title"
+msgstr ""
+
+#: inc/demo-data/demo-import.php:16
+msgid "Demo Preview Imgae"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:244
+msgid "Designation"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1724
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1734
+msgid "Disable"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:240
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:394
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:435
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:891
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:965
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:974
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:983
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:992
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1167
+msgid "Disabled"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:803
+msgid "Dismiss this notice"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:34
+msgid "Display Name"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1807
+msgid "Documentation"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:226
+msgid "Duration"
+msgstr ""
+
+#: inc/luxrio-functions.php:247 woocommerce/myaccount/my-address.php:84
+msgid "Edit"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:65
+msgid "Elementor"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:98
+msgid "Email"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:239
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:393
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:434
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:890
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:964
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:973
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:982
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:991
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1166
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1723
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1733
+msgid "Enabled"
+msgstr ""
+
+#: inc/luxrio-functions.php:479
+msgid "Enter"
+msgstr ""
+
+#: comments.php:55
+msgid "Enter E-mail Address *"
+msgstr ""
+
+#: inc/luxrio-functions.php:478
+msgid "Enter Password"
+msgstr ""
+
+#: comments.php:54
+msgid "Enter Your Name *"
+msgstr ""
+
+#: inc/luxrio-breadcrumbs.php:124
+msgid "Error 404"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:328
+msgid "Error Color"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4803
+msgid "External Source"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:182
+msgid "Extra Info"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1726
+msgid ""
+"First make your footer from footer custom types then select it from here."
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:27
+msgid "First Name"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1693
+msgid "Footer"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1740
+msgid "Footer Bottom Background Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1731
+msgid "Footer Bottom?"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1710
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1713
+msgid "Footer Builder"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1763
+msgid "Footer Copyright Ancor Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1771
+msgid "Footer Copyright Ancor Hover Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1755
+msgid "Footer Copyright Text Color"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:72
+msgid "Forgot Your Password?"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:160
+msgid "Fullwidth"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1666
+msgid "Gallery Image"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1671
+msgid "Gallery Images"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1663
+msgid "Gallery Widget"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:228
+msgid "General"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:88
+msgid "Global Settings"
+msgstr ""
+
+#: 404.php:23
+msgid "Go Back To Home"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:95
+#: woocommerce/single-product-reviews.php:106
+msgid "Good"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1058
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1173
+msgid "H1"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1059
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1174
+msgid "H2"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1060
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1175
+msgid "H3"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1061
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1176
+msgid "H4"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1062
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1177
+msgid "H5"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1063
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1178
+msgid "H6"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:518
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:541
+msgid "Header"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:529
+msgid "Header Builder"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:551
+msgid "Header Menu"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:531
+msgid "Header Options"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:603
+msgid "Header Searchbar?"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:271
+msgid "Heading Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:77
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:116
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:602
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:717
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:899
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:908
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:917
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:926
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1014
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1457
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1466
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1535
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1581
+msgid "Hide"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1203
+msgid ""
+"Hide / Show breadcrumb from all pages and posts ( Default settings hide )."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1578
+msgid "Hide / Show cross sell product in single page (Default Settings Show)"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1463
+msgid "Hide / Show related product in single page (Default Settings Show)"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1532
+msgid "Hide / Show upsell product in single page (Default Settings Show)"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1473
+msgid "highly recommend"
+msgstr ""
+
+#: inc/luxrio-breadcrumbs.php:27
+msgid "Home"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:308
+msgid "Hot"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://vecurosoft.com/"
+msgstr ""
+
+#. URI of the theme
+msgid "https://wordpress.vecurosoft.com/luxrio/"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1653
+msgid "Icon (example: fa fa-facebook) "
+msgstr ""
+
+#: inc/demo-data/demo-import.php:68
+msgid "Import Demo Data"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:436
+msgid "In Stock"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5647
+msgid "Install"
+msgstr ""
+
+#. %2$s: plugin name in screen reader markup
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5419
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:669
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:667
+msgid "Install Required Plugins"
+msgstr ""
+
+#. 1: install status, 2: update status
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4897
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4851
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5193
+msgid "Installed version:"
+msgstr ""
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7251
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7267
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. %s: plugin name.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:673
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:472
+msgid "It belongs to the back-end of your website to log-in to admin panel."
+msgstr ""
+
+#: templates/content-none.php:34
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:30
+msgid "Last Name"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:659
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:847
+msgid "Layout"
+msgstr ""
+
+#: comments.php:63
+msgid "Leave A Comment"
+msgstr ""
+
+#. %s is product title
+#: woocommerce/single-product-reviews.php:68
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: inc/theme-setup.php:37
+msgid "Left Menu"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:292
+msgid "Light Color"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:30
+msgid "Log In"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:69
+msgid "Log in"
+msgstr ""
+
+#: comments.php:67
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: woocommerce/global/form-login.php:51 woocommerce/myaccount/form-login.php:69
+msgid "Login"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:490
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:497
+msgid "Logo"
+msgstr ""
+
+#: inc/luxrio-functions.php:60 inc/luxrio-functions.php:84
+msgid "logo"
+msgstr ""
+
+#: 404.php:24
+msgid ""
+"Lorem ipsum dolor sit amet, conse elit, sedid that eiusmod aboret dolore "
+"magna aliqua conseel usndi"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1262
+msgid ""
+"Lorem ipsum dolor sit amet, conse elit, sedid that eiusmod aboret dolore "
+"magna aliqua conseel usndi."
+msgstr ""
+
+#: woocommerce/global/form-login.php:55
+msgid "Lost your password?"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:27
+msgid ""
+"Lost your password? Please enter your username or email address. You will "
+"receive a link to create a new password via email."
+msgstr ""
+
+#. Name of the theme
+msgid "Luxrio"
+msgstr ""
+
+#. Description of the theme
+msgid "Luxrio - Multipurpose eCommerce Jewellery WordPress Theme"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:39
+msgid "Luxrio Core"
+msgstr ""
+
+#: inc/demo-data/demo-import.php:19
+msgid "Luxrio Demo"
+msgstr ""
+
+#: inc/demo-data/demo-import.php:67
+msgid "Luxrio Demo Import"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1695
+msgid "luxrio Footer"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:85
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:86
+msgid "Luxrio Options"
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:264
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1749
+msgid "Luxrio."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:558
+msgid "Menu Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:565
+msgid "Menu Hover Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:933
+msgid "Meta Data"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5209
+msgid "Minimum required version:"
+msgstr ""
+
+#: inc/theme-setup.php:36
+msgid "Mobile Menu"
+msgstr ""
+
+#: woocommerce/order/order-details-customer.php:31
+#: woocommerce/order/order-details-customer.php:48
+msgid "N/A"
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:397
+msgid "Next Post"
+msgstr ""
+
+#. 1: plugin name.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:793
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:6081
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5813
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5817
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5279
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:6029
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5727
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5731
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4843
+msgid "Not Installed"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:97
+#: woocommerce/single-product-reviews.php:108
+msgid "Not that bad"
+msgstr ""
+
+#: templates/content-none.php:17
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:627
+msgid "Offcanvas Panel Background"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:634
+msgid "Offcanvas Title Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:871
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1437
+msgid "On Header"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:53
+msgid "One Click Demo Importer"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:121
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+
+#: 404.php:22 inc/luxrio-framework/luxrio-options/luxrio-options.php:1255
+msgid "Oops! That page can't be found."
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:439
+msgid "Out Of Stock"
+msgstr ""
+
+#: inc/luxrio-functions.php:150
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1120
+msgid "Page"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:70
+msgid "Page Breadcrumb Area"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:83
+msgid "Page Breadcrumb Settings"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1246
+msgid "Page Error Number"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:146
+msgid "Page Layout"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:64
+msgid "Page Meta"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:89
+msgid "Page Settings"
+msgstr ""
+
+#: inc/luxrio-widgets-reg.php:37
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1154
+msgid "Page Sidebar"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1260
+msgid "Page Subtitle"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:109
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1253
+msgid "Page Title"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:121
+msgid "Page Title Settings"
+msgstr ""
+
+#: inc/luxrio-functions.php:146
+msgid "Pages:"
+msgstr ""
+
+#: woocommerce/global/form-login.php:37 woocommerce/myaccount/form-login.php:54
+#: woocommerce/myaccount/form-login.php:102
+msgid "Password"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:42
+msgid "Password Change"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1793
+msgid "Paste your CSS code here."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:94
+#: woocommerce/single-product-reviews.php:105
+msgid "Perfect"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:251
+msgid "Phone Number"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1284
+msgid "Pick a subtitle color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1276
+msgid "Pick a title color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1307
+msgid "Pick Button Background Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1292
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1300
+msgid "Pick Button Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1315
+msgid "Pick Button Hover Background Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:609
+msgid "Placeholder Text"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:807
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:2053
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:2059
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5307
+msgid "Plugin"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:2455
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:6123
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:787
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:6545
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:6543
+msgid "Plugin activation failed."
+msgstr ""
+
+#. 1: plugin name.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:797
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. 1: number of plugins.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4989
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/hooks/hooks-functions.php:496
+msgid "Post"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:970
+msgid "Post Auhtor"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:681
+msgid "Post Column"
+msgstr ""
+
+#: comments.php:70
+msgid "Post Comment"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:961
+msgid "Post Date"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:50
+msgid "Post Format Audio"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:44
+msgid "Post Format Video"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:914
+msgid "Post Navigation"
+msgstr ""
+
+#. %s is product title
+#: woocommerce/single-product-reviews.php:66
+#: woocommerce/single-product-reviews.php:74
+msgid "Post Review"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:39
+msgid "Post Thumb Controller"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:56
+msgid "Post Thumbnail For Slider"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1711
+msgid "Pre-built Footer"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1701
+msgid "Pre-built Footer / Footer Builder"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4809
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:528
+msgid "Prebuilt"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:424
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:431
+msgid "Preloader"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:447
+msgid "Preloader Color One"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:453
+msgid "Preloader Color Two"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:440
+msgid "Preloader Image"
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:386
+msgid "Previous Post"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:219
+msgid "Price"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:256
+msgid "Primary Color"
+msgstr ""
+
+#: inc/theme-setup.php:35
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:247
+msgid "Principal and Manager"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1369
+msgid "Product Column"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1446
+msgid "Product Details Title"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1440
+msgid "Product Details Title Position"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1406
+msgid "Product Per Page"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:42
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1412
+msgid "Product Single Page sidebar"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:641
+msgid "Product Title Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:277
+msgid "Profile URL"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:262
+msgid "Profile {#}"
+msgstr ""
+
+#: templates/header-menu-bottom.php:216
+msgid "Project Details"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:28
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:93
+#: woocommerce/single-product-reviews.php:104
+msgid "Rate&hellip;"
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:807 inc/hooks/hooks-functions.php:810
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:648
+msgid "Read More"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:803
+msgid "Read More Button Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:810
+msgid "Read More Button Hover Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:766
+msgid "Read More Text"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:755
+msgid "Read More Text Setting"
+msgstr ""
+
+#: templates/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4765
+msgid "Recommended"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:72
+msgid "Redux Framework"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:34
+#: woocommerce/myaccount/form-login.php:114
+#: woocommerce/myaccount/form-login.php:114
+msgid "Register"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:923
+msgid "Related Post"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1503
+msgid "Related Product Column"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1462
+msgid "Related product Hide/Show"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1494
+msgid "Related products number"
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:496
+msgid "Relatetd"
+msgstr ""
+
+#: woocommerce/global/form-login.php:46 woocommerce/myaccount/form-login.php:62
+msgid "Remember me"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:264
+msgid "Remove Profile"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4759
+msgid "Required"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4867
+msgid "Required Update not Available"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4873
+msgid "Requires Update"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:39
+msgid "Reset password"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1269
+msgid "Return To Home"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:783
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:785
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:1839
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5279
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7387
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/theme-setup.php:38
+msgid "Right Menu"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:305
+msgid "Sale"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:46
+msgid "Save address"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:59
+msgid "Save changes"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:114
+msgid ""
+"Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:236
+msgid "Scroll Animation"
+msgstr ""
+
+#: searchform.php:17
+msgid "Search Here"
+msgstr ""
+
+#: templates/header-menu-bottom.php:200
+msgid "Search Result"
+msgstr ""
+
+#: inc/luxrio-breadcrumbs.php:122
+msgid "Search results for: "
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:611
+msgid "Search Your Product"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:264
+msgid "Secondary Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1900
+msgid "Section via hook"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1725
+msgid "Select Footer"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:532
+msgid "Select header options."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:542
+msgid "Select header."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1127
+msgid "Select layout"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:640
+msgid "Select Option"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1182
+msgid ""
+"Select page title tag. If you use this option then you can able to change "
+"title tag H1 - H6 ( Default tag H1 )"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:139
+msgid "Select Show to display breadcrumb area"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:682
+msgid ""
+"Select your blog post column from here. If you use this option then you will "
+"able to select three type of blog post layout ( Default Two Column )."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:772
+msgid "Separator Image"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:400
+msgid "Set Back to top button Background Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:416
+msgid "Set Back to top button border Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:408
+msgid "Set Back to top Icon Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:797
+msgid "Set Blog Excerpt / Content Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:956
+msgid "Set Blog Meta Hover Text Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:942
+msgid "Set Blog Meta Icon Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:949
+msgid "Set Blog Meta Text Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:737
+msgid ""
+"Set blog page custom title form here. If you use this option then you will "
+"able to set your won title text."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:825
+msgid "Set Blog Pagination Active Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:818
+msgid "Set Blog Pagination Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:833
+msgid "Set Blog Pagination Hover Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:783
+msgid "Set Blog Title Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:790
+msgid "Set Blog Title Hover Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:279
+msgid "Set Body Text Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1268
+msgid "Set Button Text "
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:189
+msgid "Set Category Image"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1764
+msgid "Set footer copyright ancor color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1772
+msgid "Set footer copyright ancor Hover color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1756
+msgid "Set footer copyright text color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:272
+msgid "Set Heading Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1587
+msgid ""
+"Set how many cross sell products you want to show in single product page."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1495
+msgid "Set how many related products you want to show in single product page."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1541
+msgid "Set how many upsells products you want to show in single product page."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:559
+msgid "Set Menu Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:566
+msgid "Set Menu Hover Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:629
+msgid "Set Offcanvas Panel Background Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:635
+msgid "Set Offcanvas Title color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1247
+msgid "Set Page Error Number"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:154
+msgid ""
+"Set page layout container,container fluid,fullwidth or both. It's work only "
+"in template builder page."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1151
+msgid ""
+"Set page sidebar. If you use this option then you will able to set three "
+"type of sidebar ( Default no sidebar )."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1261
+msgid "Set Page Subtitle "
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1254
+msgid "Set Page Title"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:610
+msgid "Set Placeholder Text"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:448
+msgid "Set Preloader Color One"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:454
+msgid "Set Preloader Color Two"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:441
+msgid "Set Preloader Image."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:257
+msgid "Set Primary Theme Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:642
+msgid "Set Product Title color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:767
+msgid ""
+"Set read moer text here. If you use this option then you will able to set "
+"your won text."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:804
+msgid "Set Read More Button Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:811
+msgid "Set Read More Button Hover Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1472
+msgid "Set Related Product Subtitle Text"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1480
+msgid "Set Related Product Title Text"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:265
+msgid "Set Secondary Theme Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1346
+msgid "Set Shop Page Sidebar."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1454
+msgid "Set Stock Quantity Show Hide?"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:594
+msgid "Set Submenu Border Top Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:573
+msgid "Set Submenu Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:580
+msgid "Set Submenu Hover Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:587
+msgid "Set Submenu Icon Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1189
+msgid "Set Title Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:286
+msgid "Set White Bg Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1103
+msgid "Set Widget Anchor Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1110
+msgid "Set Widget Anchor Hover Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1096
+msgid "Set Widget Text Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1089
+msgid "Set Widget Title Color."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1596
+msgid "Set your woocommerce cross sell product column."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1370
+msgid "Set your woocommerce product column."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1504
+msgid "Set your woocommerce related product column."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1550
+msgid "Set your woocommerce upsell product column."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1197
+msgid ""
+"Setting page header background. If you use this option then you will able to "
+"set Background Color, Background Image, Background Repeat, Background Size, "
+"Background Attachment, Background Position."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:896
+msgid "Share Options"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:20
+#: woocommerce/myaccount/my-address.php:27
+#: woocommerce/order/order-details-customer.php:46
+msgid "Shipping address"
+msgstr ""
+
+#: templates/header-menu-bottom.php:243
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1447
+msgid "Shop Details"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:24
+msgid "Shop order"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1331
+msgid "Shop Page Background"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:76
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:115
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:601
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:716
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:898
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:907
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:916
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:925
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1013
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1456
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1465
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1534
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1580
+msgid "Show"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:105
+msgid "Side Cart WooCommerce"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:999
+msgid "Sidebar Options"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1150
+msgid "Sidebar Settings"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:839
+msgid "Single Blog Page"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:486
+msgid "SKU:"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:310
+msgid "Smoke Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1628
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1631
+msgid "Social"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1654
+msgid "Social Icon Class"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1655
+msgid "Social Icon Title"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:271
+msgid "Social Network"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1636
+msgid "Social Profile Links"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:679
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: templates/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5309
+msgid "Source"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5321
+msgid "Status"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:311
+msgid "Stock Out"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1453
+msgid "Stock Quantity Show Hide"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:593
+msgid "Submenu Border Top Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:572
+msgid "Submenu Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:579
+msgid "Submenu Hover Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:586
+msgid "Submenu Icon Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1283
+msgid "Subtitle Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1471
+msgid "Subtitle Text"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:322
+msgid "success Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1164
+msgid ""
+"Switch enabled to display page title. Fot this option you will able to show "
+"/ hide page title.  Default setting Enabled"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:432
+msgid "Switch Enabled to Display Preloader."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:237
+msgid "Switch Enabled to Enable Animation."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:391
+msgid "Switch On to Display back to top button."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:989
+msgid "Switch On to Display Category."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:980
+msgid "Switch On to Display Comment Count."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:971
+msgid "Switch On to Display Post Author."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:962
+msgid "Switch On to Display Post Date."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:888
+msgid "Switch On to Display Tags."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:887
+msgid "Tags"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:492
+msgid "Tags:"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:239
+msgid "Teachers Metabox"
+msgstr ""
+
+#. Name of the template
+#: template-builder.php:6
+msgid "Template Builder"
+msgstr ""
+
+#. %s: version number
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4177
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:46
+msgid "The following addresses will be used on the checkout page by default."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:705
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:789
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:6131
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:741
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:729
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7241
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. 1: plugin name.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7233
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7257
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:2059
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:2053
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:197
+msgid "Theme Information 1"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:202
+msgid "Theme Information 2"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:382
+msgid "There are no reviews yet"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:52
+msgid "There are no reviews yet."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:805
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:717
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:1213
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:693
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:681
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:881
+msgid "This title will show in Breadcrumb title."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:47
+msgid "TI WooCommerce Wishlist"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1163
+msgid "Title"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1188
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1275
+msgid "Title Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1485
+msgid "Title Shape"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1181
+msgid "Title Tag"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1479
+msgid "Title Text"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:353
+msgid "Title Typography"
+msgstr ""
+
+#. 1: number of plugins.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5013
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. 1: number of plugins.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4997
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1481
+msgid "top related products"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5311
+msgid "Type"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:344
+msgid "Typography"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:360
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:375
+msgid "Typography option with each property can be called individually."
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5659
+msgid "Update"
+msgstr ""
+
+#. %2$s: plugin name in screen reader markup
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5429
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. 1: number of plugins.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5005
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4879
+msgid "Update recommended"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:1215
+msgid "Update Required"
+msgstr ""
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:7223
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. %s: plugin name.
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:677
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5581
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:95
+msgid "Upload an image or enter an URL."
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1531
+msgid "Upsell product Hide/Show"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1549
+msgid "Upsells Product Column"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1540
+msgid "Upsells products number"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:51
+msgid "Use This Field When Post Format Audio"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:45
+msgid "Use This Field When Post Format Video"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-meta/luxrio-config.php:57
+msgid "Use This Field When You Want A Slider In Post Thumbnail"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:51
+#: woocommerce/myaccount/form-login.php:92
+msgid "User Name"
+msgstr ""
+
+#: woocommerce/global/form-login.php:34
+#: woocommerce/myaccount/form-lost-password.php:30
+msgid "Username or email"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:59
+msgid "Variation Swatches for WooCommerce"
+msgstr ""
+
+#: inc/hooks/hooks-functions.php:264
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1749
+msgid "Vecuro"
+msgstr ""
+
+#. Author of the theme
+msgid "Vecurosoft"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:542
+msgid "verified owner"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:5319
+msgid "Version"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:98
+#: woocommerce/single-product-reviews.php:109
+msgid "Very poor"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:644
+msgid "View options"
+msgstr ""
+
+#: inc/luxrio-functions.php:438
+msgid "What Are You Looking For"
+msgstr ""
+
+#: inc/luxrio-functions.php:406
+msgid "What are you looking for"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:285
+msgid "White Background"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:304
+msgid "White Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:506
+msgid "White Logo"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1102
+msgid "Widget Anchor Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1048
+msgid "Widget Border"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1109
+msgid "Widget Hover Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1030
+msgid "Widget Margin"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1039
+msgid "Widget Padding"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1095
+msgid "Widget Text Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1088
+msgid "Widget Title Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1071
+msgid "Widget Title Margin"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1079
+msgid "Widget Title Padding"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1066
+msgid "Widget Title Tag"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1006
+msgid "Widgets Background Color"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1012
+msgid "Widgets Custom Box Shadow/Padding/Margin/border"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:92
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:1326
+msgid "Woocommerce Page"
+msgstr ""
+
+#: inc/luxrio-widgets-reg.php:49
+msgid "WooCommerce Sidebar"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/class-tgm-plugin-activation.php:4797
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/luxrio-framework/plugins-activation/luxrio-active-plugins.php:99
+msgid "WPC Smart Quick View for WooCommerce"
+msgstr ""
+
+#: comments.php:61
+msgid "Write Your Comment *"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:113
+msgid "Write your comments"
+msgstr ""
+
+#: inc/luxrio-framework/luxrio-options/luxrio-options.php:316
+msgid "Yellow Color"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:80
+msgid "You have not set up this type of address yet."
+msgstr ""
+
+#: woocommerce/single-product/up-sells.php:28
+msgid "You may also like"
+msgstr ""
+
+#. %s opening and closing link tags respectively
+#: woocommerce/single-product-reviews.php:89
+#, php-format
+msgid "You must be %1$slogged in%2$s to post a review."
+msgstr ""
+
+#: inc/luxrio-functions.php:251
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:84
+msgid "Your E-mail"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:37
+msgid "Your Email"
+msgstr ""
+
+#: comments.php:66
+msgid "Your email address will not be published. Required fields are marked *"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:83
+msgid "Your Name"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:92
+#: woocommerce/single-product-reviews.php:103
+msgid "Your Rating"
+msgstr ""
+
+#: inc/woo-hooks/luxrio-woo-hooks-functions.php:532
+msgid "Your review is awaiting approval"
+msgstr ""

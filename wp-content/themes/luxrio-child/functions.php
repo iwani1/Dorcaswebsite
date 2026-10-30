@@ -39,6 +39,7 @@ function luxrio_child_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'luxrio_child_enqueue_styles', 100000 );
 
+require_once get_stylesheet_directory() . '/inc/rebrand.php';
 require_once get_stylesheet_directory() . '/inc/symbol-guide.php';
 require_once get_stylesheet_directory() . '/inc/ring-size.php';
 

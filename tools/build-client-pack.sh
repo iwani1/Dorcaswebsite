@@ -54,6 +54,9 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 DOCS=(IMPORT-GUIDE.md REPLACE-DEMO.md PHOTO-REQUEST.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
+mkdir -p "$OUT/brand"
+cp "$REPO"/client/brand/*.svg "$OUT/brand/"
+
 for f in "${DOCS[@]}" "${DATA[@]}"; do
 	if [ ! -f "$REPO/client/$f" ]; then
 		echo "error: client/$f is missing" >&2
@@ -68,6 +71,8 @@ mkdir -p "$PACK"
 cp "$THEME_ZIP" "$PACK/"
 cp "$PLUGIN_ZIP" "$PACK/"
 for f in "${DOCS[@]}" "${DATA[@]}"; do cp "$REPO/client/$f" "$PACK/"; done
+mkdir -p "$PACK/brand"
+cp "$REPO"/client/brand/*.svg "$PACK/brand/"
 
 PACK_ZIP="$OUT/queendor-client-pack.zip"
 ( cd "$STAGE" && zip -qr "$PACK_ZIP" queendor-client-pack )
@@ -146,6 +151,16 @@ cat > "$OUT/index.html" <<HTML
 <a class="card" href="policies.md">
   <strong>policies.md</strong>
   <span>Source copy for the policy pages, and the footer checklist.</span>
+</a>
+
+<h2>Brand</h2>
+<a class="card" href="brand/logo.svg">
+  <strong>logo.svg</strong>
+  <span>Temporary wordmark until the real one arrives. Theme Options → Logo.</span>
+</a>
+<a class="card" href="brand/logo-white.svg">
+  <strong>logo-white.svg</strong>
+  <span>The same, for dark backgrounds and the footer.</span>
 </a>
 
 <h2>Everything</h2>

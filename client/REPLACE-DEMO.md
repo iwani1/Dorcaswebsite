@@ -166,12 +166,37 @@ And outside the pages:
 - [ ] **Product photographs** — every product currently shows the WooCommerce placeholder
 - [ ] **Materials** — gold-plated vs brass is assumed per product, and drives the care note shown on that product page
 - [ ] **Ring sizes** — L, N, P, R, T, V is a guess; set their real range
-- [ ] **Logo** — the Luxrio logo is still in the header
-- [ ] **Footer** — real business name, registration, address, and remove the "Vecuro" / "Luxrio" credit
+- [ ] **Logo** — the Luxrio wordmark is still in the header; see §9
+- [ ] **Footer** — registration number and address; the vendor credit is already replaced in code (§9)
 
 ## 8. Then deactivate the cleanup tool
 
 `Plugins → Deactivate → Delete`. It has done its job, and a tool that can trash the catalogue should not sit active on a live site.
+
+## 9. The name
+
+Child theme **1.2.0** rewrites the vendor's name automatically — nothing to click:
+
+- The footer credit the demo shipped ("Copyright © … Luxrio. All Rights Reserved by Vecuro") is replaced with `© 2026 Queen Dor's Fashion House. All rights reserved.` — the stored option is rewritten on read, in code, so it survives an options reset.
+- If the site name is still the installer's `My WordPress`, every title, schema block and order email now says **Queen Dor's Fashion House** instead. Once you set a real name in `Settings → General`, the filter stops touching it — it only replaces known placeholders.
+- The tagline `Blank` becomes *Elegant jewellery for every occasion*.
+
+### What still needs you
+
+**The logo.** The header is showing the demo's `logo.svg`, which is the word **LUXRIO** in a circle — by far the most visible thing left. Two options in the pack:
+
+- `brand/logo.svg` and `brand/logo-white.svg` — clean temporary wordmarks in the client's name. Better than the vendor's mark, not a substitute for their actual logo.
+- Or upload their real logo: `Theme Options → Logo` → header logo, and the white version for the footer/dark sections.
+
+**The footer text**, if you want different wording: `Theme Options → Footer → Copyright Text`. The demo value is a Redux option — edit it once and save, and the rewritten default stops being used.
+
+**The theme name in the admin.** `Appearance → Themes` will still list the parent as "Luxrio". That is display-only, comes from the vendor theme's own header, and is never seen by a customer. Renaming it means re-uploading the parent theme — worth doing only if you're re-uploading that anyway.
+
+### ⚠️ Do not run a database search-replace for "Luxrio"
+
+MySQL string comparison is case-**insensitive** on the usual collations, so `Tools → Better Search Replace` with `Luxrio` → `Queen Dor's` also matches **`luxrio`** inside `/wp-content/themes/luxrio/…` in Elementor data and any custom CSS. That rewrites the asset paths and the site loads with no styling, no icons and a broken layout — and the change is inside serialized data, so it's painful to undo.
+
+If a stray "Luxrio" turns up in page content, edit that page. The coded strings are already handled by the child theme.
 
 ---
 

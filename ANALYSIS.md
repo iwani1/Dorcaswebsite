@@ -55,7 +55,7 @@ Theme file mix: 77 PHP · 57 SCSS · 34 font files · 14 PNG · 11 JS · 8 CSS �
 - **CMB2** — per-page meta (`inc/luxrio-framework/luxrio-meta/`).
 - **Elementor** — header/footer/page building via `luxrio_header` / `luxrio_footer` custom post types registered in the core plugin; page templates delegate to `Elementor\Plugin::instance()->frontend->get_builder_content_for_display()`.
 - **TGMPA 2.6.1** — plugin installer/notices (bundled, 176 KB).
-- **WooCommerce** — 34 template overrides plus 2 hook files.
+- **WooCommerce** — 33 template overrides plus 2 hook files.
 - **One Click Demo Import** — demo importer with local XML/JSON payloads.
 - **51 custom `do_action` hooks** as the theme's extension surface (reasonable design).
 
@@ -139,13 +139,13 @@ Note the bundled `luxrio-core` is the vendor's **own** plugin (GPL2, 14,980 LOC)
 
 ## 6. WooCommerce integration
 
-34 template overrides — far more than typical, which multiplies maintenance risk.
+33 template overrides — far more than typical, which multiplies maintenance risk. See [the dedicated audit](docs/WOOCOMMERCE-TEMPLATE-AUDIT.md) for a per-file verdict against WooCommerce 11.2.1.
 
 Version spread in override headers: **1.6.4 → 9.7.0**.
 
 - Modern and likely fine: `form-login.php`, `form-edit-account.php`, `single-product-reviews.php` (9.7.0); `loop/orderby.php` (9.7.0); `tabs.php`, `related.php`, `up-sells.php` (9.6.0).
-- **Old / drifting:** `single-product.php` (1.6.4), `review.php` (2.6.0), `content-widget-product.php` (3.5.5), `my-account.php` (3.5.0), the five `content-product-*.php` variants (3.6.0), all four `add-to-cart/*` (7.0.1), `archive-product.php` (8.6.0).
-- Since the theme targets WC ~9.7 and current WooCommerce is several majors ahead, **expect "outdated templates" warnings** and possible broken markup on archive/add-to-cart screens.
+- Low version numbers are **not** proof of drift: `single-product.php` is still `@version 1.6.4` in WooCommerce 11.2.1, so that override is current. The later audit (against WC 11.2.1) found only **6** overrides actually missing upstream changes, 3 with stale headers, and 16 fully current.
+- Expect "outdated templates" notices for those 9; none of them breaks the checkout path.
 
 `add_theme_support( 'woocommerce' )` plus gallery zoom/slider are declared; there is **no `FeaturesUtil::declare_compatibility()`** call (e.g. for HPOS/custom order tables), so a store using High-Performance Order Storage gets the "incompatible plugin" notice.
 
@@ -240,7 +240,7 @@ If this theme is going to be maintained, the zip should be unpacked to `wp-conte
 | **Output escaping / XSS** | ✅ **Good** (580 i18n-escaped strings, 143 `esc_attr`, 139 `esc_url`, zero raw echoes found). |
 | **CSRF / capability** | 🟡 Adequate (5 nonce checks, 12 cap checks, admin-only import path). |
 | **Bundled dependencies** | 🟡 12 required plugins, no version pins, 2 wrong slugs; TGMPA 2.6.1 abandoned. |
-| **WooCommerce compatibility** | 🟠 34 overrides spanning WC 1.6.4–9.7.0; several stale; no HPOS declaration. |
+| **WooCommerce compatibility** | 🟡 33 overrides; audited against WC 11.2.1 — 16 current, 3 header-only drift, 6 need a small upstream merge, 8 custom. No HPOS declaration. See [audit](docs/WOOCOMMERCE-TEMPLATE-AUDIT.md). |
 | **Demo import reliability** | 🟠 Deprecated API + unguarded object access + hard Elementor dependency → fatal-error risk. |
 | **Performance** | 🟠 18 MB fonts, 1 MB CSS (unminified), 0.33 MB JS, no defer, remote Google Fonts. |
 | **Licensing** | 🔴 **Font Awesome Pro 6.6.0 redistributed** under a commercial license with no attribution or vendor clearance. |
@@ -248,7 +248,7 @@ If this theme is going to be maintained, the zip should be unpacked to `wp-conte
 | **Maintainability** | 🟠 33k LOC of PHP, no WPCS baseline, no tests, no CI, wrong asset version strings, missing referenced file. |
 | **Repo hygiene** | 🔴 16 MB binary in Git, no `.gitignore`/README, no unpacked source. |
 
-**Overall: a legitimate, un-compromised commercial theme that is safe to run, but carries real legal exposure (Font Awesome Pro) and will decay quickly because it hard-pins 11 unversioned third-party plugins and 34 WooCommerce overrides.**
+**Overall: a legitimate, un-compromised commercial theme that is safe to run, but carries real legal exposure (Font Awesome Pro) and will decay quickly because it hard-pins 11 unversioned third-party plugins and 33 WooCommerce overrides.**
 
 ---
 

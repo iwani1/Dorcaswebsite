@@ -35,13 +35,18 @@ wp-content/
 │   │   │   ├── fonts/              # Font Awesome 6 Free (woff2 only) + OFL licence
 │   │   │   └── sass/               # SCSS sources for style.css
 │   │   ├── inc/                    # framework: Redux options, CMB2 meta, hooks, demo import
-│   │   └── woocommerce/            # 34 template overrides
+│   │   └── woocommerce/            # 33 template overrides
 │   └── luxrio-child/               # put all project customisation here
 └── plugins/
     └── luxrio-core/                # companion plugin source (Elementor widgets, header/footer builder)
 
+docs/
+├── WOOCOMMERCE-TEMPLATE-AUDIT.md   # per-template verdict vs WooCommerce 11.2.1
+└── STAGING-QA-CHECKLIST.md         # pre-launch checklist, checkout gate included
+
 tools/
-└── build-core-plugin-zip.sh        # rebuilds the plugin bundle the theme installer ships
+├── build-core-plugin-zip.sh        # rebuilds the plugin bundle the theme installer ships
+└── wc-template-audit.py            # re-runnable override audit after a WooCommerce update
 ```
 
 > **All customisation belongs in `luxrio-child`.** The parent theme is patched only to stay deployable, so it can be re-diffed against future vendor releases.
@@ -85,13 +90,17 @@ The vendor package shipped **Font Awesome Pro 6.6.0** (`thin`/`light`/`duotone`/
 
 ### Known remaining issues (deliberately not changed)
 - **Google Fonts** (Cormorant, Italiana, Poppins) are still fetched from `fonts.googleapis.com`. Self-hosting needs the font binaries, which were not available in this environment. GDPR/CWV impact.
-- **WooCommerce overrides** span template versions 1.6.4 → 9.7.0 and several are stale. Check **WooCommerce → Status → Templates** after deployment and refresh them against your WooCommerce version. No HPOS compatibility is declared.
+- **WooCommerce overrides**: 33 templates, audited against WooCommerce 11.2.1 in [`docs/WOOCOMMERCE-TEMPLATE-AUDIT.md`](docs/WOOCOMMERCE-TEMPLATE-AUDIT.md) — 16 current, 3 with stale headers only, **6 needing a small upstream merge**, 8 custom. No HPOS compatibility is declared.
 - **12 plugins are flagged `required`** with no version pins. Pin the versions you ship and update them deliberately.
 - Bootstrap 5.0.0-**beta1** (2020) is still the bundled framework.
 - No `<main>` landmark on pages (only when the scroll-animation option is on), no skip link.
 - `readme.txt` still carries the vendor changelog; the theme version was left at 1.0.1 to avoid implying a vendor release.
 
 ---
+
+## Before you launch
+
+Work through [`docs/STAGING-QA-CHECKLIST.md`](docs/STAGING-QA-CHECKLIST.md). The checkout section is the release gate: nothing in this repo has been executed by PHP or rendered in a browser yet.
 
 ## Verification performed
 

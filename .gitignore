@@ -22,3 +22,6 @@ wp-content/languages/
 
 # --- Build artefacts ---
 *.map
+
+# --- Generated client pack (rebuild with tools/build-client-pack.sh) ---
+client/pack/

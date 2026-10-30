@@ -5,7 +5,7 @@
  Author:       Vecurosoft
  Author URI:   http://vecurosoft.com/
  Template:     luxrio
- Version: 1.0.0
+ Version: 1.1.0
  Requires at least: 5.0
  Tested up to: 6.7
  Requires PHP: 7.0
@@ -15,5 +15,8 @@
  Text Domain:  luxrio-child
 */
 
-/*  [ Add your custom css below ]
+/*  Queen Dor's — component styles live in assets/css/queendor.css
+    (enqueued from functions.php). Keep this file for overrides only.
+
+    [ Add your custom css below ]
 - - - - - - - - - - - - - - - - - - - - */

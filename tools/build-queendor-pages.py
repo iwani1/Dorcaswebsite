@@ -14,7 +14,11 @@ import xml.etree.ElementTree as ET
 
 SITE = "https://www.blaharbenyah.com/dorcas"
 AUTHOR = "iwan1"
-NOW = datetime.datetime(2026, 10, 30, 9, 0, 0)
+# Must be in the PAST when the file is imported. WordPress treats a WXR item
+# whose post_date is in the future as a scheduled post, so a hardcoded stamp
+# silently files every page under "Scheduled" and they 404 until cron catches
+# up — which is exactly what happened on the first import.
+NOW = datetime.datetime.now().replace(second=0, microsecond=0) - datetime.timedelta(minutes=5)
 
 PAGES = [
     {

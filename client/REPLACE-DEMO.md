@@ -69,6 +69,20 @@ Expect **8 pages**:
 | Symbols | `/symbols/` — renders `[queendor_symbol_index]` |
 | Wholesale | `/wholesale/` |
 
+### If the pages land as "Scheduled"
+
+Older copies of `queendor-pages.wxr` stamped a fixed publishing time in the file. If the file date is in the future when WordPress reads it, every page is filed as **Scheduled** instead of Published — and a scheduled page returns **404** to visitors until the time passes and something triggers WP-Cron.
+
+The current file in the pack cannot do this: it stamps a time five minutes *before* the build. But if pages on your install already show as **Scheduled** in `Pages → All Pages`, fix all of them at once:
+
+1. `Pages → All Pages`
+2. Tick the checkbox in the header row to select every page
+3. `Bulk actions` → **Edit** → `Apply`
+4. `Status: Published`, `Date: 1 October 2026` (any past date)
+5. `Update`
+
+Confirm each page now reads **Published** in grey, not **Scheduled**.
+
 **Repeat the import with `queendor-pages.wxr` a second time and you get duplicates** — WordPress will happily create `/about-2/`. Import once.
 
 ## 6. Build the menu

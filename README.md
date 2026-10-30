@@ -46,7 +46,8 @@ docs/
 ├── GREENGEEKS-DEPLOY.md            # host-specific runbook for the client review site
 ├── GREENGEEKS-STEPS.html           # printable/tickable build sheet (open in a browser)
 ├── LIVE-SITE-FIXES.md              # audit of the deployed install + go-live migration
-└── CLIENT-BRIEF-QUEENDOR.md        # client profile: Adinkra jewellery, retail + wholesale, WhatsApp-first
+├── CLIENT-BRIEF-QUEENDOR.md        # client profile: Adinkra jewellery, retail + wholesale, WhatsApp-first
+└── BUILD-PLAN-QUEENDOR.md          # executable plan: 10 launch SKUs, taxonomy, wholesale, Ghana shipping
 
 tools/
 ├── build-core-plugin-zip.sh        # rebuilds the plugin bundle the theme installer ships

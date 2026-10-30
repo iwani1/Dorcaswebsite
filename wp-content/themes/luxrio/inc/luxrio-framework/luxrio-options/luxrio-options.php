@@ -497,7 +497,7 @@
                 'title'    => esc_html__( 'Logo', 'luxrio' ),
                 'subtitle' => esc_html__( 'Choose the site Dark logo', 'luxrio' ),
                 'default'  => array(
-                    'url' => 'https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/11/logo.svg',
+                    'url' => LUXRIO_DIR_URI . 'assets/img/logo.svg',
                 ),
             ),
             array(
@@ -506,7 +506,7 @@
                 'title'    => esc_html__( 'White Logo', 'luxrio' ),
                 'subtitle' => esc_html__( 'Choose the site White logo', 'luxrio' ),
                 'default'  => array(
-                    'url' => 'https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/11/logo.svg',
+                    'url' => LUXRIO_DIR_URI . 'assets/img/logo-white.svg',
                 ),
             ),
     

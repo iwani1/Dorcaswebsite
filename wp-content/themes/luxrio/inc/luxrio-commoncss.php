@@ -13,14 +13,15 @@ if( !defined( 'ABSPATH' ) ){
 
 // enqueue css
 function luxrio_common_custom_css(){
-	wp_enqueue_style( 'luxrio-color-schemes', get_template_directory_uri().'/assets/css/color.schemes.css' );
+	// Register an inline-only stylesheet (no HTTP request) that the dynamic CSS below attaches to.
+	wp_register_style( 'luxrio-color-schemes', false, array(), null );
+	wp_enqueue_style( 'luxrio-color-schemes' );
 
-    $CustomCssOpt  = luxrio_opt( 'luxrio_css_editor' );
-	if( $CustomCssOpt ){
-		$CustomCssOpt = $CustomCssOpt;
-	}else{
-		$CustomCssOpt = '';
-	}
+    $CustomCssOpt = luxrio_opt( 'luxrio_css_editor' );
+
+    if ( ! $CustomCssOpt ) {
+        $CustomCssOpt = '';
+    }
 
     $customcss = "";
 

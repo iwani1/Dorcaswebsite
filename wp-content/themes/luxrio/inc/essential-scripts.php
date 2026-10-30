@@ -15,65 +15,81 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue scripts and styles.
  */
+/**
+ * Cache-busting version string for a local theme asset.
+ *
+ * Uses the file's modification time so that a replaced vendor file always
+ * busts browser/proxy caches, instead of hardcoded version numbers that
+ * drift away from the build actually shipped in the package.
+ *
+ * @param string $relative_path Path relative to the theme root, e.g. '/assets/js/slick.min.js'.
+ * @return string
+ */
+function luxrio_asset_version( $relative_path ) {
+    $path = get_theme_file_path( $relative_path );
+
+    return file_exists( $path ) ? (string) filemtime( $path ) : wp_get_theme()->get( 'Version' );
+}
+
 function luxrio_essential_scripts() {
 
-	wp_enqueue_style( 'luxrio-style', get_stylesheet_uri() ,array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'luxrio-style', get_stylesheet_uri(), array(), luxrio_asset_version( '/style.css' ) );
 
     // google font
     wp_enqueue_style( 'luxrio-fonts', luxrio_google_fonts() ,array(), wp_get_theme()->get( 'Version' ) );
 
-    // Font Awesome Five
-    wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/fontawesome.min.css' ) ,array(), '6.6.0' );
+    // Font Awesome Free 6
+    wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/fontawesome.min.css' ), array(), luxrio_asset_version( '/assets/css/fontawesome.min.css' ) );
 
     // Slick css
-    wp_enqueue_style( 'slick', get_theme_file_uri( '/assets/css/slick.min.css' ) ,array(), '4.0.13' );
+    wp_enqueue_style( 'slick', get_theme_file_uri( '/assets/css/slick.min.css' ), array(), luxrio_asset_version( '/assets/css/slick.min.css' ) );
 
     // Bootstrap Min
-    wp_enqueue_style( 'bootstrap', get_theme_file_uri( '/assets/css/bootstrap.min.css' ) ,array(), '4.3.1' );
+    wp_enqueue_style( 'bootstrap', get_theme_file_uri( '/assets/css/bootstrap.min.css' ), array(), luxrio_asset_version( '/assets/css/bootstrap.min.css' ) );
 
     // Magnific Popup
-    wp_enqueue_style( 'magnific-popup', get_theme_file_uri( '/assets/css/magnific-popup.min.css' ), array(), '1.0' );
+    wp_enqueue_style( 'magnific-popup', get_theme_file_uri( '/assets/css/magnific-popup.min.css' ), array(), luxrio_asset_version( '/assets/css/magnific-popup.min.css' ) );
 
     // luxrio app style
-    wp_enqueue_style( 'luxrio-main-style', get_theme_file_uri('/assets/css/style.css') ,array(), wp_get_theme()->get( 'Version' ) );
+    wp_enqueue_style( 'luxrio-main-style', get_theme_file_uri( '/assets/css/style.min.css' ), array(), luxrio_asset_version( '/assets/css/style.min.css' ) );
 
     // Load Js
 
     // Bootstrap
-    wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.min.js' ), array( 'jquery' ), '4.3.1', true );
+    wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.min.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/bootstrap.min.js' ), true );
 
     // Slick
-    wp_enqueue_script( 'slick', get_theme_file_uri( '/assets/js/slick.min.js' ), array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'slick', get_theme_file_uri( '/assets/js/slick.min.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/slick.min.js' ), true );
     
     // Slick animation
-    wp_enqueue_script( 'slick-animation', get_theme_file_uri( '/assets/js/slick-animation.min.js' ), array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'slick-animation', get_theme_file_uri( '/assets/js/slick-animation.min.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/slick-animation.min.js' ), true );
 
     // magnific popup
-    wp_enqueue_script( 'magnific-popup', get_theme_file_uri( '/assets/js/jquery.magnific-popup.min.js' ), array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'magnific-popup', get_theme_file_uri( '/assets/js/jquery.magnific-popup.min.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/jquery.magnific-popup.min.js' ), true );
 
     // Isotope
-    wp_enqueue_script( 'isototpe-pkgd', get_theme_file_uri( '/assets/js/isotope.pkgd.min.js' ), array( 'jquery' ), '1.0.0', true );
+    wp_enqueue_script( 'isototpe-pkgd', get_theme_file_uri( '/assets/js/isotope.pkgd.min.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/isotope.pkgd.min.js' ), true );
 
     // Isotope Imagesloaded
     wp_enqueue_script( 'imagesloaded' );
 
     // wow script
-    wp_enqueue_script( 'luxrio-wow', get_theme_file_uri( '/assets/js/wow.min.js' ), array('jquery'), wp_get_theme()->get( 'Version' ), true );
+    wp_enqueue_script( 'luxrio-wow', get_theme_file_uri( '/assets/js/wow.min.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/wow.min.js' ), true );
     
     // gsap script
-    wp_enqueue_script( 'gsap', get_theme_file_uri( '/assets/js/gsap.min.js' ), array('jquery'), wp_get_theme()->get( 'Version' ), true );
+    wp_enqueue_script( 'gsap', get_theme_file_uri( '/assets/js/gsap.min.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/gsap.min.js' ), true );
     
     // gsap scroll-to-plugin script
-    wp_enqueue_script( 'gsap-scroll-to-plugin', get_theme_file_uri( '/assets/js/gsap-scroll-to-plugin.js' ), array('jquery'), '3.11.4', true );
+    wp_enqueue_script( 'gsap-scroll-to-plugin', get_theme_file_uri( '/assets/js/gsap-scroll-to-plugin.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/gsap-scroll-to-plugin.js' ), true );
 
     // lenis script
-    wp_enqueue_script( 'lenis', get_theme_file_uri( '/assets/js/lenis.min.js' ), array('jquery'), '1.1.17', true );
+    wp_enqueue_script( 'lenis', get_theme_file_uri( '/assets/js/lenis.min.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/lenis.min.js' ), true );
     
     // Scroll Trigger script
-    wp_enqueue_script( 'scrolltrigger', get_theme_file_uri( '/assets/js/ScrollTrigger.min.js' ), array('jquery'), '3.12.5', true );
+    wp_enqueue_script( 'scrolltrigger', get_theme_file_uri( '/assets/js/ScrollTrigger.min.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/ScrollTrigger.min.js' ), true );
     
     // main script
-    wp_enqueue_script( 'luxrio-main-script', get_theme_file_uri( '/assets/js/main.js' ), array('jquery'), wp_get_theme()->get( 'Version' ), true );
+    wp_enqueue_script( 'luxrio-main-script', get_theme_file_uri( '/assets/js/main.js' ), array( 'jquery' ), luxrio_asset_version( '/assets/js/main.js' ), true );
 
     // comment reply
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

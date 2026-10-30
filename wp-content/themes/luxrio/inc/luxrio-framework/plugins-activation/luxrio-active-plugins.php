@@ -97,13 +97,13 @@ function luxrio_register_required_plugins() {
 
         array(
             'name'      => esc_html__( 'WPC Smart Quick View for WooCommerce', 'luxrio' ),
-            'slug'      => 'side-cart-woocommerce',
+            'slug'      => 'woo-smart-quick-view',
             'version'   => '',
             'required'  => true,
         ),
         array(
             'name'      => esc_html__( 'Side Cart WooCommerce', 'luxrio' ),
-            'slug'      => 'woo-smart-quick-view',
+            'slug'      => 'side-cart-woocommerce',
             'version'   => '',
             'required'  => true,
         ),

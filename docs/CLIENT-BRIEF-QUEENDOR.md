@@ -1,176 +1,206 @@
-# Queen Dor's Fashion House — client profile and what it changes
+# Queen Dor's Fashion House — client profile (corrected)
 
-**Source:** `instagram.com/queendor_fashionhouse` (supplied by you).
-**Note:** Instagram returns 403 to unauthenticated requests and the handle isn't indexed anywhere I can reach, so **I could not read the profile**. Everything below about the brand's *product range* is flagged as needing confirmation. What is not in doubt is the category of business: a **fashion house**, not a jeweller.
+**Source:** `instagram.com/queendor_fashionhouse`, read through a mirror (imginn) because Instagram returns 403 to unauthenticated requests.
+
+> ## Correction to the previous version of this brief
+>
+> I assumed from the name "Fashion house" that this was an apparel label and recommended restructuring the catalogue for garments. **That was wrong.** They sell *jewellery*. Luxrio is a jewellery theme, so the theme is the right buy and the demo's structure largely holds. What was wrong was my read of the business, not their choice of theme.
+>
+> The relevant point survives in a different form: the demo's *vocabulary* is still wrong — "diamond", "High Class Jewellery", "wedding ring" — but it's now a copy problem inside a correct structure, not a re-platforming problem.
 
 ---
 
-## 1. The problem this creates
+## 1. What the profile actually says
 
-Luxrio is a **jewellery theme**, and the demo content is jewellery all the way down. From `luxrio-demo.xml`, the demo taxonomy is:
+| | |
+|---|---|
+| Handle | `@queendor_fashionhouse` |
+| Name | Queen Dor's Fashion house |
+| Followers / following | **8.9K** / 1,712 |
+| Bio line 1 | *"Elegant jewelry for every occasion"* |
+| Bio line 2 | *"Adinkra & timeless pieces 🇬🇭"* |
+| Bio line 3 | *"Retail \| Wholesale \| Worldwide delivery 🌍"* |
+| Bio line 4 | *"📍 Accra, Ghana"* |
+| CTA | *"👇 Shop / Order on WhatsApp"* |
 
-```
-rings · wedding-ring · classic-ring · modern-ring · trending-rings · women-ring
-woman-earring · necklace · pendent · padent · bracelate · luxry-watch
-diamond · silver · green · pink · orange
-```
+I could see the post thumbnails but not the captions, so product range, price points and materials are still **unconfirmed** (see §8).
 
-And the live home page says: *"Necklace jewellery — HOLY JEWELRY and diamonds pendants"*, *"High Class Jewellery"*, *"Find the perfect High Class Jewellery"*.
+---
 
-So as it stands, the client opens their review link and sees **a diamond and watch shop bearing their name**. That is worse than showing them nothing.
+## 2. Four facts in that bio that change the build
 
-This isn't a content-swap job. Four things are wrong at once:
+### a. They sell Adinkra-motif jewellery, not generic fine jewellery
 
-| Layer | Demo has | Fashion house needs |
+Adinkra are Akan symbols, each with a name and a meaning — Gye Nyame (except for God), Sankofa (go back and fetch it), Duafe (beauty), Akoma (patience), Bese Saka (abundance), Dwennimmen (humility and strength), Adinkrahene (leadership), Nkyinkyim (initiative).
+
+This is the single most useful thing in the profile. **The symbol is the product story.** Competitors sell "a gold necklace"; they sell Sankofa. That gives you:
+
+- A second axis for navigation: shop **by symbol**, not only by type
+- Real copy on every product page — the symbol's meaning, 40–80 words — instead of "Lorem ipsum necklace"
+- The SEO that wins: nobody searching "Sankofa necklace meaning" lands on a jewellery template demo
+- A gift narrative — symbol jewellery sells because the meaning is the gift
+
+The demo has none of this. Its categories are `diamond`, `silver`, `classic-ring`, `luxry-watch` — fine-jewellery language for what is, culturally, a different product. **"Diamond" and "High Class Jewellery" copy must go**; it misrepresents both the material and the brand.
+
+### b. Retail **and wholesale** are both revenue lines
+
+The theme, like every default WooCommerce setup, shows one price to everyone. Wholesale means a second, lower price for approved accounts — usually with a minimum order quantity.
+
+| Approach | How | Cost |
 |---|---|---|
-| Taxonomy | rings, earrings, bracelets | ready-to-wear, kaba & slit, bridal, occasion |
-| Attributes | ring size, metal, stone colour | UK dress size, colour/print, fabric |
-| Product model | fixed SKU | size/colour variations, made-to-measure, lead times |
-| Imagery | macro shots of stones | full-look editorial on a model |
+| **A. Wholesale role** | WooCommerce role-based pricing (B2BKing, Wholesale Prices, or a snippet + `wholesale_customer` role) — approved accounts see trade prices | free–$150/yr |
+| **B. Enquiry only** | "Wholesale enquiry" form → CF7, you quote by email | free |
+| **C. Separate catalogue** | password-protected wholesale page with a PDF line sheet | free |
 
----
+**Recommendation: B now, A if wholesale becomes a real share of revenue.** A wholesale tier adds complexity to every product page and every plugin interaction; ship the retail store first. B also tells you *whether* wholesale demand justifies it.
 
-## 2. What survives — the case for keeping Luxrio
+**Open question: are their wholesale prices worth showing at all?** They may do wholesale on an enquiry basis only, in which case A is wasted plugin weight.
 
-The **layout bones are genre-neutral** and genuinely suit a fashion label:
+### c. "Worldwide delivery" is core, not an afterthought
 
-- Full-bleed hero slider — lookbook/campaign imagery
-- Product grid with **4:5 portrait crops** — the standard fashion ratio
-- Category tiles, lookbook/Instagram strip, testimonial slider, newsletter block
-- Mega menu with room for Lookbook / Collections / Bespoke / About
-
-That's an editorial fashion layout with jewellery copy layered on top. Keep the theme. Re-platforming now would throw away the WooCommerce 11.2.1 template merges, the Font Awesome Free swap and the 44 hardening fixes — for a cosmetic gain.
-
-**One condition:** no jewellery word survives into the handover. Not in menus, not in the footer, not in an alt tag, not in an Elementor template still sitting in the library.
-
----
-
-## 3. The catalogue model to build
-
-**Categories** — replace the jewellery tree entirely:
-
-```
-Ready to Wear        → Dresses · Two-piece · Tops · Skirts
-Kaba & Slit
-Bridal / Traditional Bridal
-Occasion & Evening
-Bespoke (Made to Measure)
-Accessories          → Headwraps · Bags
-```
-
-Confirm the real split with the client — a house that mainly does bridal has a very different homepage from one selling ready-to-wear.
-
-**Attributes** (WooCommerce → Products → Attributes):
-
-| Attribute | Values | Notes |
-|---|---|---|
-| `Size` | UK 6–20, **Made to measure** | confirm UK vs S/M/L — Ghana mostly uses UK |
-| `Colour / Print` | per product | drives the swatches |
-| `Fabric` | Kente · Ankara · Lace · Satin · Chiffon | useful filter, and shoppers search by fabric |
-
-**Variation Swatches** is already installed, so size/colour selection renders as buttons rather than dropdowns. That was in the plugin list for a reason — it now does real work.
-
-**Product types:**
-
-- **Simple** — ready-to-wear, fixed price, stock count
-- **Variable** — size × colour
-- **Bespoke** — the one that needs a decision (see §4)
-
----
-
-## 4. The decision that shapes the build: bespoke
-
-A Ghanaian fashion house usually sells two things that behave nothing alike — ready-to-wear off the shelf, and made-to-measure with a 2–3 week production window. WooCommerce has no native concept of the second.
-
-Three ways to do it, in ascending cost:
-
-| Option | How | Cost | Trade-off |
-|---|---|---|---|
-| **A. Enquiry** | "Request this piece" button → Contact Form 7, prefilled with the product name | free | no checkout, no deposit, you quote manually |
-| **B. Add-on fields** | PPOM for WooCommerce (free tier) or WooCommerce Product Add-ons ($49/yr) puts measurement fields on the product, carried into the cart | free–$49 | the real answer if bespoke is the core business |
-| **C. Deposit** | 50% deposit product + balance invoice | paid plugin or manual | accounting complexity worth avoiding at launch |
-
-**Recommendation: B for bespoke products, A as the fallback.** Measurements captured at the point of sale is what prevents the "that's not my size" conversation, which is the single most expensive failure mode in made-to-measure.
-
-Whatever you pick, put the **production lead time on the product page** and set the item to backorder so it doesn't show "out of stock" while it's being made.
-
----
-
-## 5. Ghana commerce setup — this is where the money is won or lost
-
-**Payments.** Mobile Money is how Ghana pays online. A card-only checkout will convert a fraction of what a MoMo-enabled one does.
-
-- **Paystack Ghana** — MTN MoMo, Telecel Cash, AirtelTigo Money, plus Visa/Mastercard. This is the default recommendation.
-- **Hubtel** — strong local alternative, good MoMo coverage.
-- **Pay on delivery** — normal and expected in Accra. Enable it for Accra only.
-
-Until they have a merchant account, keep the review site in **test mode** as already planned.
-
-**WhatsApp.** For a Ghanaian boutique, WhatsApp is not a nice-to-have — it's the primary sales channel, and a large share of buyers will message before they buy a dress. Add:
-
-- A floating WhatsApp button (site-wide)
-- "Order on WhatsApp" on each product, with the product name and price prefilled in the message
-
-This runs *alongside* the cart, not instead of it. It also gives you a working sales channel on day one while the catalogue is still being filled.
-
-**Delivery zones** — the jewellery-theme defaults are useless here:
+The demo ships placeholder zones. For a brand whose customers are in the diaspora, international shipping is the *main* channel, not the edge case:
 
 | Zone | Method | Notes |
 |---|---|---|
-| Accra | flat rate / same-day rider | Yango Delivery, Bolt Send, or their own dispatch |
-| Other regions | courier | Kumasi, Takoradi, Tamale etc. |
-| International | DHL / courier | the diaspora market is real for Ghanaian labels — price it, don't leave it vague |
+| Accra | flat rate / same-day rider | Yango Delivery, Bolt Send, or own dispatch |
+| Other regions | courier | Kumasi, Takoradi, Tamale |
+| **International** | **DHL / courier, weight-based** | UK, US, Canada — the diaspora buyers |
 
-**Size guide.** Build **"How to measure"** as a real page with their actual sizing. For apparel this is the highest-leverage page on the site — it cuts returns and returns arguments more than any design choice will.
+Jewellery is light and small, so weight-based rates work well and DHL is cheap enough to be viable. Get real rates from the client — international buyers abandon at an unexpected shipping cost faster than at a product price.
 
-**Returns.** Apparel returns are not jewellery returns. Sensible default: exchange within 7 days, unworn with tags, **bespoke non-returnable**. State it plainly on the product page, not just in a policy buried in the footer.
+**Currency decision:** many Ghanaian jewellers display GHS but settle diaspora sales in USD. If a large share of buyers is abroad, a currency switcher is worth it. Don't guess — ask.
 
-**Privacy.** Ghana's Data Protection Act (Act 843) applies as soon as they collect names, addresses and phone numbers. The policy page must be real text, not the WordPress skeleton — and it names who holds the data.
+### d. They already sell on WhatsApp
+
+The CTA is *"Shop / Order on WhatsApp"* — which suggests the link in their bio is a WhatsApp link, and that the checkout may not exist yet. Whatever the truth, **the website must not fight the channel that already works**:
+
+- Floating WhatsApp button, site-wide
+- "Order on WhatsApp" on every product, message prefilled with the product name and price
+- Runs *alongside* the cart, not instead of it
+
+This also means the site can go live and be useful on day one, before the catalogue is complete.
 
 ---
 
-## 6. Assets to collect from the client
+## 3. Taxonomy to build
 
-Send this as one message; it's the critical path.
+The demo's type categories are a usable skeleton. Keep the shape, change the vocabulary, add the axis that matters.
 
-- [ ] Logo — vector (SVG/AI/PDF) **and** a white/light version. Not a screenshot from Instagram.
-- [ ] Brand colours (hex) if defined, or the two or three colours from the logo
-- [ ] **15–25 product photos**, portrait 4:5, minimum 1200 × 1500 px, model shots preferred over flat-lays
-- [ ] Per product: name · price (GHS) · sizes available · colours/prints · fabric · ready-to-wear or made-to-measure
-- [ ] 3–5 **lifestyle/campaign** images for the hero slider (wide, 1920 px+)
-- [ ] Their size chart and how they measure (bust/waist/hips in inches or cm)
-- [ ] Delivery fees: Accra / other regions / international
-- [ ] Paystack or Hubtel merchant details (or "test mode for now")
+**By type** (demo's, cleaned up):
+
+```
+Necklaces · Earrings · Bracelets · Rings (if stocked) · Sets & Bridal
+```
+
+Delete: `luxry-watch`, `diamond`, `silver`, `classic-ring`, `trending-rings` — fine-jewellery language that doesn't describe Adinkra pieces.
+
+**By symbol** — the differentiator:
+
+```
+Gye Nyame · Sankofa · Duafe · Akoma · Bese Saka · Dwennimmen · Adinkrahene · Nkyinkyim
+```
+
+**By occasion** — straight from their own words, *"for every occasion"*:
+
+```
+Everyday · Occasion & Evening · Gifting · Bridal
+```
+
+Three menus is one too many for a boutique this size. Ship **type + symbol**, and use occasion as a homepage/edit collection rather than a third nav axis.
+
+---
+
+## 4. Product data model
+
+Jewellery is simpler than apparel — no dress sizes — but it has its own attributes:
+
+| Attribute | Values | Notes |
+|---|---|---|
+| `Symbol` | the Adinkra name | the copy hook, and a filter |
+| `Material / Finish` | gold-plated · brass · beaded · sterling | drives care instructions |
+| `Chain / Band length` | adjustable · 16" · 18" · custom | the #1 jewellery question |
+| `Ring size` | UK sizes, only if rings are stocked | |
+| `Colour` | per piece | drives the swatches |
+
+**Variation Swatches** is already installed, so colour/size render as buttons. It finally does real work here.
+
+**Care instructions** — a short block on every product page (avoid perfume, store dry, gold-plated vs solid). Cheap to write, cuts complaints, and it's what a serious jeweller has.
+
+---
+
+## 5. Shipping, payment, and the Ghana realities
+
+**Payments.** Mobile Money is how Ghana pays online — a card-only checkout will convert a fraction of what a MoMo-enabled one does.
+
+- **Paystack Ghana** — MTN MoMo, Telecel Cash, AirtelTigo Money, plus cards. Default recommendation.
+- **Hubtel** — strong local alternative.
+- **Pay on delivery** — normal in Accra, enable for Accra only.
+- **International buyers** will use cards — make sure the same gateway handles them, or add PayPal for the diaspora.
+
+**Wholesale MOQ** — if they take wholesale orders through the site, minimum quantities per line need enforcing. That's the point at which option A above becomes necessary; option B avoids it entirely.
+
+**Privacy.** Ghana's Data Protection Act (Act 843) applies as soon as they collect names, addresses and phone numbers. The policy page must be real text.
+
+---
+
+## 6. What the demo gets wrong, concretely
+
+| Demo currently says | Should say |
+|---|---|
+| "Necklace jewellery — HOLY JEWELRY and diamonds" | A collection lead: Sankofa, Gye Nyame, or their strongest seller |
+| "High Class Jewellery" | "Elegant jewellery for every occasion" — their own line |
+| Categories: diamond, silver, luxry-watch | Necklaces, Earrings, Bracelets, Sets + symbol axis |
+| Product: "Adjustable Rings $30" | Real product, real price in GHS, the symbol's meaning below the fold |
+| Nav: Home 01/02/03, Page List 1–4 | Home, Shop, Symbols/Collections, Wholesale, About, Contact |
+| 470 imported items | **20–60 real SKUs.** A boutique with 8.9K followers doesn't carry 470 products; pruning makes the shop look curated rather than scraped |
+
+That last row matters more than it looks. A demo-scale catalogue reads as padding. Twelve well-shot products convert better than 470 imported ones.
+
+---
+
+## 7. Assets to collect
+
+- [ ] Logo — vector (SVG/AI/PDF) **and** a white/light version. Not an Instagram screenshot.
+- [ ] Brand colours (hex), or the two or three colours from the logo/packaging
+- [ ] **20–40 product photos**, square or 4:5, minimum 1200 px, on a plain background — plus any on-model shots
+- [ ] Per product: name · **Adinkra symbol** · price (GHS) · material/finish · chain/band length · colours · ring sizes if applicable
+- [ ] **The meaning of each symbol they use**, in their own words — or authority to write them and have them approve
+- [ ] 3–5 wide lifestyle/campaign images for the hero slider (1920 px+)
+- [ ] Delivery fees: Accra / other regions / international, and who ships internationally
+- [ ] Wholesale terms: minimum quantity, price list, or "enquiry only"
+- [ ] Payment: Paystack or Hubtel merchant details (or "test mode for now")
 - [ ] WhatsApp business number
-- [ ] Business name, address, phone, and registration number for the footer
-- [ ] Privacy policy + returns text (or authority to write a draft for their review)
-- [ ] Instagram handle confirmed
+- [ ] Business name, address, phone, registration number for the footer
+- [ ] Privacy policy + returns/exchange text (jewellery: hygiene rules usually mean earrings are non-returnable — confirm theirs)
+- [ ] Confirmed Instagram handle for the feed block
 
 ---
 
-## 7. Decisions I need from you
+## 8. Questions for the client
 
-1. **Shop model** — full checkout, WhatsApp-enquiry catalogue, or both? (I'd say both.)
-2. **Bespoke** — quote-only, or measurements captured at checkout with a deposit?
-3. **Range** — ready-to-wear only, or RTW + bespoke + bridal?
-4. **Copy** — do they write it, or do I draft from their Instagram captions for approval?
+1. **Wholesale through the site, or by enquiry only?** (If enquiry, we skip a plugin and a lot of complexity.)
+2. **Do most sales go abroad or in Ghana?** This decides whether we build a currency switcher and how hard we push international shipping.
+3. **Is there a checkout today, or does everything go through WhatsApp?** Determines whether the site replaces a flow or creates one.
+4. **What are their best-selling 10 pieces?** Build the homepage around those, not around the demo's layout.
+5. **Do they sell rings?** Ring sizing is the only fiddly attribute; if it's necklaces and earrings, the product model stays very simple.
 
 ---
 
-## 8. Revised build order — what changes from the build sheet
+## 9. Revised build order
 
-Two steps in `docs/LIVE-SITE-FIXES.md` are now **downgraded**:
+**Downgraded from the last version:** the catalogue rebuild is *not* a re-platforming job. The structure stays.
 
-- **§3 "Kill every `vecurosoft` reference"** — don't spend the time replacing hotlinked images you're about to delete. Fix only what survives: the footer newsletter icon, and replace the Instagram strip with their real feed or remove it. Everything else dies with the demo content.
-- **§6 "Strip the demo content"** — promoted from "nice to have before launch" to **the next task**. The jewellery catalogue cannot be the first thing they see.
+**Changed from `docs/LIVE-SITE-FIXES.md`:** §3, the `vecurosoft` hotlink replacement, is **back on**. The theme is jewellery and so is the client, so the demo's product photography actually fits the review — it's better to show the client a working jewellery shop than a broken one. Run the Better Search Replace pass as written; it costs 10 minutes and makes the review link coherent.
 
-Revised order from here:
+Order from here:
 
-1. Get the asset list from §6 (blocks everything visual)
-2. Rebuild taxonomy and attributes — categories, `Size`, `Colour`, `Fabric`
-3. Build **one** real category end-to-end with 6 products (variable + one bespoke), including size guide and returns copy
-4. Wire MoMo/Paystack in test mode + WhatsApp button
-5. Only then strip the remaining demo pages and rebuild the menu
-6. Review link with the directory password on
+1. **Fix the three P0s already found** — coming-soon off, menu pointing at `/shop-2/`, `vecurosoft` replace. The site should look correct before anything else.
+2. Get the asset list (§7) — blocks all visual work
+3. Rebuild taxonomy: type categories + `Symbol` attribute, delete the diamond/watch vocabulary
+4. Rewrite the homepage sections in their voice — *"Elegant jewellery for every occasion"*, symbol-led
+5. Build **one category end-to-end** with 6 real products, including a symbol story and care instructions
+6. Paystack in test mode + WhatsApp button
+7. Prune the demo to a curated catalogue, rebuild the menu, add Wholesale/About/Contact
+8. Review link with the directory password on
 
-Building one category properly first is deliberate — six products expose every problem in the setup (variations, swatches, images, size guide, shipping class, returns) without you discovering them 40 products later.
+Step 5 exists to surface every problem — swatches, imagery, shipping class, symbol copy, care block — at six products instead of forty.

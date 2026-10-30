@@ -54,6 +54,8 @@ Two reasons this matters more than it looks: the vendor can shut that server dow
 
 **The media files are already local** — I checked two: `hero-slide-1-1-1.png` is media ID 215 and `inssta-1-2.jpg` is ID 653, both at `www.blaharbenyah.com/dorcas/wp-content/uploads/…`. So only the *URLs* in the content are wrong, which means one replace fixes both the images and the links.
 
+> **Update (client profile confirmed):** Queen Dor's sells jewellery, so this demo photography is the right *kind* of content. Do this replace — a coherent jewellery shop is a far better review link than a broken one.
+
 **Fix — Better Search Replace** (`Tools → Better Search Replace`):
 
 | Field | Value |
@@ -88,6 +90,8 @@ Leaving the protocol off both sides is deliberate: it catches `http://` and `htt
 Prices render as `$30.00`. `WooCommerce → Settings → General` → Country **Ghana**, currency **GHS**. Then the Ghana pass from the build sheet: shipping zones (Accra / Other / International), tax decision, payment gateway in test mode.
 
 ### 6. Demo content
+
+> **Update (client profile confirmed):** the jewellery taxonomy is now the right structure — keep the type categories, delete the `diamond`/`silver`/`luxry-watch` vocabulary, and prune 470 imported items down to a curated set. See `docs/CLIENT-BRIEF-QUEENDOR.md` §3 and §6.
 
 Nav currently reads: Home 01 / Home 02 / Home 03 · Page List 1–4 · 404 Page · and blog posts dated November 2024 by author `iwan1`. Delete the extra home pages and the Page List filler, keep one, and rebuild the menu around real sections.
 

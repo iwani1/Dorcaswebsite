@@ -15,10 +15,34 @@ const QUEENDOR_OPTION_PHONE   = 'queendor_whatsapp';
 const QUEENDOR_OPTION_FLOATING = 'queendor_whatsapp_floating';
 
 /**
+ * Whether a number can plausibly be dialled.
+ *
+ * Ghana numbers are 233 plus nine digits — twelve in total. A short number
+ * still produces a link, and that link silently goes nowhere, so it is worth
+ * refusing rather than saving.
+ *
+ * @param string $digits Digits only.
+ * @return bool
+ */
+function queendor_phone_is_valid( $digits ) {
+	$length = strlen( $digits );
+
+	if ( $length < 10 || $length > 15 ) {
+		return false;
+	}
+
+	if ( 0 === strpos( $digits, '233' ) && 12 !== $length ) {
+		return false;
+	}
+
+	return true;
+}
+
+/**
  * Strip a phone number to digits and make sure it carries a country code.
  *
  * @param string $value Raw input.
- * @return string
+ * @return string Sanitised digits, or the previously saved value if invalid.
  */
 function queendor_sanitize_phone( $value ) {
 	$digits = preg_replace( '/[^0-9]/', '', (string) $value );
@@ -30,6 +54,21 @@ function queendor_sanitize_phone( $value ) {
 	// A local Ghanaian number written as 024 123 4567 needs 233 and no leading zero.
 	if ( 0 === strpos( $digits, '0' ) ) {
 		$digits = '233' . substr( $digits, 1 );
+	}
+
+	if ( ! queendor_phone_is_valid( $digits ) ) {
+		add_settings_error(
+			'queendor_settings',
+			'queendor_phone_invalid',
+			sprintf(
+				/* translators: %s: the rejected digits */
+				esc_html__( '"%s" is not a dialable number, so it was not saved. A Ghanaian mobile needs 233 followed by nine digits — 024 123 4567 becomes 233241234567.', 'luxrio-child' ),
+				esc_html( $digits )
+			),
+			'error'
+		);
+
+		return (string) get_option( QUEENDOR_OPTION_PHONE, '' );
 	}
 
 	return $digits;
@@ -135,7 +174,7 @@ function queendor_sanitize_checkbox( $value ) {
  * @return void
  */
 function queendor_settings_intro() {
-	echo '<p>' . esc_html__( 'Enter the number in international format, digits only (233241234567). A local number starting with 0 is converted automatically.', 'luxrio-child' ) . '</p>';
+	echo '<p>' . esc_html__( 'Enter the number in international format, digits only. A local number is converted for you: 024 123 4567 is saved as 233241234567.', 'luxrio-child' ) . '</p>';
 }
 
 /**
@@ -155,6 +194,17 @@ function queendor_field_phone() {
 	if ( '' === $value ) {
 		echo '<p class="description" style="color:#b32d2e;"><strong>'
 			. esc_html__( 'No number saved — the WhatsApp buttons are hidden until you add one.', 'luxrio-child' )
+			. '</strong></p>';
+		return;
+	}
+
+	echo '<p class="description">' . esc_html__( 'Saved. Your buttons link to:', 'luxrio-child' ) . ' ';
+	echo '<a href="' . esc_url( 'https://wa.me/' . $value ) . '" target="_blank" rel="noopener">'
+		. esc_html( 'https://wa.me/' . $value ) . '</a></p>';
+
+	if ( ! queendor_phone_is_valid( $value ) ) {
+		echo '<p class="description" style="color:#b32d2e;"><strong>'
+			. esc_html__( 'This number is too short to reach WhatsApp. Re-enter it as 233 followed by nine digits.', 'luxrio-child' )
 			. '</strong></p>';
 	}
 }

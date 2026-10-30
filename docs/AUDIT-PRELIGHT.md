@@ -43,7 +43,16 @@ Same class of bug for `Cart → /cart-2/`, `Checkout → /checkout-2/`, `My acco
 
 ### 2. About, Wholesale and the policy pages do not exist
 
-`/about/` → **404**, `/wholesale/` → **404**. The eight replacement pages in `queendor-pages.wxr` have not been imported.
+`/about/` → **404**, `/wholesale/` → **404**.
+
+The eight pages *have* been imported — but WordPress filed every one as **Scheduled**, not Published. The export carried a hardcoded timestamp of `2026-10-30 09:00`, still in the future at import time, so WordPress treated each page as a scheduled post. A scheduled page returns 404 to the public until its time passes and WP-Cron fires.
+
+**Fixed at source:** the generator now stamps five minutes before build time, so this cannot recur. For the eight already imported:
+
+1. `Pages → All Pages` → tick the header checkbox (selects all)
+2. `Bulk actions` → **Edit** → Apply
+3. `Status: Published`, `Date: 1 October 2026`
+4. Update
 
 **Fix.** `Tools → Import → WordPress` → `queendor-pages.wxr`. Import once; a second import creates `about-2`, `about-3` and so on. Then fill the `________` blanks — the About page currently ships with placeholder markers by design.
 
@@ -138,7 +147,7 @@ The side cart says **"Secure Checkout · Fast Shipping · Easy Returns"** on eve
 
 | # | Issue | Where |
 |---|---|---|
-| 16 | No meta descriptions — every search result will be auto-snippeted | all pages |
+| 16 | All-in-One SEO is installed and filling titles and descriptions, but its scores on the imported pages run 49–55/100 — descriptions are truncated mid-sentence (*Jewellery that already means something Adinkra…*) | pages |
 | 17 | Alt text is `logo`, `cate 1 1`, `insta 1 2` — the theme's demo filenames | all pages |
 | 18 | Heading order: `<h3>` product titles sit under `<h2>` section titles on some sections and leap straight from `<h1>` on others | home, shop |
 | 19 | Share links point at `twitter.com` and `http://pinterest.com` (insecure protocol) | blog |
@@ -148,6 +157,7 @@ The side cart says **"Secure Checkout · Fast Shipping · Easy Returns"** on eve
 | 23 | Order emails will send from the host with no SMTP — they'll land in spam | WooCommerce |
 | 24 | Demo categories still in the store: `luxry-watch` is linked from the menu | Products → Categories |
 | 25 | No `noindex` on the staging install — Google can index `/dorcas/` and will compete with the real site later | head |
+| 25a | 28 pages exist: the demo pages (Shop 2, Home 02/03, FAQ's) are still published alongside the replacements | pages |
 | 26 | Preloader animation on first paint ("Cancel Preloader" is the first thing in the DOM) — it delays the largest paint for no benefit | theme options |
 
 ---
@@ -175,6 +185,7 @@ The side cart says **"Secure Checkout · Fast Shipping · Easy Returns"** on eve
 | **Now** | Delete "Hello world!", rename the admin account (§6) | 10 min |
 | **Now** | Products per page → 12 (§11), symbol filter on shop (§12) | 5 min |
 | **Now** | Fix the two theme-option headings (§8) | 2 min |
+| **Now** | Bulk-edit the eight scheduled pages to Published (§2) | 1 min |
 | **Today** | Install child theme 1.2.0 + cleanup 1.0.1 from the pack | 2 min |
 | **Today** | Rewrite the home page from `REPLACE-DEMO.md` §5, deleting the fake testimonials and the 40%-off banners (§4) | 2 h |
 | **This week** | Photography (`PHOTO-REQUEST.md`) | client |

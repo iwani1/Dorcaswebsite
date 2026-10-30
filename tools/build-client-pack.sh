@@ -51,7 +51,7 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
 # --- documents and data ------------------------------------------------------
-DOCS=(IMPORT-GUIDE.md REPLACE-DEMO.md PHOTO-REQUEST.md policies.md)
+DOCS=(IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md PHOTO-REQUEST.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
 mkdir -p "$OUT/brand"
@@ -143,6 +143,10 @@ cat > "$OUT/index.html" <<HTML
 <a class="card" href="IMPORT-GUIDE.md">
   <strong>IMPORT-GUIDE.md</strong>
   <span>The catalogue import, step by step, with the placeholder prices to replace.</span>
+</a>
+<a class="card" href="PAGES-AND-MENU.md">
+  <strong>PAGES-AND-MENU.md</strong>
+  <span>Publishing the eight pages, trashing the 28-page demo pile-up, and rebuilding the menu so "Shop" stops opening an empty page.</span>
 </a>
 <a class="card" href="PHOTO-REQUEST.md">
   <strong>PHOTO-REQUEST.md</strong>

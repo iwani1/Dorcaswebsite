@@ -51,7 +51,7 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
 # --- documents and data ------------------------------------------------------
-DOCS=(IMPORT-GUIDE.md REPLACE-DEMO.md policies.md)
+DOCS=(IMPORT-GUIDE.md REPLACE-DEMO.md PHOTO-REQUEST.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
 for f in "${DOCS[@]}" "${DATA[@]}"; do
@@ -138,6 +138,10 @@ cat > "$OUT/index.html" <<HTML
 <a class="card" href="IMPORT-GUIDE.md">
   <strong>IMPORT-GUIDE.md</strong>
   <span>The catalogue import, step by step, with the placeholder prices to replace.</span>
+</a>
+<a class="card" href="PHOTO-REQUEST.md">
+  <strong>PHOTO-REQUEST.md</strong>
+  <span>The message to send the client, the SKU naming scheme, and what happens when the files land.</span>
 </a>
 <a class="card" href="policies.md">
   <strong>policies.md</strong>

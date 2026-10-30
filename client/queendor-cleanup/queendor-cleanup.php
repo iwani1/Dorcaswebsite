@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Queen Dor's — Demo Cleanup
  * Description:       Trashes the Luxrio demo content without touching the client's ten products. Dry run first, trash rather than delete, and nothing is removed until you tick it.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Arena
@@ -101,18 +101,35 @@ function qclean_demo_post_ids() {
 	$query = new WP_Query(
 		array(
 			'post_type'      => 'post',
-			'post_status'    => array( 'publish', 'draft', 'pending' ),
+			'post_status'    => array( 'publish', 'draft', 'pending', 'future' ),
 			'posts_per_page' => -1,
 			'fields'         => 'ids',
-			'date_query'     => array(
-				array(
-					'before' => '2025-01-01',
-				),
-			),
 		)
 	);
 
-	return array_map( 'absint', $query->posts );
+	$ids = array();
+
+	foreach ( $query->posts as $id ) {
+		$post = get_post( $id );
+
+		if ( ! $post instanceof WP_Post ) {
+			continue;
+		}
+
+		// Demo posts were imported with back-dated stamps.
+		$backdated = strtotime( $post->post_date_gmt . ' UTC' ) < strtotime( '2025-01-01 UTC' );
+
+		// WordPress's own first post keeps *today's* date, so a date rule alone
+		// misses it — which is exactly what happened on the live site.
+		$default_post = ( 'hello-world' === $post->post_name )
+			|| false !== strpos( $post->post_content, 'Welcome to WordPress' );
+
+		if ( $backdated || $default_post ) {
+			$ids[] = absint( $id );
+		}
+	}
+
+	return $ids;
 }
 
 /**

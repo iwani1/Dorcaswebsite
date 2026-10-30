@@ -4,7 +4,7 @@ Everything in this pack goes onto the live site at `blaharbenyah.com/dorcas` in 
 
 | File | What it's for | Where it goes |
 |---|---|---|
-| `luxrio-child-1.1.1.zip` | The code: symbol panels, care notes, ring-size tab, WhatsApp buttons, shop settings | Appearance → Themes → Upload |
+| `luxrio-child-1.1.2.zip` | The code: symbol panels, care notes, ring-size tab, WhatsApp buttons, shop settings | Appearance → Themes → Upload |
 | `queendor-products.csv` | The 10 launch products, 18 size variations, real copy | Products → All Products → Import |
 | `policies.md` | Draft shipping, returns, privacy and care copy | Pages + WooCommerce settings |
 
@@ -42,9 +42,9 @@ Nkyinkyim
 
 ## Step 2 — install the child theme (5 min)
 
-`Appearance → Themes → Add New → Upload Theme` → `luxrio-child-1.1.1.zip` → **Install** → **Replace current with uploaded**.
+`Appearance → Themes → Add New → Upload Theme` → `luxrio-child-1.1.2.zip` → **Install** → **Replace current with uploaded**.
 
-The version number is 1.1.1 so WordPress offers the replace; you don't lose any settings, because settings live in the database, not the theme.
+The version number is 1.1.2 so WordPress offers the replace; you don't lose any settings, because settings live in the database, not the theme.
 
 **Then:** `Settings → Queen Dor's`
 

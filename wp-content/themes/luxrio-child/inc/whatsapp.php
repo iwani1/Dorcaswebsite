@@ -274,22 +274,32 @@ function queendor_product_whatsapp_button() {
 		return;
 	}
 
-	$name  = $product->get_name();
-	$sku   = $product->get_sku();
-	$price = wp_strip_all_tags( wc_price( $product->get_price() ) );
-	$link  = get_permalink( $product->get_id() );
+	$name = $product->get_name();
+	$sku  = (string) $product->get_sku();
+	$link = get_permalink( $product->get_id() );
 
-	$message = sprintf(
-		/* translators: 1: product name, 2: price, 3: product URL */
-		__( "Hello Queen Dor's, I'd like to order:%1\$s\nPrice: %2\$s\n%3\$s", 'luxrio-child' ),
-		$name,
-		$price,
-		$link
+	/*
+	 * wc_price() returns the currency as an HTML entity (&#36;, &#8373;), which
+	 * survived wp_strip_all_tags() and arrived in WhatsApp as literal "&#36;".
+	 * Decode it, and build the message from lines rather than one translated
+	 * string so the line breaks cannot be lost.
+	 */
+	$price = html_entity_decode(
+		wp_strip_all_tags( wc_price( $product->get_price() ) ),
+		ENT_QUOTES,
+		'UTF-8'
 	);
 
-	if ( '' !== $sku ) {
-		$message .= "\n" . sprintf( __( 'Ref: %s', 'luxrio-child' ), $sku );
-	}
+	$lines = array_filter(
+		array(
+			$name,
+			'' !== $sku ? sprintf( __( 'Ref: %s', 'luxrio-child' ), $sku ) : '',
+			'' !== $price ? sprintf( __( 'Price: %s', 'luxrio-child' ), $price ) : '',
+			$link,
+		)
+	);
+
+	$message = __( "Hello Queen Dor's, I'd like to order:", 'luxrio-child' ) . "\n" . implode( "\n", $lines );
 
 	$url = queendor_whatsapp_url( $message );
 

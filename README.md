@@ -168,7 +168,6 @@ The client-facing work lives in `wp-content/themes/luxrio-child/`, one file per 
 | `inc/symbol-guide.php` | The Adinkra library (12 symbols) and the product-page symbol panel; `[queendor_symbol_index]` and `[queendor_symbol]` shortcodes |
 | `inc/product-blocks.php` | Hooks the symbol panel and the care note into the product summary, and picks the care text from the Material attribute |
 | `inc/ring-size.php` | UK ring chart, the "Ring size guide" product tab on ring products, `[queendor_ring_guide]` |
-| `inc/whatsapp.php` | Settings → Queen Dor's (phone number), "Order on WhatsApp" per product, floating button |
 | `assets/css/queendor.css` | All component styling, `qd-` prefixed |
 
 Rebuild the installable archives with `./tools/build-client-pack.sh` — it writes `client/pack/luxrio-child-<version>.zip` and the combined pack, and validates that each archive has a single top-level folder and a readable version header. Zips are gitignored.

@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 if ( $settings['blog_post_style'] == '1' ) {
     echo '<div class="vs-blog blog-style2">';
         if( has_post_thumbnail() ) {

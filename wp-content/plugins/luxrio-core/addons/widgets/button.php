@@ -4,6 +4,11 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Box_Shadow;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  *
  * Button Widget .

@@ -9,7 +9,7 @@ namespace Masdevs\Elementor\Modulis;
 use Elementor\Element_Base;
 use Elementor\Controls_Manager;
 
-// defined( 'ABSPATH' ) || die();
+defined( 'ABSPATH' ) || die();
 
 class Luxrio_Core_Transform {
 

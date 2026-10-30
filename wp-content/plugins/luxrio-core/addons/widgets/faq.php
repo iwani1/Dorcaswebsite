@@ -5,6 +5,11 @@ use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Border;
 use \Elementor\Utils;
 use \Elementor\Repeater;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  *
  * Faq Widget .

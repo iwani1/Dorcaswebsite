@@ -8,6 +8,11 @@ use \Elementor\Group_Control_Image_Size;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Border;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  *
  * Testimonial Slider Two Widget .

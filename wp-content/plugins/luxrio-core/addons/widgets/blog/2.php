@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
     echo '<div class="vs-blog blog-style3">';
         echo '<div class="blog-img">';
             if ( has_post_thumbnail() ) {

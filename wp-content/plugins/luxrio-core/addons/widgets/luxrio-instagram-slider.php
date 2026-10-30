@@ -7,6 +7,11 @@ use \Elementor\Repeater;
 use \Elementor\Group_Control_Image_Size;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Background;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  *
  * Instagram Slider Widget .

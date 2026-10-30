@@ -6,6 +6,11 @@ use \Elementor\Repeater;
 use \Elementor\Utils;
 use \Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Image_Size;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  *
  * New Header Widget .

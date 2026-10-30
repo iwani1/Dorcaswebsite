@@ -4,6 +4,11 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Utils;
 use \Elementor\Repeater;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  *
  * Gallery Image Widget .

@@ -35,11 +35,22 @@ So: if you edit a header layout and the site doesn't change, this switch is why.
 
 ### Replace the logo
 
-`Options → Logo` → the **Logo** field → upload. WordPress rejects `.svg`; use `brand/logo.png` from the pack.
+**There is more than one logo.** This is what makes a new logo appear on desktop and not on the phone — the two are reading different fields.
 
-There is **one** logo field in the options. If a header layout has its own logo widget inside Elementor, that one wins for that layout — check the builder before assuming the option took effect.
+| Where the image comes from | When it's the one shown |
+|---|---|
+| **Options → Logo** | The header's logo widget is set to **Logo Type: Dark** (the default) |
+| **Appearance → Customize → Site Identity → Logo** | The widget is set to *Custom*, or to *White* with no white logo uploaded |
+| **The logo widget's own “Choose logo” field** | Only when that widget's Logo Type is **Custom** — the option is then ignored |
+| **The Mobile Menu widget's “Logo” field** | The slide-out hamburger panel on phones. A completely separate image. |
 
-### Change the copyright line
+So a logo uploaded in the options panel updates every header that uses *Dark* — and nothing else. The mobile drawer and any *Custom* logo widget keep whatever they were given at import, which is why the old vendor mark survives on the phone.
+
+**The thirty-second test:** on the phone, long-press the logo → *copy image address*. Do the same on desktop. If the URLs differ, it's a different field — go to that widget and replace it. If they're identical, it's cache, not the logo.
+
+Use `brand/logo.png` from the pack. WordPress rejects `.svg`.
+
+### Change the copyright line### Change the copyright line
 
 `Options → Footer → Copyright Text`.
 

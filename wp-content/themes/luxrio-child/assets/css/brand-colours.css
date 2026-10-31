@@ -1,0 +1,86 @@
+/*
+ * Queen Dor's palette, taken from the logo.
+ *
+ *   teal  #0B4B4C  the D monogram, and "Fashion house" under it
+ *   gold  #C8AC77  "QueenDor's" and the crown
+ *
+ * The parent theme drives almost every colour through these custom
+ * properties, so setting them here repaints buttons, links, prices, hovers
+ * and the theme's accents in one place.
+ *
+ * Gold is a decorative colour: on white it measures about 2.1:1, roughly half
+ * the contrast a body-size text colour needs. It is used for rules, borders,
+ * small capitals and hover states — never for sentences.
+ */
+
+:root,
+body {
+	--theme-color: #0b4b4c;
+	--theme-color2: #c8ac77;
+	--title-color: #0b4b4c;
+	--body-color: #3f4a49;
+	--smoke-color: #d8d3c8;
+	--vs-secondary-color: #f2efe6;
+	--bg-color12: #f7f3ea;
+}
+
+/* Buttons: teal field, warm hover. */
+.vs-btn,
+button.vs-btn,
+.wc-block-components-button,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	background-color: var(--theme-color);
+	border-color: var(--theme-color);
+	color: #fff;
+}
+
+.vs-btn:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover {
+	background-color: var(--theme-color2);
+	border-color: var(--theme-color2);
+	color: #1b1b1b;
+}
+
+/* Prices: teal, not the demo orange. */
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
+.woocommerce ul.products li.product .price,
+.woocommerce-Price-amount {
+	color: var(--theme-color);
+}
+
+/* Links in body copy. */
+.entry-content a,
+.woocommerce-info a,
+.woocommerce-message a {
+	color: var(--theme-color);
+	text-decoration-color: var(--theme-color2);
+}
+
+/* Gold as an accent: underlines and rules, never as text weight. */
+.woocommerce-message,
+.woocommerce-info {
+	border-top-color: var(--theme-color2);
+}
+
+.breadcumb-area,
+.vs-breadcrumb {
+	background-color: var(--theme-color);
+}
+
+/* Back-to-top and small circular controls. */
+.scroll-top,
+.back-to-top {
+	background-color: var(--theme-color);
+}
+
+.scroll-top:hover,
+.back-to-top:hover {
+	background-color: var(--theme-color2);
+}

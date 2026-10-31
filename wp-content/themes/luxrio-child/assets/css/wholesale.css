@@ -1,7 +1,7 @@
 /* Wholesale band, product line and application form. */
 
 .qd-trade {
-	background: #0d0d0d;
+	background: #0b4b4c;
 	color: #f5f1e8;
 	padding: 56px 20px;
 }
@@ -26,7 +26,7 @@
 	font-size: 12px;
 	letter-spacing: 0.22em;
 	text-transform: uppercase;
-	color: #c9a227;
+	color: #c8ac77;
 }
 
 .qd-trade__title {
@@ -51,9 +51,9 @@
 .qd-trade__btn {
 	display: inline-block;
 	padding: 16px 30px;
-	border: 1px solid #c9a227;
-	background: #c9a227;
-	color: #111;
+	border: 1px solid #c8ac77;
+	background: #c8ac77;
+	color: #0b4b4c;
 	font-size: 13px;
 	font-weight: 700;
 	letter-spacing: 0.14em;
@@ -65,7 +65,7 @@
 .qd-trade__btn:hover,
 .qd-trade__btn:focus {
 	background: transparent;
-	color: #c9a227;
+	color: #c8ac77;
 }
 
 /* Product page line */
@@ -73,14 +73,14 @@
 .qd-trade-line {
 	margin: 10px 0 18px;
 	padding: 12px 14px;
-	border-left: 2px solid #c9a227;
+	border-left: 2px solid #c8ac77;
 	background: #faf7f0;
 	font-size: 14px;
 	color: #333;
 }
 
 .qd-trade-line a {
-	color: #8a6d1a;
+	color: #0b4b4c;
 	text-decoration: underline;
 }
 
@@ -102,7 +102,7 @@
 
 	content: "\2713";
 	margin-right: 10px;
-	color: #c9a227;
+	color: #c8ac77;
 }
 
 .queendor-apply {
@@ -135,14 +135,14 @@
 
 .queendor-apply input:focus,
 .queendor-apply textarea:focus {
-	outline: 2px solid #c9a227;
+	outline: 2px solid #c8ac77;
 	outline-offset: 1px;
 }
 
 .queendor-apply__submit {
 	padding: 16px 30px;
-	border: 1px solid #111;
-	background: #111;
+	border: 1px solid #0b4b4c;
+	background: #0b4b4c;
 	color: #fff;
 	font-size: 13px;
 	font-weight: 700;
@@ -153,7 +153,7 @@
 
 .queendor-apply__submit:hover {
 	background: transparent;
-	color: #111;
+	color: #0b4b4c;
 }
 
 .queendor-apply__small {

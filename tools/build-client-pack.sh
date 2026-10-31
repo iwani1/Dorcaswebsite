@@ -66,7 +66,7 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
 # --- documents and data ------------------------------------------------------
-DOCS=(HOMEPAGE-JSON-FIX.md HOMEPAGE-UI-COLOUR.md HOMEPAGE-ANALYSIS.md LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
+DOCS=(HOMEPAGE-ANALYSIS-2.md HOMEPAGE-JSON-FIX.md HOMEPAGE-UI-COLOUR.md HOMEPAGE-ANALYSIS.md LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
 mkdir -p "$OUT/brand"
@@ -197,6 +197,10 @@ cat > "$OUT/index.html" <<HTML
 <a class="card" href="brand-palette.png">
   <strong>brand-palette.png</strong>
   <span>The four colours, side by side — show this to the client.</span>
+</a>
+<a class="card" href="HOMEPAGE-ANALYSIS-2.md">
+  <strong>HOMEPAGE-ANALYSIS-2.md</strong>
+  <span>The home page measured after the import: what sells now, what is still the demo, and why.</span>
 </a>
 <a class="card" href="HOMEPAGE-JSON-FIX.md">
   <strong>HOMEPAGE-JSON-FIX.md</strong>

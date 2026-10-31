@@ -2,6 +2,7 @@
 
 **Page:** `https://www.blaharbenyah.com/dorcas/`
 **Theme live:** **1.8.1** (verified from the server, 2026-10-31)
+**Status:** fixed in **1.8.2** — §7 lists what shipped and what did not.
 **Scope:** the home page, interface and colour only
 **Sources:** the rendered markup; the page's own Elementor stylesheet
 (`wp-content/uploads/elementor/css/post-25.css`), which states every section's
@@ -163,21 +164,23 @@ not the colour.
 
 ---
 
-## 7. Priority
+## 7. Priority — and what 1.8.2 did
 
-| # | Item | Effort | Why |
-|---|---|---|---|
-| 1 | **Set the Elementor global colours** to the brand four | 3 min | stops orange leaking into every future page |
-| 2 | Reduce the display scale to three sizes | 15 min | the page has no focal point |
-| 3 | Remove `width:111.129%` from the two titles | 5 min | horizontal scroll on phones |
-| 4 | One vertical rhythm, two content widths | 20 min | the "slightly off" feeling, removed |
-| 5 | Product price `#3C3B3B` → teal | 2 min | last warm/cool clash in the buying path |
-| 6 | Distinct link labels | 10 min | accessibility, and clearer intent |
-| 7 | Star rating `#000` → antique gold | 1 min | free consistency |
-| 8 | Assign the footer | 5 min | missing trust signals on a page that takes money |
+| # | Item | Status in 1.8.2 |
+|---|---|---|
+| 1 | Elementor global colours → brand four | **fixed in code** — the kit's variables are redeclared in the head; the Site Settings screen can still be set later |
+| 2 | Display scale: five sizes → three | **fixed** — 60/68, 40/50, 32/42 |
+| 3 | Remove `width:111.129%` | **fixed** — full column width |
+| 4 | One vertical rhythm, one content width | **fixed** — 120/120, 1330px throughout |
+| 5 | Promo price `#3C3B3B` → teal | **fixed** — and the title `#021210` → ink |
+| 6 | Distinct link labels | **not done** — that is copy, and copy is out of scope |
+| 7 | Star rating `#000` → antique gold | **fixed** |
+| 8 | Assign the footer | **not done** — a WordPress setting, not a stylesheet |
 
-Items 1, 3, 5 and 7 are settings changes measured in minutes, and together they
-remove the last of the demo's colour language.
+Everything in the first column that a stylesheet can reach is now in
+`assets/css/brand-light.css` §4 and `inc/brand-colours.php`, shipped as
+**1.8.2**. Items 6 and 8 need decisions (words, and the Footer Builder), so they
+stay on the list until you ask.
 
 ---
 

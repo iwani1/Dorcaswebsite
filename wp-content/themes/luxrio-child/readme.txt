@@ -2,7 +2,7 @@
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: 1.8.0
+Stable tag: 1.8.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Parent theme: luxrio
@@ -47,6 +47,18 @@ would put white text on white cards.
 Product photography and page copy. Also content.
 
 == Changelog ================================================================
+
+= 1.8.2 =
+* Elementor's own global palette is replaced in the head: the kit still held
+  the demo's orange, so every page built from it would have painted orange.
+* Home page hierarchy: three display sizes instead of five, one content width,
+  one vertical rhythm, the 111.129% width hack removed.
+* The last demo colours on the home page: the promo pair's blue-black title,
+  grey price and pure-black stars.
+
+= 1.8.1 =
+* Home page backgrounds and text: four dark sections become linen, the hero
+  becomes teal, five white titles become teal, eyebrows become antique gold.
 
 = 1.8.0 =
 * Light storefront shell: white header, linen top bar, ink menu, white sticky

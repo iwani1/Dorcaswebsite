@@ -168,7 +168,7 @@ cat > "$OUT/index.html" <<HTML
 </a>
 <a class="card" href="LIGHT-MODE.md">
   <strong>LIGHT-MODE.md</strong>
-  <span>What 1.8.0 already made light, and the four sections CSS cannot reach.</span>
+  <span>Which parts of the page CSS now paints, and which are still Elementor content.</span>
 </a>
 <a class="card" href="UPLOAD-THEME.md">
   <strong>UPLOAD-THEME.md</strong>

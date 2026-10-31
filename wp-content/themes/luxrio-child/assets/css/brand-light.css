@@ -206,3 +206,165 @@ body.qd-light .elementor-25 .elementor-element.elementor-element-e900ec0 :is(p, 
 body.qd-light .elementor-25 .elementor-element.elementor-element-ee5646a :is(p, li, span, .elementor-widget-text-editor) {
 	color: var(--qd-text-body) !important;
 }
+
+/* =====================================================================
+ * 4. the demo's hierarchy
+ *
+ * Section 1–3 fixed what the eye can measure: the page is legible. This
+ * fixes what it cannot: five display headings at 80–90px with nothing the
+ * biggest, two content widths, four section paddings, and a width hack left
+ * over from the demo's layout. Layout maths only — no copy, no photography.
+ *
+ * Every value below is transcribed from the page's own stylesheet,
+ * uploads/elementor/css/post-25.css, and overridden by the same selector at
+ * higher specificity. If the page is rebuilt in Elementor, these win again.
+ * ===================================================================== */
+
+/* ---------- 4.1 three display sizes, not five ----------
+ *
+ * 60 / 40 / 28 is a scale: display for the two full-band titles, sub-display
+ * for the title with the emphasised word, band title for the two that were
+ * inheriting a size nobody chose. Before this, 90px and 85px and 80px and
+ * 95px all competed and the page had no focal point below the hero.
+ */
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-3031698 .title-selector,
+body.qd-light .elementor-25 .elementor-element.elementor-element-1e90125 .title-selector {
+	font-size: 60px !important;
+	line-height: 68px !important;
+}
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-181ea56 .title-selector {
+	font-size: 40px !important;
+	line-height: 50px !important;
+}
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-01e6aeb .title-selector,
+body.qd-light .elementor-25 .elementor-element.elementor-element-adfb89e .title-selector {
+	font-size: 32px !important;
+	line-height: 42px !important;
+}
+
+@media (max-width: 1024px) {
+	body.qd-light .elementor-25 .elementor-element.elementor-element-3031698 .title-selector,
+	body.qd-light .elementor-25 .elementor-element.elementor-element-1e90125 .title-selector {
+		font-size: 44px !important;
+		line-height: 52px !important;
+	}
+
+	body.qd-light .elementor-25 .elementor-element.elementor-element-181ea56 .title-selector {
+		font-size: 34px !important;
+		line-height: 44px !important;
+	}
+
+	body.qd-light .elementor-25 .elementor-element.elementor-element-01e6aeb .title-selector,
+	body.qd-light .elementor-25 .elementor-element.elementor-element-adfb89e .title-selector {
+		font-size: 28px !important;
+		line-height: 36px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	body.qd-light .elementor-25 .elementor-element.elementor-element-3031698 .title-selector,
+	body.qd-light .elementor-25 .elementor-element.elementor-element-1e90125 .title-selector {
+		font-size: 36px !important;
+		line-height: 44px !important;
+	}
+
+	body.qd-light .elementor-25 .elementor-element.elementor-element-181ea56 .title-selector {
+		font-size: 30px !important;
+		line-height: 40px !important;
+	}
+
+	body.qd-light .elementor-25 .elementor-element.elementor-element-01e6aeb .title-selector,
+	body.qd-light .elementor-25 .elementor-element.elementor-element-adfb89e .title-selector {
+		font-size: 26px !important;
+		line-height: 34px !important;
+	}
+}
+
+/* ---------- 4.2 the 111.129% width hack ----------
+ *
+ * Two title widgets were set 11% wider than their column, which is how the
+ * demo let a heading bleed past its gutter. On a narrow viewport that is a
+ * horizontal-scroll candidate — the failure that makes a site feel broken on
+ * a phone before anything else does. Full width of the column instead.
+ */
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-3031698,
+body.qd-light .elementor-25 .elementor-element.elementor-element-181ea56 {
+	width: 100% !important;
+	max-width: 100% !important;
+	--container-widget-width: 100% !important;
+	flex-grow: 0 !important;
+	flex-shrink: 0 !important;
+}
+
+/* ---------- 4.3 one content width ----------
+ *
+ * The promo pair under the hero sat in 1600px while every band below it sat
+ * in 1330px, so the gutters jumped 270px in one scroll. 1330 throughout.
+ */
+
+@media (min-width: 768px) {
+	body.qd-light .elementor-25 .elementor-element.elementor-element-ed0f918 {
+		--content-width: 1330px !important;
+	}
+}
+
+/* ---------- 4.4 one vertical rhythm ----------
+ *
+ * Four bands, four paddings: 120/90, 120/120, 120/90, 160/160. The 160 was
+ * emphasis with nothing to emphasise. 120/120 everywhere, 80/80 on tablet.
+ */
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-0657b9f,
+body.qd-light .elementor-25 .elementor-element.elementor-element-e2bd445,
+body.qd-light .elementor-25 .elementor-element.elementor-element-e900ec0,
+body.qd-light .elementor-25 .elementor-element.elementor-element-ee5646a {
+	--padding-top: 120px !important;
+	--padding-bottom: 120px !important;
+}
+
+@media (max-width: 1024px) {
+	body.qd-light .elementor-25 .elementor-element.elementor-element-0657b9f,
+	body.qd-light .elementor-25 .elementor-element.elementor-element-e2bd445,
+	body.qd-light .elementor-25 .elementor-element.elementor-element-e900ec0,
+	body.qd-light .elementor-25 .elementor-element.elementor-element-ee5646a {
+		--padding-top: 80px !important;
+		--padding-bottom: 80px !important;
+	}
+}
+
+/* ---------- 4.5 the last of the demo's colours ----------
+ *
+ * Three values that were never from the logo: a blue-black title, a neutral
+ * grey price, and a pure-black star rating. Pure black is the one colour the
+ * palette does not contain.
+ */
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-9dc2739 .banner-style .banner-title a,
+body.qd-light .elementor-25 .elementor-element.elementor-element-def6933 .banner-style .banner-title a {
+	color: var(--qd-text-primary) !important;
+}
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-9dc2739 .banner-style .product-price,
+body.qd-light .elementor-25 .elementor-element.elementor-element-def6933 .banner-style .product-price {
+	color: var(--qd-primary) !important;
+}
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-9dc2739 .star-rating::before,
+body.qd-light .elementor-25 .elementor-element.elementor-element-def6933 .star-rating::before {
+	color: var(--qd-accent-text) !important;
+}
+
+/* ---------- 4.6 eyebrow tracking ----------
+ *
+ * 3px of tracking at eyebrow size (~13px) is a gap per letter wide enough to
+ * break a four-word label into fragments when it wraps. 1.8px keeps the
+ * eyebrow feeling spaced without the tearing.
+ */
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-1e90125 .title-area .sec-text {
+	letter-spacing: 1.8px !important;
+}

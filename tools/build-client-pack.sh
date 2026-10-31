@@ -51,11 +51,11 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
 # --- documents and data ------------------------------------------------------
-DOCS=(IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md PHOTO-REQUEST.md policies.md)
+DOCS=(IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
 mkdir -p "$OUT/brand"
-cp "$REPO"/client/brand/*.svg "$OUT/brand/"
+cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$OUT/brand/"
 
 for f in "${DOCS[@]}" "${DATA[@]}"; do
 	if [ ! -f "$REPO/client/$f" ]; then
@@ -72,7 +72,7 @@ cp "$THEME_ZIP" "$PACK/"
 cp "$PLUGIN_ZIP" "$PACK/"
 for f in "${DOCS[@]}" "${DATA[@]}"; do cp "$REPO/client/$f" "$PACK/"; done
 mkdir -p "$PACK/brand"
-cp "$REPO"/client/brand/*.svg "$PACK/brand/"
+cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$PACK/brand/"
 
 PACK_ZIP="$OUT/queendor-client-pack.zip"
 ( cd "$STAGE" && zip -qr "$PACK_ZIP" queendor-client-pack )
@@ -158,6 +158,14 @@ cat > "$OUT/index.html" <<HTML
 </a>
 
 <h2>Brand</h2>
+<a class="card" href="IMAGES-NOT-SHOWING.md">
+  <strong>IMAGES-NOT-SHOWING.md</strong>
+  <span>Uploaded an image and it isn't on the page? Triage in four checks, then the eleven causes in order of likelihood.</span>
+</a>
+<a class="card" href="brand/logo.png">
+  <strong>logo.png</strong>
+  <span>Upload this one — WordPress rejects SVG files by default.</span>
+</a>
 <a class="card" href="brand/logo.svg">
   <strong>logo.svg</strong>
   <span>Temporary wordmark until the real one arrives. Theme Options → Logo.</span>

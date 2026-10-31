@@ -25,3 +25,7 @@ wp-content/languages/
 
 # --- Generated client pack (rebuild with tools/build-client-pack.sh) ---
 client/pack/
+
+# python bytecode from the brand generators
+__pycache__/
+*.pyc

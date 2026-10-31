@@ -1,6 +1,13 @@
 # Release state
 
-## Ship this: `QueenDors-child-theme-1.8.5.zip` — 227 KB
+## Ship this: `QueenDors-child-theme-1.8.6.zip` — 228 KB
+
+1.8.5 plus the seam under the header. The demo leaves a gap between the header
+and the first home-page section; on a black site it was invisible, on a white one
+it is a stripe. It is now painted from the header's own box shadow, so it becomes
+teal regardless of what creates the gap.
+
+## Also good: `QueenDors-child-theme-1.8.5.zip` — 227 KB
 
 The text-visibility fix. 1.8.4's light layer left the theme's own templates —
 shop, product, cart, checkout, account, policies, blog — with white headings and

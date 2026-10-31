@@ -58,6 +58,32 @@ Normal checkout, Paystack or whatever gateway is live. The trade price is what g
 
 ---
 
+## What appears on the site, without you building anything
+
+Child theme **1.4.0** adds three placements in code, so there is nothing to drag in Elementor:
+
+| Where | What |
+|---|---|
+| **Home page** — immediately after the hero slider | A full-width band: *Stock Queen Dor's* · trade prices from ₵90 a piece, six per style minimum, boxed and retail-ready · **[ Apply for a trade account ]** |
+| **Every product page** — under the price | *Stocking a shop? Trade price ₵160 — apply for a trade account.* |
+| **The Wholesale page** | The placeholder blanks are replaced with the real terms, and the application form is added at the end |
+
+The band is injected through Elementor's render filter, not written into the saved page — so the page stays editable in Elementor exactly as before. To turn the band off without touching the layout, add this to the child theme's `functions.php`:
+
+```php
+add_filter( 'queendor_wholesale_show_band', '__return_false' );
+```
+
+The Wholesale page copy only replaces what is still placeholder text: the moment somebody edits that page and removes the `________` markers, the filter stops applying and their own words take over.
+
+### The application form
+
+`[queendor_wholesale_apply]` — right now the only place it is rendered is the end of the Wholesale page. It can be dropped on any page or post with that shortcode.
+
+It asks for business name, contact name, email, phone, town and a note; checks for an existing account on that email; creates a **pending** customer (retail prices, no access to trade ones); emails the shop owner; and sends the applicant a set-password link. A honeypot field and a three-second minimum stop most bots. Approval is still the one click in `Users`.
+
+**The menu item is not automatic.** Add `Wholesale` under `Appearance → Menus` — one item, and it is the placement buyers look for first.
+
 ## Setup checklist
 
 1. **Update the child theme to 1.3.0** — `Appearance → Themes → Add New → Upload` → `luxrio-child-1.3.0.zip`. The existing theme is replaced; settings are untouched.

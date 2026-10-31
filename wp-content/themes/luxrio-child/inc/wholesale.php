@@ -31,7 +31,7 @@ if ( ! defined( 'QUEENDOR_WHOLESALE_MIN_ORDER' ) ) {
 	define( 'QUEENDOR_WHOLESALE_MIN_ORDER', 0 );
 }
 if ( ! defined( 'QUEENDOR_WHOLESALE_VERSION' ) ) {
-	define( 'QUEENDOR_WHOLESALE_VERSION', '1.1.0' );
+	define( 'QUEENDOR_WHOLESALE_VERSION', '1.2.0' );
 }
 
 /* -------------------------------------------------------------------------
@@ -682,3 +682,179 @@ function queendor_wholesale_order_column_content( $column, $post_id ) {
 }
 add_action( 'manage_shop_order_posts_custom_column', 'queendor_wholesale_order_column_content', 20, 2 );
 add_action( 'manage_woocommerce_page_wc-orders_custom_column', 'queendor_wholesale_order_column_content', 20, 2 );
+
+/* -------------------------------------------------------------------------
+ * 8. The application form
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Handle a submitted application.
+ *
+ * Accounts created here are ordinary customers with a pending flag — they see
+ * retail prices until a human approves them, so a spam account gains nothing
+ * but a row in the Users list.
+ */
+function queendor_wholesale_handle_application() {
+	$redirect = wp_get_referer() ? wp_get_referer() : home_url( '/wholesale/' );
+
+	if ( ! isset( $_POST['queendor_application_nonce'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['queendor_application_nonce'] ) ), 'queendor_application' ) ) {
+		wp_safe_redirect( add_query_arg( 'queendor_apply', 'failed', $redirect ) );
+		exit;
+	}
+
+	// A field a human never fills in, and a form a human cannot submit this fast.
+	if ( ! empty( $_POST['queendor_website'] ) ) {
+		wp_safe_redirect( add_query_arg( 'queendor_apply', 'failed', $redirect ) );
+		exit;
+	}
+
+	$started = isset( $_POST['queendor_started'] ) ? absint( $_POST['queendor_started'] ) : 0;
+
+	if ( $started && ( time() - $started ) < 3 ) {
+		wp_safe_redirect( add_query_arg( 'queendor_apply', 'failed', $redirect ) );
+		exit;
+	}
+
+	$business = isset( $_POST['queendor_business_name'] ) ? sanitize_text_field( wp_unslash( $_POST['queendor_business_name'] ) ) : '';
+	$contact  = isset( $_POST['queendor_contact_name'] ) ? sanitize_text_field( wp_unslash( $_POST['queendor_contact_name'] ) ) : '';
+	$email    = isset( $_POST['queendor_email'] ) ? sanitize_email( wp_unslash( $_POST['queendor_email'] ) ) : '';
+	$phone    = isset( $_POST['queendor_business_phone'] ) ? sanitize_text_field( wp_unslash( $_POST['queendor_business_phone'] ) ) : '';
+	$city     = isset( $_POST['queendor_business_city'] ) ? sanitize_text_field( wp_unslash( $_POST['queendor_business_city'] ) ) : '';
+	$note     = isset( $_POST['queendor_note'] ) ? sanitize_textarea_field( wp_unslash( $_POST['queendor_note'] ) ) : '';
+
+	if ( '' === $business || '' === $email || '' === $phone || ! is_email( $email ) ) {
+		wp_safe_redirect( add_query_arg( 'queendor_apply', 'incomplete', $redirect ) );
+		exit;
+	}
+
+	if ( email_exists( $email ) ) {
+		wp_safe_redirect( add_query_arg( 'queendor_apply', 'exists', $redirect ) );
+		exit;
+	}
+
+	$username = sanitize_user( current( explode( '@', $email ) ), true );
+	$username = $username ? $username : 'trade';
+	$suffix   = 1;
+
+	while ( username_exists( $username ) ) {
+		$username = sanitize_user( current( explode( '@', $email ) ), true ) . $suffix;
+		$suffix++;
+	}
+
+	$user_id = wp_create_user( $username, wp_generate_password( 24 ), $email );
+
+	if ( is_wp_error( $user_id ) ) {
+		wp_safe_redirect( add_query_arg( 'queendor_apply', 'failed', $redirect ) );
+		exit;
+	}
+
+	$user = new WP_User( $user_id );
+	$user->set_role( 'customer' );
+
+	update_user_meta( $user_id, 'business_name', $business );
+	update_user_meta( $user_id, 'business_phone', $phone );
+	update_user_meta( $user_id, 'business_city', $city );
+	update_user_meta( $user_id, 'queendor_wholesale_status', 'pending' );
+
+	if ( '' !== $contact ) {
+		update_user_meta( $user_id, 'first_name', $contact );
+	}
+
+	wp_new_user_notification( $user_id, null, 'user' );
+
+	wp_mail(
+		get_option( 'admin_email' ),
+		sprintf(
+			/* translators: %s: business name. */
+			__( 'Wholesale application: %s', 'luxrio-child' ),
+			$business
+		),
+		sprintf(
+			/* translators: 1: business, 2: contact, 3: email, 4: phone, 5: city, 6: note, 7: URL. */
+			__( "A wholesale account has been requested.\n\nBusiness: %1\$s\nContact: %2\$s\nEmail: %3\$s\nPhone: %4\$s\nTown: %5\$s\n\n%6\$s\n\nApprove or decline:\n%7\$s", 'luxrio-child' ),
+			$business,
+			$contact,
+			$email,
+			$phone,
+			$city,
+			$note,
+			admin_url( 'users.php' )
+		)
+	);
+
+	wp_safe_redirect( add_query_arg( 'queendor_apply', 'sent', $redirect ) );
+	exit;
+}
+add_action( 'admin_post_queendor_wholesale_apply', 'queendor_wholesale_handle_application' );
+add_action( 'admin_post_nopriv_queendor_wholesale_apply', 'queendor_wholesale_handle_application' );
+
+/**
+ * The form itself.
+ *
+ * @return string
+ */
+function queendor_wholesale_apply_form() {
+	if ( is_user_logged_in() ) {
+		$status = get_user_meta( get_current_user_id(), 'queendor_wholesale_status', true );
+
+		if ( queendor_wholesale_is_wholesale() ) {
+			return '<p class="queendor-apply__note">' . esc_html__( 'Your trade account is open. Trade prices are shown throughout the shop while you are signed in.', 'luxrio-child' ) . '</p>';
+		}
+
+		if ( 'pending' === $status ) {
+			return '<p class="queendor-apply__note">' . esc_html__( 'Your application is with us and will be reviewed within one working day.', 'luxrio-child' ) . '</p>';
+		}
+
+		return '';
+	}
+
+	$status = isset( $_GET['queendor_apply'] ) ? sanitize_key( wp_unslash( $_GET['queendor_apply'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+	if ( 'sent' === $status ) {
+		return '<div class="queendor-apply__done"><h3>' . esc_html__( 'Application received', 'luxrio-child' ) . '</h3><p>'
+			. esc_html__( 'We will review it and email you within one working day. You have been sent a link to set your password — trade prices appear once the account is approved.', 'luxrio-child' )
+			. '</p></div>';
+	}
+
+	$messages = array(
+		'incomplete' => __( 'Please add your business name, a phone number and a valid email.', 'luxrio-child' ),
+		'exists'     => __( 'There is already an account with that email. Sign in and ask us to upgrade it to a trade account.', 'luxrio-child' ),
+		'failed'     => __( 'That did not go through. Please try again, or email us directly.', 'luxrio-child' ),
+	);
+
+	$notice = isset( $messages[ $status ] ) ? '<p class="queendor-apply__error">' . esc_html( $messages[ $status ] ) . '</p>' : '';
+
+	ob_start();
+	?>
+	<form class="queendor-apply" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+		<?php echo $notice; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above. ?>
+		<input type="hidden" name="action" value="queendor_wholesale_apply" />
+		<input type="hidden" name="queendor_started" value="<?php echo esc_attr( time() ); ?>" />
+		<?php wp_nonce_field( 'queendor_application', 'queendor_application_nonce' ); ?>
+		<p class="queendor-apply__hp"><label>Website<input type="text" name="queendor_website" value="" tabindex="-1" autocomplete="off" /></label></p>
+
+		<p><label for="qa-business"><?php esc_html_e( 'Business name', 'luxrio-child' ); ?> *</label>
+			<input type="text" id="qa-business" name="queendor_business_name" required /></p>
+
+		<p><label for="qa-contact"><?php esc_html_e( 'Your name', 'luxrio-child' ); ?></label>
+			<input type="text" id="qa-contact" name="queendor_contact_name" /></p>
+
+		<p><label for="qa-email"><?php esc_html_e( 'Email', 'luxrio-child' ); ?> *</label>
+			<input type="email" id="qa-email" name="queendor_email" required /></p>
+
+		<p><label for="qa-phone"><?php esc_html_e( 'Phone', 'luxrio-child' ); ?> *</label>
+			<input type="tel" id="qa-phone" name="queendor_business_phone" required /></p>
+
+		<p><label for="qa-city"><?php esc_html_e( 'Town or city', 'luxrio-child' ); ?></label>
+			<input type="text" id="qa-city" name="queendor_business_city" /></p>
+
+		<p><label for="qa-note"><?php esc_html_e( 'Anything we should know?', 'luxrio-child' ); ?></label>
+			<textarea id="qa-note" name="queendor_note" rows="3"></textarea></p>
+
+		<p><button type="submit" class="queendor-apply__submit"><?php esc_html_e( 'Apply for a trade account', 'luxrio-child' ); ?></button></p>
+		<p class="queendor-apply__small"><?php esc_html_e( 'We review applications within one working day. Trade prices are visible only after approval.', 'luxrio-child' ); ?></p>
+	</form>
+	<?php
+	return ob_get_clean();
+}
+add_shortcode( 'queendor_wholesale_apply', 'queendor_wholesale_apply_form' );

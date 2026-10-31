@@ -1,0 +1,202 @@
+/* Wholesale band, product line and application form. */
+
+.qd-trade {
+	background: #0d0d0d;
+	color: #f5f1e8;
+	padding: 56px 20px;
+}
+
+.qd-trade__inner {
+	max-width: 1180px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 28px;
+}
+
+.qd-trade__copy {
+	flex: 1 1 520px;
+}
+
+.qd-trade__eyebrow {
+	display: inline-block;
+	margin-bottom: 10px;
+	font-size: 12px;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: #c9a227;
+}
+
+.qd-trade__title {
+	margin: 0 0 12px;
+	font-size: clamp(26px, 3.4vw, 40px);
+	line-height: 1.15;
+	color: #f5f1e8;
+}
+
+.qd-trade__text {
+	margin: 0;
+	max-width: 62ch;
+	font-size: 16px;
+	line-height: 1.65;
+	color: #d9d3c7;
+}
+
+.qd-trade__action {
+	flex: 0 0 auto;
+}
+
+.qd-trade__btn {
+	display: inline-block;
+	padding: 16px 30px;
+	border: 1px solid #c9a227;
+	background: #c9a227;
+	color: #111;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.qd-trade__btn:hover,
+.qd-trade__btn:focus {
+	background: transparent;
+	color: #c9a227;
+}
+
+/* Product page line */
+
+.qd-trade-line {
+	margin: 10px 0 18px;
+	padding: 12px 14px;
+	border-left: 2px solid #c9a227;
+	background: #faf7f0;
+	font-size: 14px;
+	color: #333;
+}
+
+.qd-trade-line a {
+	color: #8a6d1a;
+	text-decoration: underline;
+}
+
+/* Wholesale page */
+
+.qd-terms {
+	margin: 0 0 28px;
+	padding: 0;
+	list-style: none;
+}
+
+.qd-terms li {
+	padding: 10px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	font-size: 15px;
+}
+
+.qd-terms li::before {
+
+	content: "\2713";
+	margin-right: 10px;
+	color: #c9a227;
+}
+
+.queendor-apply {
+	max-width: 620px;
+}
+
+.queendor-apply p {
+	margin: 0 0 16px;
+}
+
+.queendor-apply label {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 13px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #444;
+}
+
+.queendor-apply input[type="text"],
+.queendor-apply input[type="email"],
+.queendor-apply input[type="tel"],
+.queendor-apply textarea {
+	width: 100%;
+	padding: 12px 14px;
+	border: 1px solid #cfc8ba;
+	background: #fff;
+	font-size: 15px;
+}
+
+.queendor-apply input:focus,
+.queendor-apply textarea:focus {
+	outline: 2px solid #c9a227;
+	outline-offset: 1px;
+}
+
+.queendor-apply__submit {
+	padding: 16px 30px;
+	border: 1px solid #111;
+	background: #111;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.queendor-apply__submit:hover {
+	background: transparent;
+	color: #111;
+}
+
+.queendor-apply__small {
+	font-size: 13px;
+	color: #666;
+}
+
+.queendor-apply__error {
+	padding: 12px 14px;
+	border-left: 3px solid #b32d2e;
+	background: #fdf1f1;
+	color: #7a1f1f;
+	font-size: 14px;
+}
+
+.queendor-apply__done {
+	padding: 22px 24px;
+	border-left: 3px solid #2e7d32;
+	background: #f1f8f1;
+}
+
+.queendor-apply__done h3 {
+	margin: 0 0 8px;
+	font-size: 18px;
+}
+
+/* Honeypot: never shown, never announced to a screen reader. */
+.queendor-apply__hp {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+@media (max-width: 767px) {
+	.qd-trade {
+		padding: 40px 18px;
+	}
+
+	.qd-trade__btn {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}

@@ -43,6 +43,7 @@ require_once get_stylesheet_directory() . '/inc/rebrand.php';
 require_once get_stylesheet_directory() . '/inc/symbol-guide.php';
 require_once get_stylesheet_directory() . '/inc/ring-size.php';
 require_once get_stylesheet_directory() . '/inc/wholesale.php';
+require_once get_stylesheet_directory() . '/inc/wholesale-cta.php';
 
 /*
  * The product blocks talk to WooCommerce classes directly, so they are only

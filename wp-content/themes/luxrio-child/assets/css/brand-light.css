@@ -35,89 +35,76 @@ body.qd-light .preloader-wrap {
 	background-color: var(--qd-bg-page);
 }
 
-/* ---------- header shell ---------- */
+/* ---------- the header ----------
+ *
+ * The header is not lightened, and the reason is in the parent theme:
+ *
+ *   .main-menu > ul > li > a { color: var(--white-color); }
+ *   .main-menu ul.sub-menu   { background-color: var(--white-color); }
+ *
+ * the top-level menu type is hard-coded white and the logo is a white SVG, so a
+ * white header has nothing readable to put on it — that is what "menu not
+ * visible" was. But the dropdown panels are white, which means a blanket "make
+ * header text dark" rule would have hidden the dropdowns instead.
+ *
+ * So the header keeps every colour the design gave it and only the field behind
+ * it changes: Adinkra Teal instead of the demo's black. White on #0B4B4C is
+ * 9.88:1, the logo and the menu are untouched, and the header now merges into
+ * the hero instead of stopping above it.
+ */
 
-body.qd-light header.header {
-	background-color: var(--qd-bg-page);
-	border-bottom: 1px solid var(--qd-border-subtle);
+body.qd-light header,
+body.qd-light header.header,
+body.qd-light .vs-header,
+body.qd-light .vs-header.layout1,
+body.qd-light .vs-header.layout2,
+body.qd-light .vs-header.layout3,
+body.qd-light .header-layout1 {
+	background-color: var(--qd-primary) !important;
 }
 
-body.qd-light header.header .elementor-section,
-body.qd-light header.header .elementor-column,
-body.qd-light header.header .elementor-widget-wrap,
-body.qd-light header.header .e-con,
-body.qd-light header.header .e-con-inner {
+/* Rows inside the Elementor header template must not repaint their own black
+   on top of the teal. Backgrounds only — no text colour is touched here. */
+body.qd-light header .e-con,
+body.qd-light header .e-con-inner,
+body.qd-light header .elementor-section,
+body.qd-light header .elementor-column,
+body.qd-light header .elementor-widget-wrap,
+body.qd-light .vs-header .e-con,
+body.qd-light .vs-header .e-con-inner,
+body.qd-light .vs-header .elementor-section,
+body.qd-light .vs-header .elementor-column,
+body.qd-light .vs-header .elementor-widget-wrap {
 	background-color: transparent !important;
 	background-image: none !important;
 }
 
-/* The top bar sits above the header and is the first thing to look wrong if it
-   keeps a black stripe under a white menu. */
+/* The dropdown panels are white with dark type by default; this only makes sure
+   the theme's own menu colours survive anything else on this page. */
+body.qd-light header .main-menu ul.sub-menu a,
+body.qd-light header .main-menu ul.mega-menu a,
+body.qd-light .vs-header .main-menu ul.sub-menu a {
+	color: var(--title-color, #211F1C);
+}
+
+/* The top bar sits above the header. It takes the same teal so the two read as
+   one band; its own type is light in the design and stays light. */
 body.qd-light .header-top,
 body.qd-light .header-layout1 .header-top,
 body.qd-light .menu-top {
-	background-color: var(--qd-bg-subtle);
-	border-bottom: 1px solid var(--qd-border-subtle);
-}
-
-/* ---------- header text ---------- */
-
-body.qd-light header.header a,
-body.qd-light header.header .elementor-widget-container,
-body.qd-light header.header .header-links a,
-body.qd-light header.header .menu > li > a,
-body.qd-light .header-top a,
-body.qd-light .header-top span,
-body.qd-light .header-top p {
-	color: var(--qd-text-primary) !important;
-}
-
-body.qd-light header.header a:hover,
-body.qd-light header.header .menu > li > a:hover,
-body.qd-light .header-top a:hover {
-	color: var(--qd-primary) !important;
-}
-
-body.qd-light header.header .menu > li.current-menu-item > a,
-body.qd-light header.header .menu > li.current-menu-ancestor > a {
-	color: var(--qd-primary) !important;
-}
-
-/* Icons are drawn as SVG with an inherited fill; without this they stay white. */
-body.qd-light header.header svg {
-	fill: currentColor;
-	stroke: currentColor;
-}
-
-/* Count bubbles sit on their own coloured disc, so they keep light type. */
-body.qd-light header.header .cart-count,
-body.qd-light header.header .wishlist-count,
-body.qd-light header.header .header-btns .count {
-	color: #fff !important;
-	background-color: var(--qd-primary);
+	background-color: var(--qd-primary) !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 /* ---------- sticky header ---------- */
 
 body.qd-light .header-sticky,
 body.qd-light .vs-header.sticky,
-body.qd-light .sticky-header {
-	background-color: var(--qd-bg-page) !important;
+body.qd-light .sticky-header,
+body.qd-light .will-sticky .sticky-active.active {
+	background-color: var(--qd-primary) !important;
 	box-shadow: var(--qd-shadow-sm);
 }
-
-/* ---------- mobile menu ---------- */
-
-body.qd-light .vs-menu-wrapper,
-body.qd-light .sidemenu-wrapper {
-	background-color: var(--qd-bg-page);
-}
-
-body.qd-light .vs-menu-wrapper a,
-body.qd-light .sidemenu-wrapper a {
-	color: var(--qd-text-primary);
-}
-
 
 /* ============================================================================
  * Home page - the dark sections, made light

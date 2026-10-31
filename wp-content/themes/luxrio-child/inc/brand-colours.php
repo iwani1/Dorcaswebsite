@@ -1,15 +1,16 @@
 <?php
 /**
- * Repaint the site in the client's logo colours.
+ * Dress the site in the client's logo colours.
  *
- * The logo is two colours: a deep teal and a warm gold. The parent theme
- * exposes almost all of its colour through CSS custom properties, so the
- * palette is set once and inherited everywhere.
+ * The palette is two sampled values — Adinkra Teal #0B4B4C from the D
+ * monogram and Crown Gold #C8AC77 from the name and the crown — expanded into
+ * full ramps by tools/brand_palette.py and emitted as tokens by
+ * tools/build-brand-assets.py. Nothing here is hand-written CSS: both
+ * stylesheets are generated, so the shop and the client's preview page cannot
+ * drift apart.
  *
- * The same values can be typed into Theme Options → General → Primary Colour,
- * Secondary Colour and Heading Colour. Both work; this file also covers the
- * handful of places the theme hardcodes rather than uses a variable, and it
- * cannot be undone by an options reset.
+ * Load order matters. The parent theme prints its own option colours inline in
+ * the head, so these load last and win.
  *
  * @package luxrio-child
  */
@@ -24,20 +25,29 @@ if ( ! defined( 'QUEENDOR_GOLD' ) ) {
 }
 
 /**
- * Load the palette after the theme's own stylesheets and inline CSS.
+ * Tokens first, then the components that read them.
  */
 function queendor_brand_colours() {
+	$dir = get_stylesheet_directory_uri() . '/assets/css';
+
 	wp_enqueue_style(
-		'queendor-brand-colours',
-		get_stylesheet_directory_uri() . '/assets/css/brand-colours.css',
+		'queendor-brand-tokens',
+		$dir . '/brand-tokens.css',
 		array( 'luxrio-child-style' ),
+		queendor_version()
+	);
+
+	wp_enqueue_style(
+		'queendor-brand-components',
+		$dir . '/brand-components.css',
+		array( 'queendor-brand-tokens' ),
 		queendor_version()
 	);
 }
 add_action( 'wp_enqueue_scripts', 'queendor_brand_colours', 30 );
 
 /**
- * Give the browser the teal as its address-bar colour on mobile.
+ * Colour the mobile browser chrome to match the header.
  */
 function queendor_theme_colour_meta() {
 	printf( '<meta name="theme-color" content="%s">' . "\n", esc_attr( QUEENDOR_TEAL ) );

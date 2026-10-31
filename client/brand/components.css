@@ -1,0 +1,410 @@
+/*
+ * Queen Dor's — components
+ *
+ * Generated from tools/brand_palette.py. Every colour here is a token, so
+ * these rules survive a palette change and work in both modes.
+ *
+ * Naming: .qd-btn
+ *   variants  --primary --secondary --ghost --danger
+ *   sizes     --sm --lg
+ *   states    hover · active · focus-visible · [disabled] / [aria-disabled]
+ */
+
+/* ============ base ============ */
+
+body {
+	background: var(--qd-bg-page);
+	color: var(--qd-text-body);
+}
+
+/* Headings are coloured through the parent theme's own --title-color, which the
+   bridge sets to the teal. Deliberately no `h1..h6 { color }` here: a global rule
+   would also repaint headings inside the theme's dark sections, where teal on
+   black measures 2.1:1. */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+	letter-spacing: -.011em;
+}
+
+a {
+	color: var(--qd-primary);
+	text-decoration-color: var(--qd-accent);
+	text-underline-offset: .18em;
+	transition: color var(--qd-transition), text-decoration-color var(--qd-transition);
+}
+
+a:hover {
+	color: var(--qd-primary-hover);
+	text-decoration-color: var(--qd-primary-hover);
+}
+
+/* One focus ring for the whole site. Keyboard only — a mouse click should not
+   leave a ring behind, but a Tab press must always produce one. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+	outline: 2px solid var(--qd-focus);
+	outline-offset: 2px;
+	border-radius: var(--qd-radius-xs);
+}
+
+/* ============ buttons ============ */
+
+.qd-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--qd-space-2);
+	padding: 14px var(--qd-space-5);
+	border: 1px solid transparent;
+	border-radius: var(--qd-radius-sm);
+	font: inherit;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 1.2;
+	letter-spacing: .01em;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color var(--qd-transition), border-color var(--qd-transition),
+		color var(--qd-transition), box-shadow var(--qd-transition), transform var(--qd-transition);
+}
+
+.qd-btn:active { transform: translateY(1px); }
+
+.qd-btn--sm { padding: 9px var(--qd-space-4); font-size: 14px; }
+.qd-btn--lg { padding: 18px var(--qd-space-6); font-size: 16px; }
+
+/* primary — teal field, cream label. The main action on a screen. One per view. */
+.qd-btn--primary {
+	background: var(--qd-primary);
+	border-color: var(--qd-primary);
+	color: var(--qd-text-onPrimary);
+}
+.qd-btn--primary:hover { background: var(--qd-primary-hover); border-color: var(--qd-primary-hover); }
+.qd-btn--primary:active { background: var(--qd-primary-active); border-color: var(--qd-primary-active); }
+
+/* secondary — outline. Sits beside a primary without competing. */
+.qd-btn--secondary {
+	background: transparent;
+	border-color: var(--qd-border-strong);
+	color: var(--qd-text-primary);
+}
+.qd-btn--secondary:hover {
+	background: var(--qd-hover-wash);
+	border-color: var(--qd-primary);
+	color: var(--qd-primary);
+}
+.qd-btn--secondary:active { background: var(--qd-pressed-wash); }
+
+/* ghost — text only, for tertiary actions and "remove". */
+.qd-btn--ghost {
+	background: transparent;
+	border-color: transparent;
+	color: var(--qd-primary);
+	padding-inline: var(--qd-space-3);
+}
+.qd-btn--ghost:hover { background: var(--qd-hover-wash); }
+.qd-btn--ghost:active { background: var(--qd-pressed-wash); }
+
+/* danger — destructive only. Never for a checkout or payment action. */
+.qd-btn--danger {
+	background: var(--qd-danger);
+	border-color: var(--qd-danger);
+	color: #FFFFFF;
+}
+.qd-btn--danger:hover { filter: brightness(.92); }
+
+.qd-btn[disabled],
+.qd-btn[aria-disabled="true"] {
+	background: var(--qd-bg-muted);
+	border-color: var(--qd-border-subtle);
+	color: var(--qd-text-muted);
+	cursor: not-allowed;
+	opacity: 1;
+}
+.qd-btn[disabled]:active,
+.qd-btn[aria-disabled="true"]:active { transform: none; }
+
+/* On a dark or teal section — gold, because teal disappears there (2.1:1). */
+.qd-on-dark .qd-btn--primary {
+	background: var(--qd-accent);
+	border-color: var(--qd-accent);
+	color: #211F1C;
+}
+.qd-on-dark .qd-btn--primary:hover { background: #E3CCA0; border-color: #E3CCA0; }
+.qd-on-dark .qd-btn--secondary {
+	border-color: var(--qd-accent);
+	color: var(--qd-accent);
+}
+.qd-on-dark .qd-btn--secondary:hover { background: rgba(200, 172, 119, .14); color: var(--qd-accent); }
+.qd-on-dark :where(a, h1, h2, h3, h4) { color: var(--qd-text-onDark); }
+.qd-on-dark a:hover { color: var(--qd-accent); }
+
+/* ============ form fields ============ */
+
+.qd-field {
+	display: flex;
+	flex-direction: column;
+	gap: var(--qd-space-2);
+	margin-bottom: var(--qd-space-5);
+}
+
+.qd-field > label,
+.qd-label {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	color: var(--qd-text-muted);
+}
+
+.qd-input,
+.qd-field input,
+.qd-field select,
+.qd-field textarea {
+	width: 100%;
+	padding: 13px var(--qd-space-4);
+	background: var(--qd-bg-page);
+	border: 1px solid var(--qd-border-default);
+	border-radius: var(--qd-radius-sm);
+	color: var(--qd-text-primary);
+	font: inherit;
+	transition: border-color var(--qd-transition), box-shadow var(--qd-transition);
+}
+
+.qd-input::placeholder { color: var(--qd-text-muted); }
+
+.qd-input:hover { border-color: var(--qd-border-strong); }
+
+/* Focus: the border moves to teal AND a soft ring appears, so the state is
+   visible on a cheap screen where a 1px colour change is not. */
+.qd-input:focus,
+.qd-field input:focus,
+.qd-field select:focus,
+.qd-field textarea:focus {
+	outline: none;
+	border-color: var(--qd-primary);
+	box-shadow: 0 0 0 3px rgba(11, 75, 76, .15);
+}
+
+.qd-input--error { border-color: var(--qd-danger); }
+.qd-input--error:focus { box-shadow: 0 0 0 3px rgba(124, 48, 39, .15); }
+
+.qd-input--success { border-color: var(--qd-success); }
+.qd-input--success:focus { box-shadow: 0 0 0 3px rgba(47, 106, 78, .15); }
+
+.qd-input:disabled {
+	background: var(--qd-bg-muted);
+	color: var(--qd-text-muted);
+	cursor: not-allowed;
+}
+
+.qd-help { font-size: 13px; color: var(--qd-text-muted); }
+.qd-help--error { color: var(--qd-danger); font-weight: 500; }
+.qd-help--success { color: var(--qd-success); font-weight: 500; }
+
+/* ============ cards ============ */
+
+.qd-card {
+	background: var(--qd-surface-card);
+	border: 1px solid var(--qd-border-subtle);
+	border-radius: var(--qd-radius-lg);
+	box-shadow: var(--qd-shadow-sm);
+	overflow: hidden;
+	transition: box-shadow var(--qd-transition), transform var(--qd-transition),
+		border-color var(--qd-transition);
+}
+
+.qd-card:hover {
+	box-shadow: var(--qd-shadow-md);
+	transform: translateY(-2px);
+	border-color: var(--qd-border-default);
+}
+
+.qd-card__media { aspect-ratio: 4 / 5; background: var(--qd-bg-muted); object-fit: cover; width: 100%; }
+.qd-card__body { padding: var(--qd-space-5); }
+.qd-card__eyebrow {
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: var(--qd-accent-text);
+}
+.qd-card__title { font-size: 18px; margin: var(--qd-space-2) 0; }
+.qd-card__price { font-weight: 600; color: var(--qd-primary); }
+
+/* ============ navigation ============ */
+
+.qd-nav {
+	display: flex;
+	align-items: center;
+	gap: var(--qd-space-5);
+	background: var(--qd-bg-page);
+	border-bottom: 1px solid var(--qd-border-subtle);
+}
+
+.qd-nav a {
+	position: relative;
+	color: var(--qd-text-primary);
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: 500;
+	padding: var(--qd-space-3) 0;
+	transition: color var(--qd-transition);
+}
+
+.qd-nav a::after {
+	content: "";
+	position: absolute;
+	left: 0; right: 0; bottom: 6px;
+	height: 2px;
+	background: var(--qd-accent);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform var(--qd-transition);
+}
+
+.qd-nav a:hover { color: var(--qd-primary); }
+.qd-nav a:hover::after,
+.qd-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.qd-nav a[aria-current="page"] { color: var(--qd-primary); font-weight: 600; }
+
+/* ============ feedback ============ */
+
+.qd-alert {
+	border-left: 4px solid var(--qd-info);
+	background: var(--qd-info-subtle);
+	color: var(--qd-text-primary);
+	padding: var(--qd-space-4) var(--qd-space-5);
+	border-radius: var(--qd-radius-sm);
+}
+.qd-alert--success { border-left-color: var(--qd-success); background: var(--qd-success-subtle); }
+.qd-alert--warning { border-left-color: var(--qd-warning); background: var(--qd-warning-subtle); }
+.qd-alert--error { border-left-color: var(--qd-danger); background: var(--qd-danger-subtle); }
+
+.qd-badge {
+	display: inline-block;
+	padding: 4px 10px;
+	border-radius: var(--qd-radius-pill);
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	background: var(--qd-accent-subtle);
+	color: var(--qd-accent-text);
+}
+
+/* ============ texture ============ */
+
+.qd-pattern-adinkra {
+	background-color: var(--qd-primary);
+	background-image: repeating-linear-gradient(45deg,
+		rgba(200, 172, 119, .07) 0 2px, transparent 2px 22px),
+		repeating-linear-gradient(-45deg,
+		rgba(200, 172, 119, .07) 0 2px, transparent 2px 22px);
+}
+
+.qd-gradient-gold { background: var(--qd-gradient-gold-sheen); }
+.qd-gradient-teal { background: var(--qd-gradient-teal-depth); color: var(--qd-text-onDark); }
+
+/* ============ parent theme bridge ============
+ *
+ * The Luxrio parent drives nearly every colour through these custom
+ * properties. Mapping them to the tokens once means the shop's buttons,
+ * prices, links, breadcrumbs and controls all follow the palette without a
+ * selector-by-selector fight.
+ *
+ * Declared on body as well as :root on purpose: the theme prints its own
+ * option colours inline in <head>, and an inherited value on body wins over
+ * an inherited value on html whatever order the stylesheets land in.
+ */
+
+:root,
+body {
+	--theme-color: var(--qd-primary);
+	--theme-color2: var(--qd-accent);
+	--title-color: var(--qd-text-heading);
+	--body-color: var(--qd-text-body);
+	--smoke-color: #D3CBBB;
+	--vs-secondary-color: #F3EFE8;
+	--bg-color12: var(--qd-bg-subtle);
+}
+
+/* ============ WooCommerce ============ */
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.wc-block-components-button {
+	background-color: var(--qd-primary);
+	border-color: var(--qd-primary);
+	color: var(--qd-text-onPrimary);
+	border-radius: var(--qd-radius-sm);
+	font-weight: 600;
+	transition: background-color var(--qd-transition), border-color var(--qd-transition);
+}
+
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover {
+	background-color: var(--qd-primary-hover);
+	border-color: var(--qd-primary-hover);
+	color: var(--qd-text-onPrimary);
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
+.woocommerce ul.products li.product .price,
+.woocommerce-Price-amount {
+	color: var(--qd-primary);
+}
+
+.woocommerce-message,
+.woocommerce-info { border-top-color: var(--qd-accent); }
+.woocommerce-error { border-top-color: var(--qd-danger); }
+
+.woocommerce-message a,
+.woocommerce-info a,
+.entry-content a { color: var(--qd-primary); text-decoration-color: var(--qd-accent); }
+
+.breadcumb-area,
+.vs-breadcrumb { background-color: var(--qd-primary); }
+
+.scroll-top,
+.back-to-top { background-color: var(--qd-primary); }
+.scroll-top:hover,
+.back-to-top:hover { background-color: var(--qd-accent); color: #211F1C; }
+
+.woocommerce span.onsale {
+	background-color: var(--qd-accent);
+	color: #211F1C;
+	border-radius: var(--qd-radius-pill);
+	font-weight: 600;
+}
+
+/* Dark and teal sections: prices and links go gold, buttons go gold. */
+.qd-on-dark :where(.woocommerce-Price-amount, a),
+.qd-on-dark .woocommerce div.product p.price,
+.qd-on-dark .woocommerce ul.products li.product .price {
+	color: var(--qd-accent);
+}
+
+.qd-on-dark .woocommerce a.button,
+.qd-on-dark .woocommerce button.button,
+.qd-on-dark .vs-btn {
+	background-color: var(--qd-accent);
+	border-color: var(--qd-accent);
+	color: #211F1C;
+}
+
+.qd-on-dark .woocommerce a.button:hover,
+.qd-on-dark .woocommerce button.button:hover,
+.qd-on-dark .vs-btn:hover {
+	background-color: #E3CCA0;
+	border-color: #E3CCA0;
+	color: #211F1C;
+}

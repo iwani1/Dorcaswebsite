@@ -51,11 +51,12 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
 # --- documents and data ------------------------------------------------------
-DOCS=(BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
+DOCS=(COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
 mkdir -p "$OUT/brand"
-cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$OUT/brand/"
+cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$REPO"/client/brand/*.css \
+   "$REPO"/client/brand/*.json "$REPO"/client/brand/*.html "$REPO"/client/brand/*.pdf "$OUT/brand/"
 
 for f in "${DOCS[@]}" "${DATA[@]}"; do
 	if [ ! -f "$REPO/client/$f" ]; then
@@ -72,7 +73,8 @@ cp "$THEME_ZIP" "$PACK/"
 cp "$PLUGIN_ZIP" "$PACK/"
 for f in "${DOCS[@]}" "${DATA[@]}"; do cp "$REPO/client/$f" "$PACK/"; done
 mkdir -p "$PACK/brand"
-cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$PACK/brand/"
+cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$REPO"/client/brand/*.css \
+   "$REPO"/client/brand/*.json "$REPO"/client/brand/*.html "$REPO"/client/brand/*.pdf "$PACK/brand/"
 
 PACK_ZIP="$OUT/queendor-client-pack.zip"
 ( cd "$STAGE" && zip -qr "$PACK_ZIP" queendor-client-pack )
@@ -143,6 +145,22 @@ cat > "$OUT/index.html" <<HTML
 <a class="card" href="IMPORT-GUIDE.md">
   <strong>IMPORT-GUIDE.md</strong>
   <span>The catalogue import, step by step, with the placeholder prices to replace.</span>
+</a>
+<a class="card" href="COLOR-SYSTEM.md">
+  <strong>COLOR-SYSTEM.md</strong>
+  <span>The full colour system: ramps, roles, WCAG tables, component states, tokens, dark mode.</span>
+</a>
+<a class="card" href="brand/preview.html">
+  <strong>brand/preview.html</strong>
+  <span>Open this first. Palette and components in light and dark, with a toggle.</span>
+</a>
+<a class="card" href="brand/queendor-color-guide.pdf">
+  <strong>brand/queendor-color-guide.pdf</strong>
+  <span>Eight pages, print-ready, ending in a one-page card to pin up.</span>
+</a>
+<a class="card" href="brand/design-tokens.json">
+  <strong>brand/design-tokens.json</strong>
+  <span>Drop into Tokens Studio for Figma. Core ramps plus light and dark semantic sets.</span>
 </a>
 <a class="card" href="BRAND-COLOURS.md">
   <strong>BRAND-COLOURS.md</strong>

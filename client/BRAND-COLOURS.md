@@ -9,7 +9,7 @@ The logo is two colours: a deep teal for the **D** monogram and *Fashion house*,
 | Cream | `#F7F3EA` | — | section backgrounds |
 | Ink | `#3F4A49` | — | body copy |
 
-Ships in **child theme 1.6.0**.
+Ships in **child theme 1.7.0** — see `COLOR-SYSTEM.md` for the complete system, and `brand/preview.html` for the page to show the client.
 
 ---
 
@@ -58,7 +58,7 @@ The parent theme feeds almost every colour through CSS variables — there is ex
 
 Doing both is fine and they won't fight: the child theme loads last.
 
-To change the palette later, edit `assets/css/brand-colours.css` in the child theme — four lines at the top.
+To change the palette later, edit `tools/brand_palette.py` and run `python3 tools/build-brand-assets.py` — the CSS, the Figma tokens, the preview page and the PDF all regenerate together. See `COLOR-SYSTEM.md` for the full system.
 
 ---
 

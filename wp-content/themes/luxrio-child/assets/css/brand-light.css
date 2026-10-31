@@ -108,3 +108,101 @@ body.qd-light .vs-menu-wrapper a,
 body.qd-light .sidemenu-wrapper a {
 	color: var(--qd-text-primary);
 }
+
+/* ============================================================================
+ * Home page — section backgrounds and text
+ *
+ * The IDs below are not guessed. They come from the stylesheet WordPress
+ * generates for the home page (post 25), fetched from the live site:
+ *
+ *   /wp-content/uploads/elementor/css/post-25.css
+ *
+ * That file states each section's exact background and each title's colour, so
+ * these overrides hit the sections that are actually dark instead of painting
+ * every section on every page and hoping.
+ *
+ * Photography is untouched. Copy is untouched. Only background and text colour.
+ * ============================================================================ */
+
+/* ---------- 1. the dark sections, made light ----------
+ *
+ * 3c5f51b  hero section      — was a dark background image
+ * c25843e  hero container    — was #020203 with an image, inside the hero
+ * e2bd445  categories band   — was a background image
+ * e900ec0  product band      — was a background image
+ * ee5646a  story band        — was a photo with an orange #CF6D03 overlay
+ */
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-3c5f51b,
+body.qd-light .elementor-25 .elementor-element.elementor-element-c25843e,
+body.qd-light .elementor-25 .elementor-element.elementor-element-e2bd445,
+body.qd-light .elementor-25 .elementor-element.elementor-element-e900ec0,
+body.qd-light .elementor-25 .elementor-element.elementor-element-ee5646a {
+	background-image: none !important;
+}
+
+/* The hero keeps a dark field, because its headline is white and sits over
+   photography. Teal rather than black: same contrast, brand colour. */
+body.qd-light .elementor-25 .elementor-element.elementor-element-3c5f51b {
+	background-color: var(--qd-primary) !important;
+}
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-c25843e {
+	background-color: transparent !important;
+}
+
+/* The overflow ring around the hero content is the theme's; it reads as a dark
+   frame on a teal field. */
+body.qd-light .elementor-25 .elementor-element.elementor-element-3c5f51b [class*="luxriohero"] {
+	background-color: transparent !important;
+	background-image: none !important;
+}
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-e2bd445,
+body.qd-light .elementor-25 .elementor-element.elementor-element-e900ec0,
+body.qd-light .elementor-25 .elementor-element.elementor-element-ee5646a {
+	background-color: var(--qd-bg-subtle) !important;
+}
+
+/* The demo laid an orange veil over the story band. */
+body.qd-light .elementor-25 .elementor-element.elementor-element-ee5646a::before,
+body.qd-light .elementor-25 .elementor-element.elementor-element-ee5646a > .e-con-inner::before {
+	background-color: transparent !important;
+	opacity: 0 !important;
+}
+
+/* ---------- 2. white titles on those sections, made readable ----------
+ *
+ * 01e6aeb  "A piece that says something"
+ * 3031698  the 90px display title
+ * 181ea56  the 46px title, with one emphasised word in a <span>
+ * adfb89e  a centred section title
+ * 1e90125  the 80px title plus its eyebrow
+ */
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-01e6aeb .title-selector,
+body.qd-light .elementor-25 .elementor-element.elementor-element-3031698 .title-selector,
+body.qd-light .elementor-25 .elementor-element.elementor-element-181ea56 .title-selector,
+body.qd-light .elementor-25 .elementor-element.elementor-element-adfb89e .title-selector,
+body.qd-light .elementor-25 .elementor-element.elementor-element-1e90125 .title-selector {
+	color: var(--qd-text-heading) !important;
+}
+
+/* The emphasised word keeps emphasis by turning gold rather than sharing the
+   heading colour, which would hide the emphasis entirely. */
+body.qd-light .elementor-25 .elementor-element.elementor-element-181ea56 .title-selector span {
+	color: var(--qd-accent-text) !important;
+}
+
+/* Eyebrows above the titles were white with 3px tracking. */
+body.qd-light .elementor-25 .elementor-element.elementor-element-1e90125 .title-area .sec-text {
+	color: var(--qd-accent-text) !important;
+}
+
+/* ---------- 3. body copy in those bands ---------- */
+
+body.qd-light .elementor-25 .elementor-element.elementor-element-e2bd445 :is(p, li, span, .elementor-widget-text-editor),
+body.qd-light .elementor-25 .elementor-element.elementor-element-e900ec0 :is(p, li, span, .elementor-widget-text-editor),
+body.qd-light .elementor-25 .elementor-element.elementor-element-ee5646a :is(p, li, span, .elementor-widget-text-editor) {
+	color: var(--qd-text-body) !important;
+}

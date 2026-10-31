@@ -272,8 +272,4 @@ cp "$REPO/client/brand/preview.html" "$PACK/preview.html"
 # Also drop the theme at the repository root: client/pack/*.zip is gitignored, so
 # a build there is invisible to anyone browsing the repo.
 cp "$THEME_ZIP" "$REPO/QueenDors-child-theme-$THEME_VERSION.zip"
-for old in "$REPO"/QueenDors-child-theme-*.zip; do
-	[ "$old" = "$REPO/QueenDors-child-theme-$THEME_VERSION.zip" ] || rm -f "$old"
-done
-
 echo "done — 3 archives verified, $(ls "$OUT" | wc -l | tr -d ' ') files in client/pack/"

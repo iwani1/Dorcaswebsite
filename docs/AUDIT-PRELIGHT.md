@@ -115,7 +115,9 @@ Confirmed on the shop grid, the single product page and the symbol archive. Four
 
 ### 10. Related products are output twice
 
-On `/product/sankofa-pendant-necklace/` under "top related products", the same six products appear, then appear again. On the shop page the entire grid repeats below the pagination. This looks like the carousel library cloning slides for infinite scrolling — normal markup, but if it's *visible* duplication it's a layout bug. **Needs one browser check**: scroll to the bottom of a product page. If you see two rows of related products, tell me and I'll patch it out.
+**Resolved — not a bug.** `assets/js/main.js:382` initialises `.related-product.vs-carousel` with Slick and `infinite: true`. Slick clones the slides so the loop has no visible seam, so every related product exists twice in the DOM — the second set positioned off-screen and `aria-hidden`. The text extractor sees the clones; a visitor doesn't.
+
+The same explanation covers most of the repeated "Add to Wishlist" links inside carousels. The duplication on the **single product summary** (outside any slider) is still real and still worth fixing — see §9.
 
 ### 11. Ten products, nine per page
 

@@ -31,7 +31,7 @@ if ( ! defined( 'QUEENDOR_WHOLESALE_MIN_ORDER' ) ) {
 	define( 'QUEENDOR_WHOLESALE_MIN_ORDER', 0 );
 }
 if ( ! defined( 'QUEENDOR_WHOLESALE_VERSION' ) ) {
-	define( 'QUEENDOR_WHOLESALE_VERSION', '1.0.0' );
+	define( 'QUEENDOR_WHOLESALE_VERSION', '1.1.0' );
 }
 
 /* -------------------------------------------------------------------------
@@ -578,3 +578,107 @@ function queendor_wholesale_nocache() {
 	}
 }
 add_action( 'template_redirect', 'queendor_wholesale_nocache', 0 );
+
+/* -------------------------------------------------------------------------
+ * 7. Marking trade orders, so nobody mistakes one for a pricing error
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Flag the order at the moment it is created.
+ *
+ * A ₵160 line on a product the shop lists at ₵320 looks like someone broke
+ * the pricing. The flag follows the order everywhere afterwards.
+ *
+ * @param WC_Order $order Order being created.
+ */
+function queendor_wholesale_flag_order( $order ) {
+	if ( ! $order instanceof WC_Order || ! queendor_wholesale_is_wholesale() ) {
+		return;
+	}
+
+	$order->update_meta_data( '_queendor_wholesale', 'yes' );
+}
+add_action( 'woocommerce_checkout_create_order', 'queendor_wholesale_flag_order' );
+
+/**
+ * Add an internal note once the order exists.
+ *
+ * @param int $order_id New order ID.
+ */
+function queendor_wholesale_order_note( $order_id ) {
+	$order = wc_get_order( $order_id );
+
+	if ( ! $order || 'yes' !== $order->get_meta( '_queendor_wholesale' ) ) {
+		return;
+	}
+
+	$order->add_order_note(
+		sprintf(
+			/* translators: %d: discount percentage. */
+			esc_html__( 'Wholesale account: trade pricing applied (%d%% off retail).', 'luxrio-child' ),
+			(int) round( ( 1 - (float) QUEENDOR_WHOLESALE_DISCOUNT ) * 100 )
+		)
+	);
+}
+add_action( 'woocommerce_new_order', 'queendor_wholesale_order_note' );
+
+/**
+ * Show the flag in the order emails.
+ *
+ * @param array    $fields        Extra email fields.
+ * @param bool     $sent_to_admin Whether this copy goes to staff.
+ * @param WC_Order $order         Order.
+ * @return array
+ */
+function queendor_wholesale_email_field( $fields, $sent_to_admin, $order ) {
+	unset( $sent_to_admin );
+
+	if ( $order instanceof WC_Order && 'yes' === $order->get_meta( '_queendor_wholesale' ) ) {
+		$fields['queendor_wholesale'] = array(
+			'label' => __( 'Account', 'luxrio-child' ),
+			'value' => __( 'Wholesale — trade pricing applied', 'luxrio-child' ),
+		);
+	}
+
+	return $fields;
+}
+add_filter( 'woocommerce_email_order_meta_fields', 'queendor_wholesale_email_field', 10, 3 );
+
+/**
+ * Add a column to the orders table.
+ *
+ * WooCommerce 8 moved orders out of wp_posts; both list tables are supported
+ * so the flag survives the site switching between them.
+ *
+ * @param array $columns Existing columns.
+ * @return array
+ */
+function queendor_wholesale_order_column( $columns ) {
+	$columns['queendor_wholesale'] = __( 'Wholesale', 'luxrio-child' );
+
+	return $columns;
+}
+add_filter( 'manage_edit-shop_order_columns', 'queendor_wholesale_order_column', 20 );
+add_filter( 'manage_woocommerce_page_wc-orders_columns', 'queendor_wholesale_order_column', 20 );
+
+/**
+ * Fill the column.
+ *
+ * @param string $column  Column key.
+ * @param int    $post_id Order ID (legacy list) or 0.
+ */
+function queendor_wholesale_order_column_content( $column, $post_id ) {
+	if ( 'queendor_wholesale' !== $column ) {
+		return;
+	}
+
+	$order = wc_get_order( $post_id );
+
+	if ( $order && 'yes' === $order->get_meta( '_queendor_wholesale' ) ) {
+		echo '<span style="display:inline-block;padding:2px 8px;border-radius:3px;background:#f0b849;color:#1d2327;font-weight:600;font-size:11px;">' . esc_html__( 'Trade', 'luxrio-child' ) . '</span>';
+	} else {
+		echo '&mdash;';
+	}
+}
+add_action( 'manage_shop_order_posts_custom_column', 'queendor_wholesale_order_column_content', 20, 2 );
+add_action( 'manage_woocommerce_page_wc-orders_custom_column', 'queendor_wholesale_order_column_content', 20, 2 );

@@ -71,6 +71,26 @@ Admins don't get trade prices automatically — deliberately, since you'd then s
 
 ---
 
+## Paying online
+
+Wholesale orders go through the normal checkout and the normal gateway — Paystack, card or mobile money. There is no invoicing, no net-30, no deposit step. A trade customer who orders six units pays for six units at the trade price, there and then.
+
+Two consequences worth knowing.
+
+**Staff cannot tell a trade order from a pricing mistake.** A ₵160 line on a product listed at ₵320 looks like someone broke the shop. So every trade order now:
+
+- gets an internal order note — *"Wholesale account: trade pricing applied (50% off retail)"*
+- shows a **Trade** badge in the orders list (a new column)
+- carries an *Account: Wholesale* line in the order emails, to both customer and staff
+
+**The gateway fee is a percentage, so it scales with the order — and your minimum already protects you.** With a ₵180 product at 50% off, the smallest legal trade line is 6 × ₵90 = **₵540**. At roughly 2% plus a small fixed fee, that's about ₵11 of processing on ₵540 — around 2% of margin, which is the cost of doing business.
+
+A minimum order value is therefore **not** needed: the per-style minimum of six already puts the floor at about ₵540, because the cheapest piece in the catalogue is the ₵180 earring. If you ever add a ₵40 item, that floor drops to ₵120 and a minimum order value starts to matter — set `QUEENDOR_WHOLESALE_MIN_ORDER` then, not before.
+
+### One choice still open
+
+Trade orders can be cancelled like any other, but a **refund** on a wholesale order needs care: refunding the trade price is correct, refunding the retail price would give back money that was never charged. WooCommerce refunds the amount paid, so this is already right — just check the amount on the first refund you issue.
+
 ## Two things that will bite if you skip them
 
 **Clear the cart after approval.** WooCommerce stores the price at the moment an item is added. A customer who filled a cart as retail, then got approved, keeps retail prices in that cart until they empty it.
@@ -83,7 +103,7 @@ Admins don't get trade prices automatically — deliberately, since you'd then s
 
 - **No second currency, no per-product trade price fields.** Trade is a percentage of retail. If particular styles need different trade prices, that's a field per product and a change here — say the word.
 - **No tiered pricing** (25+ at one rate, 50+ at another). It's a single trade price.
-- **No net terms or invoicing.** Wholesale orders pay at checkout like retail ones. If invoices are wanted — pay 30 days later — that's a gateway decision, not a pricing one.
+- **No net terms or invoicing.** Confirmed: wholesalers pay online at checkout, like retail customers.
 - **No trade-only catalogue.** Trade customers see the same products, at trade prices.
 
 ---

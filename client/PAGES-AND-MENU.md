@@ -144,6 +144,8 @@ Click through all six menu items on the live site. Expected:
 | About | `/about/` | The client story, blanks to fill |
 | Contact | `/contact/` | The contact page |
 
+**If `/` shows the blog instead of the home page** — the logo lands there too, because the theme's logo always links to the site root — then `Settings → Reading` has slipped onto *Your latest posts*, usually because the front page was trashed. Set it back to **A static page**: Homepage = `Home 01`, Posts page = `Blog`. If `Home 01` isn't in the dropdown, it's in the Trash — restore it first.
+
 If Symbols shows a blank area, the child theme's `[queendor_symbol_index]` shortcode is fine but the products' `pa_symbol` terms may not have been set yet — check one product's **Attributes** tab.
 
 Then check the **footer** menu too (`Appearance → Menus → Manage Locations`) — it usually has its own copy of the same demo links, and it's a separate menu.

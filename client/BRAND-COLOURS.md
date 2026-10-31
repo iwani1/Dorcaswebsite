@@ -62,6 +62,47 @@ To change the palette later, edit `assets/css/brand-colours.css` in the child th
 
 ---
 
+## The recommendation
+
+**Prices in teal. Not gold.** Four reasons, in order of weight:
+
+1. **It fails on the surface it lives on.** A price is small text on a white page. Gold measures **2.2:1** there — below even the 3:1 allowed for large type. Teal measures **9.9:1**, roughly double what AA asks for. This alone decides it.
+2. **Ghana is a phone market, used outdoors.** Low-contrast type is the first thing to disappear in sunlight, and the price is the one number the customer came for.
+3. **Gold price + gold everything = noise.** Accent only works by contrast with restraint. If gold is on the price, the button, the rule and the hover, it stops being an accent.
+4. **It costs nothing.** The price already inherits the theme colour. Teal is the default; gold would be an override.
+
+### But the colours aren't interchangeable — that's the real finding
+
+Each one dies on the surface the other is built for:
+
+| | on white | on cream | on teal | on black |
+|---|---|---|---|---|
+| **Teal** `#0B4B4C` | 9.9:1 | 8.9:1 | — | **2.1:1** |
+| **Gold** `#C8AC77` | 2.2:1 | 2.0:1 | 4.5:1 | 9.7:1 |
+
+Teal is a **light-surface** accent. Gold is a **dark-surface** accent. Neither is the brand colour "in general" — they're brand colours *for a surface*.
+
+So 1.6.0 includes a `qd-on-dark` class: put it on any dark Elementor section (Section → Advanced → CSS Classes) and the links, prices and buttons inside it turn gold automatically. Use it on the wholesale band, the footer, and the hero if it stays dark.
+
+## The hero — the one thing I'd change before showing the client
+
+The hero is a black section. Left as it is, two things happen:
+
+- **The top third of the site ignores the new palette.** The client will notice immediately: "you said you matched the logo, but the top is still black."
+- **A teal button on black is nearly invisible** — 2.1:1. The main call to action would dim the moment we repaint.
+
+**Recommendation:** make the hero section **teal**, keep the headline cream or white, and make the button **gold**. That gives you the palette in the most valuable 700 pixels on the site, and it's a better look than black anyway — black heroes are the most common thing on the internet, and this is the one brand asset nobody else has.
+
+If the photography is dark and dramatic and black suits it better, then keep black and add `qd-on-dark` to the section so the button goes gold. What you must not do is leave a teal button on a black field.
+
+## Where gold belongs — three places, no more
+
+1. The wholesale band (a dark surface — gold reads at 9.7:1 there)
+2. Rules, underlines and the small gold hairlines on cards
+3. Hover states on buttons
+
+That's it. Gold earns its "luxury" reading by scarcity; spread it around and it becomes a mustard.
+
 ## If the client wants a different balance
 
 The current split is **teal-led**, matching how the logo reads at small size: the mark and the descriptor are teal, the name is gold.

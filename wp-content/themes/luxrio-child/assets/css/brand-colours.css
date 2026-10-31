@@ -84,3 +84,43 @@ button.vs-btn,
 .back-to-top:hover {
 	background-color: var(--theme-color2);
 }
+
+/*
+ * Dark surfaces.
+ *
+ * The two colours are not interchangeable — each one dies on the surface the
+ * other is for. Measured contrast against what they sit on:
+ *
+ *   teal on white  9.9:1      gold on white  2.2:1
+ *   teal on black  2.1:1      gold on black  9.7:1
+ *   teal on cream  8.9:1      gold on teal   4.5:1
+ *
+ * So teal is the light-surface accent and gold is the dark-surface accent.
+ *
+ * Add the class `qd-on-dark` to any Elementor section with a dark or teal
+ * background (Section → Advanced → CSS Classes) and everything inside it —
+ * links, prices, buttons — flips to the gold that actually reads there.
+ */
+
+.qd-on-dark a,
+.qd-on-dark .woocommerce-Price-amount,
+.qd-on-dark .woocommerce div.product p.price,
+.qd-on-dark .woocommerce ul.products li.product .price {
+	color: var(--theme-color2);
+}
+
+.qd-on-dark .vs-btn,
+.qd-on-dark .woocommerce a.button,
+.qd-on-dark .woocommerce button.button {
+	background-color: var(--theme-color2);
+	border-color: var(--theme-color2);
+	color: #14100a;
+}
+
+.qd-on-dark .vs-btn:hover,
+.qd-on-dark .woocommerce a.button:hover,
+.qd-on-dark .woocommerce button.button:hover {
+	background-color: #f5f1e8;
+	border-color: #f5f1e8;
+	color: #14100a;
+}

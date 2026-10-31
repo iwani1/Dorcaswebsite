@@ -113,6 +113,11 @@ unzip -p "$THEME_ZIP" luxrio-child/style.css | grep -q "Version: $THEME_VERSION"
 unzip -p "$PLUGIN_ZIP" queendor-cleanup/queendor-cleanup.php | grep -q "Version:  *$PLUGIN_VERSION" \
 	|| { echo "error: plugin header version missing inside the plugin zip" >&2; exit 1; }
 
+# The preview page also answers at /preview.html, because that is the URL people
+# type. It redirects rather than duplicating: one copy of the page, no drift.
+cp "$REPO/tools/preview-redirect.html" "$OUT/preview.html"
+cp "$REPO/tools/preview-redirect.html" "$PACK/preview.html"
+
 # --- download page -----------------------------------------------------------
 cat > "$OUT/index.html" <<HTML
 <!doctype html>

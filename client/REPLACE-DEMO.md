@@ -110,6 +110,27 @@ Then check the footer menu and the mobile menu assignment (`Appearance → Menus
 
 The home page is an Elementor template — duplicating and editing it is a hundred times faster than starting from scratch. Work top to bottom, replacing section content, and delete any section you don't want rather than leaving it empty.
 
+### The slider widget — the fields you'll actually see
+
+The hero is a **theme widget**, not an Elementor Pro slider. Expand **Slider Content** and each slide opens six fields — two of them misspelled by the vendor, so don't go looking for the correctly-spelled version:
+
+| Field | What it holds in the demo |
+|---|---|
+| **Slider Image** | The cut-out product on the right — the watch. Transparent PNG; no background of its own. |
+| **Subttile** *[sic]* | Small line above the headline: "EXTRA 20% OFF" |
+| **Title** | "STYLISH WRIST WATCH" |
+| **Discription** *[sic]* | "STARTING AT $150.00" |
+| **Button Text** | "SHOP NOW" |
+| **Button Url** | Where the button goes — the demo points at the vendor's shop |
+
+- **Add a slide:** `+ Add Item` at the bottom of Slider Content.
+- **Reorder:** drag the handle at the left of each slide.
+- **Remove:** the bin icon on the slide row.
+- **Dots / Autoplay:** under **Slider Settings**. With more than one slide, turn Dots on — otherwise there's no cue that others exist.
+- **The dark background** is *not* in this widget. Click the **section** (not the widget) → Style → Background. That image is currently hotlinked from `wordpress.vecurosoft.com`.
+
+Each slide's Title renders as an `<h1>`, so three slides is three `<h1>`s on one page. One slide is the cleaner choice.
+
 ### 1. Hero
 
 > **Jewellery that already means something**

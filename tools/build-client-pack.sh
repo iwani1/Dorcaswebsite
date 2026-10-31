@@ -113,10 +113,7 @@ unzip -p "$THEME_ZIP" luxrio-child/style.css | grep -q "Version: $THEME_VERSION"
 unzip -p "$PLUGIN_ZIP" queendor-cleanup/queendor-cleanup.php | grep -q "Version:  *$PLUGIN_VERSION" \
 	|| { echo "error: plugin header version missing inside the plugin zip" >&2; exit 1; }
 
-# The preview page also answers at /preview.html, because that is the URL people
-# type. It redirects rather than duplicating: one copy of the page, no drift.
-cp "$REPO/tools/preview-redirect.html" "$OUT/preview.html"
-cp "$REPO/tools/preview-redirect.html" "$PACK/preview.html"
+# removes the path dependency that made /preview.html 404. The downloads page
 
 # --- download page -----------------------------------------------------------
 cat > "$OUT/index.html" <<HTML
@@ -253,5 +250,15 @@ cat > "$OUT/index.html" <<HTML
 <p class="n">Prices, materials, ring sizes and every <code>________</code> in the page copy are placeholders. Check them before the shop goes public.</p>
 </div></body></html>
 HTML
+
+# The colour system is the root page: it is the thing worth looking at, and it
+# removes the path dependency that made /preview.html 404. The downloads page
+# moves to /pack.html, still linked from the cards below.
+# moves to /pack.html.
+mv "$OUT/index.html" "$OUT/pack.html"
+cp "$REPO/client/brand/preview.html" "$OUT/index.html"
+cp "$REPO/client/brand/preview.html" "$OUT/preview.html"
+cp "$REPO/client/brand/preview.html" "$PACK/index.html"
+cp "$REPO/client/brand/preview.html" "$PACK/preview.html"
 
 echo "done — 3 archives verified, $(ls "$OUT" | wc -l | tr -d ' ') files in client/pack/"

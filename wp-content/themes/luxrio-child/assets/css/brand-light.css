@@ -1,0 +1,335 @@
+/*
+ * Queen Dor's - the light storefront
+ *
+ * The client's reference is a light, editorial jewellery shop: warm ground,
+ * dark type, gold used sparingly. The demo this site was built from is the
+ * opposite - black top bar, black header, black page, four home-page sections
+ * sitting on dark photographs. None of that black is a theme setting; it is
+ * Elementor content, so it is overridden here rather than switched.
+ *
+ * Two layers, kept separate on purpose:
+ *
+ *   1. the shell        - top bar, header, page ground, sticky header, mobile menu
+ *   2. the home page    - the four dark bands, their titles, their body copy,
+ *                         and the display scale they were set at
+ *
+ * Every section ID below is transcribed from the stylesheet WordPress generates
+ * for that page, uploads/elementor/css/post-1628.css. The page was rebuilt by a
+ * template import and its element IDs changed with it, so a rule written against
+ * the old page (post 25) would now miss every section.
+ *
+ * Photography is untouched. Copy is untouched.
+ *
+ * Disable the whole file:
+ *   add_filter( 'queendor_light_storefront', '__return_false' );
+ */
+
+/* ---------- page ground ---------- */
+
+body.qd-light {
+	background-color: var(--qd-bg-page);
+}
+
+body.qd-light #preloader,
+body.qd-light .preloader-wrap {
+	background-color: var(--qd-bg-page);
+}
+
+/* ---------- header shell ---------- */
+
+body.qd-light header.header {
+	background-color: var(--qd-bg-page);
+	border-bottom: 1px solid var(--qd-border-subtle);
+}
+
+body.qd-light header.header .elementor-section,
+body.qd-light header.header .elementor-column,
+body.qd-light header.header .elementor-widget-wrap,
+body.qd-light header.header .e-con,
+body.qd-light header.header .e-con-inner {
+	background-color: transparent !important;
+	background-image: none !important;
+}
+
+/* The top bar sits above the header and is the first thing to look wrong if it
+   keeps a black stripe under a white menu. */
+body.qd-light .header-top,
+body.qd-light .header-layout1 .header-top,
+body.qd-light .menu-top {
+	background-color: var(--qd-bg-subtle);
+	border-bottom: 1px solid var(--qd-border-subtle);
+}
+
+/* ---------- header text ---------- */
+
+body.qd-light header.header a,
+body.qd-light header.header .elementor-widget-container,
+body.qd-light header.header .header-links a,
+body.qd-light header.header .menu > li > a,
+body.qd-light .header-top a,
+body.qd-light .header-top span,
+body.qd-light .header-top p {
+	color: var(--qd-text-primary) !important;
+}
+
+body.qd-light header.header a:hover,
+body.qd-light header.header .menu > li > a:hover,
+body.qd-light .header-top a:hover {
+	color: var(--qd-primary) !important;
+}
+
+body.qd-light header.header .menu > li.current-menu-item > a,
+body.qd-light header.header .menu > li.current-menu-ancestor > a {
+	color: var(--qd-primary) !important;
+}
+
+/* Icons are drawn as SVG with an inherited fill; without this they stay white. */
+body.qd-light header.header svg {
+	fill: currentColor;
+	stroke: currentColor;
+}
+
+/* Count bubbles sit on their own coloured disc, so they keep light type. */
+body.qd-light header.header .cart-count,
+body.qd-light header.header .wishlist-count,
+body.qd-light header.header .header-btns .count {
+	color: #fff !important;
+	background-color: var(--qd-primary);
+}
+
+/* ---------- sticky header ---------- */
+
+body.qd-light .header-sticky,
+body.qd-light .vs-header.sticky,
+body.qd-light .sticky-header {
+	background-color: var(--qd-bg-page) !important;
+	box-shadow: var(--qd-shadow-sm);
+}
+
+/* ---------- mobile menu ---------- */
+
+body.qd-light .vs-menu-wrapper,
+body.qd-light .sidemenu-wrapper {
+	background-color: var(--qd-bg-page);
+}
+
+body.qd-light .vs-menu-wrapper a,
+body.qd-light .sidemenu-wrapper a {
+	color: var(--qd-text-primary);
+}
+
+
+/* ============================================================================
+ * Home page - the dark sections, made light
+ * ============================================================================ */
+
+/* ---------- 1. the hero ----------
+ *
+ * 4ef7025b  the hero section carried a dark photograph
+ * 5acb16fa  the hero container carried #020203 and a second photograph
+ *
+ * The hero headline is white and is set inside the widget, not in CSS, so the
+ * field behind it has to stay dark enough to carry white type. Adinkra Teal is
+ * the darkest colour in the palette: white on it measures 9.88:1.
+ */
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-4ef7025b:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-1628 .elementor-element.elementor-element-4ef7025b > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+	background-image: none !important;
+	background-color: var(--qd-primary) !important;
+}
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-5acb16fa:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-1628 .elementor-element.elementor-element-5acb16fa > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+	background-color: transparent !important;
+	background-image: none !important;
+}
+
+/* ---------- 2. the three photograph bands ----------
+ *
+ * 5d181b5a  "CUSTOM Jewelry"       was the demo's 3.jpg
+ * 126446e8  product slider         was the demo's 4.jpg
+ * 6051b75c  "Our work"             was a photograph under an orange veil
+ *
+ * The veil is the demo's #CF6D0333. White on that orange is 3.59:1 - the only
+ * place on the page that fails AA - so it goes, and the band takes the same
+ * warm linen as the other two.
+ */
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+	background-image: none !important;
+	background-color: var(--qd-bg-subtle) !important;
+}
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c::before,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c > .e-con-inner::before {
+	background-color: transparent !important;
+	opacity: 0 !important;
+}
+
+/* ---------- 3. the titles ----------
+ *
+ * 39f7ad53  "A piece that says something"
+ * 6a9c7a23  the 90px display title
+ * 40a27bbe  the 46px title, with one emphasised word in a <span>
+ * c7dea92   a centred section title
+ * 64e1ff38  the 80px title plus its eyebrow
+ */
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-39f7ad53 .title-selector,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23 .title-selector,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-c7dea92 .title-selector,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-selector {
+	color: var(--qd-text-heading) !important;
+}
+
+/* The emphasised word keeps its emphasis by turning gold, not by sharing the
+   heading colour - which would hide the emphasis entirely. */
+body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector span {
+	color: var(--qd-accent-text) !important;
+}
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-area .sec-text {
+	color: var(--qd-accent-text) !important;
+	letter-spacing: 1.8px !important;
+}
+
+/* ---------- 4. body copy in those bands ---------- */
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a :is(p, li, span, .elementor-widget-text-editor),
+body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8 :is(p, li, span, .elementor-widget-text-editor),
+body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c :is(p, li, span, .elementor-widget-text-editor) {
+	color: var(--qd-text-body) !important;
+}
+
+/* ============================================================================
+ * Home page - the display scale
+ *
+ * Five headline sizes were in use (90/85, 80/95, 46/52, and two nobody chose),
+ * so nothing on the page was the biggest and the eye had no focal point below
+ * the hero. Three sizes now: 60 / 40 / 32.
+ * ============================================================================ */
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23 .title-selector,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-selector {
+	font-size: 60px !important;
+	line-height: 68px !important;
+}
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector {
+	font-size: 40px !important;
+	line-height: 50px !important;
+}
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-39f7ad53 .title-selector,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-c7dea92 .title-selector {
+	font-size: 32px !important;
+	line-height: 42px !important;
+}
+
+@media (max-width: 1024px) {
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23 .title-selector,
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-selector {
+		font-size: 44px !important;
+		line-height: 52px !important;
+	}
+
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector {
+		font-size: 34px !important;
+		line-height: 44px !important;
+	}
+
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-39f7ad53 .title-selector,
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-c7dea92 .title-selector {
+		font-size: 28px !important;
+		line-height: 36px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23 .title-selector,
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-selector {
+		font-size: 36px !important;
+		line-height: 44px !important;
+	}
+
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector {
+		font-size: 30px !important;
+		line-height: 40px !important;
+	}
+
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-39f7ad53 .title-selector,
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-c7dea92 .title-selector {
+		font-size: 26px !important;
+		line-height: 34px !important;
+	}
+}
+
+/* ---------- the 111.129% width hack ----------
+ * Two title widgets are set 11% wider than their column, which is how the demo
+ * let a heading bleed past its gutter. On a narrow viewport that is a
+ * horizontal-scroll candidate.
+ */
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe {
+	width: 100% !important;
+	max-width: 100% !important;
+	--container-widget-width: 100% !important;
+}
+
+/* ---------- one content width, one rhythm ----------
+ * The promo pair sat in 1600px while every band below it sat in 1330px, and the
+ * bands used 120/90, 120/120, 120/90 and 160/160.
+ */
+
+@media (min-width: 768px) {
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-3d12503f {
+		--content-width: 1330px !important;
+	}
+}
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-3d79a7ba,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c {
+	--padding-top: 120px !important;
+	--padding-bottom: 120px !important;
+}
+
+@media (max-width: 1024px) {
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-3d79a7ba,
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a,
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8,
+	body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c {
+		--padding-top: 80px !important;
+		--padding-bottom: 80px !important;
+	}
+}
+
+/* ---------- the promo pair's demo colours ----------
+ * 472310e5 and 740be13 are the two cards under the hero. Their title, price and
+ * stars were still #021210, #3C3B3B and #000000 - three greys the palette does
+ * not contain.
+ */
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-472310e5 .banner-style .banner-title a,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-740be13 .banner-style .banner-title a {
+	color: var(--qd-text-primary) !important;
+}
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-472310e5 .banner-style .product-price,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-740be13 .banner-style .product-price {
+	color: var(--qd-primary) !important;
+}
+
+body.qd-light .elementor-1628 .elementor-element.elementor-element-472310e5 .star-rating::before,
+body.qd-light .elementor-1628 .elementor-element.elementor-element-740be13 .star-rating::before {
+	color: var(--qd-accent-text) !important;
+}

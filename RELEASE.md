@@ -1,6 +1,23 @@
 # Release state
 
-## Ship next: `QueenDors-child-theme-1.7.2.zip` — 222 KB
+## Try this: `QueenDors-child-theme-1.8.3.zip` — 226 KB
+
+The light storefront, rebuilt against the page **as it now is** (post 1628, after
+the template import) — plus the demo palette removed at its source. This is the
+answer to the client sending the Bijoux reference: warm ground, dark type, gold
+in small doses.
+
+| | |
+|---|---|
+| white page, linen bands, white header, teal hero | `brand-light.css` |
+| the orange veil and the orange global colour | gone — 3.59:1 was the only AA failure |
+| display scale, width hack, rhythm | 60/40/32, one content width, one padding |
+| menu trim | carried forward from 1.7.2 |
+
+Undo without touching files: `add_filter( 'queendor_light_storefront', '__return_false' );`
+Full reasoning: `client/CLIENT-REFERENCE-BIJOUX.md`.
+
+## Also good: `QueenDors-child-theme-1.7.2.zip` — 222 KB
 
 1.7.1 plus one change: the header menu stops wrapping. Cart and Checkout leave
 the menu (they are already in the header — cart icon with count, and cart leads to

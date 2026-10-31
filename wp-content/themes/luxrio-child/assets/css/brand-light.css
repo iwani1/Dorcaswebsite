@@ -415,44 +415,62 @@ body.qd-light .elementor-element-4ef7025b .vs-btn {
 }
 
 /* ============================================================================
- * The seam between the header and the first section
+ * The seam between the header and the first section - closed, not covered
  *
- * The demo leaves a gap between the header block and the first section on the
- * home page. On a black site that gap is black and nobody sees it; on a white
- * ground it is a white stripe about a hundred pixels tall, which is exactly
- * what it looked like once this layer was switched on.
+ * The demo leaves a gap of about a hundred pixels between the header and the
+ * first home-page section. On a black site it was black and invisible; on a white
+ * one it is a white stripe.
  *
- * The cause is not in a stylesheet I can read - it may be a margin on the first
- * section or a padding row inside the header template - so rather than guess at
- * one of them, the gap is painted from the header's own box. A hard-edged
- * shadow, no blur, extending downward: whatever is between the two teal blocks
- * becomes teal, and anything that follows and paints its own background covers
- * it again.
+ * Whatever owns that space, this removes it:
  *
- * Scoped to the front page, because on the shop, the cart and the product pages
- * the first block after the header is the page itself and a 160px teal band
- * would be a stripe of its own.
+ *   .breadcumb-wrapper   an empty page-title band, if the front page renders one
+ *   .main               the content wrapper, in case the theme pads it
+ *   the first section    in case the margin is on the hero itself
+ *
+ * Every candidate is zeroed rather than guessed at, and the band is also hidden
+ * on the front page because it carries no text there.
+ *
+ * The shadow at the end is a safety net, not the mechanism: if some plugin adds
+ * a margin I cannot see, the leftover strip is teal rather than white. It is
+ * invisible whenever the section below paints a background of its own.
  * ============================================================================ */
 
-body.qd-light.home header.header,
-body.qd-light.home .vs-header,
-body.qd-light.home .header-layout1 {
-	box-shadow: 0 160px 0 0 var(--qd-primary) !important;
+/* an empty page-title band has no business on the front page */
+body.qd-light.home .breadcumb-wrapper,
+body.qd-light.home .page-title-area,
+body.qd-light.home .breadcumb-content {
+	display: none !important;
 }
 
-/* And where the gap is a margin, remove it. */
+/* the content wrapper */
 body.qd-light.home .main,
 body.qd-light.home main.main,
-body.qd-light.home .elementor-element.elementor-element-4ef7025b,
-body.qd-light.home .main > :first-child {
+body.qd-light.home #content,
+body.qd-light.home .site-content {
 	margin-top: 0 !important;
 	padding-top: 0 !important;
 }
 
-/* The first section of the home page must keep a minimum height even if its
-   background is not painted, or the teal from the header would run into the
-   next band. */
-body.qd-light.home .main > .elementor:first-child,
+/* the first section, whatever its id, and the hero by name */
+body.qd-light.home .main > :first-child,
+body.qd-light.home .main > :first-child > .e-con,
+body.qd-light.home header + .main > :first-child,
+body.qd-light.home header + :is(.main, .elementor, .elementor-section, .e-con),
 body.qd-light.home .elementor-element.elementor-element-4ef7025b {
-	min-height: 1px;
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+/* the header itself must not add a margin of its own */
+body.qd-light.home header,
+body.qd-light.home header.header,
+body.qd-light.home .vs-header {
+	margin-bottom: 0 !important;
+}
+
+/* Safety net: any strip that survives is the colour of the header, not the page. */
+body.qd-light.home header.header,
+body.qd-light.home .vs-header,
+body.qd-light.home .header-layout1 {
+	box-shadow: 0 160px 0 0 var(--qd-primary) !important;
 }

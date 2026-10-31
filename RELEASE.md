@@ -1,6 +1,13 @@
 # Release state
 
-## Ship this: `QueenDors-child-theme-1.8.6.zip` — 228 KB
+## Ship this: `QueenDors-child-theme-1.8.7.zip` — 228 KB
+
+1.8.6 plus a real close on the seam under the header: the empty page-title band is
+hidden on the front page and every candidate that could own the space — the
+content wrapper, the first section, the hero, the header's own margin — is zeroed.
+The teal shadow stays only as a fallback.
+
+## Previous: `QueenDors-child-theme-1.8.6.zip` — 228 KB
 
 1.8.5 plus the seam under the header. The demo leaves a gap between the header
 and the first home-page section; on a black site it was invisible, on a white one

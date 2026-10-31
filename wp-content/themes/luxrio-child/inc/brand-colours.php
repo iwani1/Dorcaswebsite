@@ -43,8 +43,43 @@ function queendor_brand_colours() {
 		array( 'queendor-brand-tokens' ),
 		queendor_version()
 	);
+
+	wp_enqueue_style(
+		'queendor-brand-light',
+		$dir . '/brand-light.css',
+		array( 'queendor-brand-components' ),
+		queendor_version()
+	);
 }
 add_action( 'wp_enqueue_scripts', 'queendor_brand_colours', 30 );
+
+/**
+ * Light storefront, on by default.
+ *
+ * The demo's black shell is Elementor content rather than a theme setting, so
+ * there is nothing in the customiser to switch — it is overridden in CSS and
+ * gated behind a body class, which means one filter turns it back off without
+ * editing a stylesheet.
+ *
+ * @return bool
+ */
+function queendor_light_storefront() {
+	return (bool) apply_filters( 'queendor_light_storefront', true );
+}
+
+/**
+ * Add the body class the light stylesheet hangs off.
+ *
+ * @param array $classes Body classes.
+ * @return array
+ */
+function queendor_light_body_class( $classes ) {
+	if ( queendor_light_storefront() ) {
+		$classes[] = 'qd-light';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'queendor_light_body_class' );
 
 /**
  * Colour the mobile browser chrome to match the header.

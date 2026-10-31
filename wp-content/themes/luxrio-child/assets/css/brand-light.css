@@ -1,0 +1,110 @@
+/*
+ * Queen Dor's — light storefront shell
+ *
+ * The demo paints its shell black: the top bar, the header, the page. That
+ * black is Elementor content, not a theme setting, so there is no switch to
+ * flip — these rules flip it.
+ *
+ * Scope is deliberate. This file lightens the *chrome* (header, top bar, page
+ * ground, preloader). It does not touch section backgrounds, because a section's
+ * darkness is a design decision made in Elementor and a blanket override would
+ * put white text on white — the demo's sections carry their own text colours.
+ * Section backgrounds are listed in client/LIGHT-MODE.md instead.
+ *
+ * Disable the whole file with:
+ *   add_filter( 'queendor_light_storefront', '__return_false' );
+ */
+
+/* ---------- page ground ---------- */
+
+body.qd-light {
+	background-color: var(--qd-bg-page);
+}
+
+body.qd-light #preloader,
+body.qd-light .preloader-wrap {
+	background-color: var(--qd-bg-page);
+}
+
+/* ---------- header shell ---------- */
+
+body.qd-light header.header {
+	background-color: var(--qd-bg-page);
+	border-bottom: 1px solid var(--qd-border-subtle);
+}
+
+body.qd-light header.header .elementor-section,
+body.qd-light header.header .elementor-column,
+body.qd-light header.header .elementor-widget-wrap,
+body.qd-light header.header .e-con,
+body.qd-light header.header .e-con-inner {
+	background-color: transparent !important;
+	background-image: none !important;
+}
+
+/* The top bar sits above the header and is the first thing to look wrong if it
+   keeps a black stripe under a white menu. */
+body.qd-light .header-top,
+body.qd-light .header-layout1 .header-top,
+body.qd-light .menu-top {
+	background-color: var(--qd-bg-subtle);
+	border-bottom: 1px solid var(--qd-border-subtle);
+}
+
+/* ---------- header text ---------- */
+
+body.qd-light header.header a,
+body.qd-light header.header .elementor-widget-container,
+body.qd-light header.header .header-links a,
+body.qd-light header.header .menu > li > a,
+body.qd-light .header-top a,
+body.qd-light .header-top span,
+body.qd-light .header-top p {
+	color: var(--qd-text-primary) !important;
+}
+
+body.qd-light header.header a:hover,
+body.qd-light header.header .menu > li > a:hover,
+body.qd-light .header-top a:hover {
+	color: var(--qd-primary) !important;
+}
+
+body.qd-light header.header .menu > li.current-menu-item > a,
+body.qd-light header.header .menu > li.current-menu-ancestor > a {
+	color: var(--qd-primary) !important;
+}
+
+/* Icons are drawn as SVG with an inherited fill; without this they stay white. */
+body.qd-light header.header svg {
+	fill: currentColor;
+	stroke: currentColor;
+}
+
+/* Count bubbles sit on their own coloured disc, so they keep light type. */
+body.qd-light header.header .cart-count,
+body.qd-light header.header .wishlist-count,
+body.qd-light header.header .header-btns .count {
+	color: #fff !important;
+	background-color: var(--qd-primary);
+}
+
+/* ---------- sticky header ---------- */
+
+body.qd-light .header-sticky,
+body.qd-light .vs-header.sticky,
+body.qd-light .sticky-header {
+	background-color: var(--qd-bg-page) !important;
+	box-shadow: var(--qd-shadow-sm);
+}
+
+/* ---------- mobile menu ---------- */
+
+body.qd-light .vs-menu-wrapper,
+body.qd-light .sidemenu-wrapper {
+	background-color: var(--qd-bg-page);
+}
+
+body.qd-light .vs-menu-wrapper a,
+body.qd-light .sidemenu-wrapper a {
+	color: var(--qd-text-primary);
+}

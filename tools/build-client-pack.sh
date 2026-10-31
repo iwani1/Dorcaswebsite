@@ -66,7 +66,7 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
 # --- documents and data ------------------------------------------------------
-DOCS=(UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
+DOCS=(LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
 mkdir -p "$OUT/brand"
@@ -165,6 +165,10 @@ cat > "$OUT/index.html" <<HTML
 <a class="card" href="IMPORT-GUIDE.md">
   <strong>IMPORT-GUIDE.md</strong>
   <span>The catalogue import, step by step, with the placeholder prices to replace.</span>
+</a>
+<a class="card" href="LIGHT-MODE.md">
+  <strong>LIGHT-MODE.md</strong>
+  <span>What 1.8.0 already made light, and the four sections CSS cannot reach.</span>
 </a>
 <a class="card" href="UPLOAD-THEME.md">
   <strong>UPLOAD-THEME.md</strong>

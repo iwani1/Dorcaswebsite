@@ -1,6 +1,19 @@
 # Release state
 
-## Try this: `QueenDors-child-theme-1.8.3.zip` — 226 KB
+## Ship this: `QueenDors-child-theme-1.8.5.zip` — 227 KB
+
+The text-visibility fix. 1.8.4's light layer left the theme's own templates —
+shop, product, cart, checkout, account, policies, blog — with white headings and
+pale grey body copy on a white page: 1.00:1 and 1.61:1. Both are now driven from
+the variables the theme actually reads, and headings are repainted only inside
+those templates.
+
+Also in this version: header on teal (1.8.4), light home page (1.8.3), display
+scale, orange removal, menu trim.
+
+Full findings with the measured table: `client/CONTRAST-AUDIT.md`.
+
+## Superseded: `QueenDors-child-theme-1.8.3.zip` — 226 KB
 
 The light storefront, rebuilt against the page **as it now is** (post 1628, after
 the template import) — plus the demo palette removed at its source. This is the

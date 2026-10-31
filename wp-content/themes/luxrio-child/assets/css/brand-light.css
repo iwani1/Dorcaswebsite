@@ -87,13 +87,26 @@ body.qd-light .vs-header .main-menu ul.sub-menu a {
 	color: var(--title-color, #211F1C);
 }
 
-/* The top bar sits above the header. It takes the same teal so the two read as
-   one band; its own type is light in the design and stays light. */
+/* The top bar sits above the header and carries no logo, so it can go light
+   with dark type - which also means the small print survives the change to
+   --smoke-color further down this file. */
 body.qd-light .header-top,
 body.qd-light .header-layout1 .header-top,
 body.qd-light .menu-top {
-	background-color: var(--qd-primary) !important;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+	background-color: var(--qd-bg-subtle) !important;
+	border-bottom: 1px solid var(--qd-border-subtle);
+}
+
+body.qd-light .header-top a,
+body.qd-light .header-top span,
+body.qd-light .header-top p,
+body.qd-light .menu-top a {
+	color: var(--qd-text-body) !important;
+}
+
+body.qd-light .header-top a:hover,
+body.qd-light .menu-top a:hover {
+	color: var(--qd-primary) !important;
 }
 
 /* ---------- sticky header ---------- */
@@ -120,14 +133,14 @@ body.qd-light .will-sticky .sticky-active.active {
  * the darkest colour in the palette: white on it measures 9.88:1.
  */
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-4ef7025b:not(.elementor-motion-effects-element-type-background),
-body.qd-light .elementor-1628 .elementor-element.elementor-element-4ef7025b > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+body.qd-light .elementor-element.elementor-element-4ef7025b:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-element.elementor-element-4ef7025b > .elementor-motion-effects-container > .elementor-motion-effects-layer {
 	background-image: none !important;
 	background-color: var(--qd-primary) !important;
 }
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-5acb16fa:not(.elementor-motion-effects-element-type-background),
-body.qd-light .elementor-1628 .elementor-element.elementor-element-5acb16fa > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+body.qd-light .elementor-element.elementor-element-5acb16fa:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-element.elementor-element-5acb16fa > .elementor-motion-effects-container > .elementor-motion-effects-layer {
 	background-color: transparent !important;
 	background-image: none !important;
 }
@@ -143,18 +156,18 @@ body.qd-light .elementor-1628 .elementor-element.elementor-element-5acb16fa > .e
  * warm linen as the other two.
  */
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a:not(.elementor-motion-effects-element-type-background),
-body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a > .elementor-motion-effects-container > .elementor-motion-effects-layer,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8:not(.elementor-motion-effects-element-type-background),
-body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c:not(.elementor-motion-effects-element-type-background),
-body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+body.qd-light .elementor-element.elementor-element-5d181b5a:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-element.elementor-element-5d181b5a > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+body.qd-light .elementor-element.elementor-element-126446e8:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-element.elementor-element-126446e8 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+body.qd-light .elementor-element.elementor-element-6051b75c:not(.elementor-motion-effects-element-type-background),
+body.qd-light .elementor-element.elementor-element-6051b75c > .elementor-motion-effects-container > .elementor-motion-effects-layer {
 	background-image: none !important;
 	background-color: var(--qd-bg-subtle) !important;
 }
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c::before,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c > .e-con-inner::before {
+body.qd-light .elementor-element.elementor-element-6051b75c::before,
+body.qd-light .elementor-element.elementor-element-6051b75c > .e-con-inner::before {
 	background-color: transparent !important;
 	opacity: 0 !important;
 }
@@ -168,30 +181,30 @@ body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c > .e
  * 64e1ff38  the 80px title plus its eyebrow
  */
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-39f7ad53 .title-selector,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23 .title-selector,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-c7dea92 .title-selector,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-selector {
+body.qd-light .elementor-element.elementor-element-39f7ad53 .title-selector,
+body.qd-light .elementor-element.elementor-element-6a9c7a23 .title-selector,
+body.qd-light .elementor-element.elementor-element-40a27bbe .title-selector,
+body.qd-light .elementor-element.elementor-element-c7dea92 .title-selector,
+body.qd-light .elementor-element.elementor-element-64e1ff38 .title-selector {
 	color: var(--qd-text-heading) !important;
 }
 
 /* The emphasised word keeps its emphasis by turning gold, not by sharing the
    heading colour - which would hide the emphasis entirely. */
-body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector span {
+body.qd-light .elementor-element.elementor-element-40a27bbe .title-selector span {
 	color: var(--qd-accent-text) !important;
 }
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-area .sec-text {
+body.qd-light .elementor-element.elementor-element-64e1ff38 .title-area .sec-text {
 	color: var(--qd-accent-text) !important;
 	letter-spacing: 1.8px !important;
 }
 
 /* ---------- 4. body copy in those bands ---------- */
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a :is(p, li, span, .elementor-widget-text-editor),
-body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8 :is(p, li, span, .elementor-widget-text-editor),
-body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c :is(p, li, span, .elementor-widget-text-editor) {
+body.qd-light .elementor-element.elementor-element-5d181b5a :is(p, li, span, .elementor-widget-text-editor),
+body.qd-light .elementor-element.elementor-element-126446e8 :is(p, li, span, .elementor-widget-text-editor),
+body.qd-light .elementor-element.elementor-element-6051b75c :is(p, li, span, .elementor-widget-text-editor) {
 	color: var(--qd-text-body) !important;
 }
 
@@ -203,56 +216,56 @@ body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c :is(
  * the hero. Three sizes now: 60 / 40 / 32.
  * ============================================================================ */
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23 .title-selector,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-selector {
+body.qd-light .elementor-element.elementor-element-6a9c7a23 .title-selector,
+body.qd-light .elementor-element.elementor-element-64e1ff38 .title-selector {
 	font-size: 60px !important;
 	line-height: 68px !important;
 }
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector {
+body.qd-light .elementor-element.elementor-element-40a27bbe .title-selector {
 	font-size: 40px !important;
 	line-height: 50px !important;
 }
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-39f7ad53 .title-selector,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-c7dea92 .title-selector {
+body.qd-light .elementor-element.elementor-element-39f7ad53 .title-selector,
+body.qd-light .elementor-element.elementor-element-c7dea92 .title-selector {
 	font-size: 32px !important;
 	line-height: 42px !important;
 }
 
 @media (max-width: 1024px) {
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23 .title-selector,
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-selector {
+	body.qd-light .elementor-element.elementor-element-6a9c7a23 .title-selector,
+	body.qd-light .elementor-element.elementor-element-64e1ff38 .title-selector {
 		font-size: 44px !important;
 		line-height: 52px !important;
 	}
 
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector {
+	body.qd-light .elementor-element.elementor-element-40a27bbe .title-selector {
 		font-size: 34px !important;
 		line-height: 44px !important;
 	}
 
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-39f7ad53 .title-selector,
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-c7dea92 .title-selector {
+	body.qd-light .elementor-element.elementor-element-39f7ad53 .title-selector,
+	body.qd-light .elementor-element.elementor-element-c7dea92 .title-selector {
 		font-size: 28px !important;
 		line-height: 36px !important;
 	}
 }
 
 @media (max-width: 767px) {
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23 .title-selector,
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-64e1ff38 .title-selector {
+	body.qd-light .elementor-element.elementor-element-6a9c7a23 .title-selector,
+	body.qd-light .elementor-element.elementor-element-64e1ff38 .title-selector {
 		font-size: 36px !important;
 		line-height: 44px !important;
 	}
 
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe .title-selector {
+	body.qd-light .elementor-element.elementor-element-40a27bbe .title-selector {
 		font-size: 30px !important;
 		line-height: 40px !important;
 	}
 
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-39f7ad53 .title-selector,
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-c7dea92 .title-selector {
+	body.qd-light .elementor-element.elementor-element-39f7ad53 .title-selector,
+	body.qd-light .elementor-element.elementor-element-c7dea92 .title-selector {
 		font-size: 26px !important;
 		line-height: 34px !important;
 	}
@@ -264,8 +277,8 @@ body.qd-light .elementor-1628 .elementor-element.elementor-element-c7dea92 .titl
  * horizontal-scroll candidate.
  */
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-6a9c7a23,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe {
+body.qd-light .elementor-element.elementor-element-6a9c7a23,
+body.qd-light .elementor-element.elementor-element-40a27bbe {
 	width: 100% !important;
 	max-width: 100% !important;
 	--container-widget-width: 100% !important;
@@ -277,24 +290,24 @@ body.qd-light .elementor-1628 .elementor-element.elementor-element-40a27bbe {
  */
 
 @media (min-width: 768px) {
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-3d12503f {
+	body.qd-light .elementor-element.elementor-element-3d12503f {
 		--content-width: 1330px !important;
 	}
 }
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-3d79a7ba,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c {
+body.qd-light .elementor-element.elementor-element-3d79a7ba,
+body.qd-light .elementor-element.elementor-element-5d181b5a,
+body.qd-light .elementor-element.elementor-element-126446e8,
+body.qd-light .elementor-element.elementor-element-6051b75c {
 	--padding-top: 120px !important;
 	--padding-bottom: 120px !important;
 }
 
 @media (max-width: 1024px) {
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-3d79a7ba,
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-5d181b5a,
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-126446e8,
-	body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c {
+	body.qd-light .elementor-element.elementor-element-3d79a7ba,
+	body.qd-light .elementor-element.elementor-element-5d181b5a,
+	body.qd-light .elementor-element.elementor-element-126446e8,
+	body.qd-light .elementor-element.elementor-element-6051b75c {
 		--padding-top: 80px !important;
 		--padding-bottom: 80px !important;
 	}
@@ -306,17 +319,97 @@ body.qd-light .elementor-1628 .elementor-element.elementor-element-6051b75c {
  * not contain.
  */
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-472310e5 .banner-style .banner-title a,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-740be13 .banner-style .banner-title a {
+body.qd-light .elementor-element.elementor-element-472310e5 .banner-style .banner-title a,
+body.qd-light .elementor-element.elementor-element-740be13 .banner-style .banner-title a {
 	color: var(--qd-text-primary) !important;
 }
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-472310e5 .banner-style .product-price,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-740be13 .banner-style .product-price {
+body.qd-light .elementor-element.elementor-element-472310e5 .banner-style .product-price,
+body.qd-light .elementor-element.elementor-element-740be13 .banner-style .product-price {
 	color: var(--qd-primary) !important;
 }
 
-body.qd-light .elementor-1628 .elementor-element.elementor-element-472310e5 .star-rating::before,
-body.qd-light .elementor-1628 .elementor-element.elementor-element-740be13 .star-rating::before {
+body.qd-light .elementor-element.elementor-element-472310e5 .star-rating::before,
+body.qd-light .elementor-element.elementor-element-740be13 .star-rating::before {
 	color: var(--qd-accent-text) !important;
+}
+
+/* ============================================================================
+ * Text on light surfaces - the whole site
+ *
+ * The parent theme is written for a black site, and two of its defaults are
+ * fatal once the ground is white:
+ *
+ *   .h1, h1 ... .h6, h6 { color: var(--white-color) }   -> 1.00:1 on white
+ *   body, p, a          { color: var(--smoke-color) }   -> 1.61:1 on white
+ *
+ * White headings and pale body copy are invisible on a white page - not low
+ * contrast, invisible. Both are changed at the variable level rather than
+ * selector by selector, because the theme drives the whole shop, the cart, the
+ * checkout, the account pages, the policy pages and the blog through them.
+ *
+ * The heading override is deliberately NOT blanket. Elementor pages set their
+ * own colours and some of them still sit on dark bands, so headings are only
+ * repainted inside the theme's own templates - WooCommerce, page content, the
+ * blog, the FAQ, breadcrumbs.
+ * ============================================================================ */
+
+body.qd-light {
+	/* body copy, paragraphs, uncoloured links */
+	--smoke-color: #3F4A49;
+	--text-color1: #3F4A49;
+	--text-color2: #3F4A49;
+	--text-color4: #3F4A49;
+	--text-color5: #211F1C;
+	--text-color8: #211F1C;
+
+	/* small print that was pale grey on black */
+	--gray-color1: #6C665A;
+	--gray-color2: #524E47;
+	--gray-color3: #6C665A;
+	--pagi-text-color: #524E47;
+	--footer-text-color: #6C665A;
+
+	/* rules that were light-on-dark and now disappear into the page */
+	--vs-border-color: #E6E1D5;
+	--vs-border-color2: #E6E1D5;
+	--vs-border-color3: #E6E1D5;
+}
+
+/* The breadcrumb band is deliberately left alone: the theme paints it with a
+   background image and puts white type on it. Colouring those headings dark
+   would be the same mistake in the other direction.
+ *
+ * Headings inside the theme's own templates. The shop, the product pages, the
+   cart, the checkout, the account area, the policy pages, the FAQ and the blog
+   are all rendered by theme templates rather than by Elementor. */
+body.qd-light :is(.woocommerce, .woocommerce-page, .page--item, .entry-content, .page-content, .faq-area, .blog, .sidebar, .vs-comment-form) :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+	color: var(--qd-text-heading) !important;
+}
+
+/* Form controls: the demo paints dark fields with pale type, which on a light
+   page reads as an empty box. */
+body.qd-light input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]),
+body.qd-light textarea,
+body.qd-light select,
+body.qd-light .theme-input-style {
+	background-color: #FFFFFF !important;
+	color: var(--qd-text-primary) !important;
+	border-color: var(--qd-border-default) !important;
+}
+
+body.qd-light ::placeholder {
+	color: var(--qd-text-muted) !important;
+	opacity: 1;
+}
+
+/* Anything still painted white inside the hero stays white: the hero field is
+   teal in this mode, and white on it measures 9.88:1. */
+body.qd-light .elementor-element-4ef7025b :is(h1, h2, h3, h4, h5, h6, p, span, a, div) {
+	color: #FFFFFF !important;
+}
+
+body.qd-light .elementor-element-4ef7025b .elementor-element-4ef7025b a,
+body.qd-light .elementor-element-4ef7025b .vs-btn {
+	color: #FFFFFF !important;
 }

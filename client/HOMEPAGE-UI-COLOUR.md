@@ -2,7 +2,9 @@
 
 **Page:** `https://www.blaharbenyah.com/dorcas/`
 **Theme live:** **1.8.1** (verified from the server, 2026-10-31)
-**Status:** fixed in **1.8.2** — §7 lists what shipped and what did not.
+**Status:** fixed in 1.8.2, then **reverted at the client's request** — the live
+site runs **1.7.1**, the dark-header version. This document is the audit, not a
+record of what is deployed. §7 says what the fix did.
 **Scope:** the home page, interface and colour only
 **Sources:** the rendered markup; the page's own Elementor stylesheet
 (`wp-content/uploads/elementor/css/post-25.css`), which states every section's

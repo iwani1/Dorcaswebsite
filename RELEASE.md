@@ -1,6 +1,21 @@
 # Release state
 
-**Live: `1.7.1`** — confirmed from the server on 2026-10-31, twice:
+## Ship next: `QueenDors-child-theme-1.7.2.zip` — 222 KB
+
+1.7.1 plus one change: the header menu stops wrapping. Cart and Checkout leave
+the menu (they are already in the header — cart icon with count, and cart leads to
+checkout), which puts Jewelry House / Wholesale / FAQ's / Contact / Shop / My
+account on one line instead of two.
+
+| | |
+|---|---|
+| `inc/menu-trim.php` | new — front-end filter on `wp_nav_menu_objects` |
+| the stored menu | **untouched** — items return if the theme is rolled back |
+| everything else | identical to 1.7.1 |
+
+Off-switch: `add_filter( 'queendor_trim_header_menu', '__return_false' );`
+
+## Live: `1.7.1` — confirmed from the server on 2026-10-31, twice:
 
 - `…/themes/luxrio-child/style.css` reports `Version: 1.7.1` with a cache-buster.
 - `…/themes/luxrio-child/assets/css/brand-light.css` returns **404**, so the

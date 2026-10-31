@@ -46,6 +46,7 @@ require_once get_stylesheet_directory() . '/inc/wholesale.php';
 require_once get_stylesheet_directory() . '/inc/wholesale-cta.php';
 require_once get_stylesheet_directory() . '/inc/demo-links.php';
 require_once get_stylesheet_directory() . '/inc/brand-colours.php';
+require_once get_stylesheet_directory() . '/inc/menu-trim.php';
 
 /*
  * The product blocks talk to WooCommerce classes directly, so they are only

@@ -1,0 +1,1527 @@
+{
+ "content": [
+  {
+   "id": "6d47ee5c",
+   "settings": {
+    "content_width": "full",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 0
+    },
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    },
+    "margin_tablet": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_image": {
+     "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2025/01/hero-bg-3-1-2-wp.jpg",
+     "id": 1394,
+     "size": "",
+     "alt": "",
+     "source": "library"
+    },
+    "background_position": "center center",
+    "background_repeat": "no-repeat",
+    "z_index": 1
+   },
+   "elements": [
+    {
+     "id": "6beb1e96",
+     "settings": {
+      "heroone_slides": [
+       {
+        "subtitle": "Adinkra jewellery · Accra",
+        "title": "Jewellery that means something",
+        "hero_text": "Hand-finished pieces, made to be given.",
+        "_id": "7e0af58",
+        "button_text": "Shop the collection",
+        "slider_image": {
+         "url": "https://www.blaharbenyah.com/dorcas/wp-content/uploads/2026/10/ChatGPT-Image-Oct-31-2026-08_39_23-AM-6-e1793436450913.png",
+         "id": 1556,
+         "size": "",
+         "alt": "",
+         "source": "library"
+        },
+        "link": "https://www.blaharbenyah.com/dorcas/shop/"
+       }
+      ],
+      "slider_dots": ""
+     },
+     "elements": [],
+     "isInner": false,
+     "widgetType": "luxrioherofour",
+     "elType": "widget"
+    }
+   ],
+   "isInner": false,
+   "elType": "container"
+  },
+  {
+   "id": "5a73b24b",
+   "settings": {
+    "flex_direction": "column",
+    "content_width": "full",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 0
+    },
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#020203",
+    "background_image": {
+     "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/2.jpg",
+     "id": 902,
+     "size": "",
+     "alt": "",
+     "source": "library"
+    },
+    "background_position": "center center",
+    "background_repeat": "no-repeat",
+    "background_size": "cover"
+   },
+   "elements": [
+    {
+     "id": "47f2c6c8",
+     "settings": {
+      "boxed_width": {
+       "unit": "px",
+       "size": 1600,
+       "sizes": []
+      },
+      "flex_direction": "row",
+      "flex_gap": {
+       "column": "0",
+       "row": "0",
+       "isLinked": false,
+       "unit": "px",
+       "size": 0
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "flex_wrap_tablet": "wrap"
+     },
+     "elements": [
+      {
+       "id": "3da2d2c9",
+       "settings": {
+        "content_width": "full",
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "60568b76",
+         "settings": {
+          "banner_image": {
+           "url": "https://www.blaharbenyah.com/dorcas/wp-content/uploads/2026/10/ChatGPT-Image-Oct-31-2026-08_39_26-AM-8.png",
+           "id": 1607,
+           "size": "",
+           "alt": "",
+           "source": "library"
+          },
+          "show_star": "yes",
+          "product_category_text": "For the shop",
+          "product_price": "Only From <span>GHC 100.00</span>",
+          "button_text": "Shop Now",
+          "button_link": {
+           "url": "https://www.blaharbenyah.com/dorcas/shop/",
+           "is_external": false,
+           "nofollow": false,
+           "custom_attributes": ""
+          },
+          "banner_bg_image": {
+           "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/banner-bg-1-1.png",
+           "id": 888,
+           "size": "",
+           "alt": "",
+           "source": "library"
+          },
+          "box_border_radius": {
+           "unit": "px",
+           "top": "10",
+           "right": "0",
+           "bottom": "0",
+           "left": "10",
+           "isLinked": false
+          },
+          "box_border_radius_tablet": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "star_color": "#C8AC77",
+          "category_text_color": "#211F1C",
+          "price_text_color": "#0B4B4C"
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "luxrioproductbanner",
+         "elType": "widget"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      },
+      {
+       "id": "50463557",
+       "settings": {
+        "content_width": "full",
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "4a932dfd",
+         "settings": {
+          "banner_image": {
+           "url": "https://www.blaharbenyah.com/dorcas/wp-content/uploads/2026/10/gold_bracelet_only_transparent_475x533-1.png",
+           "id": 1550,
+           "size": "",
+           "alt": "",
+           "source": "library"
+          },
+          "show_star": "yes",
+          "product_category_text": "For the gift",
+          "product_price": "Only From <span>GHC 300.00</span>",
+          "button_text": "Shop Now",
+          "button_link": {
+           "url": "https://www.blaharbenyah.com/dorcas/shop/",
+           "is_external": false,
+           "nofollow": false,
+           "custom_attributes": ""
+          },
+          "banner_bg_image": {
+           "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/banner-bg-1-2.png",
+           "id": 887,
+           "size": "",
+           "alt": "",
+           "source": "library"
+          },
+          "star_color": "#C8AC77",
+          "category_text_color": "#211F1C",
+          "price_text_color": "#0B4B4C",
+          "box_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "10",
+           "bottom": "10",
+           "left": "0",
+           "isLinked": false
+          },
+          "box_border_radius_tablet": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "luxrioproductbanner",
+         "elType": "widget"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      }
+     ],
+     "isInner": true,
+     "elType": "container"
+    },
+    {
+     "id": "59c06640",
+     "settings": {
+      "content_width": "full",
+      "flex_gap": {
+       "column": "0",
+       "row": "0",
+       "isLinked": false,
+       "unit": "px",
+       "size": 0
+      },
+      "padding": {
+       "unit": "px",
+       "top": "120",
+       "right": "0",
+       "bottom": "90",
+       "left": "0",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "80",
+       "right": "0",
+       "bottom": "50",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "5e5583a0",
+       "settings": {
+        "boxed_width": {
+         "unit": "px",
+         "size": 1330,
+         "sizes": []
+        },
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "content_width": "full"
+       },
+       "elements": [
+        {
+         "id": "1fa0e8b9",
+         "settings": {
+          "content_width": "full",
+          "flex_gap": {
+           "column": "0",
+           "row": "0",
+           "isLinked": false,
+           "unit": "px",
+           "size": 0
+          },
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "15",
+           "bottom": "0",
+           "left": "15",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "1c1be01b",
+           "settings": {
+            "section_title": "A piece that says something",
+            "section_subtitle": "Why Adinkra",
+            "section_description": "",
+            "show_sahpe": "yes",
+            "shape_icon": {
+             "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/11/title-shape-1.svg",
+             "id": 251,
+             "size": "",
+             "alt": "",
+             "source": "library"
+            },
+            "section_title_align": "center",
+            "section_title_color": "#FFFFFF"
+           },
+           "elements": [],
+           "isInner": false,
+           "widgetType": "luxriosectiontitle",
+           "elType": "widget"
+          }
+         ],
+         "isInner": true,
+         "elType": "container"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      },
+      {
+       "id": "33482552",
+       "settings": {
+        "boxed_width": {
+         "unit": "px",
+         "size": 1330,
+         "sizes": []
+        },
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "content_width": "full"
+       },
+       "elements": [
+        {
+         "id": "29f17a94",
+         "settings": {
+          "content_width": "full",
+          "flex_gap": {
+           "column": "0",
+           "row": "0",
+           "isLinked": false,
+           "unit": "px",
+           "size": 0
+          },
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [
+          {
+           "id": "7382287d",
+           "settings": {
+            "product_style": "4",
+            "product_count": 5,
+            "product_cats": [],
+            "desktop_items": {
+             "unit": "%",
+             "size": 4,
+             "sizes": []
+            },
+            "slider_arrows": ""
+           },
+           "elements": [],
+           "isInner": false,
+           "widgetType": "luxrioproductslider",
+           "elType": "widget"
+          }
+         ],
+         "isInner": true,
+         "elType": "container"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      }
+     ],
+     "isInner": true,
+     "elType": "container"
+    }
+   ],
+   "isInner": false,
+   "elType": "container"
+  },
+  {
+   "id": "5c383de2",
+   "settings": {
+    "content_width": "full",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 0
+    },
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "986b59b",
+     "settings": {
+      "left_side_big_image": {
+       "url": "https://www.blaharbenyah.com/dorcas/wp-content/uploads/2026/10/IMG_8575-e1793446803402.png",
+       "id": 1560,
+       "size": "",
+       "alt": "",
+       "source": "library"
+      },
+      "section_title": "CUSTOM Jewelry",
+      "section_subtitle": "exclusive categories",
+      "shape_icon": {
+       "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/11/title-shape-2.svg",
+       "id": 527,
+       "size": "",
+       "alt": "",
+       "source": "library"
+      },
+      "slides": [
+       {
+        "category_name": "Necklaces",
+        "_id": "561476d",
+        "luxrio_tab_builder_title_option": "906"
+       },
+       {
+        "category_name": "Earrings",
+        "_id": "449d97e",
+        "luxrio_tab_builder_title_option": "920"
+       },
+       {
+        "category_name": "Bracelets",
+        "_id": "cdc013b",
+        "luxrio_tab_builder_title_option": "920"
+       },
+       {
+        "_id": "0f086d3",
+        "category_name": "Rings",
+        "luxrio_tab_builder_title_option": "920"
+       },
+       {
+        "_id": "e3ed997",
+        "category_name": "Sets & Gifts",
+        "luxrio_tab_builder_title_option": "920"
+       }
+      ],
+      "shape_one": {
+       "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/cate-ele-2-1.png",
+       "id": 911,
+       "size": "",
+       "alt": "",
+       "source": "library"
+      },
+      "shape_two": {
+       "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/cate-ele-2-2.svg",
+       "id": 912,
+       "size": "",
+       "alt": "",
+       "source": "library"
+      },
+      "shape_three": {
+       "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/cate-ele-2-3.svg",
+       "id": 913,
+       "size": "",
+       "alt": "",
+       "source": "library"
+      },
+      "shape_four": {
+       "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/cate-ele-2-4.svg",
+       "id": 914,
+       "size": "",
+       "alt": "",
+       "source": "library"
+      },
+      "category_background_background": "classic",
+      "category_background_image": {
+       "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/cate-bg-1-1.png",
+       "id": 930,
+       "size": "",
+       "alt": "",
+       "source": "library"
+      },
+      "category_background_position": "center center",
+      "category_background_repeat": "no-repeat",
+      "category_background_size": "cover",
+      "slider_autoplay": "yes"
+     },
+     "elements": [],
+     "isInner": false,
+     "widgetType": "luxrioproductcategorytab",
+     "elType": "widget"
+    }
+   ],
+   "isInner": false,
+   "elType": "container"
+  },
+  {
+   "id": "773653e4",
+   "settings": {
+    "flex_direction": "column",
+    "content_width": "full",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 0
+    },
+    "padding": {
+     "unit": "px",
+     "top": "120",
+     "right": "0",
+     "bottom": "120",
+     "left": "0",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_image": {
+     "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/3.jpg",
+     "id": 963,
+     "size": "",
+     "alt": "",
+     "source": "library"
+    },
+    "background_position": "center center",
+    "background_repeat": "no-repeat",
+    "background_size": "cover",
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "0",
+     "bottom": "80",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "8e357ae",
+     "settings": {
+      "boxed_width": {
+       "unit": "px",
+       "size": 1330,
+       "sizes": []
+      },
+      "flex_direction": "row",
+      "flex_gap": {
+       "column": "0",
+       "row": "0",
+       "isLinked": false,
+       "unit": "px",
+       "size": 0
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "flex_wrap_tablet": "wrap"
+     },
+     "elements": [
+      {
+       "id": "6ee6aa0f",
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 41.666
+        },
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "15",
+         "bottom": "0",
+         "left": "15",
+         "isLinked": false
+        },
+        "_flex_size": "none",
+        "_element_width": "initial",
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": "",
+         "sizes": []
+        },
+        "flex_justify_content": "center"
+       },
+       "elements": [
+        {
+         "id": "53f4769",
+         "settings": {
+          "section_title": "High Class <span>Jewelry</span>",
+          "section_subtitle": "THE PROCESS",
+          "section_description": "",
+          "section_title_color": "#FFFFFF",
+          "section_title_typography_typography": "custom",
+          "section_title_typography_font_size": {
+           "unit": "px",
+           "size": 90,
+           "sizes": []
+          },
+          "section_title_typography_line_height": {
+           "unit": "px",
+           "size": 85,
+           "sizes": []
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "%",
+           "size": 111.129
+          },
+          "_flex_size": "none",
+          "section_wrapper_margin": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "section_subtitle_margin": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "20",
+           "left": "0",
+           "isLinked": false
+          },
+          "section_title_align_tablet": "center",
+          "section_title_typography_font_size_tablet": {
+           "unit": "px",
+           "size": 46,
+           "sizes": []
+          },
+          "section_title_typography_line_height_tablet": {
+           "unit": "px",
+           "size": 48,
+           "sizes": []
+          },
+          "section_title_typography_line_height_mobile": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          }
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "luxriosectiontitle",
+         "elType": "widget"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      },
+      {
+       "id": "424ba57b",
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 25
+        },
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "15",
+         "bottom": "0",
+         "left": "15",
+         "isLinked": false
+        },
+        "_flex_size": "none",
+        "_element_width": "initial",
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": "",
+         "sizes": []
+        },
+        "margin_tablet": {
+         "unit": "px",
+         "top": "30",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "271736b0",
+         "settings": {
+          "image": {
+           "url": "https://www.blaharbenyah.com/dorcas/wp-content/uploads/2026/10/IMG_8580-1.png",
+           "id": 1561,
+           "size": "",
+           "alt": "",
+           "source": "library"
+          }
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "image",
+         "elType": "widget"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      },
+      {
+       "id": "2010cf",
+       "settings": {
+        "content_width": "full",
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "15",
+         "bottom": "0",
+         "left": "15",
+         "isLinked": false
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": "",
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": "",
+         "sizes": []
+        },
+        "flex_justify_content": "center",
+        "margin_tablet": {
+         "unit": "px",
+         "top": "40",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "52dc19e7",
+         "settings": {
+          "section_title": "Our <span>work</span> \n\n ",
+          "section_subtitle": "",
+          "section_description": "Each piece is finished by hand, boxed in a Queen Dor's pouch, and sent from Accra. Retail and wholesale, delivered worldwide",
+          "section_title_color": "#FFFFFF",
+          "section_title_typography_typography": "custom",
+          "section_title_typography_font_size": {
+           "unit": "px",
+           "size": 46,
+           "sizes": []
+          },
+          "section_title_typography_line_height": {
+           "unit": "px",
+           "size": 52,
+           "sizes": []
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "%",
+           "size": 111.129
+          },
+          "_flex_size": "none",
+          "section_wrapper_margin": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "__globals__": {
+           "section_diff_title_color": "globals/colors?id=luxrio_opt_primary"
+          },
+          "section_title_align_tablet": "center"
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "luxriosectiontitle",
+         "elType": "widget"
+        },
+        {
+         "id": "6a41e1d8",
+         "settings": {
+          "button_text": "Contact Us",
+          "button_link": {
+           "url": "https://www.blaharbenyah.com/dorcas/contact/",
+           "is_external": false,
+           "nofollow": false,
+           "custom_attributes": ""
+          },
+          "button_icon": "fa-solid fa-headphones",
+          "button_style": "4",
+          "button_align_tablet": "center"
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "luxriobutton",
+         "elType": "widget"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      }
+     ],
+     "isInner": true,
+     "elType": "container"
+    }
+   ],
+   "isInner": false,
+   "elType": "container"
+  },
+  {
+   "id": "48af3b47",
+   "settings": {
+    "flex_direction": "column",
+    "content_width": "full",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 0
+    },
+    "padding": {
+     "unit": "px",
+     "top": "120",
+     "right": "0",
+     "bottom": "90",
+     "left": "0",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_image": {
+     "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/4.jpg",
+     "id": 970,
+     "size": "",
+     "alt": "",
+     "source": "library"
+    },
+    "background_position": "center center",
+    "background_repeat": "no-repeat",
+    "background_size": "cover",
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "0",
+     "bottom": "50",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "744e4025",
+     "settings": {
+      "boxed_width": {
+       "unit": "px",
+       "size": 1330,
+       "sizes": []
+      },
+      "flex_gap": {
+       "column": "0",
+       "row": "0",
+       "isLinked": false,
+       "unit": "px",
+       "size": 0
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "2212303d",
+       "settings": {
+        "content_width": "full",
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "14a88864",
+         "settings": {
+          "section_title": "Graceful Ear Drops",
+          "section_subtitle": "best selling",
+          "section_description": "",
+          "show_sahpe": "yes",
+          "shape_icon": {
+           "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/11/title-shape-1.svg",
+           "id": 251,
+           "size": "",
+           "alt": "",
+           "source": "library"
+          },
+          "section_title_align": "center",
+          "section_title_color": "#FFFFFF",
+          "_background_color_stop_tablet": {
+           "unit": "%"
+          },
+          "_background_color_stop_mobile": {
+           "unit": "%"
+          },
+          "_background_color_b_stop_tablet": {
+           "unit": "%"
+          },
+          "_background_color_b_stop_mobile": {
+           "unit": "%"
+          },
+          "_background_gradient_angle_tablet": {
+           "unit": "deg"
+          },
+          "_background_gradient_angle_mobile": {
+           "unit": "deg"
+          },
+          "_background_hover_color_stop_tablet": {
+           "unit": "%"
+          },
+          "_background_hover_color_stop_mobile": {
+           "unit": "%"
+          },
+          "_background_hover_color_b_stop_tablet": {
+           "unit": "%"
+          },
+          "_background_hover_color_b_stop_mobile": {
+           "unit": "%"
+          },
+          "_background_hover_gradient_angle_tablet": {
+           "unit": "deg"
+          },
+          "_background_hover_gradient_angle_mobile": {
+           "unit": "deg"
+          }
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "luxriosectiontitle",
+         "elType": "widget"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      }
+     ],
+     "isInner": true,
+     "elType": "container"
+    },
+    {
+     "id": "3568887b",
+     "settings": {
+      "boxed_width": {
+       "unit": "px",
+       "size": 1330,
+       "sizes": []
+      },
+      "flex_gap": {
+       "column": "0",
+       "row": "0",
+       "isLinked": false,
+       "unit": "px",
+       "size": 0
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "c725905",
+       "settings": {
+        "content_width": "full",
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "15",
+         "bottom": "0",
+         "left": "15",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "235a6a14",
+         "settings": {
+          "product_count": 8,
+          "column_count": "3",
+          "product_filter_by": "1",
+          "product_attributes": [
+           "recent-items"
+          ],
+          "product_cats": [],
+          "product_style": "4",
+          "column_count_tablet": "6",
+          "column_count_mobile": "12",
+          "_background_color_stop_tablet": {
+           "unit": "%"
+          },
+          "_background_color_stop_mobile": {
+           "unit": "%"
+          },
+          "_background_color_b_stop_tablet": {
+           "unit": "%"
+          },
+          "_background_color_b_stop_mobile": {
+           "unit": "%"
+          },
+          "_background_gradient_angle_tablet": {
+           "unit": "deg"
+          },
+          "_background_gradient_angle_mobile": {
+           "unit": "deg"
+          },
+          "_background_hover_color_stop_tablet": {
+           "unit": "%"
+          },
+          "_background_hover_color_stop_mobile": {
+           "unit": "%"
+          },
+          "_background_hover_color_b_stop_tablet": {
+           "unit": "%"
+          },
+          "_background_hover_color_b_stop_mobile": {
+           "unit": "%"
+          },
+          "_background_hover_gradient_angle_tablet": {
+           "unit": "deg"
+          },
+          "_background_hover_gradient_angle_mobile": {
+           "unit": "deg"
+          }
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "luxrioproducttab",
+         "elType": "widget"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      }
+     ],
+     "isInner": true,
+     "elType": "container"
+    }
+   ],
+   "isInner": false,
+   "elType": "container"
+  },
+  {
+   "id": "369360c",
+   "settings": {
+    "flex_direction": "column",
+    "content_width": "full",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 0
+    },
+    "background_background": "classic",
+    "background_image": {
+     "url": "https://www.blaharbenyah.com/dorcas/wp-content/uploads/2026/10/IMG_8575-1.png",
+     "id": 1562,
+     "size": "",
+     "alt": "",
+     "source": "library"
+    },
+    "background_position": "center center",
+    "background_repeat": "no-repeat",
+    "background_size": "cover",
+    "background_overlay_background": "classic",
+    "background_overlay_color": "#CF6D0333",
+    "background_overlay_opacity": {
+     "unit": "px",
+     "size": 1,
+     "sizes": []
+    },
+    "padding": {
+     "unit": "px",
+     "top": "160",
+     "right": "0",
+     "bottom": "160",
+     "left": "0",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "0",
+     "bottom": "80",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "6c72539",
+     "settings": {
+      "boxed_width": {
+       "unit": "px",
+       "size": 1330,
+       "sizes": []
+      },
+      "flex_gap": {
+       "column": "0",
+       "row": "0",
+       "isLinked": false,
+       "unit": "px",
+       "size": 0
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "7a1510d3",
+       "settings": {
+        "content_width": "full",
+        "flex_justify_content": "center",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "column": "0",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 0
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "15",
+         "bottom": "0",
+         "left": "15",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "4b8fb382",
+         "settings": {
+          "image": {
+           "url": "https://wordpress.vecurosoft.com/luxrio/wp-content/uploads/2024/12/title-shape-4.svg",
+           "id": 975,
+           "size": "",
+           "alt": "",
+           "source": "library"
+          }
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "image",
+         "elType": "widget"
+        },
+        {
+         "id": "518b8eab",
+         "settings": {
+          "section_title": "Style Keepers",
+          "section_subtitle": "",
+          "section_description": "Jewelry  NOW UPDATE!",
+          "section_title_align": "center",
+          "section_wrapper_margin": {
+           "unit": "px",
+           "top": "20",
+           "right": "0",
+           "bottom": "38",
+           "left": "0",
+           "isLinked": false
+          },
+          "section_wrapper_margin_mobile": {
+           "unit": "px",
+           "top": "20",
+           "right": "0",
+           "bottom": "20",
+           "left": "0",
+           "isLinked": false
+          },
+          "section_title_color": "#FFFFFF",
+          "section_title_typography_typography": "custom",
+          "section_title_typography_font_size": {
+           "unit": "px",
+           "size": 80,
+           "sizes": []
+          },
+          "section_title_typography_font_size_mobile": {
+           "unit": "px",
+           "size": 42,
+           "sizes": []
+          },
+          "section_title_typography_line_height": {
+           "unit": "px",
+           "size": 95,
+           "sizes": []
+          },
+          "section_title_typography_line_height_mobile": {
+           "unit": "px",
+           "size": 50,
+           "sizes": []
+          },
+          "section_description_color": "#FFFFFF",
+          "section_description_typography_typography": "custom",
+          "section_description_typography_font_weight": "700",
+          "section_description_typography_letter_spacing": {
+           "unit": "px",
+           "size": 3,
+           "sizes": []
+          },
+          "section_description_margin": {
+           "unit": "px",
+           "top": "-10",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [],
+         "isInner": false,
+         "widgetType": "luxriosectiontitle",
+         "elType": "widget"
+        }
+       ],
+       "isInner": true,
+       "elType": "container"
+      }
+     ],
+     "isInner": true,
+     "elType": "container"
+    }
+   ],
+   "isInner": false,
+   "elType": "container"
+  },
+  {
+   "id": "3a94b5b2",
+   "settings": {
+    "content_width": "full",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 0
+    },
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "3a072882",
+     "settings": {
+      "slides": [
+       {
+        "instagram_image": {
+         "url": "https://www.blaharbenyah.com/dorcas/wp-content/uploads/2026/10/IMG_8576-1-e1793440219644.png",
+         "id": 1569,
+         "size": "",
+         "alt": "",
+         "source": "library"
+        },
+        "_id": "251e806",
+        "instagram_url": "https://www.instagram.com/queendor_fashionhouse/"
+       },
+       {
+        "instagram_image": {
+         "url": "https://www.blaharbenyah.com/dorcas/wp-content/uploads/2026/10/IMG_8580-1.png",
+         "id": 1569,
+         "size": "",
+         "alt": "",
+         "source": "library"
+        },
+        "_id": "5208ff9",
+        "instagram_url": "https://www.instagram.com/queendor_fashionhouse/"
+       },
+       {
+        "instagram_image": {
+         "url": "https://www.blaharbenyah.com/dorcas/wp-content/uploads/2026/10/IMG_8575-1.png",
+         "id": 1569,
+         "size": "",
+         "alt": "",
+         "source": "library"
+        },
+        "_id": "b3cdb83",
+        "instagram_url": "https://www.instagram.com/queendor_fashionhouse/"
+       }
+      ],
+      "icon": {
+       "value": "fab fa-instagram",
+       "library": "fa-brands"
+      },
+      "instagram_text": "Instagram",
+      "slide_to_show": {
+       "unit": "px",
+       "size": 3,
+       "sizes": []
+      },
+      "instagram_style": "2",
+      "_background_color_stop_tablet": {
+       "unit": "%"
+      },
+      "_background_color_stop_mobile": {
+       "unit": "%"
+      },
+      "_background_color_b_stop_tablet": {
+       "unit": "%"
+      },
+      "_background_color_b_stop_mobile": {
+       "unit": "%"
+      },
+      "_background_gradient_angle_tablet": {
+       "unit": "deg"
+      },
+      "_background_gradient_angle_mobile": {
+       "unit": "deg"
+      },
+      "_background_hover_color_stop_tablet": {
+       "unit": "%"
+      },
+      "_background_hover_color_stop_mobile": {
+       "unit": "%"
+      },
+      "_background_hover_color_b_stop_tablet": {
+       "unit": "%"
+      },
+      "_background_hover_color_b_stop_mobile": {
+       "unit": "%"
+      },
+      "_background_hover_gradient_angle_tablet": {
+       "unit": "deg"
+      },
+      "_background_hover_gradient_angle_mobile": {
+       "unit": "deg"
+      }
+     },
+     "elements": [],
+     "isInner": false,
+     "widgetType": "luxrioinstagramslider",
+     "elType": "widget"
+    }
+   ],
+   "isInner": false,
+   "elType": "container"
+  }
+ ],
+ "page_settings": {
+  "luxrio_header_builder_option": "159"
+ },
+ "version": "0.4",
+ "title": "home page",
+ "type": "page"
+}

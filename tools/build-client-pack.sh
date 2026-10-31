@@ -66,7 +66,7 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
 # --- documents and data ------------------------------------------------------
-DOCS=(HOMEPAGE-UI-COLOUR.md HOMEPAGE-ANALYSIS.md LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
+DOCS=(HOMEPAGE-JSON-FIX.md HOMEPAGE-UI-COLOUR.md HOMEPAGE-ANALYSIS.md LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
 mkdir -p "$OUT/brand"
@@ -197,6 +197,10 @@ cat > "$OUT/index.html" <<HTML
 <a class="card" href="brand-palette.png">
   <strong>brand-palette.png</strong>
   <span>The four colours, side by side — show this to the client.</span>
+</a>
+<a class="card" href="HOMEPAGE-JSON-FIX.md">
+  <strong>HOMEPAGE-JSON-FIX.md</strong>
+  <span>Why the home page had empty sections, the 15 edits in the fixed export, and how to import it.</span>
 </a>
 <a class="card" href="HOMEPAGE-UI-COLOUR.md">
   <strong>HOMEPAGE-UI-COLOUR.md</strong>

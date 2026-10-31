@@ -27,6 +27,21 @@ for pair in "theme:$THEME_VERSION" "plugin:$PLUGIN_VERSION"; do
 	fi
 done
 
+# A theme without these is rejected at upload time. Fail here instead of
+# letting the client discover it in wp-admin.
+for required in style.css index.php functions.php; do
+	if [ ! -f "$THEME_DIR/$required" ]; then
+		echo "error: the theme is missing $required — WordPress will refuse to install it" >&2
+		exit 1
+	fi
+done
+
+PARENT="$(sed -n 's/^[[:space:]]*Template:[[:space:]]*\(.*\)/\1/p' "$THEME_DIR/style.css" | tr -d '\r' | head -n1)"
+if [ -z "$PARENT" ] || [ ! -d "$REPO/wp-content/themes/$PARENT" ]; then
+	echo "error: style.css declares Template: '${PARENT}', which has no matching parent theme" >&2
+	exit 1
+fi
+
 echo "packaging luxrio-child $THEME_VERSION, queendor-cleanup $PLUGIN_VERSION"
 
 rm -rf "$OUT"
@@ -51,7 +66,7 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
 # --- documents and data ------------------------------------------------------
-DOCS=(COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
+DOCS=(UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
 mkdir -p "$OUT/brand"
@@ -89,6 +104,9 @@ for archive in "$THEME_ZIP" "$PLUGIN_ZIP" "$PACK_ZIP"; do
 	unzip -tq "$archive" >/dev/null || { echo "error: $(basename "$archive") is corrupt" >&2; exit 1; }
 done
 
+unzip -Z1 "$THEME_ZIP" | grep -qx "luxrio-child/index.php" \
+	|| { echo "error: index.php is missing from the theme zip" >&2; exit 1; }
+
 unzip -p "$THEME_ZIP" luxrio-child/style.css | grep -q "Version: $THEME_VERSION" \
 	|| { echo "error: style.css version missing inside the theme zip" >&2; exit 1; }
 
@@ -118,9 +136,9 @@ cat > "$OUT/index.html" <<HTML
 <p class="sub">Rebuild the shop: clear the demo, import the client's pages, upload the theme and the cleanup tool. Everything is generated from the repository by <code>tools/build-client-pack.sh</code>.</p>
 
 <h2>Install these</h2>
-<a class="card" href="luxrio-child-$THEME_VERSION.zip">
+<a class="card" href="luxrio-child-$THEME_VERSION.zip" style="border-left-color:#0b4b4c">
   <strong>luxrio-child-$THEME_VERSION.zip</strong>
-  <span>Appearance → Themes → Upload Theme → Replace current with uploaded.</span>
+  <span>Appearance → Themes → Upload Theme → Replace current with uploaded. Read <a href="UPLOAD-THEME.md">UPLOAD-THEME.md</a> first — one extra field in Elementor.</span>
 </a>
 <a class="card" href="queendor-cleanup-$PLUGIN_VERSION.zip">
   <strong>queendor-cleanup-$PLUGIN_VERSION.zip</strong>
@@ -145,6 +163,10 @@ cat > "$OUT/index.html" <<HTML
 <a class="card" href="IMPORT-GUIDE.md">
   <strong>IMPORT-GUIDE.md</strong>
   <span>The catalogue import, step by step, with the placeholder prices to replace.</span>
+</a>
+<a class="card" href="UPLOAD-THEME.md">
+  <strong>UPLOAD-THEME.md</strong>
+  <span>Install, purge the cache in the right order, and the four checks that prove it worked.</span>
 </a>
 <a class="card" href="COLOR-SYSTEM.md">
   <strong>COLOR-SYSTEM.md</strong>

@@ -5,7 +5,7 @@
  Author:       Queen Dor's Fashion House
  Author URI:   https://www.instagram.com/queendor_fashionhouse/
  Template:     luxrio
- Version: 1.7.0
+ Version: 1.7.1
  Requires at least: 5.0
  Tested up to: 6.7
  Requires PHP: 7.0
@@ -16,7 +16,9 @@
 */
 
 /*  Queen Dor's — component styles live in assets/css/queendor.css
-    (enqueued from functions.php). Keep this file for overrides only.
+    (enqueued from functions.php), and the colour system in
+    assets/css/brand-tokens.css + brand-components.css, both generated from
+    tools/brand_palette.py. Keep this file for overrides only.
 
     [ Add your custom css below ]
 - - - - - - - - - - - - - - - - - - - - */

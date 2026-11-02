@@ -97,6 +97,14 @@ if [ ! -d "$FOOTER_DIR" ]; then
 fi
 cp -r "$FOOTER_DIR" "$OUT/"
 
+# --- page copy -----------------------------------------------------------------
+CONTENT_DIR="$REPO/client/content"
+if [ ! -d "$CONTENT_DIR" ]; then
+	echo "error: client/content is missing" >&2
+	exit 1
+fi
+cp -r "$CONTENT_DIR" "$OUT/"
+
 
 # --- combined pack -----------------------------------------------------------
 PACK="$STAGE/queendor-client-pack"
@@ -106,6 +114,7 @@ cp "$PLUGIN_ZIP" "$PACK/"
 for f in "${DOCS[@]}" "${DATA[@]}"; do cp "$REPO/client/$f" "$PACK/"; done
 cp -r "$PAGES_DIR" "$PACK/"
 cp -r "$FOOTER_DIR" "$PACK/"
+cp -r "$CONTENT_DIR" "$PACK/"
 mkdir -p "$PACK/brand"
 cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$REPO"/client/brand/*.css \
    "$REPO"/client/brand/*.json "$REPO"/client/brand/*.html "$REPO"/client/brand/*.pdf "$PACK/brand/"

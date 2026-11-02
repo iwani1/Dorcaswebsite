@@ -1,0 +1,52 @@
+{
+ "content": [
+  {
+   "id": "824fdf1",
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 0
+    },
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    },
+    "margin": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "9ae7a4f",
+     "settings": {
+      "html": "<div class=\"qd-symbols\">\n\t<style>\n\t\t.qd-symbols {\n\t\t\tmax-width: 1290px;\n\t\t\tmargin: 0 auto;\n\t\t\tpadding: 76px 24px;\n\t\t}\n\t\t.qd-symbols__eyebrow {\n\t\t\tmargin: 0 0 10px;\n\t\t\tfont-size: 12px;\n\t\t\tletter-spacing: 0.2em;\n\t\t\ttext-transform: uppercase;\n\t\t\tcolor: #8F6B28;\n\t\t}\n\t\t.qd-symbols__title {\n\t\t\tmargin: 0 0 12px;\n\t\t\tfont-size: clamp(26px, 3vw, 38px);\n\t\t\tline-height: 1.2;\n\t\t\tcolor: #0B4B4C;\n\t\t}\n\t\t.qd-symbols__intro {\n\t\t\tmax-width: 60ch;\n\t\t\tmargin: 0 0 40px;\n\t\t\tcolor: #3F4A49;\n\t\t}\n\t\t.qd-symbols__grid {\n\t\t\tdisplay: grid;\n\t\t\tgrid-template-columns: repeat(3, 1fr);\n\t\t\tgap: 18px;\n\t\t}\n\t\t.qd-symbols__card {\n\t\t\tdisplay: block;\n\t\t\tpadding: 26px 24px 24px;\n\t\t\tborder: 1px solid #E6E1D5;\n\t\t\tbackground: #FAF8F5;\n\t\t\ttext-decoration: none;\n\t\t\ttransition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;\n\t\t}\n\t\t.qd-symbols__card:hover,\n\t\t.qd-symbols__card:focus {\n\t\t\tborder-color: #C8AC77;\n\t\t\ttransform: translateY(-2px);\n\t\t\tbox-shadow: 0 8px 24px rgba(11, 75, 76, 0.08);\n\t\t}\n\t\t.qd-symbols__name {\n\t\t\tdisplay: block;\n\t\t\tmargin-bottom: 4px;\n\t\t\tfont-size: 18px;\n\t\t\tfont-weight: 600;\n\t\t\tcolor: #0B4B4C;\n\t\t}\n\t\t.qd-symbols__meaning {\n\t\t\tdisplay: block;\n\t\t\tmargin-bottom: 10px;\n\t\t\tfont-size: 12px;\n\t\t\tletter-spacing: 0.12em;\n\t\t\ttext-transform: uppercase;\n\t\t\tcolor: #8F6B28;\n\t\t}\n\t\t.qd-symbols__line {\n\t\t\tdisplay: block;\n\t\t\tfont-size: 15px;\n\t\t\tline-height: 1.6;\n\t\t\tcolor: #3F4A49;\n\t\t}\n\t\t.qd-symbols__more {\n\t\t\tmargin: 32px 0 0;\n\t\t}\n\t\t.qd-symbols__more a {\n\t\t\tcolor: #0B4B4C;\n\t\t\tfont-weight: 600;\n\t\t\ttext-decoration: none;\n\t\t\tborder-bottom: 1px solid #C8AC77;\n\t\t\tpadding-bottom: 2px;\n\t\t}\n\t\t@media (max-width: 980px) {\n\t\t\t.qd-symbols__grid { grid-template-columns: repeat(2, 1fr); }\n\t\t}\n\t\t@media (max-width: 620px) {\n\t\t\t.qd-symbols { padding: 48px 18px; }\n\t\t\t.qd-symbols__grid { grid-template-columns: 1fr; }\n\t\t}\n\t</style>\n\n\t<p class=\"qd-symbols__eyebrow\">Why Adinkra</p>\n\t<h2 class=\"qd-symbols__title\">A piece that says something</h2>\n\t<p class=\"qd-symbols__intro\">Every symbol we use already meant something long before we made jewellery from it. We did not invent these meanings, and we do not need to — we just make them wearable.</p>\n\n\t<div class=\"qd-symbols__grid\">\n\n\t\t<a class=\"qd-symbols__card\" href=\"/symbol/sankofa/\">\n\t\t\t<span class=\"qd-symbols__name\">Sankofa</span>\n\t\t\t<span class=\"qd-symbols__meaning\">Go back and fetch it</span>\n\t\t\t<span class=\"qd-symbols__line\">The bird flies forward with its head turned back. It is not wrong to return for what you left behind.</span>\n\t\t</a>\n\n\t\t<a class=\"qd-symbols__card\" href=\"/symbol/gye-nyame/\">\n\t\t\t<span class=\"qd-symbols__name\">Gye Nyame</span>\n\t\t\t<span class=\"qd-symbols__meaning\">Except for God</span>\n\t\t\t<span class=\"qd-symbols__line\">The most widely worn of all Adinkra symbols — everything that has happened and will happen is already known.</span>\n\t\t</a>\n\n\t\t<a class=\"qd-symbols__card\" href=\"/symbol/akoma/\">\n\t\t\t<span class=\"qd-symbols__name\">Akoma</span>\n\t\t\t<span class=\"qd-symbols__meaning\">The heart</span>\n\t\t\t<span class=\"qd-symbols__line\">Patience, tolerance and endurance — a promise that the heart can hold more than the moment it is in.</span>\n\t\t</a>\n\n\t\t<a class=\"qd-symbols__card\" href=\"/symbol/duafe/\">\n\t\t\t<span class=\"qd-symbols__name\">Duafe</span>\n\t\t\t<span class=\"qd-symbols__meaning\">The wooden comb</span>\n\t\t\t<span class=\"qd-symbols__line\">Given as a token of love and care: beauty is something tended, not something owned.</span>\n\t\t</a>\n\n\t\t<a class=\"qd-symbols__card\" href=\"/symbol/dwennimmen/\">\n\t\t\t<span class=\"qd-symbols__name\">Dwennimmen</span>\n\t\t\t<span class=\"qd-symbols__meaning\">The ram's horns</span>\n\t\t\t<span class=\"qd-symbols__line\">The ram fights with its horns, and the same horns mean humility. Strength, and the wisdom to keep it quiet.</span>\n\t\t</a>\n\n\t\t<a class=\"qd-symbols__card\" href=\"/symbol/adinkrahene/\">\n\t\t\t<span class=\"qd-symbols__name\">Adinkrahene</span>\n\t\t\t<span class=\"qd-symbols__meaning\">Chief of all symbols</span>\n\t\t\t<span class=\"qd-symbols__line\">Three concentric circles, and the king of the Adinkra set — the standard the others are measured against.</span>\n\t\t</a>\n\n\t</div>\n\n\t<p class=\"qd-symbols__more\"><a href=\"/symbols/\">All twelve symbols, and what each one means</a></p>\n</div>"
+     },
+     "elements": [],
+     "isInner": false,
+     "widgetType": "html",
+     "elType": "widget"
+    }
+   ],
+   "isInner": false,
+   "elType": "container"
+  }
+ ],
+ "page_settings": [],
+ "version": "0.4",
+ "title": "Queen Dor's — Symbols Strip",
+ "type": "page"
+}

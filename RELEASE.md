@@ -118,3 +118,16 @@ not 1.7.1 again.
 1.7.1 also predates the light shell, so the site is back to the demo's black
 top bar, black header, and four dark home-page sections. That is the version you
 preferred, so this is recorded rather than argued with.
+
+## Domain: `queendorfashionhouse.com`
+
+Purchased, registered at GreenGeeks. The move is written up step by step in
+`client/DOMAIN-MOVE.md`; the short version is that no file moves — the new domain
+is pointed at the existing `public_html/dorcas` document root, WordPress takes the
+new URL from two `wp-config.php` constants, and the old address 301s to the new one
+with a host-conditional rule (both domains share one folder, so an unconditional
+redirect would loop).
+
+`elementor-1628-home-page-queendorfashionhouse.json` is the same home-page export
+with its 13 links already pointing at the new domain. The original `-fixed.json`
+still points at the old one, for importing before the switch.

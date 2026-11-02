@@ -66,7 +66,7 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
 # --- documents and data ------------------------------------------------------
-DOCS=(PAYSTACK-SETUP.md terms-and-conditions.md DOMAIN-MOVE.md CONTRAST-AUDIT.md HOMEPAGE-ANALYSIS-2.md HOMEPAGE-JSON-FIX.md HOMEPAGE-UI-COLOUR.md HOMEPAGE-ANALYSIS.md LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
+DOCS=(PAYSTACK-SETUP.md DOMAIN-MOVE.md CONTRAST-AUDIT.md HOMEPAGE-ANALYSIS-2.md HOMEPAGE-JSON-FIX.md HOMEPAGE-UI-COLOUR.md HOMEPAGE-ANALYSIS.md LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr)
 
 mkdir -p "$OUT/brand"
@@ -81,12 +81,22 @@ for f in "${DOCS[@]}" "${DATA[@]}"; do
 	cp "$REPO/client/$f" "$OUT/"
 done
 
+# --- the Paystack page set ---------------------------------------------------
+PAGES_DIR="$REPO/client/paystack-pages"
+if [ ! -d "$PAGES_DIR" ]; then
+	echo "error: client/paystack-pages is missing" >&2
+	exit 1
+fi
+cp -r "$PAGES_DIR" "$OUT/"
+
+
 # --- combined pack -----------------------------------------------------------
 PACK="$STAGE/queendor-client-pack"
 mkdir -p "$PACK"
 cp "$THEME_ZIP" "$PACK/"
 cp "$PLUGIN_ZIP" "$PACK/"
 for f in "${DOCS[@]}" "${DATA[@]}"; do cp "$REPO/client/$f" "$PACK/"; done
+cp -r "$PAGES_DIR" "$PACK/"
 mkdir -p "$PACK/brand"
 cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$REPO"/client/brand/*.css \
    "$REPO"/client/brand/*.json "$REPO"/client/brand/*.html "$REPO"/client/brand/*.pdf "$PACK/brand/"

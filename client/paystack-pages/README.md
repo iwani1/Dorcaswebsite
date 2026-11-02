@@ -38,6 +38,27 @@ the Contact page, in the Terms and on the Paystack account. Reviewers compare th
 
 ---
 
+## Or import all six at once
+
+`client/queendor-paystack-pages.wxr` is the same six pages, already converted to
+HTML, ready to import as **drafts** in one step:
+
+**Tools → Import → WordPress → Install Now → Run Importer →** choose the `.wxr` →
+**Download and import file attachments** does not matter (there are none) → Submit.
+
+You get six drafts, already titled, already at the right slugs. Fill in the brackets
+in each, check it, and publish.
+
+Two notes:
+
+- The drafts contain the page copy **without** the editor's notes — those stay in
+  the markdown files.
+- `/returns-exchanges/`, `/shipping-delivery/` and `/contact/` already exist on the
+  site, so WordPress will import those three as `-2` duplicates rather than
+  replacing them. Copy the new text into the existing page, then trash the
+  imported draft. `terms`, `privacy-policy` and `about` are new and can simply be
+  published.
+
 ## How to publish one
 
 1. **Pages → Add New.** Title from the table above.

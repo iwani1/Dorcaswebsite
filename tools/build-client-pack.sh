@@ -67,7 +67,7 @@ PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 
 # --- documents and data ------------------------------------------------------
 DOCS=(PAYSTACK-SETUP.md DOMAIN-MOVE.md CONTRAST-AUDIT.md HOMEPAGE-ANALYSIS-2.md HOMEPAGE-JSON-FIX.md HOMEPAGE-UI-COLOUR.md HOMEPAGE-ANALYSIS.md LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
-DATA=(queendor-products.csv queendor-pages.wxr)
+DATA=(queendor-products.csv queendor-pages.wxr queendor-paystack-pages.wxr)
 
 mkdir -p "$OUT/brand"
 cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$REPO"/client/brand/*.css \

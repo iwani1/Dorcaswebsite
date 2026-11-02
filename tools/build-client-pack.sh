@@ -89,6 +89,14 @@ if [ ! -d "$PAGES_DIR" ]; then
 fi
 cp -r "$PAGES_DIR" "$OUT/"
 
+# --- footer template ---------------------------------------------------------
+FOOTER_DIR="$REPO/client/footer"
+if [ ! -d "$FOOTER_DIR" ]; then
+	echo "error: client/footer is missing" >&2
+	exit 1
+fi
+cp -r "$FOOTER_DIR" "$OUT/"
+
 
 # --- combined pack -----------------------------------------------------------
 PACK="$STAGE/queendor-client-pack"
@@ -97,6 +105,7 @@ cp "$THEME_ZIP" "$PACK/"
 cp "$PLUGIN_ZIP" "$PACK/"
 for f in "${DOCS[@]}" "${DATA[@]}"; do cp "$REPO/client/$f" "$PACK/"; done
 cp -r "$PAGES_DIR" "$PACK/"
+cp -r "$FOOTER_DIR" "$PACK/"
 mkdir -p "$PACK/brand"
 cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$REPO"/client/brand/*.css \
    "$REPO"/client/brand/*.json "$REPO"/client/brand/*.html "$REPO"/client/brand/*.pdf "$PACK/brand/"

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Queen Dor's — Launch Fixes
  * Description:       Clears the cached 404s, puts Contact and Privacy back on their proper URLs, removes WooCommerce's sample refund page, fills the blanks the site can fill by itself, and prints the footer on every page. Each fix is a button; nothing runs on its own.
- * Version:           1.6.0
+ * Version:           1.7.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Arena
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const QFIX_VERSION = '1.6.0';
+const QFIX_VERSION = '1.7.0';
 const QFIX_CAP     = 'manage_options';
 const QFIX_SLUG    = 'queendor-fix';
 const QFIX_LOG     = 'qfix_log';
@@ -1538,6 +1538,141 @@ function qfix_returns_clause() {
 }
 
 /* -------------------------------------------------------------------------
+ * The old domain
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Replace the staging address everywhere it is still stored.
+ *
+ * The site was built at blaharbenyah.com/dorcas and moved. Three things still
+ * point there: the side cart's images, its "View Cart" link and its "Checkout"
+ * link — so a customer who opens the drawer and presses Checkout lands on that
+ * domain's 404. That one is a lost sale, not a cosmetic leftover.
+ *
+ * @param mixed  $value Stored value.
+ * @param array  $pairs Search => replace.
+ * @return mixed
+ */
+function qfix_deep_replace( $value, $pairs ) {
+	if ( is_string( $value ) ) {
+		foreach ( $pairs as $from => $to ) {
+			$value = str_replace( $from, $to, $value );
+		}
+		return $value;
+	}
+
+	if ( is_array( $value ) ) {
+		foreach ( $value as $key => $item ) {
+			$value[ $key ] = qfix_deep_replace( $item, $pairs );
+		}
+	}
+
+	return $value;
+}
+
+/**
+ * The search/replace pairs for the domain move.
+ *
+ * @return array
+ */
+function qfix_domain_pairs() {
+	$new = 'queendorfashionhouse.com';
+
+	return array(
+		'https://www.blaharbenyah.com/dorcas'  => 'https://' . $new,
+		'http://www.blaharbenyah.com/dorcas'   => 'https://' . $new,
+		'https://blaharbenyah.com/dorcas'      => 'https://' . $new,
+		'http://blaharbenyah.com/dorcas'       => 'https://' . $new,
+		'//www.blaharbenyah.com/dorcas'        => '//' . $new,
+		'\/\/www.blaharbenyah.com\/dorcas'     => '\/\/' . $new, // JSON-escaped.
+		'www.blaharbenyah.com/dorcas'          => $new,
+	);
+}
+
+/**
+ * Rewrite options and post meta that still hold the staging address.
+ *
+ * @return void
+ */
+function qfix_fix_old_domain() {
+	global $wpdb;
+
+	$pairs = qfix_domain_pairs();
+	$count = 0;
+
+	// --- options ----------------------------------------------------------
+	$names = $wpdb->get_col(
+		"SELECT option_name FROM {$wpdb->options} WHERE option_value LIKE '%blaharbenyah%'"
+	);
+
+	foreach ( $names as $name ) {
+		if ( 0 === strpos( $name, '_transient' ) || 0 === strpos( $name, '_site_transient' ) ) {
+			continue;
+		}
+
+		$old = get_option( $name );
+		$new = qfix_deep_replace( $old, $pairs );
+
+		if ( $new !== $old ) {
+			update_option( $name, $new );
+			$count++;
+			qfix_log( "Old domain: option “{$name}” rewritten." );
+		}
+	}
+
+	// --- post meta (Elementor layouts, widget settings) -------------------
+	$metas = $wpdb->get_results(
+		"SELECT meta_id, post_id, meta_key FROM {$wpdb->postmeta} WHERE meta_value LIKE '%blaharbenyah%' LIMIT 500"
+	);
+
+	foreach ( $metas as $meta ) {
+		$value = get_post_meta( (int) $meta->post_id, $meta->meta_key, true );
+		$new   = qfix_deep_replace( $value, $pairs );
+
+		if ( $new !== $value ) {
+			update_post_meta( (int) $meta->post_id, $meta->meta_key, $new );
+			$count++;
+		}
+	}
+
+	if ( $count ) {
+		qfix_log( "Old domain: {$count} stored value(s) rewritten from blaharbenyah.com/dorcas to queendorfashionhouse.com." );
+	}
+
+	// --- post content -----------------------------------------------------
+	$posts = $wpdb->get_results(
+		"SELECT ID, post_title FROM {$wpdb->posts} WHERE post_content LIKE '%blaharbenyah%' LIMIT 200"
+	);
+
+	$pc = 0;
+	foreach ( $posts as $post ) {
+		$content = (string) get_post_field( 'post_content', $post->ID );
+		$new     = qfix_deep_replace( $content, $pairs );
+
+		if ( $new !== $content ) {
+			wp_update_post(
+				array(
+					'ID'           => (int) $post->ID,
+					'post_content' => $new,
+				)
+			);
+			$pc++;
+		}
+	}
+
+	if ( $pc ) {
+		qfix_log( "Old domain: {$pc} page(s) rewritten — “{$posts[0]->post_title}” and others." );
+	}
+
+	if ( ! $count && ! $pc ) {
+		qfix_log( 'Old domain: nothing found. Either it is already clean or a cache is holding the old markup.' );
+	}
+
+	qfix_purge_cache();
+	qfix_log( 'Old domain: cache cleared. Open a page, add something to the cart, and check the drawer’s Checkout button.' );
+}
+
+/* -------------------------------------------------------------------------
  * Admin screen
  * ---------------------------------------------------------------------- */
 
@@ -1611,6 +1746,9 @@ function qfix_run( $key ) {
 		case 'footer-check':
 			qfix_footer_check();
 			break;
+		case 'domain':
+			qfix_fix_old_domain();
+			break;
 		case 'menu':
 			qfix_menu_trim();
 			break;
@@ -1630,6 +1768,7 @@ function qfix_run( $key ) {
 			qfix_add_strip();
 			qfix_add_feedback();
 			qfix_trash_duplicates();
+			qfix_fix_old_domain();
 			qfix_purge_cache();
 			qfix_scan_placeholders();
 			break;
@@ -1651,7 +1790,7 @@ function qfix_maybe_run() {
 	check_admin_referer( 'qfix_run' );
 
 	$key = sanitize_key( wp_unslash( $_POST['qfix_action'] ) );
-	$allowed = array( 'cache', 'slugs', 'sample', 'blanks', 'returns', 'scan', 'home-preview', 'home-clean', 'home-restore', 'strip', 'feedback', 'menu', 'dupes', 'footer-off', 'footer-on', 'footer-auto', 'footer-check', 'all' );
+	$allowed = array( 'cache', 'slugs', 'sample', 'blanks', 'returns', 'scan', 'home-preview', 'home-clean', 'home-restore', 'strip', 'feedback', 'menu', 'dupes', 'footer-off', 'footer-on', 'footer-auto', 'footer-check', 'domain', 'all' );
 	if ( ! in_array( $key, $allowed, true ) ) {
 		return;
 	}
@@ -1678,6 +1817,7 @@ function qfix_render_page() {
 		'home-restore'  => array( 'Restore the home page', 'Puts back the layout saved by the last clean. Your undo.', '#555' ),
 		'strip'         => array( 'Add the symbols strip', 'Appends the Adinkra symbol strip to the front page as an HTML widget, once.', '#8f6b28' ),
 		'feedback'      => array( 'Add customer feedback', 'Appends a customer-feedback band to the front page with three placeholder quotes. Replace them with real ones before Paystack looks.', '#8f6b28' ),
+		'domain'        => array( 'Fix the old domain', 'Rewrites blaharbenyah.com/dorcas to queendorfashionhouse.com in options, page content and Elementor data. The cart drawer’s Checkout button currently points at the old domain, which 404s.', '#8f6b28' ),
 		'footer-auto'   => array( 'Footer: automatic', 'The default. The plugin prints its footer only when the theme footer is off and the page has not already got one.', '#0b4b4c' ),
 		'footer-off'    => array( 'Footer: stop mine', 'Use this if you see two footers. It stops the plugin printing anything.', '#8f6b28' ),
 		'footer-on'     => array( 'Footer: always mine', 'Prints the plugin footer even if the theme one is switched on.', '#8f6b28' ),

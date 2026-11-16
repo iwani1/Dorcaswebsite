@@ -188,3 +188,43 @@ fine because that server still hosts the files, but a customer on a slow connect
 waiting on another domain, and if that hosting ever lapses the icons vanish. The URL is
 stored in the side cart plugin's own settings — **Side Cart → Settings → Icons**, or
 re-run **Fix the old domain** after the plugin settings are saved again.
+
+---
+
+# "It's fixed on my side" — how to tell who is right
+
+There is no cache on my side. Every check is a fresh request to
+`queendorfashionhouse.com`, made the way a stranger makes it: logged out, no cookies,
+nothing remembered between checks.
+
+That is also why the two of us can disagree, and the disagreement is the useful part:
+
+- **You** are logged in as an administrator. WooCommerce treats a logged-in admin
+  differently from a customer — and page caches are bypassed for logged-in users.
+- **I** am a guest, which is what Faith is, and what every customer is.
+
+The test that settles it, in thirty seconds:
+
+> Open the site in a **private / incognito window** — not logged in — add a piece to the
+> cart, go to checkout, and look for the line *"There are no payment methods available."*
+
+- **If it is there for you too:** the gateway really is unavailable to customers, and
+  the next paragraph is the fix.
+- **If it is not there:** you are right and I am reading a stale copy. Tell me and I will
+  stop raising it — the cache exclusion below also makes the two views agree permanently.
+
+## The most common cause of "works for me, not for customers"
+
+**The key type does not match the mode.**
+
+| Test mode | Keys that must be in the fields |
+|---|---|
+| **Ticked** | `pk_test_…` / `sk_test_…` |
+| **Unticked** | `pk_live_…` / `sk_live_…` |
+
+Pasting live keys while test mode is still ticked — or the reverse — leaves the gateway
+visible but unusable for customers. It is the single most frequent cause of this exact
+notice, and it also explains why the admin's own checkout sometimes behaves differently.
+
+Check both fields in **WooCommerce → Settings → Payments → Paystack → Manage**, save, then
+flush the cache.

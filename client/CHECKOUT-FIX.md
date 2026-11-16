@@ -128,3 +128,63 @@ Do that before you test checkout, or you will be testing the wrong button.
 
 That last one is the failure nobody notices until a customer complains they paid and
 heard nothing.
+
+---
+
+# Round two — after the keys went in
+
+Checked again with the keys in place:
+
+- ✅ **The cart drawer's links are fixed.** View Cart and Checkout now point at
+  `queendorfashionhouse.com`. 1.7.0 did its job.
+- ⚠️ **The "no payment methods" line is still in the page** on an anonymous visit, even
+  with the cache bypassed — while the Paystack option and the **Place Order** button are
+  both rendered above it.
+
+That combination has one common cause: **the checkout page is being cached for
+customers who are not logged in.** Cart and checkout pages must never be cached — the
+gateway availability is computed per session, and a cached copy from before the keys
+existed is served to every guest.
+
+## Exclude cart and checkout from the cache — 2 minutes
+
+**LiteSpeed Cache → Cache → Excludes → Do Not Cache URIs**, add one per line:
+
+```
+/cart/
+/checkout/
+/my-account/
+/wishlist/
+```
+
+Then **LiteSpeed Cache → Toolbox → Purge All**, and flush from cPanel if the menu is not
+there.
+
+(If the LiteSpeed plugin is not installed — only the server cache from cPanel is in play
+— ask hosting to add those four paths to the "do not cache" list for the domain. It is a
+standard request and takes them a minute.)
+
+## Then confirm the three things that matter
+
+1. Open `/cart/?add-to-cart=1466` in a **private window** (logged out, like a customer) →
+   Proceed to Checkout → is **Debit/Credit Cards** selectable and is **Place Order**
+   live?
+2. Place the order with the test card. Does it reach Paystack's payment screen?
+3. After paying: **WooCommerce → Orders** shows the order with the right total, and the
+   **confirmation email arrives in a customer's inbox**.
+
+If (1) still shows the notice after the exclusion and purge, the cause is inside the
+checkout block rather than the cache:
+**WooCommerce → Settings → Advanced → Checkout page** — confirm it is set to the
+*Checkout* page (ID 8), not a duplicate, and that the page content is the WooCommerce
+checkout block and nothing else. A second checkout block or shortcode on the same page
+produces exactly this notice.
+
+## One cosmetic leftover
+
+The drawer's three small icons still load from
+`www.blaharbenyah.com/dorcas/wp-content/plugins/side-cart-woocommerce/…`. They display
+fine because that server still hosts the files, but a customer on a slow connection is
+waiting on another domain, and if that hosting ever lapses the icons vanish. The URL is
+stored in the side cart plugin's own settings — **Side Cart → Settings → Icons**, or
+re-run **Fix the old domain** after the plugin settings are saved again.

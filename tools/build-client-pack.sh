@@ -105,6 +105,14 @@ if [ ! -d "$CONTENT_DIR" ]; then
 fi
 cp -r "$CONTENT_DIR" "$OUT/"
 
+# --- the Paystack reply kit ------------------------------------------------------
+REPLY_DIR="$REPO/client/paystack-reply"
+if [ ! -d "$REPLY_DIR" ]; then
+	echo "error: client/paystack-reply is missing" >&2
+	exit 1
+fi
+cp -r "$REPLY_DIR" "$OUT/"
+
 
 # --- combined pack -----------------------------------------------------------
 PACK="$STAGE/queendor-client-pack"
@@ -115,6 +123,7 @@ for f in "${DOCS[@]}" "${DATA[@]}"; do cp "$REPO/client/$f" "$PACK/"; done
 cp -r "$PAGES_DIR" "$PACK/"
 cp -r "$FOOTER_DIR" "$PACK/"
 cp -r "$CONTENT_DIR" "$PACK/"
+cp -r "$REPLY_DIR" "$PACK/"
 mkdir -p "$PACK/brand"
 cp "$REPO"/client/brand/*.svg "$REPO"/client/brand/*.png "$REPO"/client/brand/*.css \
    "$REPO"/client/brand/*.json "$REPO"/client/brand/*.html "$REPO"/client/brand/*.pdf "$PACK/brand/"

@@ -7,7 +7,7 @@ have to press, and the two things no code can decide for you.
 
 ## One download, one button
 
-**`queendor-fix-1.0.0.zip`** — in `client/pack/`, and inside the client pack.
+**`queendor-fix-1.2.0.zip`** — in `client/pack/`, and inside the client pack.
 
 1. Plugins → **Add New** → **Upload Plugin** → choose the zip → **Install Now** →
    **Activate Plugin**.
@@ -33,6 +33,9 @@ button is the trigger.
 | 7 | The front page is still Luxrio's demo | **Preview** names every demo block; **Clean** removes them and backs the layout up first; **Restore** undoes it |
 | 8 | No symbols strip on the home page | **Add the symbols strip** appends it as an HTML widget, once |
 | 9 | Menu still carries Cart and Checkout | **Trim the menu** removes both and adds Contact and FAQ's if missing |
+| 11 | `nathan@lushviewhotel.net` on four pages | **Fill the blanks** replaces it with `info@queendorhouse.com` |
+| 12 | FAQ collection answer left half-rewritten | Repaired, and the stray `_Local pickup_` underscores removed |
+| 13 | Returns page had no cancellation clause | **Add the cancellation clause** appends one with the real email and phone |
 | 10 | 13 duplicate pages | **Trash the duplicates** — never the front page, never a WooCommerce page, never the last copy of anything |
 
 All six are safe to run twice. Nothing is deleted — the sample page goes to Trash.

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Queen Dor's — Launch Fixes
  * Description:       Clears the cached 404s, puts Contact and Privacy back on their proper URLs, removes WooCommerce's sample refund page, fills the blanks the site can fill by itself, and prints the footer on every page. Each fix is a button; nothing runs on its own.
- * Version:           1.1.0
+ * Version:           1.2.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Arena
@@ -20,10 +20,24 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const QFIX_VERSION = '1.1.0';
+const QFIX_VERSION = '1.2.0';
 const QFIX_CAP     = 'manage_options';
 const QFIX_SLUG    = 'queendor-fix';
 const QFIX_LOG     = 'qfix_log';
+
+/*
+ * The client's real details, taken from the pages they filled in themselves.
+ * Not from Settings → General: that still holds a hotel address that leaked
+ * onto four pages.
+ */
+const QFIX_EMAIL  = 'info@queendorhouse.com';
+const QFIX_PHONE  = '+233 54 636 9625';
+const QFIX_TEL    = '+233546369625';
+const QFIX_STREET = 'Haatso';
+const QFIX_NAME   = "Queen Dor's Fashion House";
+
+// Addresses that must never appear on the site again.
+const QFIX_STALE_EMAILS = array( 'nathan@lushviewhotel.net', 'admin@queendorfashionhouse.com' );
 
 /* -------------------------------------------------------------------------
  * Log
@@ -66,30 +80,13 @@ function qfix_log_reset() {
  * @return array
  */
 function qfix_details() {
-	$email = sanitize_email( get_option( 'admin_email' ) );
-
-	$phone = '';
-	foreach ( array( 'woocommerce_store_phone', 'woocommerce_store_phone_number' ) as $key ) {
-		$candidate = trim( (string) get_option( $key ) );
-		if ( '' !== $candidate ) {
-			$phone = $candidate;
-			break;
-		}
-	}
-
-	$street = trim( (string) get_option( 'woocommerce_store_address' ) );
-	$city   = trim( (string) get_option( 'woocommerce_store_city' ) );
-	if ( '' === $city ) {
-		$city = 'Accra';
-	}
-	$address = $street ? $street . ', ' . $city . ', Ghana' : '';
-
 	return array(
-		'email'   => $email,
-		'phone'   => $phone,
-		'street'  => $street,
-		'city'    => $city,
-		'address' => $address,
+		'email'   => QFIX_EMAIL,
+		'phone'   => QFIX_PHONE,
+		'street'  => QFIX_STREET,
+		'city'    => 'Accra',
+		'address' => QFIX_STREET . ', Accra, Ghana',
+		'name'    => QFIX_NAME,
 		'date'    => date_i18n( 'j F Y' ),
 	);
 }
@@ -295,30 +292,33 @@ function qfix_fill_placeholders() {
 	// [ pattern, replacement, label ]. Applied to every page and post.
 	$rules = array();
 
-	if ( $d['email'] ) {
-		$e       = $d['email'];
-		$rules[] = array( '/\[EMAIL ADDRESS\]/', $e, 'email' );
-		$rules[] = array( '/\{email address\}/', $e, 'email' );
-		$rules[] = array( '/\{email\}/', $e, 'email' );
-		$rules[] = array( '/(Email:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 ' . $e, 'email' );
-		$rules[] = array( '/(Write to\s*)(<strong>)?\s*_{2,}/', '$1$2' . $e, 'email' );
+	$e = QFIX_EMAIL;
+	$p = QFIX_PHONE;
+
+	// The old admin address — a hotel domain — reached four pages.
+	foreach ( QFIX_STALE_EMAILS as $stale ) {
+		$rules[] = array( '/' . preg_quote( $stale, '/' ) . '/i', $e, 'stale email' );
 	}
 
-	if ( $d['phone'] ) {
-		$ph      = $d['phone'];
-		$rules[] = array( '/\[PHONE NUMBER\]/', $ph, 'phone' );
-		$rules[] = array( '/(Phone \/ WhatsApp:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 ' . $ph, 'phone' );
-	}
+	$rules[] = array( '/\[EMAIL ADDRESS\]/', $e, 'email' );
+	$rules[] = array( '/\{email address\}/', $e, 'email' );
+	$rules[] = array( '/\{email\}/', $e, 'email' );
+	$rules[] = array( '/(Email:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 ' . $e, 'email' );
+	$rules[] = array( '/(Write to\s*)(<strong>)?\s*_{2,}/', '$1$2 ' . $e, 'email' );
 
-	if ( $d['address'] ) {
-		$rules[] = array( '/(Studio:)(\s*<\/strong>)?\s*_{2,}[^<\n]*/', '$1$2 ' . $d['address'], 'address' );
-	}
+	$rules[] = array( '/\[PHONE NUMBER\]/', $p, 'phone' );
+	$rules[] = array( '/(Phone \/ WhatsApp:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 ' . $p, 'phone' );
 
+	$rules[] = array( '/\[BUSINESS ADDRESS, ACCRA,\s*GHANA\]/', QFIX_STREET . ', Accra, Ghana', 'address' );
+	$rules[] = array( '/\[STREET ADDRESS\],\s*\[AREA\]/', QFIX_STREET, 'address' );
+	$rules[] = array( '/\[REGISTERED BUSINESS NAME\]/', QFIX_NAME, 'registered name' );
+	$rules[] = array( '/(Studio:)(\s*<\/strong>)?\s*_{2,}[^<\n]*/', '$1$2 ' . QFIX_STREET . ', Accra, Ghana', 'studio' );
 	$rules[] = array(
 		'/(Opening hours:)(\s*<\/strong>)?\s*_{2,}/',
 		'$1$2 Monday–Friday, 9:00–17:00; Saturday, 10:00–14:00',
 		'hours',
 	);
+
 	$rules[] = array( '/\[DATE\]/', $d['date'], 'date' );
 	$rules[] = array( '/\[NUMBER\]\s*working days/', 'five working days', 'refund window' );
 	$rules[] = array(
@@ -328,9 +328,15 @@ function qfix_fill_placeholders() {
 	);
 	$rules[] = array(
 		'/\[Choose one:[^\]]*\]/s',
-		'Collection can be arranged in Accra — message us before you order and we will confirm a time.',
+		'Choose Local pickup at checkout and wait for our message before coming.',
 		'collection answer',
 	);
+
+	// The collection answer was replaced by hand and left half-rewritten:
+	// "…confirm a time., Accra, by appointment. …coming.]"
+	$rules[] = array( '/confirm a time\.,\s*Accra, by appointment\./', 'confirm a time.', 'FAQ sentence' );
+	$rules[] = array( '/(wait for our message before coming\.)\s*\]/', '$1', 'FAQ stray bracket' );
+	$rules[] = array( '/\b_([A-Z][A-Za-z ]{2,24})_\b/', '$1', 'stray italics marker' );
 
 	$pages = get_posts(
 		array(
@@ -1138,6 +1144,62 @@ function qfix_trash_duplicates() {
 }
 
 /* -------------------------------------------------------------------------
+ * The cancellation clause
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Append the cancellation policy to the Returns page.
+ *
+ * Paystack asked for a "refund and cancellation policy". The site had returns
+ * and refunds and no cancellation clause at all. Appending is safe and visible;
+ * it is skipped if the page already has one.
+ *
+ * @return void
+ */
+function qfix_returns_clause() {
+	$page = get_page_by_path( 'returns-exchanges' );
+
+	if ( ! $page ) {
+		qfix_log( 'Returns: no page at /returns-exchanges/. Nothing added.' );
+		return;
+	}
+
+	if ( false !== stripos( (string) $page->post_content, 'Cancelling an order' ) ) {
+		qfix_log( 'Returns: the cancellation clause is already there. Nothing added.' );
+		return;
+	}
+
+	$mail = '<a href="mailto:' . esc_attr( QFIX_EMAIL ) . '">' . esc_html( QFIX_EMAIL ) . '</a>';
+	$tel  = '<a href="tel:' . esc_attr( QFIX_TEL ) . '">' . esc_html( QFIX_PHONE ) . '</a>';
+
+	$html  = "\n<h2>Cancelling an order</h2>\n";
+	$html .= '<p>You can cancel an order at any time <strong>before it is dispatched</strong> and we will refund you in full, including any delivery charge.</p>' . "\n";
+	$html .= '<p><strong>How to cancel:</strong> email ' . $mail . ' or call ' . $tel . ' with your order number, as soon as you know. If the order has not yet left us, the cancellation is immediate.</p>' . "\n";
+	$html .= '<p><strong>If it has already been dispatched,</strong> you can refuse the parcel when it arrives, or accept it and return it under the policy above. Refusing a parcel means the courier brings it back to us; we refund the item once it reaches us, but not the delivery charge.</p>' . "\n";
+	$html .= '<p><strong>Made-to-order and personalised pieces</strong> can be cancelled at any time before we begin making them. Once work has started they cannot be cancelled or returned unless faulty — we confirm with you before we start, which is your last chance to cancel.</p>' . "\n";
+	$html .= '<p><strong>Refunds for cancellations</strong> go to the original payment method through Paystack, within five working days, and we email you to confirm.</p>' . "\n";
+	$html .= '<p><strong>If we cancel your order</strong> — a piece is out of stock, the price was listed in error, or we cannot deliver to your address — we refund you in full, including delivery, and tell you why.</p>' . "\n";
+	$html .= '<h2>Questions about a return</h2>' . "\n";
+	$html .= '<p>Email ' . $mail . ' or call ' . $tel . '. We answer within two working days. Our studio is in ' . esc_html( QFIX_STREET ) . ', Accra.</p>' . "\n";
+	$html .= '<p>Cancelling an order does not affect any other right you have under Ghanaian consumer law.</p>' . "\n";
+
+	$saved = wp_update_post(
+		array(
+			'ID'           => $page->ID,
+			'post_content' => rtrim( (string) $page->post_content ) . "\n" . $html,
+		),
+		true
+	);
+
+	if ( is_wp_error( $saved ) ) {
+		qfix_log( 'Returns: could not save — ' . $saved->get_error_message() );
+		return;
+	}
+
+	qfix_log( 'Returns: cancellation clause and contact details appended to /returns-exchanges/.' );
+}
+
+/* -------------------------------------------------------------------------
  * Admin screen
  * ---------------------------------------------------------------------- */
 
@@ -1199,11 +1261,15 @@ function qfix_run( $key ) {
 		case 'dupes':
 			qfix_trash_duplicates();
 			break;
+		case 'returns':
+			qfix_returns_clause();
+			break;
 		case 'all':
 			qfix_purge_cache();
 			qfix_fix_slugs();
 			qfix_trash_sample_refund();
 			qfix_fill_placeholders();
+			qfix_returns_clause();
 			qfix_menu_trim();
 			qfix_add_strip();
 			qfix_trash_duplicates();
@@ -1228,7 +1294,7 @@ function qfix_maybe_run() {
 	check_admin_referer( 'qfix_run' );
 
 	$key = sanitize_key( wp_unslash( $_POST['qfix_action'] ) );
-	$allowed = array( 'cache', 'slugs', 'sample', 'blanks', 'scan', 'home-preview', 'home-clean', 'home-restore', 'strip', 'menu', 'dupes', 'all' );
+	$allowed = array( 'cache', 'slugs', 'sample', 'blanks', 'returns', 'scan', 'home-preview', 'home-clean', 'home-restore', 'strip', 'menu', 'dupes', 'all' );
 	if ( ! in_array( $key, $allowed, true ) ) {
 		return;
 	}
@@ -1255,6 +1321,7 @@ function qfix_render_page() {
 		'home-restore'  => array( 'Restore the home page', 'Puts back the layout saved by the last clean. Your undo.', '#555' ),
 		'strip'         => array( 'Add the symbols strip', 'Appends the Adinkra symbol strip to the front page as an HTML widget, once.', '#8f6b28' ),
 		'menu'          => array( 'Trim the menu', 'Removes Cart and Checkout from the menu, and adds Contact and FAQ’s if they are missing.', '#8f6b28' ),
+		'returns'       => array( 'Add the cancellation clause', 'Paystack asked for a “refund and cancellation policy”; the Returns page had no cancellation clause. Appends one, with the real email and phone.', '#8f6b28' ),
 		'dupes'         => array( 'Trash the duplicates', 'Moves the -2 and -3 copies to Trash. Never touches the front page, anything WooCommerce is assigned to, or a page with no original left.', '#8f6b28' ),
 		'cache'  => array( 'Clear the cache', 'The reason /terms/ still shows a 404 to visitors even though the page is published.', '#8f6b28' ),
 		'slugs'  => array( 'Fix the two URLs', '/contact-2/ → /contact/ and /privacy-policy-2/ → /privacy-policy/. The page IDs do not change, so the menu keeps working.', '#8f6b28' ),

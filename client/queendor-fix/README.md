@@ -1,4 +1,4 @@
-# Queen Dor's — Launch Fixes (plugin, v1.1.0)
+# Queen Dor's — Launch Fixes (plugin, v1.2.0)
 
 Five fixes that cannot be done from a WXR import or an HTML widget, because each one
 writes to the database: a cached 404, two page slugs, a page status, a WooCommerce
@@ -26,6 +26,7 @@ nothing is deleted — the sample policy is trashed.
 | **Restore the home page** | Puts the backed-up layout back | Your undo |
 | **Add the symbols strip** | Appends the Adinkra strip to the front page as an HTML widget, once | Same JSON blob |
 | **Trim the menu** | Removes Cart and Checkout, adds Contact and FAQ's if they are missing | Menu items are posts |
+| **Add the cancellation clause** | Appends the cancellation policy and contact details to `/returns-exchanges/` — the gap Paystack named |
 | **Trash the duplicates** | Trashes the `-2` / `-3` copies, never the front page or anything WooCommerce is assigned to, never a page with no original left | 13 duplicate pages |
 
 **Run all fixes** is the five content fixes, the menu, the strip and the duplicates, then a second cache purge and the scan. **It does not clean the home page** — that one is a separate button, because it is the only fix that changes the design.
@@ -77,9 +78,10 @@ Read this before pressing it, because these are statements attributed to the cli
 
 | Placeholder | Filled with | Source |
 |---|---|---|
-| `[EMAIL ADDRESS]`, `{email address}`, `________` after "Write to" / "Email:" | the site's admin email | Settings → General |
-| `[PHONE NUMBER]`, `Phone / WhatsApp: _______` | WooCommerce store phone | WooCommerce → Settings → General — **left alone if empty** |
-| `Studio: _______` | WooCommerce store address | WooCommerce → Settings → General — **left alone if empty** |
+| `[EMAIL ADDRESS]`, `{email address}`, `________` after "Write to" / "Email:", and **`nathan@lushviewhotel.net` everywhere** | `info@queendorhouse.com` | the client's own Contact page |
+| `[PHONE NUMBER]`, `Phone / WhatsApp: _______` | `+233 54 636 9625` | the client's own Contact page |
+| `Studio: _______`, `[BUSINESS ADDRESS, ACCRA, GHANA]` | `Haatso, Accra, Ghana` | the client's own Contact page |
+| `[REGISTERED BUSINESS NAME]` | `Queen Dor's Fashion House` | the client's trading name — **confirm it matches the certificate** |
 | `Opening hours: _______` | Monday–Friday 9:00–17:00; Saturday 10:00–14:00 | **assumed** — change if wrong |
 | `[DATE]` | today's date | system |
 | `[NUMBER] working days` | "five working days" | **assumed** — change if wrong |

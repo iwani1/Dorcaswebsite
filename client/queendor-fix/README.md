@@ -1,4 +1,4 @@
-# Queen Dor's — Launch Fixes (plugin, v1.0.0)
+# Queen Dor's — Launch Fixes (plugin, v1.1.0)
 
 Five fixes that cannot be done from a WXR import or an HTML widget, because each one
 writes to the database: a cached 404, two page slugs, a page status, a WooCommerce
@@ -21,8 +21,14 @@ nothing is deleted — the sample policy is trashed.
 | **Remove the sample policy** | Trashes the "This is a sample page" refund policy, points WooCommerce's refund page setting at `/returns-exchanges/` | A page status and an option row |
 | **Fill the blanks** | Email, store address, opening hours, today's date, "five working days", the VAT sentence, the collection answer | Forty-odd string replacements across six pages |
 | **Scan for brackets** | Lists every published page that still contains `[SOMETHING]`, `{email}` or `GH₵ ____` | The check you run before the reviewer does |
+| **Preview the home page** | Counts the demo blocks on the front page and names what would go. Changes nothing | You cannot see the Elementor tree from the outside |
+| **Clean the home page** | Removes every Elementor block still carrying demo copy — *Limited Edition*, *Diamond Pendant*, *Luna Rosa*, `vecurosoft`. Backs the layout up first, drops columns and sections that empty out, refuses if it would empty the page | Elementor's layout is a JSON blob in post meta; nothing else can edit it safely |
+| **Restore the home page** | Puts the backed-up layout back | Your undo |
+| **Add the symbols strip** | Appends the Adinkra strip to the front page as an HTML widget, once | Same JSON blob |
+| **Trim the menu** | Removes Cart and Checkout, adds Contact and FAQ's if they are missing | Menu items are posts |
+| **Trash the duplicates** | Trashes the `-2` / `-3` copies, never the front page or anything WooCommerce is assigned to, never a page with no original left | 13 duplicate pages |
 
-**Run all fixes** is the first four, then a second cache purge, then the scan.
+**Run all fixes** is the five content fixes, the menu, the strip and the duplicates, then a second cache purge and the scan. **It does not clean the home page** — that one is a separate button, because it is the only fix that changes the design.
 
 ---
 
@@ -39,13 +45,27 @@ plugin.
 
 ---
 
+## The home page
+
+The front page is stored as Elementor JSON in `_elementor_data`. "Clean" walks the tree,
+drops any element whose settings contain a demo string, and then drops columns and
+sections that have lost every child — otherwise the page becomes a stack of empty bands.
+Before it writes anything it copies the original JSON into an option, so **Restore** is
+always available.
+
+It refuses to save if fewer than one top-level section would remain, and it clears
+Elementor's generated CSS afterwards. If the page looks wrong, press **Restore the home
+page** — that is what it is for.
+
+---
+
 ## What it deliberately does not do
 
 - **Registration number, business address, delivery prices.** No value exists anywhere
   in WordPress to copy, and inventing them would put a false statement in a legal
   document. They stay as brackets and the scan names them.
-- **The home page demo sections.** Those are Elementor templates, not database rows —
-  import `client/content/` templates instead.
+- **Rebuild the home page.** It removes what is demo; putting the client's sections in
+  their place is the Elementor template import (`client/content/`).
 - **Photographs.** Nine products still need files.
 - **Anything destructive.** Trash, never delete; no `$wpdb` writes; no SQL.
 

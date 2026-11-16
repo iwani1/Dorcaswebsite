@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Queen Dor's — Launch Fixes
  * Description:       Clears the cached 404s, puts Contact and Privacy back on their proper URLs, removes WooCommerce's sample refund page, fills the blanks the site can fill by itself, and prints the footer on every page. Each fix is a button; nothing runs on its own.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Arena
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const QFIX_VERSION = '1.0.0';
+const QFIX_VERSION = '1.1.0';
 const QFIX_CAP     = 'manage_options';
 const QFIX_SLUG    = 'queendor-fix';
 const QFIX_LOG     = 'qfix_log';
@@ -573,6 +573,571 @@ function qfix_inject_footer( $html ) {
 }
 
 /* -------------------------------------------------------------------------
+ * The front page
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Strings that only appear in the Luxrio demo. If a widget contains one of
+ * these, it was never replaced with the client's content.
+ */
+const QFIX_DEMO_MARKERS = array(
+	'Limited Edition',
+	'Diamond Pendant',
+	'Luna Rosa',
+	'vecurosoft',
+	'High Class Jewelry',
+	'Style Keepers',
+	'Jewelry NOW UPDATE',
+	'Lorem ipsum',
+	'lorem ipsum',
+);
+
+/**
+ * The front page ID, or 0.
+ *
+ * @return int
+ */
+function qfix_front_id() {
+	$id = (int) get_option( 'page_on_front' );
+	if ( ! $id ) {
+		$id = (int) get_option( 'woocommerce_shop_page_id' );
+	}
+	return $id > 0 ? $id : 0;
+}
+
+/**
+ * Read the page's Elementor data as an array.
+ *
+ * @param int $id Page ID.
+ * @return array|null
+ */
+function qfix_home_data( $id ) {
+	$raw = get_post_meta( $id, '_elementor_data', true );
+	if ( ! is_string( $raw ) || '' === $raw ) {
+		return null;
+	}
+	$data = json_decode( $raw, true );
+	return is_array( $data ) ? $data : null;
+}
+
+/**
+ * Recursively drop elements that still carry demo copy.
+ *
+ * A column or section that loses every child goes too, otherwise the page ends
+ * up as a stack of empty bands.
+ *
+ * @param array $elements Elements.
+ * @param array $removed  Collected descriptions.
+ * @return array
+ */
+function qfix_prune( $elements, &$removed ) {
+	$kept = array();
+
+	foreach ( $elements as $el ) {
+		if ( ! is_array( $el ) ) {
+			continue;
+		}
+
+		// Judge the element on its own settings, not its children's — otherwise
+		// one demo widget would take the whole section and everything else in it.
+		$own = $el;
+		unset( $own['elements'] );
+		$blob = wp_json_encode( $own );
+
+		$hit   = '';
+		foreach ( QFIX_DEMO_MARKERS as $marker ) {
+			if ( false !== stripos( (string) $blob, $marker ) ) {
+				$hit = $marker;
+				break;
+			}
+		}
+
+		if ( $hit ) {
+			$type     = isset( $el['elType'] ) ? $el['elType'] : '?';
+			$widget   = isset( $el['widgetType'] ) ? $el['widgetType'] : '';
+			$removed[] = $type . ( $widget ? '/' . $widget : '' ) . ' — “' . $hit . '”';
+			continue;
+		}
+
+		if ( ! empty( $el['elements'] ) && is_array( $el['elements'] ) ) {
+			$el['elements'] = qfix_prune( $el['elements'], $removed );
+
+			$type = isset( $el['elType'] ) ? $el['elType'] : '';
+			if ( empty( $el['elements'] ) && in_array( $type, array( 'section', 'column', 'container' ), true ) ) {
+				$removed[] = $type . ' — emptied, removed';
+				continue;
+			}
+		}
+
+		$kept[] = $el;
+	}
+
+	return $kept;
+}
+
+/**
+ * Save Elementor data and flush what Elementor cached from it.
+ *
+ * @param int   $id   Page ID.
+ * @param array $data Elements.
+ * @return void
+ */
+function qfix_save_home( $id, $data ) {
+	update_post_meta( $id, '_elementor_data', wp_slash( wp_json_encode( $data ) ) );
+	delete_post_meta( $id, '_elementor_css' );
+
+	if ( class_exists( '\Elementor\Plugin' ) && isset( \Elementor\Plugin::$instance->files_manager ) ) {
+		\Elementor\Plugin::$instance->files_manager->clear_cache();
+	}
+
+	wp_cache_flush();
+}
+
+/**
+ * Count what is still demo, without touching anything.
+ *
+ * @return void
+ */
+function qfix_home_preview() {
+	$id = qfix_front_id();
+	if ( ! $id ) {
+		qfix_log( 'Home: no front page is set (Settings → Reading). Nothing to inspect.' );
+		return;
+	}
+
+	$data = qfix_home_data( $id );
+	if ( null === $data ) {
+		qfix_log( "Home: page {$id} has no Elementor data. It may be built with the classic editor — check by hand." );
+		return;
+	}
+
+	$removed = array();
+	$kept    = qfix_prune( $data, $removed );
+
+	qfix_log( "Home: front page is {$id} “" . get_the_title( $id ) . '”.' );
+	qfix_log( 'Home: ' . count( $data ) . ' top-level sections now, ' . count( $kept ) . ' after cleaning.' );
+
+	if ( ! $removed ) {
+		qfix_log( 'Home: no demo blocks found — either it is already clean or the markers need widening.' );
+		return;
+	}
+
+	foreach ( $removed as $line ) {
+		qfix_log( 'Would remove: ' . $line );
+	}
+}
+
+/**
+ * Remove the demo blocks, keeping a copy of the original first.
+ *
+ * @return void
+ */
+function qfix_home_clean() {
+	$id = qfix_front_id();
+	if ( ! $id ) {
+		qfix_log( 'Home: no front page is set.' );
+		return;
+	}
+
+	$raw = get_post_meta( $id, '_elementor_data', true );
+	$data = qfix_home_data( $id );
+	if ( null === $data ) {
+		qfix_log( "Home: page {$id} has no Elementor data — nothing I can safely edit." );
+		return;
+	}
+
+	update_option(
+		'qfix_home_backup',
+		array(
+			'id'   => $id,
+			'raw'  => $raw,
+			'time' => time(),
+		),
+		false
+	);
+	qfix_log( 'Home: backed up the current layout. “Restore the home page” puts it back.' );
+
+	$removed = array();
+	$kept    = qfix_prune( $data, $removed );
+
+	if ( count( $kept ) < 1 ) {
+		qfix_log( 'Home: cleaning would empty the page completely, so I stopped. Nothing changed.' );
+		return;
+	}
+
+	qfix_save_home( $id, $kept );
+
+	qfix_log( 'Home: removed ' . count( $removed ) . ' demo block(s); ' . count( $kept ) . ' section(s) left.' );
+	foreach ( $removed as $line ) {
+		qfix_log( '  − ' . $line );
+	}
+	qfix_log( 'Home: Elementor CSS regenerated, cache cleared. Check the page before doing anything else.' );
+}
+
+/**
+ * Put the saved layout back.
+ *
+ * @return void
+ */
+function qfix_home_restore() {
+	$backup = get_option( 'qfix_home_backup' );
+	if ( ! is_array( $backup ) || empty( $backup['raw'] ) ) {
+		qfix_log( 'Home: there is no backup yet — “Clean the home page” makes one before it writes.' );
+		return;
+	}
+
+	update_post_meta( (int) $backup['id'], '_elementor_data', wp_slash( $backup['raw'] ) );
+	delete_post_meta( (int) $backup['id'], '_elementor_css' );
+
+	if ( class_exists( '\Elementor\Plugin' ) && isset( \Elementor\Plugin::$instance->files_manager ) ) {
+		\Elementor\Plugin::$instance->files_manager->clear_cache();
+	}
+
+	qfix_log( 'Home: restored the layout from ' . gmdate( 'Y-m-d H:i', (int) $backup['time'] ) . ' UTC.' );
+}
+
+/**
+ * The symbols strip markup, exactly as it ships in the pack.
+ *
+ * @return string
+ */
+function qfix_symbols_strip_html() {
+	return <<<'QDHTML'
+<!-- Home page symbols strip. Self-contained: the <style> block travels with the
+     markup, so this needs no theme update. Paste into an Elementor HTML widget
+     where the empty "Why Adinkra" band currently sits, or anywhere on the home page.
+
+     Links go to the /symbol/<slug>/ archives, which are Coming-soon gated until the
+     store is switched live — the same as every other shop link. -->
+
+<div class="qd-symbols">
+	<style>
+		.qd-symbols {
+			max-width: 1290px;
+			margin: 0 auto;
+			padding: 76px 24px;
+		}
+		.qd-symbols__eyebrow {
+			margin: 0 0 10px;
+			font-size: 12px;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			color: #8F6B28;
+		}
+		.qd-symbols__title {
+			margin: 0 0 12px;
+			font-size: clamp(26px, 3vw, 38px);
+			line-height: 1.2;
+			color: #0B4B4C;
+		}
+		.qd-symbols__intro {
+			max-width: 60ch;
+			margin: 0 0 40px;
+			color: #3F4A49;
+		}
+		.qd-symbols__grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 18px;
+		}
+		.qd-symbols__card {
+			display: block;
+			padding: 26px 24px 24px;
+			border: 1px solid #E6E1D5;
+			background: #FAF8F5;
+			text-decoration: none;
+			transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+		}
+		.qd-symbols__card:hover,
+		.qd-symbols__card:focus {
+			border-color: #C8AC77;
+			transform: translateY(-2px);
+			box-shadow: 0 8px 24px rgba(11, 75, 76, 0.08);
+		}
+		.qd-symbols__name {
+			display: block;
+			margin-bottom: 4px;
+			font-size: 18px;
+			font-weight: 600;
+			color: #0B4B4C;
+		}
+		.qd-symbols__meaning {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 12px;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: #8F6B28;
+		}
+		.qd-symbols__line {
+			display: block;
+			font-size: 15px;
+			line-height: 1.6;
+			color: #3F4A49;
+		}
+		.qd-symbols__more {
+			margin: 32px 0 0;
+		}
+		.qd-symbols__more a {
+			color: #0B4B4C;
+			font-weight: 600;
+			text-decoration: none;
+			border-bottom: 1px solid #C8AC77;
+			padding-bottom: 2px;
+		}
+		@media (max-width: 980px) {
+			.qd-symbols__grid { grid-template-columns: repeat(2, 1fr); }
+		}
+		@media (max-width: 620px) {
+			.qd-symbols { padding: 48px 18px; }
+			.qd-symbols__grid { grid-template-columns: 1fr; }
+		}
+	</style>
+
+	<p class="qd-symbols__eyebrow">Why Adinkra</p>
+	<h2 class="qd-symbols__title">A piece that says something</h2>
+	<p class="qd-symbols__intro">Every symbol we use already meant something long before we made jewellery from it. We did not invent these meanings, and we do not need to — we just make them wearable.</p>
+
+	<div class="qd-symbols__grid">
+
+		<a class="qd-symbols__card" href="/symbol/sankofa/">
+			<span class="qd-symbols__name">Sankofa</span>
+			<span class="qd-symbols__meaning">Go back and fetch it</span>
+			<span class="qd-symbols__line">The bird flies forward with its head turned back. It is not wrong to return for what you left behind.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/gye-nyame/">
+			<span class="qd-symbols__name">Gye Nyame</span>
+			<span class="qd-symbols__meaning">Except for God</span>
+			<span class="qd-symbols__line">The most widely worn of all Adinkra symbols — everything that has happened and will happen is already known.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/akoma/">
+			<span class="qd-symbols__name">Akoma</span>
+			<span class="qd-symbols__meaning">The heart</span>
+			<span class="qd-symbols__line">Patience, tolerance and endurance — a promise that the heart can hold more than the moment it is in.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/duafe/">
+			<span class="qd-symbols__name">Duafe</span>
+			<span class="qd-symbols__meaning">The wooden comb</span>
+			<span class="qd-symbols__line">Given as a token of love and care: beauty is something tended, not something owned.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/dwennimmen/">
+			<span class="qd-symbols__name">Dwennimmen</span>
+			<span class="qd-symbols__meaning">The ram's horns</span>
+			<span class="qd-symbols__line">The ram fights with its horns, and the same horns mean humility. Strength, and the wisdom to keep it quiet.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/adinkrahene/">
+			<span class="qd-symbols__name">Adinkrahene</span>
+			<span class="qd-symbols__meaning">Chief of all symbols</span>
+			<span class="qd-symbols__line">Three concentric circles, and the king of the Adinkra set — the standard the others are measured against.</span>
+		</a>
+
+	</div>
+
+	<p class="qd-symbols__more"><a href="/symbols/">All twelve symbols, and what each one means</a></p>
+</div>
+QDHTML;
+}
+
+/**
+ * Append the symbols strip to the front page as an HTML widget.
+ *
+ * @return void
+ */
+function qfix_add_strip() {
+	$id   = qfix_front_id();
+	$data = $id ? qfix_home_data( $id ) : null;
+
+	if ( ! $id || null === $data ) {
+		qfix_log( 'Strip: no Elementor front page to add it to. Import content/symbols-strip-elementor.json instead.' );
+		return;
+	}
+
+	if ( false !== strpos( (string) wp_json_encode( $data ), 'qd-symbols' ) ) {
+		qfix_log( 'Strip: it is already on the page. Nothing added.' );
+		return;
+	}
+
+	$data[] = array(
+		'id'       => substr( md5( 'qd-strip-section' . $id ), 0, 7 ),
+		'elType'   => 'section',
+		'isInner'  => false,
+		'settings' => array(
+			'layout' => 'full_width',
+			'gap'    => 'no',
+		),
+		'elements' => array(
+			array(
+				'id'       => substr( md5( 'qd-strip-column' . $id ), 0, 7 ),
+				'elType'   => 'column',
+				'isInner'  => false,
+				'settings' => array(
+					'_column_size' => 100,
+					'_inline_size' => null,
+				),
+				'elements' => array(
+					array(
+						'id'         => substr( md5( 'qd-strip-widget' . $id ), 0, 7 ),
+						'elType'     => 'widget',
+						'widgetType' => 'html',
+						'settings'   => array(
+							'html' => qfix_symbols_strip_html(),
+						),
+						'elements'   => array(),
+					),
+				),
+			),
+		),
+	);
+
+	qfix_save_home( $id, $data );
+	qfix_log( 'Strip: added to the front page as the last section. Its styles travel with the markup.' );
+}
+
+/* -------------------------------------------------------------------------
+ * Menu and duplicates
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Drop Cart and Checkout from the menu, and make sure Contact and FAQs are in it.
+ *
+ * @return void
+ */
+function qfix_menu_trim() {
+	$menus = wp_get_nav_menus();
+	if ( ! $menus ) {
+		qfix_log( 'Menu: no menus exist.' );
+		return;
+	}
+
+	$drop = array( 'cart', 'checkout' );
+
+	foreach ( $menus as $menu ) {
+		$items = wp_get_nav_menu_items( $menu->term_id );
+		if ( ! $items ) {
+			continue;
+		}
+
+		foreach ( $items as $item ) {
+			$title = strtolower( trim( wp_strip_all_tags( $item->title ) ) );
+			foreach ( $drop as $word ) {
+				if ( $title === $word ) {
+					wp_delete_post( $item->ID, true );
+					qfix_log( "Menu ({$menu->name}): removed “{$item->title}”." );
+					break;
+				}
+			}
+		}
+	}
+
+	// Contact and FAQs must be reachable from the header.
+	$wanted = array(
+		'Contact' => get_page_by_path( 'contact' ),
+		"FAQ's"   => get_page_by_path( 'faqs' ),
+	);
+
+	$primary = null;
+	$locations = get_nav_menu_locations();
+	foreach ( array( 'primary', 'main', 'main-menu', 'menu-1' ) as $loc ) {
+		if ( ! empty( $locations[ $loc ] ) ) {
+			$primary = (int) $locations[ $loc ];
+			break;
+		}
+	}
+	if ( ! $primary ) {
+		$primary = (int) $menus[0]->term_id;
+	}
+
+	$existing = array();
+	foreach ( (array) wp_get_nav_menu_items( $primary ) as $item ) {
+		$existing[] = (int) $item->object_id;
+	}
+
+	foreach ( $wanted as $label => $page ) {
+		if ( ! $page ) {
+			qfix_log( "Menu: there is no page at the slug for “{$label}” — skipped." );
+			continue;
+		}
+		if ( in_array( (int) $page->ID, $existing, true ) ) {
+			continue;
+		}
+		wp_update_nav_menu_item(
+			$primary,
+			0,
+			array(
+				'menu-item-title'     => $label,
+				'menu-item-object'    => 'page',
+				'menu-item-object-id' => $page->ID,
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+			)
+		);
+		qfix_log( "Menu: added “{$label}” → /{$page->post_name}/." );
+	}
+}
+
+/**
+ * Trash the duplicated pages, keeping the original of each pair.
+ *
+ * Only slugs ending -2 or -3 are considered, the front page and every page
+ * WooCommerce is assigned to are excluded, and nothing is deleted for good.
+ *
+ * @return void
+ */
+function qfix_trash_duplicates() {
+	$protected = array_filter(
+		array(
+			(int) get_option( 'page_on_front' ),
+			(int) get_option( 'page_for_posts' ),
+			(int) get_option( 'woocommerce_shop_page_id' ),
+			(int) get_option( 'woocommerce_cart_page_id' ),
+			(int) get_option( 'woocommerce_checkout_page_id' ),
+			(int) get_option( 'woocommerce_myaccount_page_id' ),
+			(int) get_option( 'woocommerce_refund_returns_page_id' ),
+		)
+	);
+
+	$pages = get_posts(
+		array(
+			'post_type'      => 'page',
+			'post_status'    => array( 'publish', 'draft', 'private' ),
+			'posts_per_page' => 200,
+		)
+	);
+
+	$count = 0;
+	foreach ( $pages as $page ) {
+		if ( in_array( (int) $page->ID, $protected, true ) ) {
+			continue;
+		}
+		if ( ! preg_match( '/-(2|3)$/', $page->post_name ) ) {
+			continue;
+		}
+
+		$base = preg_replace( '/-(2|3)$/', '', $page->post_name );
+		if ( in_array( $base, array( 'contact', 'privacy-policy', 'terms', 'faqs' ), true ) ) {
+			qfix_log( "Duplicates: /{$page->post_name}/ left alone — it is the only copy of that page." );
+			continue;
+		}
+
+		wp_trash_post( $page->ID );
+		$count++;
+		qfix_log( "Duplicates: “{$page->post_title}” (/{$page->post_name}/) → Trash." );
+	}
+
+	if ( ! $count ) {
+		qfix_log( 'Duplicates: none found.' );
+		return;
+	}
+
+	qfix_log( "Duplicates: {$count} moved to Trash. Empty Pages → Trash when you are happy." );
+}
+
+/* -------------------------------------------------------------------------
  * Admin screen
  * ---------------------------------------------------------------------- */
 
@@ -615,11 +1180,33 @@ function qfix_run( $key ) {
 		case 'scan':
 			qfix_scan_placeholders();
 			break;
+		case 'home-preview':
+			qfix_home_preview();
+			break;
+		case 'home-clean':
+			qfix_home_preview();
+			qfix_home_clean();
+			break;
+		case 'home-restore':
+			qfix_home_restore();
+			break;
+		case 'strip':
+			qfix_add_strip();
+			break;
+		case 'menu':
+			qfix_menu_trim();
+			break;
+		case 'dupes':
+			qfix_trash_duplicates();
+			break;
 		case 'all':
 			qfix_purge_cache();
 			qfix_fix_slugs();
 			qfix_trash_sample_refund();
 			qfix_fill_placeholders();
+			qfix_menu_trim();
+			qfix_add_strip();
+			qfix_trash_duplicates();
 			qfix_purge_cache();
 			qfix_scan_placeholders();
 			break;
@@ -641,7 +1228,8 @@ function qfix_maybe_run() {
 	check_admin_referer( 'qfix_run' );
 
 	$key = sanitize_key( wp_unslash( $_POST['qfix_action'] ) );
-	if ( ! in_array( $key, array( 'cache', 'slugs', 'sample', 'blanks', 'scan', 'all' ), true ) ) {
+	$allowed = array( 'cache', 'slugs', 'sample', 'blanks', 'scan', 'home-preview', 'home-clean', 'home-restore', 'strip', 'menu', 'dupes', 'all' );
+	if ( ! in_array( $key, $allowed, true ) ) {
 		return;
 	}
 
@@ -661,7 +1249,13 @@ add_action( 'admin_init', 'qfix_maybe_run' );
  */
 function qfix_render_page() {
 	$buttons = array(
-		'all'    => array( 'Run all fixes', 'Clears the cache, fixes both slugs, trashes the sample policy, fills the blanks, then clears the cache again and reports what is left. Start here.', '#0b4b4c' ),
+		'all'    => array( 'Run all fixes', 'Clears the cache, fixes both slugs, trashes the sample policy, fills the blanks, trims the menu, adds the symbols strip, trashes the duplicate pages, clears the cache again and reports what is left. Start here.', '#0b4b4c' ),
+		'home-preview'  => array( 'Preview the home page', 'Counts the demo blocks on the front page and names what would go. Changes nothing.', '#555' ),
+		'home-clean'    => array( 'Clean the home page', 'Removes the demo blocks — “Limited Edition”, “Diamond Pendant”, “Luna Rosa”, the vecurosoft images. Backs up the layout first.', '#8f6b28' ),
+		'home-restore'  => array( 'Restore the home page', 'Puts back the layout saved by the last clean. Your undo.', '#555' ),
+		'strip'         => array( 'Add the symbols strip', 'Appends the Adinkra symbol strip to the front page as an HTML widget, once.', '#8f6b28' ),
+		'menu'          => array( 'Trim the menu', 'Removes Cart and Checkout from the menu, and adds Contact and FAQ’s if they are missing.', '#8f6b28' ),
+		'dupes'         => array( 'Trash the duplicates', 'Moves the -2 and -3 copies to Trash. Never touches the front page, anything WooCommerce is assigned to, or a page with no original left.', '#8f6b28' ),
 		'cache'  => array( 'Clear the cache', 'The reason /terms/ still shows a 404 to visitors even though the page is published.', '#8f6b28' ),
 		'slugs'  => array( 'Fix the two URLs', '/contact-2/ → /contact/ and /privacy-policy-2/ → /privacy-policy/. The page IDs do not change, so the menu keeps working.', '#8f6b28' ),
 		'sample' => array( 'Remove the sample policy', 'Trashes WooCommerce’s “This is a sample page” refund policy and points the WooCommerce setting at /returns-exchanges/.', '#8f6b28' ),
@@ -703,7 +1297,8 @@ function qfix_render_page() {
 		<h2>What this plugin does not do</h2>
 		<ul style="max-width:780px;list-style:disc;padding-left:20px;color:#50575e">
 			<li>The registration number, the business address (unless WooCommerce has a store address saved) and the three delivery prices still need a person.</li>
-			<li>It does not touch the home page demo sections or the nine products without photographs.</li>
+			<li>It does not add the nine missing product photographs.</li>
+			<li>“Clean the home page” edits Elementor's saved layout. It backs the layout up first and “Restore the home page” undoes it — look at the page after pressing it.</li>
 			<li>Once the footer is assigned in <em>Theme Options → Footer</em>, you can delete this plugin — the theme footer takes over automatically.</li>
 		</ul>
 	</div>

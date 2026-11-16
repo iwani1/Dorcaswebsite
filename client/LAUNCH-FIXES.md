@@ -30,6 +30,10 @@ button is the trigger.
 | 4 | Bracketed placeholders on Terms, Privacy, Contact, FAQ, Shipping | **Fills every blank that has a real value on the site** — admin email, store address, store phone, today's date — plus the four judgement calls listed below |
 | 5 | No page anywhere has a footer | **Prints the footer itself** on every page that has none, using the same markup and stylesheet as the pack |
 | 6 | You cannot tell what is still unfinished | **Scan** lists every published page still holding `[SOMETHING]`, `{email}` or `GH₵ ____` |
+| 7 | The front page is still Luxrio's demo | **Preview** names every demo block; **Clean** removes them and backs the layout up first; **Restore** undoes it |
+| 8 | No symbols strip on the home page | **Add the symbols strip** appends it as an HTML widget, once |
+| 9 | Menu still carries Cart and Checkout | **Trim the menu** removes both and adds Contact and FAQ's if missing |
+| 10 | 13 duplicate pages | **Trash the duplicates** — never the front page, never a WooCommerce page, never the last copy of anything |
 
 All six are safe to run twice. Nothing is deleted — the sample page goes to Trash.
 
@@ -46,6 +50,22 @@ overwrite your edit afterwards.
 | Five-day refund | "within **five working days**" | your window is different |
 | Opening hours | Mon–Fri 9:00–17:00, Sat 10:00–14:00 | those are wrong |
 | Collection | "Collection can be arranged in Accra — message us before you order" | you do not offer collection |
+
+---
+
+## New in 1.1.0 — the home page
+
+"Run all fixes" now also trims the menu, adds the strip and trashes the duplicates.
+**Cleaning the home page stays a separate button**, because it is the only fix that
+changes the design:
+
+1. **Preview the home page** — names the blocks that would go. Changes nothing.
+2. **Clean the home page** — removes them, backs the layout up first.
+3. Look at the page. Wrong? **Restore the home page**.
+
+The demo sections are removed rather than replaced — putting the client's own sections
+in their place is the Elementor template import, which is in the pack
+(`content/symbols-strip-elementor.json`, `footer/`).
 
 ---
 

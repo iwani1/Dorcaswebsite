@@ -1,5 +1,10 @@
 # Paystack activation request 2087034 — what to do
 
+> **Checked against the live site on 16 November: see `client/FAITH-CHECKLIST.md`.**
+> Four of the seven points are done, one is done but has no reviews yet, two need
+documents only the client has. The 🔴 marks below are the state when this kit was
+written, not now.
+
 Faith's email asks for seven things. Six of them are page or document work; one is
 already done.
 

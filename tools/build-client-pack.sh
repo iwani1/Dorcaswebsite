@@ -15,12 +15,14 @@ set -euo pipefail
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 THEME_DIR="$REPO/wp-content/themes/luxrio-child"
 PLUGIN_DIR="$REPO/client/queendor-cleanup"
+FIX_DIR="$REPO/client/queendor-fix"
 OUT="$REPO/client/pack"
 
 THEME_VERSION="$(sed -n 's/.*Version:[[:space:]]*\([0-9.]*\).*/\1/p' "$THEME_DIR/style.css" | head -n1 | tr -d '\r')"
 PLUGIN_VERSION="$(sed -n 's/^ \* Version:[[:space:]]*\([0-9.]*\).*/\1/p' "$PLUGIN_DIR/queendor-cleanup.php" | head -n1 | tr -d '\r')"
+FIX_VERSION="$(sed -n 's/^ \* Version:[[:space:]]*\([0-9.]*\).*/\1/p' "$FIX_DIR/queendor-fix.php" | head -n1 | tr -d '\r')"
 
-for pair in "theme:$THEME_VERSION" "plugin:$PLUGIN_VERSION"; do
+for pair in "theme:$THEME_VERSION" "plugin:$PLUGIN_VERSION" "fix:$FIX_VERSION"; do
 	if [ -z "${pair#*:}" ]; then
 		echo "error: could not read a version number (${pair%%:*})" >&2
 		exit 1
@@ -42,7 +44,7 @@ if [ -z "$PARENT" ] || [ ! -d "$REPO/wp-content/themes/$PARENT" ]; then
 	exit 1
 fi
 
-echo "packaging luxrio-child $THEME_VERSION, queendor-cleanup $PLUGIN_VERSION"
+echo "packaging luxrio-child $THEME_VERSION, queendor-cleanup $PLUGIN_VERSION, queendor-fix $FIX_VERSION"
 
 rm -rf "$OUT"
 mkdir -p "$OUT"
@@ -65,8 +67,19 @@ cp "$PLUGIN_DIR/queendor-cleanup.php" "$STAGE/queendor-cleanup/"
 PLUGIN_ZIP="$OUT/queendor-cleanup-$PLUGIN_VERSION.zip"
 ( cd "$STAGE" && zip -qr "$PLUGIN_ZIP" queendor-cleanup )
 
+# --- launch-fixes plugin -----------------------------------------------------
+if [ ! -f "$FIX_DIR/queendor-fix.php" ]; then
+	echo "error: client/queendor-fix/queendor-fix.php is missing" >&2
+	exit 1
+fi
+mkdir -p "$STAGE/queendor-fix"
+cp "$FIX_DIR/queendor-fix.php" "$STAGE/queendor-fix/"
+
+FIX_ZIP="$OUT/queendor-fix-$FIX_VERSION.zip"
+( cd "$STAGE" && zip -qr "$FIX_ZIP" queendor-fix )
+
 # --- documents and data ------------------------------------------------------
-DOCS=(LIVE-CHECK.md UPLOAD-FILES.md STEP-BY-STEP.md WHO-DOES-WHAT.md FULL-AUDIT.md PAYSTACK-SETUP.md DOMAIN-MOVE.md CONTRAST-AUDIT.md HOMEPAGE-ANALYSIS-2.md HOMEPAGE-JSON-FIX.md HOMEPAGE-UI-COLOUR.md HOMEPAGE-ANALYSIS.md LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
+DOCS=(LAUNCH-FIXES.md LIVE-CHECK.md UPLOAD-FILES.md STEP-BY-STEP.md WHO-DOES-WHAT.md FULL-AUDIT.md PAYSTACK-SETUP.md DOMAIN-MOVE.md CONTRAST-AUDIT.md HOMEPAGE-ANALYSIS-2.md HOMEPAGE-JSON-FIX.md HOMEPAGE-UI-COLOUR.md HOMEPAGE-ANALYSIS.md LIGHT-MODE.md UPLOAD-THEME.md COLOR-SYSTEM.md BRAND-COLOURS.md HOMEPAGE-FIX.md IMPORT-GUIDE.md REPLACE-DEMO.md PAGES-AND-MENU.md HEADER-FOOTER.md WHOLESALE.md WHAT-CODE-CAN-DO.md PHOTO-REQUEST.md IMAGES-NOT-SHOWING.md policies.md)
 DATA=(queendor-products.csv queendor-pages.wxr queendor-paystack-pages.wxr)
 
 mkdir -p "$OUT/brand"
@@ -119,6 +132,7 @@ PACK="$STAGE/queendor-client-pack"
 mkdir -p "$PACK"
 cp "$THEME_ZIP" "$PACK/"
 cp "$PLUGIN_ZIP" "$PACK/"
+cp "$FIX_ZIP" "$PACK/"
 for f in "${DOCS[@]}" "${DATA[@]}"; do cp "$REPO/client/$f" "$PACK/"; done
 cp -r "$PAGES_DIR" "$PACK/"
 cp -r "$FOOTER_DIR" "$PACK/"
@@ -132,7 +146,7 @@ PACK_ZIP="$OUT/queendor-client-pack.zip"
 ( cd "$STAGE" && zip -qr "$PACK_ZIP" queendor-client-pack )
 
 # --- validation --------------------------------------------------------------
-for archive in "$THEME_ZIP" "$PLUGIN_ZIP" "$PACK_ZIP"; do
+for archive in "$THEME_ZIP" "$PLUGIN_ZIP" "$FIX_ZIP" "$PACK_ZIP"; do
 	top="$(unzip -Z1 "$archive" | awk -F/ '{print $1}' | sort -u | wc -l | tr -d ' ')"
 	if [ "$top" != "1" ]; then
 		echo "error: $(basename "$archive") has $top top-level entries, expected 1" >&2
@@ -149,6 +163,9 @@ unzip -p "$THEME_ZIP" luxrio-child/style.css | grep -q "Version: $THEME_VERSION"
 
 unzip -p "$PLUGIN_ZIP" queendor-cleanup/queendor-cleanup.php | grep -q "Version:  *$PLUGIN_VERSION" \
 	|| { echo "error: plugin header version missing inside the plugin zip" >&2; exit 1; }
+
+unzip -p "$FIX_ZIP" queendor-fix/queendor-fix.php | grep -q "Version:  *$FIX_VERSION" \
+	|| { echo "error: version header missing inside queendor-fix zip" >&2; exit 1; }
 
 # removes the path dependency that made /preview.html 404. The downloads page
 
@@ -325,4 +342,4 @@ cp "$REPO/client/brand/preview.html" "$PACK/preview.html"
 # Also drop the theme at the repository root: client/pack/*.zip is gitignored, so
 # a build there is invisible to anyone browsing the repo.
 cp "$THEME_ZIP" "$REPO/QueenDors-child-theme-$THEME_VERSION.zip"
-echo "done — 3 archives verified, $(ls "$OUT" | wc -l | tr -d ' ') files in client/pack/"
+echo "done — 4 archives verified, $(ls "$OUT" | wc -l | tr -d ' ') files in client/pack/"

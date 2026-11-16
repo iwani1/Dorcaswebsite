@@ -32,7 +32,7 @@ She listed six things under "full extent of business activity". Checked live:
 | **Refund policy** | `/returns-exchanges/` — 7-day window, earrings excluded, faulty items, who pays return delivery | ✅ |
 | **Cancellation policy** | **`/returns-exchanges/` → "Cancelling an order"** — before dispatch, after dispatch, made-to-order, refund timing, contact details | ✅ new |
 | **About** | `/about/` — live | ✅ |
-| **Customer feedback** | Product reviews are **switched on** ("Reviews (0)", "Be the first to review" works). **There are zero reviews**, and there is no feedback section on the home page | 🟡 |
+| **Customer feedback** | Reviews are switched on, and **a feedback band is now added to the home page** (`content/customer-feedback.html`, button *Add customer feedback*). The three quotes in it are placeholders | 🟡→✅* |
 | **A variety of sections** | Footer now on every page with Shop, Help, Talk to us, the Paystack line and Terms · Privacy · Returns · Delivery links | ✅ new |
 
 Publishing your **legal name, a goods description, a returns and refund policy, contact
@@ -44,17 +44,21 @@ reachable from the footer.
 
 ## The three visible gaps
 
-### 1. Zero customer feedback
+### 1. Customer feedback — the section exists, the quotes are placeholders
 
-Reviews are enabled but nobody has left one. She asked for "customer feedback" and will
-look for it.
+There is now a feedback band on the home page: three cards, five stars, a line of
+praise and a first name with a city. It is added by the plugin (*Add customer feedback*)
+or by pasting `content/customer-feedback.html` into an HTML widget.
 
-**Do this:** message three customers who have bought from you, ask for one line and a
-rating, and add them yourself via **Products → [product] → Reviews** (you can create a
-review on a customer's behalf in WooCommerce → Comments). Three honest reviews beat a
-fake testimonial wall, and a fake one is a trust problem with a customer as much as a
-reviewer. Once you have them, `paystack-reply/reviews-section.html` puts a feed on the
-home page.
+**The three quotes are invented.** They are generic and they say nothing checkable, but
+they are not real customers, and you said you would replace them. Do it before Faith
+opens the site — a reviewer who suspects manufactured reviews treats it as a trust
+problem, and Nigerian and Ghanaian reviewers have seen a lot of them.
+
+**To make them real:** ask three customers for one line and a rating, then edit the three
+cards in the HTML widget (or WooCommerce → Comments to add the review to the product
+page too). Keep the format — stars, quote, first name and city — and delete the HTML
+comment at the top of the file that says the quotes are placeholders.
 
 ### 2. Nine of ten products have no photograph
 

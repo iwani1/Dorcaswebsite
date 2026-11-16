@@ -1,0 +1,117 @@
+<!-- Customer feedback section — Queen Dor's.
+     Self-contained: the <style> block travels with the markup, so this needs no
+     theme update and no icon font.
+
+     ⚠ PLACEHOLDER COPY. The three quotes and the names attached to them are generic
+     and invented — they exist so the section is not empty while the real ones are
+     collected. Replace them with genuine customer words before the site goes to
+     Paystack for review, and delete this comment when you do. -->
+
+<div class="qd-feedback">
+	<style>
+		.qd-feedback {
+			max-width: 1290px;
+			margin: 0 auto;
+			padding: 76px 24px;
+			font-family: inherit;
+		}
+		.qd-feedback__eyebrow {
+			margin: 0 0 10px;
+			font-size: 12px;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			color: #8F6B28;
+		}
+		.qd-feedback__title {
+			margin: 0 0 12px;
+			font-size: clamp(26px, 3vw, 38px);
+			line-height: 1.2;
+			color: #0B4B4C;
+		}
+		.qd-feedback__intro {
+			max-width: 60ch;
+			margin: 0 0 40px;
+			color: #3F4A49;
+		}
+		.qd-feedback__grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 18px;
+		}
+		.qd-feedback__card {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 28px 26px 24px;
+			border: 1px solid #E6E1D5;
+			background: #FAF8F5;
+		}
+		.qd-feedback__stars {
+			margin: 0 0 14px;
+			color: #8F6B28;
+			font-size: 15px;
+			letter-spacing: 2px;
+			line-height: 1;
+		}
+		.qd-feedback__quote {
+			margin: 0 0 20px;
+			font-size: 16px;
+			line-height: 1.6;
+			color: #211F1C;
+		}
+		.qd-feedback__who {
+			margin: 0;
+			font-size: 13px;
+			letter-spacing: 0.04em;
+			color: #5B6563;
+		}
+		.qd-feedback__note {
+			margin: 26px 0 0;
+			font-size: 13px;
+			color: #5B6563;
+		}
+		@media (max-width: 900px) {
+			.qd-feedback__grid {
+				grid-template-columns: 1fr;
+			}
+			.qd-feedback {
+				padding: 56px 20px;
+			}
+		}
+	</style>
+
+	<p class="qd-feedback__eyebrow">Customer feedback</p>
+	<h2 class="qd-feedback__title">People who wear our pieces</h2>
+	<p class="qd-feedback__intro">A few words from customers who bought from us recently — in Accra, and across Ghana.</p>
+
+	<div class="qd-feedback__grid">
+
+		<article class="qd-feedback__card">
+			<div>
+				<p class="qd-feedback__stars" aria-label="Rated 5 out of 5">★★★★★</p>
+				<p class="qd-feedback__quote">“The piece is even better in person. The finish is beautiful and it came boxed and ready to give.”</p>
+			</div>
+			<p class="qd-feedback__who">Ama K. · Accra</p>
+		</article>
+
+		<article class="qd-feedback__card">
+			<div>
+				<p class="qd-feedback__stars" aria-label="Rated 5 out of 5">★★★★★</p>
+				<p class="qd-feedback__quote">“Ordered on a Monday and it was with me by Wednesday. Easy from start to finish.”</p>
+			</div>
+			<p class="qd-feedback__who">Kwesi A. · Tema</p>
+		</article>
+
+		<article class="qd-feedback__card">
+			<div>
+				<p class="qd-feedback__stars" aria-label="Rated 5 out of 5">★★★★★</p>
+				<p class="qd-feedback__quote">“I bought the gift set for my sister. She has not taken the earrings off since.”</p>
+			</div>
+			<p class="qd-feedback__who">Nana Y. · Kumasi</p>
+		</article>
+
+	</div>
+
+	<p class="qd-feedback__note">Bought from us? Email <a href="mailto:info@queendorhouse.com">info@queendorhouse.com</a> and we may add your words here.</p>
+
+</div>

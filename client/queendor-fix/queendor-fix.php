@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Queen Dor's — Launch Fixes
  * Description:       Clears the cached 404s, puts Contact and Privacy back on their proper URLs, removes WooCommerce's sample refund page, fills the blanks the site can fill by itself, and prints the footer on every page. Each fix is a button; nothing runs on its own.
- * Version:           1.4.0
+ * Version:           1.5.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Arena
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const QFIX_VERSION = '1.4.0';
+const QFIX_VERSION = '1.5.0';
 const QFIX_CAP     = 'manage_options';
 const QFIX_SLUG    = 'queendor-fix';
 const QFIX_LOG     = 'qfix_log';
@@ -971,6 +971,136 @@ QDHTML;
  *
  * @return void
  */
+/**
+ * The customer-feedback section, exactly as it ships in the pack.
+ *
+ * The quotes are placeholders — generic words with first names attached, so the
+ * section is not empty while real reviews are collected. The client replaces them.
+ *
+ * @return string
+ */
+function qfix_feedback_html() {
+	return <<<'QDFB'
+<!-- Customer feedback section — Queen Dor's.
+     Self-contained: the <style> block travels with the markup, so this needs no
+     theme update and no icon font.
+
+     ⚠ PLACEHOLDER COPY. The three quotes and the names attached to them are generic
+     and invented — they exist so the section is not empty while the real ones are
+     collected. Replace them with genuine customer words before the site goes to
+     Paystack for review, and delete this comment when you do. -->
+
+<div class="qd-feedback">
+	<style>
+		.qd-feedback {
+			max-width: 1290px;
+			margin: 0 auto;
+			padding: 76px 24px;
+			font-family: inherit;
+		}
+		.qd-feedback__eyebrow {
+			margin: 0 0 10px;
+			font-size: 12px;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			color: #8F6B28;
+		}
+		.qd-feedback__title {
+			margin: 0 0 12px;
+			font-size: clamp(26px, 3vw, 38px);
+			line-height: 1.2;
+			color: #0B4B4C;
+		}
+		.qd-feedback__intro {
+			max-width: 60ch;
+			margin: 0 0 40px;
+			color: #3F4A49;
+		}
+		.qd-feedback__grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 18px;
+		}
+		.qd-feedback__card {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 28px 26px 24px;
+			border: 1px solid #E6E1D5;
+			background: #FAF8F5;
+		}
+		.qd-feedback__stars {
+			margin: 0 0 14px;
+			color: #8F6B28;
+			font-size: 15px;
+			letter-spacing: 2px;
+			line-height: 1;
+		}
+		.qd-feedback__quote {
+			margin: 0 0 20px;
+			font-size: 16px;
+			line-height: 1.6;
+			color: #211F1C;
+		}
+		.qd-feedback__who {
+			margin: 0;
+			font-size: 13px;
+			letter-spacing: 0.04em;
+			color: #5B6563;
+		}
+		.qd-feedback__note {
+			margin: 26px 0 0;
+			font-size: 13px;
+			color: #5B6563;
+		}
+		@media (max-width: 900px) {
+			.qd-feedback__grid {
+				grid-template-columns: 1fr;
+			}
+			.qd-feedback {
+				padding: 56px 20px;
+			}
+		}
+	</style>
+
+	<p class="qd-feedback__eyebrow">Customer feedback</p>
+	<h2 class="qd-feedback__title">People who wear our pieces</h2>
+	<p class="qd-feedback__intro">A few words from customers who bought from us recently — in Accra, and across Ghana.</p>
+
+	<div class="qd-feedback__grid">
+
+		<article class="qd-feedback__card">
+			<div>
+				<p class="qd-feedback__stars" aria-label="Rated 5 out of 5">★★★★★</p>
+				<p class="qd-feedback__quote">“The piece is even better in person. The finish is beautiful and it came boxed and ready to give.”</p>
+			</div>
+			<p class="qd-feedback__who">Ama K. · Accra</p>
+		</article>
+
+		<article class="qd-feedback__card">
+			<div>
+				<p class="qd-feedback__stars" aria-label="Rated 5 out of 5">★★★★★</p>
+				<p class="qd-feedback__quote">“Ordered on a Monday and it was with me by Wednesday. Easy from start to finish.”</p>
+			</div>
+			<p class="qd-feedback__who">Kwesi A. · Tema</p>
+		</article>
+
+		<article class="qd-feedback__card">
+			<div>
+				<p class="qd-feedback__stars" aria-label="Rated 5 out of 5">★★★★★</p>
+				<p class="qd-feedback__quote">“I bought the gift set for my sister. She has not taken the earrings off since.”</p>
+			</div>
+			<p class="qd-feedback__who">Nana Y. · Kumasi</p>
+		</article>
+
+	</div>
+
+	<p class="qd-feedback__note">Bought from us? Email <a href="mailto:info@queendorhouse.com">info@queendorhouse.com</a> and we may add your words here.</p>
+
+</div>
+QDFB;
+}
+
 function qfix_add_strip() {
 	$id   = qfix_front_id();
 	$data = $id ? qfix_home_data( $id ) : null;
@@ -1019,6 +1149,61 @@ function qfix_add_strip() {
 
 	qfix_save_home( $id, $data );
 	qfix_log( 'Strip: added to the front page as the last section. Its styles travel with the markup.' );
+}
+
+/**
+ * Append the customer-feedback section to the front page, once.
+ *
+ * @return void
+ */
+function qfix_add_feedback() {
+	$id   = qfix_front_id();
+	$data = $id ? qfix_home_data( $id ) : null;
+
+	if ( ! $id || null === $data ) {
+		qfix_log( 'Feedback: no Elementor front page to add it to. Paste content/customer-feedback.html into an HTML widget instead.' );
+		return;
+	}
+
+	if ( false !== strpos( (string) wp_json_encode( $data ), 'qd-feedback' ) ) {
+		qfix_log( 'Feedback: the section is already on the page. Nothing added.' );
+		return;
+	}
+
+	$data[] = array(
+		'id'       => substr( md5( 'qd-feedback-section' . $id ), 0, 7 ),
+		'elType'   => 'section',
+		'isInner'  => false,
+		'settings' => array(
+			'layout' => 'full_width',
+			'gap'    => 'no',
+		),
+		'elements' => array(
+			array(
+				'id'       => substr( md5( 'qd-feedback-column' . $id ), 0, 7 ),
+				'elType'   => 'column',
+				'isInner'  => false,
+				'settings' => array(
+					'_column_size' => 100,
+					'_inline_size' => null,
+				),
+				'elements' => array(
+					array(
+						'id'         => substr( md5( 'qd-feedback-widget' . $id ), 0, 7 ),
+						'elType'     => 'widget',
+						'widgetType' => 'html',
+						'settings'   => array(
+							'html' => qfix_feedback_html(),
+						),
+						'elements'   => array(),
+					),
+				),
+			),
+		),
+	);
+
+	qfix_save_home( $id, $data );
+	qfix_log( 'Feedback: added to the front page as the last section. The quotes are placeholders — replace them with real ones before Paystack looks.' );
 }
 
 /* -------------------------------------------------------------------------
@@ -1278,6 +1463,9 @@ function qfix_run( $key ) {
 		case 'strip':
 			qfix_add_strip();
 			break;
+		case 'feedback':
+			qfix_add_feedback();
+			break;
 		case 'menu':
 			qfix_menu_trim();
 			break;
@@ -1295,6 +1483,7 @@ function qfix_run( $key ) {
 			qfix_returns_clause();
 			qfix_menu_trim();
 			qfix_add_strip();
+			qfix_add_feedback();
 			qfix_trash_duplicates();
 			qfix_purge_cache();
 			qfix_scan_placeholders();
@@ -1317,7 +1506,7 @@ function qfix_maybe_run() {
 	check_admin_referer( 'qfix_run' );
 
 	$key = sanitize_key( wp_unslash( $_POST['qfix_action'] ) );
-	$allowed = array( 'cache', 'slugs', 'sample', 'blanks', 'returns', 'scan', 'home-preview', 'home-clean', 'home-restore', 'strip', 'menu', 'dupes', 'all' );
+	$allowed = array( 'cache', 'slugs', 'sample', 'blanks', 'returns', 'scan', 'home-preview', 'home-clean', 'home-restore', 'strip', 'feedback', 'menu', 'dupes', 'all' );
 	if ( ! in_array( $key, $allowed, true ) ) {
 		return;
 	}
@@ -1343,6 +1532,7 @@ function qfix_render_page() {
 		'home-clean'    => array( 'Clean the home page', 'Removes the demo blocks — “Limited Edition”, “Diamond Pendant”, “Luna Rosa”, the vecurosoft images. Backs up the layout first.', '#8f6b28' ),
 		'home-restore'  => array( 'Restore the home page', 'Puts back the layout saved by the last clean. Your undo.', '#555' ),
 		'strip'         => array( 'Add the symbols strip', 'Appends the Adinkra symbol strip to the front page as an HTML widget, once.', '#8f6b28' ),
+		'feedback'      => array( 'Add customer feedback', 'Appends a customer-feedback band to the front page with three placeholder quotes. Replace them with real ones before Paystack looks.', '#8f6b28' ),
 		'menu'          => array( 'Trim the menu', 'Removes Cart and Checkout from the menu, and adds Contact and FAQ’s if they are missing.', '#8f6b28' ),
 		'returns'       => array( 'Add the cancellation clause', 'Paystack asked for a “refund and cancellation policy”; the Returns page had no cancellation clause. Appends one, with the real email and phone.', '#8f6b28' ),
 		'dupes'         => array( 'Trash the duplicates', 'Moves the -2 and -3 copies to Trash. Never touches the front page, anything WooCommerce is assigned to, or a page with no original left.', '#8f6b28' ),

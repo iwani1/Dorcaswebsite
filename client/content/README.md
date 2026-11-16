@@ -108,3 +108,10 @@ Both are dry-run first — nothing changes until you press the button.
 - The **real address, phone, email** and **three delivery prices** — the only
   brackets that appear in more than one file.
 - The **ring sizes and measurements** in the product descriptions.
+
+## customer-feedback.html
+
+A customer-feedback band for the home page — three cards, five stars each, self-contained
+styles. **The three quotes are placeholders**; replace them with real customer words
+before launch. The plugin can add it (Tools → Queen Dor's Fixes → *Add customer feedback*),
+or paste the file into an Elementor HTML widget.

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Queen Dor's — Launch Fixes
  * Description:       Clears the cached 404s, puts Contact and Privacy back on their proper URLs, removes WooCommerce's sample refund page, fills the blanks the site can fill by itself, and prints the footer on every page. Each fix is a button; nothing runs on its own.
- * Version:           1.5.0
+ * Version:           1.5.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Arena
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const QFIX_VERSION = '1.5.0';
+const QFIX_VERSION = '1.5.1';
 const QFIX_CAP     = 'manage_options';
 const QFIX_SLUG    = 'queendor-fix';
 const QFIX_LOG     = 'qfix_log';
@@ -323,6 +323,9 @@ function qfix_fill_placeholders() {
 	// "operated by Queen Dor's Fashion House with its address at ..." — the
 	// registration clause was removed by hand and left the comma behind.
 	$rules[] = array( '/(Fashion House)\s+with its address at/', '$1, with its address at', 'comma' );
+	// The home page claims worldwide delivery; the shipping page says the
+	// opposite. A reviewer comparing two pages of one site will find it.
+	$rules[] = array( '/delivered\s+worldwide/i', 'delivered across Ghana', 'delivery claim' );
 	$rules[] = array( '/\[NUMBER\]\s*working\s+days/', 'five working days', 'refund window' );
 	$rules[] = array(
 		'/\[Delete whichever does not apply:[^\]]*\]/s',

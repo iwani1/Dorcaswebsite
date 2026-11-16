@@ -1,0 +1,52 @@
+{
+ "content": [
+  {
+   "id": "53eb3af",
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 0
+    },
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    },
+    "margin": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "d119434",
+     "settings": {
+      "html": "<div class=\"qd-footer\" role=\"contentinfo\">\n\t<div class=\"qd-footer__inner\">\n\n\t\t<div class=\"qd-footer__grid\">\n\n\t\t\t<div class=\"qd-footer__brand\">\n\t\t\t\t<p class=\"qd-footer__name\">Queen Dor's<span>Fashion House</span></p>\n\t\t\t\t<p class=\"qd-footer__tagline\">Adinkra jewellery, hand-finished in Accra. Every symbol already means something.</p>\n\t\t\t\t<p><a href=\"https://www.instagram.com/queendor_fashionhouse/\" target=\"_blank\" rel=\"noopener\">Instagram — @queendor_fashionhouse</a></p>\n\t\t\t</div>\n\n\t\t\t<div>\n\t\t\t\t<h3>Shop</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><a href=\"/shop/\">All jewellery</a></li>\n\t\t\t\t\t<li><a href=\"/wholesale/\">Wholesale</a></li>\n\t\t\t\t\t<li><a href=\"/symbols/\">The symbols</a></li>\n\t\t\t\t\t<li><a href=\"/size-guide/\">Size guide</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\n\t\t\t<div>\n\t\t\t\t<h3>Help</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><a href=\"/contact/\">Contact us</a></li>\n\t\t\t\t\t<li><a href=\"/faqs/\">FAQs</a></li>\n\t\t\t\t\t<li><a href=\"/shipping-delivery/\">Shipping &amp; delivery</a></li>\n\t\t\t\t\t<li><a href=\"/returns-exchanges/\">Returns &amp; refunds</a></li>\n\t\t\t\t\t<li><a href=\"/my-account/\">My account</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\n\t\t\t<div class=\"qd-footer__contact\">\n\t\t\t\t<h3>Talk to us</h3>\n\t\t\t\t<address>\n\t\t\t\t\t[STREET ADDRESS], [AREA]<br>\n\t\t\t\t\tAccra, Ghana\n\t\t\t\t</address>\n\t\t\t\t<p><a href=\"tel:[PHONE NUMBER]\">[PHONE NUMBER]</a></p>\n\t\t\t\t<p><a href=\"mailto:[EMAIL ADDRESS]\">[EMAIL ADDRESS]</a></p>\n\t\t\t\t<p>Monday–Friday, [9:00–17:00]<br>Saturday, [10:00–14:00]</p>\n\t\t\t</div>\n\n\t\t</div>\n\n\t\t<div class=\"qd-footer__pay\">\n\t\t\t<p><strong>Secure payment by Paystack</strong> — Visa · Mastercard · MTN MoMo · Telecel Cash · AirtelTigo. Your card details are never stored on this site.</p>\n\t\t</div>\n\n\t\t<div class=\"qd-footer__bottom\">\n\t\t\t<p>© 2026 Queen Dor's Fashion House. [REGISTERED BUSINESS NAME], registration [NUMBER], [ADDRESS], Accra, Ghana.</p>\n\t\t\t<div class=\"qd-footer__legal\">\n\t\t\t\t<a href=\"/terms/\">Terms &amp; conditions</a>\n\t\t\t\t<a href=\"/privacy-policy/\">Privacy policy</a>\n\t\t\t\t<a href=\"/returns-exchanges/\">Returns</a>\n\t\t\t\t<a href=\"/shipping-delivery/\">Delivery</a>\n\t\t\t</div>\n\t\t</div>\n\n\t</div>\n</div>"
+     },
+     "elements": [],
+     "isInner": false,
+     "widgetType": "html",
+     "elType": "widget"
+    }
+   ],
+   "isInner": false,
+   "elType": "container"
+  }
+ ],
+ "page_settings": [],
+ "version": "0.4",
+ "title": "Queen Dor's Footer",
+ "type": "page"
+}

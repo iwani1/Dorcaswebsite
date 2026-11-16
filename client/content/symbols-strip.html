@@ -1,0 +1,137 @@
+<!-- Home page symbols strip. Self-contained: the <style> block travels with the
+     markup, so this needs no theme update. Paste into an Elementor HTML widget
+     where the empty "Why Adinkra" band currently sits, or anywhere on the home page.
+
+     Links go to the /symbol/<slug>/ archives, which are Coming-soon gated until the
+     store is switched live — the same as every other shop link. -->
+
+<div class="qd-symbols">
+	<style>
+		.qd-symbols {
+			max-width: 1290px;
+			margin: 0 auto;
+			padding: 76px 24px;
+		}
+		.qd-symbols__eyebrow {
+			margin: 0 0 10px;
+			font-size: 12px;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			color: #8F6B28;
+		}
+		.qd-symbols__title {
+			margin: 0 0 12px;
+			font-size: clamp(26px, 3vw, 38px);
+			line-height: 1.2;
+			color: #0B4B4C;
+		}
+		.qd-symbols__intro {
+			max-width: 60ch;
+			margin: 0 0 40px;
+			color: #3F4A49;
+		}
+		.qd-symbols__grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 18px;
+		}
+		.qd-symbols__card {
+			display: block;
+			padding: 26px 24px 24px;
+			border: 1px solid #E6E1D5;
+			background: #FAF8F5;
+			text-decoration: none;
+			transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+		}
+		.qd-symbols__card:hover,
+		.qd-symbols__card:focus {
+			border-color: #C8AC77;
+			transform: translateY(-2px);
+			box-shadow: 0 8px 24px rgba(11, 75, 76, 0.08);
+		}
+		.qd-symbols__name {
+			display: block;
+			margin-bottom: 4px;
+			font-size: 18px;
+			font-weight: 600;
+			color: #0B4B4C;
+		}
+		.qd-symbols__meaning {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 12px;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: #8F6B28;
+		}
+		.qd-symbols__line {
+			display: block;
+			font-size: 15px;
+			line-height: 1.6;
+			color: #3F4A49;
+		}
+		.qd-symbols__more {
+			margin: 32px 0 0;
+		}
+		.qd-symbols__more a {
+			color: #0B4B4C;
+			font-weight: 600;
+			text-decoration: none;
+			border-bottom: 1px solid #C8AC77;
+			padding-bottom: 2px;
+		}
+		@media (max-width: 980px) {
+			.qd-symbols__grid { grid-template-columns: repeat(2, 1fr); }
+		}
+		@media (max-width: 620px) {
+			.qd-symbols { padding: 48px 18px; }
+			.qd-symbols__grid { grid-template-columns: 1fr; }
+		}
+	</style>
+
+	<p class="qd-symbols__eyebrow">Why Adinkra</p>
+	<h2 class="qd-symbols__title">A piece that says something</h2>
+	<p class="qd-symbols__intro">Every symbol we use already meant something long before we made jewellery from it. We did not invent these meanings, and we do not need to — we just make them wearable.</p>
+
+	<div class="qd-symbols__grid">
+
+		<a class="qd-symbols__card" href="/symbol/sankofa/">
+			<span class="qd-symbols__name">Sankofa</span>
+			<span class="qd-symbols__meaning">Go back and fetch it</span>
+			<span class="qd-symbols__line">The bird flies forward with its head turned back. It is not wrong to return for what you left behind.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/gye-nyame/">
+			<span class="qd-symbols__name">Gye Nyame</span>
+			<span class="qd-symbols__meaning">Except for God</span>
+			<span class="qd-symbols__line">The most widely worn of all Adinkra symbols — everything that has happened and will happen is already known.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/akoma/">
+			<span class="qd-symbols__name">Akoma</span>
+			<span class="qd-symbols__meaning">The heart</span>
+			<span class="qd-symbols__line">Patience, tolerance and endurance — a promise that the heart can hold more than the moment it is in.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/duafe/">
+			<span class="qd-symbols__name">Duafe</span>
+			<span class="qd-symbols__meaning">The wooden comb</span>
+			<span class="qd-symbols__line">Given as a token of love and care: beauty is something tended, not something owned.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/dwennimmen/">
+			<span class="qd-symbols__name">Dwennimmen</span>
+			<span class="qd-symbols__meaning">The ram's horns</span>
+			<span class="qd-symbols__line">The ram fights with its horns, and the same horns mean humility. Strength, and the wisdom to keep it quiet.</span>
+		</a>
+
+		<a class="qd-symbols__card" href="/symbol/adinkrahene/">
+			<span class="qd-symbols__name">Adinkrahene</span>
+			<span class="qd-symbols__meaning">Chief of all symbols</span>
+			<span class="qd-symbols__line">Three concentric circles, and the king of the Adinkra set — the standard the others are measured against.</span>
+		</a>
+
+	</div>
+
+	<p class="qd-symbols__more"><a href="/symbols/">All twelve symbols, and what each one means</a></p>
+</div>

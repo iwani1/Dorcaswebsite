@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Queen Dor's — Launch Fixes
  * Description:       Clears the cached 404s, puts Contact and Privacy back on their proper URLs, removes WooCommerce's sample refund page, fills the blanks the site can fill by itself, and prints the footer on every page. Each fix is a button; nothing runs on its own.
- * Version:           1.2.0
+ * Version:           1.3.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Arena
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const QFIX_VERSION = '1.2.0';
+const QFIX_VERSION = '1.3.0';
 const QFIX_CAP     = 'manage_options';
 const QFIX_SLUG    = 'queendor-fix';
 const QFIX_LOG     = 'qfix_log';
@@ -300,18 +300,18 @@ function qfix_fill_placeholders() {
 		$rules[] = array( '/' . preg_quote( $stale, '/' ) . '/i', $e, 'stale email' );
 	}
 
-	$rules[] = array( '/\[EMAIL ADDRESS\]/', $e, 'email' );
+	$rules[] = array( '/\[EMAIL\s+ADDRESS\]/', $e, 'email' );
 	$rules[] = array( '/\{email address\}/', $e, 'email' );
 	$rules[] = array( '/\{email\}/', $e, 'email' );
 	$rules[] = array( '/(Email:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 ' . $e, 'email' );
 	$rules[] = array( '/(Write to\s*)(<strong>)?\s*_{2,}/', '$1$2 ' . $e, 'email' );
 
-	$rules[] = array( '/\[PHONE NUMBER\]/', $p, 'phone' );
+	$rules[] = array( '/\[PHONE\s+NUMBER\]/', $p, 'phone' );
 	$rules[] = array( '/(Phone \/ WhatsApp:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 ' . $p, 'phone' );
 
-	$rules[] = array( '/\[BUSINESS ADDRESS, ACCRA,\s*GHANA\]/', QFIX_STREET . ', Accra, Ghana', 'address' );
-	$rules[] = array( '/\[STREET ADDRESS\],\s*\[AREA\]/', QFIX_STREET, 'address' );
-	$rules[] = array( '/\[REGISTERED BUSINESS NAME\]/', QFIX_NAME, 'registered name' );
+	$rules[] = array( '/\[BUSINESS\s+ADDRESS[^\]]*\]/', QFIX_STREET . ', Accra, Ghana', 'address' );
+	$rules[] = array( '/\[STREET\s+ADDRESS\][,\s]*\[AREA\]/', QFIX_STREET, 'address' );
+	$rules[] = array( '/\[REGISTERED\s+BUSINESS\s+NAME\]/', QFIX_NAME, 'registered name' );
 	$rules[] = array( '/(Studio:)(\s*<\/strong>)?\s*_{2,}[^<\n]*/', '$1$2 ' . QFIX_STREET . ', Accra, Ghana', 'studio' );
 	$rules[] = array(
 		'/(Opening hours:)(\s*<\/strong>)?\s*_{2,}/',
@@ -320,7 +320,7 @@ function qfix_fill_placeholders() {
 	);
 
 	$rules[] = array( '/\[DATE\]/', $d['date'], 'date' );
-	$rules[] = array( '/\[NUMBER\]\s*working days/', 'five working days', 'refund window' );
+	$rules[] = array( '/\[NUMBER\]\s*working\s+days/', 'five working days', 'refund window' );
 	$rules[] = array(
 		'/\[Delete whichever does not apply:[^\]]*\]/s',
 		'We are not currently VAT-registered; no VAT is charged.',
@@ -338,6 +338,15 @@ function qfix_fill_placeholders() {
 	$rules[] = array( '/(wait for our message before coming\.)\s*\]/', '$1', 'FAQ stray bracket' );
 	$rules[] = array( '/\b_([A-Z][A-Za-z ]{2,24})_\b/', '$1', 'stray italics marker' );
 
+
+
+	// The Wholesale page still holds the original four blanks.
+	$wholesale = array(
+		array( '/(Minimum order:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 6', 'wholesale minimum' ),
+		array( '/(Lead time:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 ten', 'wholesale lead time' ),
+		array( '/(Terms:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 50% of the retail price, paid online at checkout before dispatch.', 'wholesale terms' ),
+		array( '/(Wholesale enquiries:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 ' . $e . ' · ' . $p, 'wholesale enquiries' ),
+	);
 	$pages = get_posts(
 		array(
 			'post_type'      => array( 'page', 'post' ),
@@ -353,7 +362,12 @@ function qfix_fill_placeholders() {
 		$before = $html;
 		$hits   = 0;
 
-		foreach ( $rules as $rule ) {
+		$page_rules = $rules;
+		if ( 'wholesale' === $page->post_name ) {
+			$page_rules = array_merge( $page_rules, $wholesale );
+		}
+
+		foreach ( $page_rules as $rule ) {
 			list( $pattern, $replacement, $label ) = $rule;
 
 			$out = preg_replace( $pattern, $replacement, $html, -1, $n );
@@ -428,9 +442,13 @@ function qfix_scan_placeholders() {
 
 	$found = 0;
 	foreach ( $pages as $page ) {
+		// Collapse the whitespace an editor leaves inside a placeholder, so
+		// "[PHONE\nNUMBER]" is still counted.
+		$text = preg_replace( '/\s+/', ' ', (string) $page->post_content );
+
 		$hits = array();
 		foreach ( $patterns as $p ) {
-			$c = substr_count( (string) $page->post_content, $p );
+			$c = substr_count( (string) $text, $p );
 			if ( $c ) {
 				$hits[] = $p . ' ×' . $c;
 			}
@@ -543,40 +561,25 @@ function qfix_footer_styles() {
 add_action( 'wp_enqueue_scripts', 'qfix_footer_styles', 99 );
 
 /**
- * Buffer the page so the footer can be placed before </body>.
+ * Print the footer in wp_footer.
+ *
+ * Not output buffering: the buffer did not survive this theme's own buffering and
+ * no footer appeared. wp_footer is an action the theme has to fire — its side cart
+ * depends on it — so the footer is printed before </body>.
  *
  * @return void
  */
-function qfix_start_buffer() {
-	if ( is_admin() || wp_doing_ajax() || wp_doing_cron() || is_feed() || is_robots() ) {
+function qfix_print_footer() {
+	static $printed = false;
+
+	if ( $printed ) {
 		return;
 	}
-	ob_start( 'qfix_inject_footer' );
+	$printed = true;
+
+	echo qfix_footer_html(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside.
 }
-add_action( 'template_redirect', 'qfix_start_buffer', 1 );
-
-/**
- * Inject the footer unless the page already rendered one.
- *
- * @param string $html Full page HTML.
- * @return string
- */
-function qfix_inject_footer( $html ) {
-	if ( ! is_string( $html ) || '' === $html ) {
-		return $html;
-	}
-
-	// The theme footer, once assigned, wins.
-	if ( false !== strpos( $html, 'qd-footer' ) ) {
-		return $html;
-	}
-
-	if ( false !== stripos( $html, '</body>' ) ) {
-		return str_replace( '</body>', qfix_footer_html() . "\n</body>", $html );
-	}
-
-	return $html . qfix_footer_html();
-}
+add_action( 'wp_footer', 'qfix_print_footer', 99 );
 
 /* -------------------------------------------------------------------------
  * The front page

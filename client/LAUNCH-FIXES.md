@@ -7,7 +7,7 @@ have to press, and the two things no code can decide for you.
 
 ## One download, one button
 
-**`queendor-fix-1.3.0.zip`** — in `client/pack/`, and inside the client pack.
+**`queendor-fix-1.4.0.zip`** — in `client/pack/`, and inside the client pack.
 
 1. Plugins → **Add New** → **Upload Plugin** → choose the zip → **Install Now** →
    **Activate Plugin**.

@@ -6,9 +6,9 @@ Everything below is either one button or one short step. Nothing here needs a de
 
 # Part 1 — the plugin does it (4 minutes)
 
-**Download:** `queendor-fix-1.3.0.zip`
+**Download:** `queendor-fix-1.4.0.zip`
 
-1. **Plugins → Add New → Upload Plugin → Choose File** → `queendor-fix-1.3.0.zip` →
+1. **Plugins → Add New → Upload Plugin → Choose File** → `queendor-fix-1.4.0.zip` →
    **Install Now** → **Activate Plugin**.
 2. **Tools → Queen Dor's Fixes**.
 3. Press **Preview the home page**. Read the list — it changes nothing.

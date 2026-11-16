@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Queen Dor's — Launch Fixes
  * Description:       Clears the cached 404s, puts Contact and Privacy back on their proper URLs, removes WooCommerce's sample refund page, fills the blanks the site can fill by itself, and prints the footer on every page. Each fix is a button; nothing runs on its own.
- * Version:           1.3.0
+ * Version:           1.4.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Arena
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const QFIX_VERSION = '1.3.0';
+const QFIX_VERSION = '1.4.0';
 const QFIX_CAP     = 'manage_options';
 const QFIX_SLUG    = 'queendor-fix';
 const QFIX_LOG     = 'qfix_log';
@@ -320,6 +320,9 @@ function qfix_fill_placeholders() {
 	);
 
 	$rules[] = array( '/\[DATE\]/', $d['date'], 'date' );
+	// "operated by Queen Dor's Fashion House with its address at ..." — the
+	// registration clause was removed by hand and left the comma behind.
+	$rules[] = array( '/(Fashion House)\s+with its address at/', '$1, with its address at', 'comma' );
 	$rules[] = array( '/\[NUMBER\]\s*working\s+days/', 'five working days', 'refund window' );
 	$rules[] = array(
 		'/\[Delete whichever does not apply:[^\]]*\]/s',
@@ -347,6 +350,13 @@ function qfix_fill_placeholders() {
 		array( '/(Terms:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 50% of the retail price, paid online at checkout before dispatch.', 'wholesale terms' ),
 		array( '/(Wholesale enquiries:)(\s*<\/strong>)?\s*_{2,}/', '$1$2 ' . $e . ' · ' . $p, 'wholesale enquiries' ),
 	);
+
+	// Shipping: a placeholder was typed into the cost column. Delivery is priced
+	// by the checkout, so say that rather than repeat the phrase.
+	$shipping = array(
+		array( '/Estimated by Delivery service/i', 'Calculated at checkout', 'shipping cost wording' ),
+		array( '/Calculation by Delivery service/i', 'Calculated at checkout', 'shipping cost wording' ),
+	);
 	$pages = get_posts(
 		array(
 			'post_type'      => array( 'page', 'post' ),
@@ -365,6 +375,9 @@ function qfix_fill_placeholders() {
 		$page_rules = $rules;
 		if ( 'wholesale' === $page->post_name ) {
 			$page_rules = array_merge( $page_rules, $wholesale );
+		}
+		if ( 'shipping-delivery' === $page->post_name ) {
+			$page_rules = array_merge( $page_rules, $shipping );
 		}
 
 		foreach ( $page_rules as $rule ) {
@@ -430,6 +443,7 @@ function qfix_scan_placeholders() {
 		'[AREA]',
 		'GH₵ ____',
 		'______',
+		'Estimated by Delivery service',
 	);
 
 	$pages = get_posts(
@@ -1044,9 +1058,15 @@ function qfix_menu_trim() {
 	}
 
 	// Contact and FAQs must be reachable from the header.
+	// Shop and My account vanish from the menu when their duplicate pages are
+	// trashed — the menu item points at the duplicate's ID. Put them back,
+	// pointing at the canonical pages.
 	$wanted = array(
-		'Contact' => get_page_by_path( 'contact' ),
-		"FAQ's"   => get_page_by_path( 'faqs' ),
+		'Shop'       => get_page_by_path( 'shop' ),
+		'Wholesale'  => get_page_by_path( 'wholesale' ),
+		'Contact'    => get_page_by_path( 'contact' ),
+		"FAQ's"      => get_page_by_path( 'faqs' ),
+		'My account' => get_page_by_path( 'my-account' ),
 	);
 
 	$primary = null;

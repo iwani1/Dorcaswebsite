@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Queen Dor's — Launch Fixes
  * Description:       Clears the cached 404s, puts Contact and Privacy back on their proper URLs, removes WooCommerce's sample refund page, fills the blanks the site can fill by itself, and prints the footer on every page. Each fix is a button; nothing runs on its own.
- * Version:           1.5.1
+ * Version:           1.6.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Arena
@@ -20,10 +20,11 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const QFIX_VERSION = '1.5.1';
+const QFIX_VERSION = '1.6.0';
 const QFIX_CAP     = 'manage_options';
 const QFIX_SLUG    = 'queendor-fix';
 const QFIX_LOG     = 'qfix_log';
+const QFIX_FOOTER  = 'qfix_footer_mode'; // auto | on | off
 
 /*
  * The client's real details, taken from the pages they filled in themselves.
@@ -342,6 +343,7 @@ function qfix_fill_placeholders() {
 	// "…confirm a time., Accra, by appointment. …coming.]"
 	$rules[] = array( '/confirm a time\.,\s*Accra, by appointment\./', 'confirm a time.', 'FAQ sentence' );
 	$rules[] = array( '/(wait for our message before coming\.)\s*\]/', '$1', 'FAQ stray bracket' );
+	$rules[] = array( '/before coming\.?\s*\]\s*/', 'before coming.', 'FAQ stray bracket' );
 	$rules[] = array( '/\b_([A-Z][A-Za-z ]{2,24})_\b/', '$1', 'stray italics marker' );
 
 
@@ -586,10 +588,90 @@ add_action( 'wp_enqueue_scripts', 'qfix_footer_styles', 99 );
  *
  * @return void
  */
+/**
+ * Is the theme's own footer switched on?
+ *
+ * Luxrio keeps its footer setting in the Redux array `luxrio_opt`:
+ * `luxrio_footer_builder_trigger` is 'footer_builder' with a template ID, or
+ * 'prebuilt' for the theme's built-in footer.
+ *
+ * @return bool
+ */
+function qfix_theme_footer_active() {
+	$opt = get_option( 'luxrio_opt' );
+
+	if ( ! is_array( $opt ) || empty( $opt['luxrio_footer_builder_trigger'] ) ) {
+		return false;
+	}
+
+	$trigger = (string) $opt['luxrio_footer_builder_trigger'];
+
+	if ( 'prebuilt' === $trigger ) {
+		return true;
+	}
+
+	if ( 'footer_builder' !== $trigger ) {
+		return false;
+	}
+
+	$id = isset( $opt['luxrio_footer_builder_select'] ) ? (int) $opt['luxrio_footer_builder_select'] : 0;
+	if ( $id <= 0 ) {
+		return false;
+	}
+
+	$template = get_post( $id );
+	return ( $template && 'publish' === $template->post_status );
+}
+
+/**
+ * Has this page already got the footer in it?
+ *
+ * Elementor keeps a widget's HTML in `_elementor_data`, not in post_content, so
+ * check both — otherwise a footer pasted into the home page is printed twice.
+ *
+ * @return bool
+ */
+function qfix_page_has_footer() {
+	$id = get_queried_object_id();
+	if ( ! $id ) {
+		return false;
+	}
+
+	if ( false !== strpos( (string) get_post_field( 'post_content', $id ), 'qd-footer' ) ) {
+		return true;
+	}
+
+	$data = get_post_meta( $id, '_elementor_data', true );
+	return is_string( $data ) && false !== strpos( $data, 'qd-footer' );
+}
+
+/**
+ * Should the plugin print its footer on this request?
+ *
+ * @return bool
+ */
+function qfix_should_print_footer() {
+	$mode = get_option( QFIX_FOOTER, 'auto' );
+
+	if ( 'off' === $mode ) {
+		return false;
+	}
+	if ( 'on' === $mode ) {
+		return true;
+	}
+
+	return ! qfix_theme_footer_active() && ! qfix_page_has_footer();
+}
+
+/**
+ * Print the footer, once, when it is wanted.
+ *
+ * @return void
+ */
 function qfix_print_footer() {
 	static $printed = false;
 
-	if ( $printed ) {
+	if ( $printed || ! qfix_should_print_footer() ) {
 		return;
 	}
 	$printed = true;
@@ -1209,6 +1291,51 @@ function qfix_add_feedback() {
 	qfix_log( 'Feedback: added to the front page as the last section. The quotes are placeholders — replace them with real ones before Paystack looks.' );
 }
 
+/**
+ * Explain which footer is on and why, so the duplicate is not a guess.
+ *
+ * @return void
+ */
+function qfix_footer_check() {
+	$mode = get_option( QFIX_FOOTER, 'auto' );
+	qfix_log( "Footer: mode is “{$mode}”." );
+
+	$theme = qfix_theme_footer_active();
+	qfix_log( 'Footer: the theme footer is ' . ( $theme ? 'ON' : 'off' ) . '.' );
+
+	$opt = get_option( 'luxrio_opt' );
+	if ( is_array( $opt ) ) {
+		$trigger = isset( $opt['luxrio_footer_builder_trigger'] ) ? $opt['luxrio_footer_builder_trigger'] : '(not set)';
+		$select  = isset( $opt['luxrio_footer_builder_select'] ) ? (int) $opt['luxrio_footer_builder_select'] : 0;
+		qfix_log( "Footer: luxrio_footer_builder_trigger = “{$trigger}”, template = {$select}." );
+
+		if ( $select > 0 ) {
+			$post = get_post( $select );
+			if ( $post ) {
+				qfix_log( "Footer: template {$select} “{$post->post_title}” is {$post->post_status}." );
+				$data = (string) get_post_meta( $select, '_elementor_data', true );
+				if ( false !== strpos( $data, 'qd-footer' ) ) {
+					qfix_log( 'Footer: that template contains the Queen Dor’s footer markup.' );
+				}
+			} else {
+				qfix_log( "Footer: template {$select} does not exist — the theme footer renders nothing." );
+			}
+		}
+	} else {
+		qfix_log( 'Footer: luxrio_opt is missing, so the theme is running on defaults.' );
+	}
+
+	$front = qfix_front_id();
+	if ( $front ) {
+		$data = (string) get_post_meta( $front, '_elementor_data', true );
+		if ( false !== strpos( $data, 'qd-footer' ) ) {
+			qfix_log( "Footer: the front page ({$front}) has a footer pasted into its own layout as well." );
+		}
+	}
+
+	qfix_log( 'Footer: this plugin ' . ( qfix_should_print_footer() ? 'IS printing its footer on pages that have none.' : 'is NOT printing its footer.' ) );
+}
+
 /* -------------------------------------------------------------------------
  * Menu and duplicates
  * ---------------------------------------------------------------------- */
@@ -1469,6 +1596,21 @@ function qfix_run( $key ) {
 		case 'feedback':
 			qfix_add_feedback();
 			break;
+		case 'footer-off':
+			update_option( QFIX_FOOTER, 'off', false );
+			qfix_log( 'Footer: the plugin will stop printing its footer. If the page now has none, press “Start printing it again”.' );
+			break;
+		case 'footer-on':
+			update_option( QFIX_FOOTER, 'on', false );
+			qfix_log( 'Footer: the plugin prints its footer on every page again.' );
+			break;
+		case 'footer-auto':
+			update_option( QFIX_FOOTER, 'auto', false );
+			qfix_log( 'Footer: back to automatic — it stands aside when the theme footer or a pasted copy is present.' );
+			break;
+		case 'footer-check':
+			qfix_footer_check();
+			break;
 		case 'menu':
 			qfix_menu_trim();
 			break;
@@ -1509,7 +1651,7 @@ function qfix_maybe_run() {
 	check_admin_referer( 'qfix_run' );
 
 	$key = sanitize_key( wp_unslash( $_POST['qfix_action'] ) );
-	$allowed = array( 'cache', 'slugs', 'sample', 'blanks', 'returns', 'scan', 'home-preview', 'home-clean', 'home-restore', 'strip', 'feedback', 'menu', 'dupes', 'all' );
+	$allowed = array( 'cache', 'slugs', 'sample', 'blanks', 'returns', 'scan', 'home-preview', 'home-clean', 'home-restore', 'strip', 'feedback', 'menu', 'dupes', 'footer-off', 'footer-on', 'footer-auto', 'footer-check', 'all' );
 	if ( ! in_array( $key, $allowed, true ) ) {
 		return;
 	}
@@ -1536,6 +1678,10 @@ function qfix_render_page() {
 		'home-restore'  => array( 'Restore the home page', 'Puts back the layout saved by the last clean. Your undo.', '#555' ),
 		'strip'         => array( 'Add the symbols strip', 'Appends the Adinkra symbol strip to the front page as an HTML widget, once.', '#8f6b28' ),
 		'feedback'      => array( 'Add customer feedback', 'Appends a customer-feedback band to the front page with three placeholder quotes. Replace them with real ones before Paystack looks.', '#8f6b28' ),
+		'footer-auto'   => array( 'Footer: automatic', 'The default. The plugin prints its footer only when the theme footer is off and the page has not already got one.', '#0b4b4c' ),
+		'footer-off'    => array( 'Footer: stop mine', 'Use this if you see two footers. It stops the plugin printing anything.', '#8f6b28' ),
+		'footer-on'     => array( 'Footer: always mine', 'Prints the plugin footer even if the theme one is switched on.', '#8f6b28' ),
+		'footer-check'  => array( 'Footer: what is switched on?', 'Reports the theme footer trigger, the template it points at, and whether this page already contains a footer.', '#555' ),
 		'menu'          => array( 'Trim the menu', 'Removes Cart and Checkout from the menu, and adds Contact and FAQ’s if they are missing.', '#8f6b28' ),
 		'returns'       => array( 'Add the cancellation clause', 'Paystack asked for a “refund and cancellation policy”; the Returns page had no cancellation clause. Appends one, with the real email and phone.', '#8f6b28' ),
 		'dupes'         => array( 'Trash the duplicates', 'Moves the -2 and -3 copies to Trash. Never touches the front page, anything WooCommerce is assigned to, or a page with no original left.', '#8f6b28' ),

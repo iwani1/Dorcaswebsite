@@ -62,7 +62,7 @@ is what actually happens.
 
 ## Do this now — three minutes
 
-1. Upload **`queendor-fix-1.5.1.zip`**, activate, **Run all fixes**.
+1. Upload **`queendor-fix-1.6.0.zip`**, activate, **Run all fixes**.
    It restores the menu and fixes the shipping wording.
 2. **Preview the home page**, then **Clean the home page**. Look at the site. Wrong?
    **Restore the home page**.

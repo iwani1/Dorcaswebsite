@@ -74,3 +74,6 @@ html body.vs-body header .main-menu>ul>li>a,html body.vs-body header .vs-header_
 /* Product page details (SKU, category, tags, share) that the theme sets in white */
 html body.vs-body .product_meta,html body.vs-body .product_meta span,html body.vs-body .product_meta a{color:var(--qd-ink2)!important;font-size:13px}
 html body.vs-body .product_meta a:hover{color:var(--qd-ink)!important}
+
+/* Headings the theme forces white or teal (e.g. "Top related products" on product pages, "New in store" on the cart) */
+html body.vs-body .sec-title.text-white,html body.vs-body .sec-title{color:var(--qd-ink)!important;font-family:var(--qd-serif)!important;font-weight:400!important;text-transform:none!important}

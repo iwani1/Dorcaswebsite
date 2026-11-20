@@ -77,3 +77,14 @@ html body.vs-body .product_meta a:hover{color:var(--qd-ink)!important}
 
 /* Headings the theme forces white or teal (e.g. "Top related products" on product pages, "New in store" on the cart) */
 html body.vs-body .sec-title.text-white,html body.vs-body .sec-title{color:var(--qd-ink)!important;font-family:var(--qd-serif)!important;font-weight:400!important;text-transform:none!important}
+
+/* Checkout tick boxes: the theme draws each box itself and showed the tick on unticked boxes, so they read back to front. Show the tick only when the box is ticked. */
+html body.vs-body .wc-block-components-checkbox .wc-block-components-checkbox__mark path{fill:transparent!important}
+html body.vs-body .wc-block-components-checkbox .wc-block-components-checkbox__input:checked + .wc-block-components-checkbox__mark path{fill:#16130f!important}
+html body.vs-body .wc-block-components-checkbox label:focus-within .wc-block-components-checkbox__mark{outline:2px solid #d9ad5e;outline-offset:2px}
+
+/* Shop dropdown: remove the broken icon boxes and the orange marker, use Lumina ink and bone */
+html body.vs-body header .main-menu .sub-menu{background:#f7f6f3!important;border:0!important;border-top:2px solid #d9ad5e!important;box-shadow:0 12px 30px rgba(0,0,0,.18)!important}
+html body.vs-body header .main-menu .sub-menu a{color:#16130f!important;font-family:"Jost","Futura",system-ui,sans-serif!important;font-weight:500!important;font-size:12px!important;letter-spacing:.16em!important;text-transform:uppercase}
+html body.vs-body header .main-menu .sub-menu a:hover{color:#8f6417!important}
+html body.vs-body header .main-menu .sub-menu a::before,html body.vs-body header .main-menu > ul > li.menu-item-has-children > a::before{display:none!important;content:none!important}

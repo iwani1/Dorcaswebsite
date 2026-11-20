@@ -66,3 +66,11 @@ html body.vs-body .fa-arrow-up,html body.vs-body .scroll-top,html body.vs-body .
 
 /* Focus that is easy to see on both ink and bone */
 body.vs-body a:focus-visible,body.vs-body button:focus-visible,body.vs-body input:focus-visible,body.vs-body select:focus-visible{outline:2px solid var(--qd-gold);outline-offset:3px}
+
+/* Pages whose header comes from the header builder (home, symbols, wholesale, cart) use a plain <header> */
+html body.vs-body header{background:var(--qd-ink)!important;background-color:var(--qd-ink)!important}
+html body.vs-body header .main-menu>ul>li>a,html body.vs-body header .vs-header__top--menu a,html body.vs-body header .reg-link{font-family:var(--qd-sans)!important;font-weight:500!important;font-size:12px!important;letter-spacing:.18em!important;text-transform:uppercase;color:#f4f1ea!important}
+
+/* Product page details (SKU, category, tags, share) that the theme sets in white */
+html body.vs-body .product_meta,html body.vs-body .product_meta span,html body.vs-body .product_meta a{color:var(--qd-ink2)!important;font-size:13px}
+html body.vs-body .product_meta a:hover{color:var(--qd-ink)!important}

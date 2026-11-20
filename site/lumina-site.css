@@ -2,6 +2,12 @@
    Brings the theme's header, page titles, shop, product pages and buttons into the Lumina look used on the homepage:
    ink and bone neutrals, one gold hairline, Cormorant Garamond headings, Jost text. Remove this block to return to the theme's own look. */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+/* Load the Elementor header's layout styles at the top of the page. WordPress prints them at the bottom, so the header was drawn unstyled
+   (about 360px tall) and then snapped to 132px, pushing every page up by ~230px. These must stay with the other @import lines, before any rule. */
+@import url("/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=4.3.5");
+@import url("/wp-content/uploads/elementor/css/post-1337.css");
+@import url("/wp-content/uploads/elementor/css/base-desktop.css") (min-width:768px);
+@import url("/wp-content/uploads/elementor/css/base-mobile.css") (max-width:767px);
 :root{--qd-ink:#16130f;--qd-ink2:#5b554d;--qd-bone:#f7f6f3;--qd-well:#ebe8e2;--qd-line:#ddd8d0;--qd-gold:#d9ad5e;--qd-gold-ink:#8f6417;--qd-serif:"Cormorant Garamond","Cormorant",Georgia,serif;--qd-sans:"Jost","Futura","Avenir Next",system-ui,sans-serif}
 
 /* Text */

@@ -1,0 +1,68 @@
+/* Queen Dor's · Lumina site styles (Additional CSS)
+   Brings the theme's header, page titles, shop, product pages and buttons into the Lumina look used on the homepage:
+   ink and bone neutrals, one gold hairline, Cormorant Garamond headings, Jost text. Remove this block to return to the theme's own look. */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+:root{--qd-ink:#16130f;--qd-ink2:#5b554d;--qd-bone:#f7f6f3;--qd-well:#ebe8e2;--qd-line:#ddd8d0;--qd-gold:#d9ad5e;--qd-gold-ink:#8f6417;--qd-serif:"Cormorant Garamond","Cormorant",Georgia,serif;--qd-sans:"Jost","Futura","Avenir Next",system-ui,sans-serif}
+
+/* Text */
+body.vs-body{font-family:var(--qd-sans);color:var(--qd-ink);background:var(--qd-bone)}
+body.vs-body h1,body.vs-body h2,body.vs-body h3,body.vs-body h4{font-family:var(--qd-serif);font-weight:400;letter-spacing:0;color:var(--qd-ink)}
+body.vs-body a{transition:color .2s}
+
+/* Header: ink bar, bone text, tracked uppercase links, gold hairline under the active item */
+html body.vs-body header.header,html body.vs-body .header .vs-menu-area,html body.vs-body .header .sticky-wrapper,html body.vs-body .header .sticky-active,html body.vs-body .mobile-logo,html body.vs-body .searchClose{background:var(--qd-ink)!important;background-color:var(--qd-ink)!important}
+.header .vs-menu-area{border-bottom:1px solid rgba(244,241,234,.12)}
+.header .main-menu>ul>li>a,.header .vs-header__top--menu a,.header .reg-link{font-family:var(--qd-sans)!important;font-weight:500!important;font-size:12px!important;letter-spacing:.18em!important;text-transform:uppercase;color:#f4f1ea!important}
+.header .main-menu>ul>li>a:hover,.header .main-menu>ul>li.current-menu-item>a{color:var(--qd-gold)!important}
+.header .main-menu>ul>li.current-menu-item>a{box-shadow:inset 0 -1px 0 var(--qd-gold)}
+.header .wc-link,.header .wc-link2,.header .searchBoxTggler,.header .xoo-wsc-cart-trigger,.header .vs-menu-toggle{color:#f4f1ea!important}
+.header .vs-header__top--menu{opacity:.75}
+
+/* Page title band: the theme's dark photo banner becomes a slim bone band with a serif title */
+.breadcumb-wrapper{min-height:0!important;height:auto!important;background:var(--qd-bone)!important;background-image:none!important;padding:56px 0 40px!important;border-bottom:1px solid var(--qd-line)}
+.breadcumb-wrapper::before,.breadcumb-wrapper::after{display:none!important}
+.breadcumb-wrapper img{display:none!important}
+.breadcumb-title{font-family:var(--qd-serif)!important;font-weight:300!important;font-size:clamp(40px,5vw,64px)!important;color:var(--qd-ink)!important;text-transform:none!important;letter-spacing:0!important}
+.breadcumb-menu,.breadcumb-menu a,.breadcumb-menu span,.breadcumb-wrapper li,.breadcumb-wrapper li a{font-family:var(--qd-sans)!important;font-size:11px!important;letter-spacing:.2em!important;text-transform:uppercase;color:var(--qd-ink2)!important}
+.breadcumb-wrapper li:last-child,.breadcumb-wrapper li:last-child a{color:var(--qd-ink)!important}
+
+/* Sidebar and widget headings that the theme sets in white */
+html body.vs-body .wp-block-group h2.wp-block-heading,html body.vs-body .widget_title,html body.vs-body .widget-title{color:var(--qd-ink)!important;font-family:var(--qd-sans)!important;font-size:12px!important;font-weight:500!important;letter-spacing:.2em!important;text-transform:uppercase}
+
+/* Badges and the back-to-top button */
+html body.vs-body .woocommerce-badge,html body.vs-body .product-tag{background:var(--qd-ink)!important;color:#f4f1ea!important;border-radius:0!important;font-family:var(--qd-sans)!important;font-size:10px!important;letter-spacing:.16em;text-transform:uppercase}
+html body.vs-body .fa-arrow-up,html body.vs-body .scroll-top,html body.vs-body .scrollToTop{background:var(--qd-ink)!important;color:#f4f1ea!important}
+
+/* Buttons: square ink buttons with tracked capitals */
+.vs-btn,.button,button.button,a.button,.single_add_to_cart_button,.woocommerce a.button,.woocommerce button.button,.checkout-button,#place_order{background:var(--qd-ink)!important;color:#f4f1ea!important;border:1px solid var(--qd-ink)!important;border-radius:0!important;font-family:var(--qd-sans)!important;font-weight:500!important;font-size:12px!important;letter-spacing:.18em!important;text-transform:uppercase;box-shadow:none!important}
+.vs-btn:hover,.button:hover,.single_add_to_cart_button:hover,.woocommerce a.button:hover,.checkout-button:hover,#place_order:hover{background:transparent!important;color:var(--qd-ink)!important}
+.vs-btn::before,.vs-btn::after{display:none!important}
+
+/* Prices */
+.price,.price .amount,.woocommerce-Price-amount{color:var(--qd-ink)!important;font-family:var(--qd-sans)!important;font-weight:500!important;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.price del{opacity:.5}
+
+/* Shop grid cards */
+.product-title,.product-title a,.woocommerce-loop-product__title{font-family:var(--qd-serif)!important;font-weight:400!important;color:var(--qd-ink)!important;letter-spacing:0!important}
+.woocommerce ul.products li.product img,.vs-product-box img,[class*=product-img] img{border-radius:0!important;background:var(--qd-well)}
+.product-cart,.add_to_cart_button{color:var(--qd-ink)!important}
+.woocommerce-result-count,.woocommerce-ordering select,.orderby{font-family:var(--qd-sans)!important;font-size:12px!important;letter-spacing:.14em;text-transform:uppercase;color:var(--qd-ink2)!important;border-radius:0!important}
+
+/* Single product */
+.single-product .product-title{font-size:clamp(36px,4vw,52px)!important;line-height:1.05}
+.single-product .woocommerce-product-details__short-description{color:var(--qd-ink2);font-size:17px}
+.single-product .quantity input,.single-product select{border-radius:0!important;border-color:var(--qd-line)!important}
+.woocommerce-tabs .tabs li a,.woocommerce-tabs .nav-link{font-family:var(--qd-sans)!important;font-size:12px!important;letter-spacing:.18em!important;text-transform:uppercase;color:var(--qd-ink2)!important;border-radius:0!important;background:none!important}
+.woocommerce-tabs .tabs li.active a,.woocommerce-tabs .nav-link.active{color:var(--qd-ink)!important;box-shadow:inset 0 -2px 0 var(--qd-gold)}
+.variable-items-wrapper .variable-item{border-radius:0!important}
+.variable-items-wrapper .variable-item.selected{box-shadow:0 0 0 2px var(--qd-ink)!important}
+
+/* Footer: ink with bone text and a gold rule */
+.qd-footer{background:var(--qd-ink)!important;color:rgba(244,241,234,.78)!important;border-top:2px solid var(--qd-gold)}
+.qd-footer a{color:#f4f1ea!important}
+.qd-footer a:hover{color:var(--qd-gold)!important}
+.qd-footer__name{font-family:var(--qd-serif)!important;font-weight:400!important;font-size:30px!important;letter-spacing:0!important;text-transform:none!important;color:#f4f1ea!important}
+.qd-footer h2,.qd-footer h3,.qd-footer h4{color:rgba(244,241,234,.6)!important;font-family:var(--qd-sans)!important;font-size:11px!important;letter-spacing:.2em!important;text-transform:uppercase}
+
+/* Focus that is easy to see on both ink and bone */
+body.vs-body a:focus-visible,body.vs-body button:focus-visible,body.vs-body input:focus-visible,body.vs-body select:focus-visible{outline:2px solid var(--qd-gold);outline-offset:3px}
